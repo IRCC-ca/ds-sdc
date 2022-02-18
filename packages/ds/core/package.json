@@ -1,0 +1,26 @@
+{
+  "name": "ds-core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "IRCC-ca",
+  "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
+  "license": "MIT",
+  "main": "index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/IRCC-ca/ds-sdc/issues"
+  }
+}
