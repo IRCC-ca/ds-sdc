@@ -1,5 +1,5 @@
 {
-  "name": "ds-angular",
+  "name": "@ircc-ca-ds/angular",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "IRCC-ca",
@@ -28,6 +28,7 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
+    "@ircc-ca-ds/core": "file:../core",
     "tslib": "^2.3.0"
   }
 }

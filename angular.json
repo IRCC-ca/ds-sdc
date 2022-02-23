@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "ds-angular": {
+    "@ircc-ca-ds/angular": {
       "projectType": "library",
       "root": "packages/ds/angular",
       "sourceRoot": "packages/ds/angular/src",
@@ -58,8 +58,16 @@
             "tsConfig": "sample/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "sample/src/favicon.ico",
-              "sample/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "sample/src",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "sample/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "sample/src/styles.scss"
@@ -138,5 +146,5 @@
       }
     }
   },
-  "defaultProject": "ds-angular"
+  "defaultProject": "sample"
 }

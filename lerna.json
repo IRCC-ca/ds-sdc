@@ -1,6 +1,7 @@
 {
   "packages": [
-    "packages/ds/*"
+    "packages/ds/*",
+    "*"
   ],
   "version": "independent"
 }

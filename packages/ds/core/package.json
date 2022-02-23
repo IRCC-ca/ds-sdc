@@ -1,17 +1,17 @@
 {
-  "name": "ds-core",
+  "name": "@ircc-ca-ds/core",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "IRCC-ca",
   "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
   "license": "MIT",
-  "main": "index.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
+  "main": "_theme.scss",
   "files": [
-    "lib"
+    "**.scss"
   ],
   "repository": {
     "type": "git",
