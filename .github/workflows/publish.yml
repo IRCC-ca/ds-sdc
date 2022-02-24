@@ -1,0 +1,38 @@
+name: Publish
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+      - main
+jobs:
+  publish:
+    if: github.event.pull_request.merged == true # Condition
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # Checkout all branches and tags
+    - name: "Use NodeJS 16"
+      uses: actions/setup-node@v2
+      with: 
+        node-version: '16'
+    - name: "Setup npm"
+      run: | # Set registry and authenticate with repo token
+        npm set @ircc-ca:registry=https://npm.pkg.github.com/ircc-ca
+        npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+    - name: "Version and publish"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor}}@users.noreply.github.com"
+
+        if [ ${{ github.base_ref }} = main ]; then
+          npx lerna version --conventional-commits --conventional-graduate --yes
+        else
+          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
+        fi
+
+        npx lerna publish from-git --yes
