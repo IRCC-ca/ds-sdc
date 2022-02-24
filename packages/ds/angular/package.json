@@ -1,5 +1,5 @@
 {
-  "name": "@ircc-ca-ds/angular",
+  "name": "@ircc-ca/ds-sdc-angular",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "IRCC-ca",
@@ -18,7 +18,8 @@
     "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Tests not implemented\"",
+    "lint": "echo \"Linting not implemented\""
   },
   "bugs": {
     "url": "https://github.com/IRCC-ca/ds-sdc/issues"
@@ -28,7 +29,12 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
-    "@ircc-ca-ds/core": "file:../core",
+    "@ircc-ca/ds-sdc-core": "file:../core",
     "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com",
+    "tag": "ds-sdc-angular"
   }
 }
