@@ -1,0 +1,18 @@
+@import "layout-var";
+
+$gap-width: $spacing-20;
+
+.ds-sdc-grid {
+    display: grid;
+    column-gap: $gap-width;
+    &-margins {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+.columns-responsive {
+    @extend .ds-sdc-grid;
+    &-margins {
+        @extend .ds-sdc-grid-margins;
+    }
+}
