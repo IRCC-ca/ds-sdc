@@ -23,7 +23,7 @@ $spacing-4: 4px;
     }
 }
 @mixin in-desktop-layout {
-    @media only screen and (min-width: $bp-width-tablet) and (max-width: $bp-width-desktop) {
+    @media only screen and (min-width: $bp-width-tablet) {
         @content;
     }
 }

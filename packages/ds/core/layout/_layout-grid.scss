@@ -2,17 +2,54 @@
 
 $gap-width: $spacing-20;
 
-.ds-sdc-grid {
+@mixin template-columns($num: 12) {
+    grid-template-columns: repeat($num, minmax(auto, 1fr));
+}
+
+%mod-grid {
     display: grid;
     column-gap: $gap-width;
+    > * {
+        grid-column: auto / span 1;
+    }
     &-margins {
-        margin-left: 20px;
-        margin-right: 20px;
+        @extend %mod-grid;
+        @include in-phone-layout {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        @include in-tablet-layout {
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        @include in-desktop-layout {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
     }
 }
-.columns-responsive {
-    @extend .ds-sdc-grid;
+.header-area-responsive,
+.content-area-responsive {
+    @extend %mod-grid;
+    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
     &-margins {
-        @extend .ds-sdc-grid-margins;
+        @extend .content-area-responsive;
+        @extend %mod-grid-margins;
     }
 }
+
+@mixin panel-column($column-count: 1) {
+    .panel-#{$column-count}-column {
+        @extend %mod-grid;
+        @include template-columns($column-count);
+        &-margins {
+            @extend .panel-#{$column-count}-column;
+            @extend %mod-grid-margins;
+        }
+}
+}
+
+@include panel-column(1);
+@include panel-column(2);
+@include panel-column(3);
+
