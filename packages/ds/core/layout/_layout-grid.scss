@@ -2,18 +2,13 @@
 
 $gap-width: $spacing-20;
 
-@mixin template-columns($num: 12) {
-    grid-template-columns: repeat($num, minmax(auto, 1fr));
+@function grid-bounds($content) {
+    @return [first premier f p] #{$content} [last dernier l d];
 }
-
-%mod-grid {
-    display: grid;
+%mod-layout {
     column-gap: $gap-width;
-    > * {
-        grid-column: auto / span 1;
-    }
     &-margins {
-        @extend %mod-grid;
+        @extend %mod-layout;
         @include in-phone-layout {
             margin-left: 16px;
             margin-right: 16px;
@@ -28,23 +23,64 @@ $gap-width: $spacing-20;
         }
     }
 }
-.header-area-responsive,
+
+%mod-flex {
+    @extend %mod-layout;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    &-margins {
+        @extend %mod-flex;
+        @extend %mod-layout-margins;
+    }
+}
+
+%mod-grid {
+    @extend %mod-layout;
+    display: grid;
+    justify-items: center;
+    justify-tracks: center;
+    > * {
+        grid-column: auto / span 1;
+    }
+    &-margins {
+        @extend %mod-grid;
+        @extend %mod-layout-margins;
+    }
+}
 .content-area-responsive {
-    @extend %mod-grid;
-    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    @extend %mod-flex;
     &-margins {
         @extend .content-area-responsive;
-        @extend %mod-grid-margins;
+        @extend %mod-flex-margins;
     }
+}
+
+
+.header-area-responsive {
+    @extend .content-area-responsive;
+    grid-column: first / last;
+    grid-row: first / 2;
+    &-margins {
+        @extend .header-area-responsive;
+        @extend .content-area-responsive-margins;
+    }
+}
+
+@mixin layout-grid($columns, $rows) {
+    display: grid;
+    grid-template-columns: grid-bounds($columns);
+    grid-template-rows: grid-bounds($rows);
 }
 
 @mixin panel-column($column-count: 1) {
     .panel-#{$column-count}-column {
         @extend %mod-grid;
-        @include template-columns($column-count);
+        grid-template-columns: grid-bounds(repeat(#{$column-count}, minmax(auto, 1fr)));
         &-margins {
-            @extend .panel-#{$column-count}-column;
             @extend %mod-grid-margins;
+            @extend .panel-#{$column-count}-column;
         }
 }
 }
