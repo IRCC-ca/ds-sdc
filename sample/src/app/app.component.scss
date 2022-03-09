@@ -1,0 +1,23 @@
+@import "~@ircc-ca/ds-sdc-core/layout/layout-grid";
+@import "~@ircc-ca/ds-sdc-core/typography/typography";
+.sidenav {
+    grid-column: first / span 1;
+    background-color: orange;
+    height: 100%;
+    > * {
+        grid-column: auto / span 1;
+    }
+}
+.sidenav2 {
+    grid-column: span 1 / last;
+    background-color: orange;
+}
+.masthead {
+    grid-row: 1 / 2;
+    grid-column: first / last;
+    background-color: aquamarine;
+}
+.wrapper {
+    @include layout-grid(auto 1fr auto, 1fr auto);
+    height: 100%;
+}

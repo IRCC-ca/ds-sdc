@@ -11,6 +11,7 @@
   },
   "main": "_theme.scss",
   "files": [
+    "node_modules/@fontsource/*/**",
     "**.scss"
   ],
   "repository": {
@@ -28,5 +29,9 @@
     "access": "restricted",
     "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
     "tag": "ds-sdc-core"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^4.5.4",
+    "@fontsource/lato": "^4.5.2"
   }
 }

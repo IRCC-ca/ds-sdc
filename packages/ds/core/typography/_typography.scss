@@ -1,0 +1,161 @@
+@import "fonts";
+@import "../layout/layout-var";
+%typography {
+    color: var(--neutral-1200);
+}
+
+%heading {
+    @extend %typography;
+    &.emphasis {
+      font-family: "heading-emphasis";
+    }
+    strong {
+        font-family: "heading-emphasis";
+    }
+    font-family: "heading";
+  }
+@mixin h1 {
+    @extend %heading;
+    font-size: $relative-2-25;
+    line-height: $relative-3-25;
+}
+@mixin h2 {
+    @extend %heading;
+    font-size: $relative-2;
+    line-height: $relative-2-75;
+}
+@mixin h3 {
+    @extend %heading;
+    font-size: $relative-1-75;
+    line-height: $relative-2-5;
+}
+@mixin h4 {
+    @extend %heading;
+    font-size: $relative-1-5;
+    line-height: $relative-1-75;
+}
+@mixin h5 {
+    @extend %heading;
+    font-size: $relative-1-25;
+    line-height: $relative-1-75;
+}
+@mixin h6 {
+    @extend %heading;
+    font-size: $relative-1;
+    line-height: $relative-1-5;
+}
+
+@mixin createHeadings {
+    @include Lato-fontFace(
+      $weight: 400,
+      $display: auto,
+      $style: normal,
+      $fontDir: "~@fontsource/lato/files",
+      $fontName: "heading"
+    );
+  
+    @include Lato-fontFace(
+      $weight: 700,
+      $display: auto,
+      $style: normal,
+      $fontDir: "~@fontsource/lato/files",
+      $fontName: "heading-emphasis"
+    );
+    h1,
+    .h1 {
+      @include h1;
+    }
+    h2,
+    .h2 {
+      @include h2;
+    }
+    h3,
+    .h3 {
+        @include h3;
+    }
+    h4,
+    .h4 {
+        @include h4;
+    }
+    h5,
+    .h5 {
+        @include h5;
+    }
+    h6,
+    .h6 {
+        @include h6;
+    }
+  }
+
+%body {
+    @extend %typography;
+    strong {
+      font-family: "body-emphasis";
+    }
+    &.emphasis {
+      font-family: "body-emphasis";
+    }
+    font-family: "body";
+}
+@mixin body1 {
+    @extend %body;
+    font-size: $relative-1-25;
+    line-height: $relative-1-75;
+}
+@mixin body2 {
+    @extend %body;
+    font-size: $relative-1;
+    line-height: $relative-1-5;
+}
+@mixin body3 {
+    @extend %body;
+    font-size: $relative-0-875;
+    line-height: $relative-1-25;
+}
+@mixin body4 {
+    @extend %body;
+    font-size: $relative-0-75;
+    line-height: $relative-1-25;
+}
+
+@mixin createBody($default-size) {
+  @include Inter-fontFace(
+    $weight: 400,
+    $display: auto,
+    $style: normal,
+    $fontDir: "~@fontsource/inter/files",
+    $fontName: "body"
+  );
+
+  @include Inter-fontFace(
+    $weight: 600,
+    $display: auto,
+    $style: normal,
+    $fontDir: "~@fontsource/inter/files",
+    $fontName: "body-emphasis"
+  );
+  
+  .body1 {
+      @include body1;
+  }
+  .body2 {
+      @include body2;
+  }
+  .body3 {
+      @include body3;
+  }
+  .body4 {
+      @include body4;
+  }
+
+  p,
+  ol,
+  ul {
+    @extend .#{$default-size};
+  }
+}
+
+@mixin create($default-size: "body2") {
+  @include createHeadings();
+  @include createBody($default-size);
+}
