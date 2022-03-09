@@ -2,3 +2,11 @@
 @forward "./ircc-jl-colours" as colour-*;
 @forward "./components/index" as component-*;
 @forward "./layout/layout-grid" as grid-*;
+@forward "./typography/typography" as typography-*;
+
+@use "./theme" as theme;
+@use "./typography/typography" as typography;
+@mixin default {
+    @include theme.create();
+    @include typography.create();
+}

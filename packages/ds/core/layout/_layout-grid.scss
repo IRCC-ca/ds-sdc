@@ -1,6 +1,6 @@
 @import "layout-var";
 
-$gap-width: $spacing-20;
+$gap-width: 20px;
 
 @function grid-bounds($content) {
     @return [first premier f p] #{$content} [last dernier l d];

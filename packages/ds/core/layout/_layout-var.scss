@@ -3,14 +3,21 @@ $bp-width-tablet: 768px;
 $bp-width-phone: 360px;
 $bp-width-0: 0px;
 
-$spacing-56: 56px;
-$spacing-40: 40px;
-$spacing-32: 32px;
-$spacing-24: 24px;
-$spacing-20: 20px;
-$spacing-16: 16px;
-$spacing-8: 8px;
-$spacing-4: 4px;
+$relative-3-5: 3.5rem;
+$relative-3-25: 3.25rem;
+$relative-3: 3rem;
+$relative-2-75: 2.75rem;
+$relative-2-5: 2.5rem;
+$relative-2-25: 2.25rem;
+$relative-2: 2rem;
+$relative-1-75: 1.75rem;
+$relative-1-5: 1.5rem;
+$relative-1-25: 1.25rem;
+$relative-1: 1rem;
+$relative-0-875: 0.875rem;
+$relative-0-75: 0.75rem;
+$relative-0-5: 0.5rem;
+$relative-0-25: 0.25rem;
 
 @mixin in-phone-layout {
     @media only screen and (min-width: $bp-width-0) and (max-width: $bp-width-phone) {
