@@ -1,5 +1,7 @@
 @use "./alert";
+@use "./anchor";
 
 $component-list: (
     alert: alert.$alert,
+    anchor: anchor.$anchor,
 )

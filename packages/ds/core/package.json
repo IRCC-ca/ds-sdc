@@ -11,6 +11,7 @@
   },
   "main": "_theme.scss",
   "files": [
+    "node_modules/@fortawesome/*/**",
     "node_modules/@fontsource/*/**",
     "**.scss"
   ],
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.4",
-    "@fontsource/lato": "^4.5.2"
+    "@fontsource/lato": "^4.5.2",
+    "@fortawesome/fontawesome-pro": "^6.0.0"
   }
 }

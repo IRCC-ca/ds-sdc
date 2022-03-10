@@ -1,2 +1,19 @@
 @forward "~@fontsource/lato/scss/mixins" as Lato-*;
 @forward "~@fontsource/inter/scss/mixins" as Inter-*;
+@import "~@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "~@fortawesome/fontawesome-pro/scss/brands";
+@import "~@fortawesome/fontawesome-pro/scss/duotone";
+@import "~@fortawesome/fontawesome-pro/scss/light";
+@import "~@fortawesome/fontawesome-pro/scss/regular";
+@import "~@fortawesome/fontawesome-pro/scss/solid";
+@import "~@fortawesome/fontawesome-pro/scss/thin";
+
+
+@mixin decor-icon($fa-var, $fa-family) {
+    --fa-style-family: #{$fa-family};
+    @extend .#{$fa-family};
+  
+    content: unquote("\"#{ $fa-var }\"");
+    content: unquote("\"#{ $fa-var }\"") / "";
+    speak: none;
+}
