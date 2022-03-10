@@ -6,6 +6,9 @@
 
 @use "./theme" as theme;
 @use "./typography/typography" as typography;
+
+@import "~@fortawesome/fontawesome-pro/scss/fontawesome";
+
 @mixin default {
     @include theme.create();
     @include typography.create();
