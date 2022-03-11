@@ -1,0 +1,43 @@
+@use "../../layout/layout-var" as var;
+
+$body: (
+    map: (
+        light: (
+            text-colour: neutral-1200
+        ),
+        dark: (
+            text-colour: neutral-200
+        ),
+      ),
+      selectors: ".body1, .body2, .body3, .body4"
+    );
+@mixin body {
+    color: var(--text-colour);
+    strong {
+      font-family: "body-emphasis";
+    }
+    &.emphasis {
+      font-family: "body-emphasis";
+    }
+    font-family: "body";
+}
+@mixin body1 {
+    @include body;
+    font-size: var.$relative-1-25;
+    line-height: var.$relative-1-75;
+}
+@mixin body2 {
+    @include body;
+    font-size: var.$relative-1;
+    line-height: var.$relative-1-5;
+}
+@mixin body3 {
+    @include body;
+    font-size: var.$relative-0-875;
+    line-height: var.$relative-1-25;
+}
+@mixin body4 {
+    @include body;
+    font-size: var.$relative-0-75;
+    line-height: var.$relative-1-25;
+}

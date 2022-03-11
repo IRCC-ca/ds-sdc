@@ -1,0 +1,55 @@
+@use "../../layout/layout-var" as var;
+
+$headings: (
+    map: (
+        light: (
+            text-colour: neutral-1200
+        ),
+        dark: (
+            text-colour: neutral-200
+        ),
+      ),
+      selectors: ".h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6"
+    );
+
+@mixin heading {
+    color: var(--text-colour);
+    &.emphasis {
+        font-family: "heading-emphasis";
+      }
+      strong {
+          font-family: "heading-emphasis";
+      }
+      font-family: "heading";
+}
+
+@mixin h1 {
+    @include heading;
+    font-size: var.$relative-2-25;
+    line-height: var.$relative-3-25;
+}
+@mixin h2 {
+    @include heading;
+    font-size: var.$relative-2;
+    line-height: var.$relative-2-75;
+}
+@mixin h3 {
+    @include heading;
+    font-size: var.$relative-1-75;
+    line-height: var.$relative-2-5;
+}
+@mixin h4 {
+    @include heading;
+    font-size: var.$relative-1-5;
+    line-height: var.$relative-1-75;
+}
+@mixin h5 {
+    @include heading;
+    font-size: var.$relative-1-25;
+    line-height: var.$relative-1-75;
+}
+@mixin h6 {
+    @include heading;
+    font-size: var.$relative-1;
+    line-height: var.$relative-1-5;
+}
