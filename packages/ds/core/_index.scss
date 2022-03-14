@@ -1,5 +1,5 @@
 @use "./typography/typography" as typography;
-@use "./theme" as theme;
+@use "./theme/theme" as theme;
 
 @mixin default {
     @include theme.create();

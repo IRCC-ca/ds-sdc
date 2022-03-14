@@ -1,5 +1,5 @@
 @use "sass:map";
-@import "./string";
+@import "../_util/string";
 
 ///
 ///
@@ -46,24 +46,24 @@
 @mixin core($root-palette, $hues, $include-list) {
   @each $colour-mode, $colour-palette in $root-palette {
     @if index(($root-palette), ($colour-mode $colour-palette)) == 1 {
-      body {
+      html {
         @include create-global-styles($colour-palette);
       }
     } @else {
-      body[mode="#{$colour-mode}"] {
+      html[mode="#{$colour-mode}"] {
         @include create-global-styles($colour-palette);
       }
     }
   }
   @each $hue-theme in $hues {
     @if index(($hues), ($hue-theme)) == 1 {
-      body {
+      html {
         @each $component-name, $component-config in $include-list {
           @include create-component-styles($component-config, $hue-theme);
         }
       }
     } @else {
-      body[data-theme="#{$hue-theme}"] {
+      html[data-theme="#{$hue-theme}"] {
         @each $component-name, $component-config in $include-list {
           @include create-component-styles($component-config, $hue-theme);
         }

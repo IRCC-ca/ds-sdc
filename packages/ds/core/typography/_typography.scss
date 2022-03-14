@@ -18,7 +18,7 @@
     );
   }
 
-@mixin createBody($default-size) {
+@mixin createBody($default-font) {
   @include fonts.Inter-fontFace(
     $weight: 400,
     $display: auto,
@@ -34,10 +34,14 @@
     $fontDir: "~@fontsource/inter/files",
     $fontName: "body-emphasis"
   );
+
+  body {
+    @extend .#{$default-font};
+  }
 }
 
-@mixin create($default-size: "body2") {
+@mixin create($default-font: "body2") {
   @include createHeadings();
-  @include createBody($default-size);
+  @include createBody($default-font);
   @include fonts.FA-create();
 }

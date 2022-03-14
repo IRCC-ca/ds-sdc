@@ -9,7 +9,7 @@ $body: (
             text-colour: neutral-200
         ),
       ),
-      selectors: ".body1, .body2, .body3, .body4"
+      selectors: ".body1, .body2, .body3, .body4, body"
     );
 @mixin body {
     color: var(--text-colour);
