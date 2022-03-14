@@ -20,7 +20,7 @@ $navy: (
   400: #8d9fbe,
   500: #6c82a9,
   600: #4b6695,
-  700: #5c749f,
+  700: #2a4980,
   800: #233f71,
   900: #1d3561,
   1000: #162c52,
@@ -129,6 +129,7 @@ $journeylab-palette: (
     information: $teal,
     success: $green,
     focus: $blue,
+    visited: $purple,
   ),
   greyscale: (
     neutral: $grey,
@@ -139,5 +140,6 @@ $journeylab-palette: (
     information: $grey,
     success: $grey,
     focus: $grey,
+    visited: $grey,
   ),
 );

@@ -1,6 +1,0 @@
-@use './_util/theme';
-@import './ircc-jl-colours.scss';
-@import './components/index';
-@mixin create($root-palette: $journeylab-palette, $hues: (light, dark), $include-list: $component-list) {
-  @include theme.core($root-palette, $hues, $include-list);
-}

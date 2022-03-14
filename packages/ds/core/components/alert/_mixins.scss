@@ -21,9 +21,9 @@ $alert: (
     warning,
     success,
   ),
-  selector: alert
+  selectors: ".alert"
 );
-.alert {
+@mixin alert {
   background-color: var(--background);
   color: var(--text);
 }

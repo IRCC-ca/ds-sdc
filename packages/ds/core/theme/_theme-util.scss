@@ -1,10 +1,10 @@
 @use "sass:map";
-@import './string';
+@import "../_util/string";
 
 ///
 ///
 ///
-@mixin varsForMap($hue-map, $colour-map, $str-prefix: '', $replace: 'role') {
+@mixin varsForMap($hue-map, $colour-map: "", $str-prefix: "", $replace: "role") {
   @each $key, $value in $hue-map {
     @if type-of($value) == map {
       @include varsForMap($value, $colour-map, #{$str-prefix}-#{$key});
@@ -16,14 +16,22 @@
   }
 }
 @mixin create-component-styles($component-settings, $hue-selector) {
-  @each $colour-role in map-get($component-settings, roles) {
-    .#{map-get($component-settings, selector)} {
-      &[role='#{$colour-role}'] {
-        @include varsForMap(
-          map-get($component-settings, map, $hue-selector),
-          $colour-role
-        );
+  @if (map.has-key($component-settings, roles) == true) {
+    @each $colour-role in map-get($component-settings, roles) {
+      #{map-get($component-settings, selectors)} {
+        &[role="#{$colour-role}"] {
+          @include varsForMap(
+            map-get($component-settings, map, $hue-selector),
+            $colour-role
+          );
+        }
       }
+    }
+  } @else {
+    #{map-get($component-settings, selectors)} {
+      @include varsForMap(
+        map-get($component-settings, map, $hue-selector)
+      );
     }
   }
 }
@@ -38,24 +46,24 @@
 @mixin core($root-palette, $hues, $include-list) {
   @each $colour-mode, $colour-palette in $root-palette {
     @if index(($root-palette), ($colour-mode $colour-palette)) == 1 {
-      body {
+      html {
         @include create-global-styles($colour-palette);
       }
     } @else {
-      body[mode='#{$colour-mode}'] {
+      html[mode="#{$colour-mode}"] {
         @include create-global-styles($colour-palette);
       }
     }
   }
   @each $hue-theme in $hues {
-    @if index(($hues), ($hue-theme)) == 1{
-      body {
+    @if index(($hues), ($hue-theme)) == 1 {
+      html {
         @each $component-name, $component-config in $include-list {
           @include create-component-styles($component-config, $hue-theme);
         }
       }
     } @else {
-      body[data-theme='#{$hue-theme}'] {
+      html[data-theme="#{$hue-theme}"] {
         @each $component-name, $component-config in $include-list {
           @include create-component-styles($component-config, $hue-theme);
         }

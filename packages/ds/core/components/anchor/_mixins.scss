@@ -1,0 +1,39 @@
+@use "../../typography/fonts" as font;
+@use "../../layout/layout-var" as var;
+$anchor: (
+  map: (
+    light: (
+      text: cta-700,
+      text-hover: cta-800,
+      text-visited: visited-800,
+      text-active: cta-900,
+      background-active: neutral-300,
+    ),
+    dark: (
+      text: cta-700,
+      text-hover: cta-800,
+      text-visited: visited-800,
+      text-active: cta-900,
+      background-active: neutral-900,
+    ),
+  ),
+  selectors: 'a, .anchor, .link'
+);
+@mixin anchor {
+  border-radius: var.$fixed-4;
+  padding: var.$fixed-4;
+  text-decoration-line: underline;
+  &:link {
+    color: var(--text);
+  }
+  &:hover {
+    color: var(--text-hover);
+  }
+  &:active {
+    color: var(--text-active);
+    background-color: var(--background-active);
+  }
+  &:visited {
+    color: var(--text-visited);
+  }
+}

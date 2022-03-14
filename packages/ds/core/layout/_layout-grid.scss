@@ -29,7 +29,7 @@ $gap-width: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: stretch;
+    align-items: baseline;
     &-margins {
         @extend %mod-flex;
         @extend %mod-layout-margins;

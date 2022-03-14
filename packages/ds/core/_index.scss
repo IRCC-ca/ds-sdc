@@ -1,13 +1,5 @@
-@forward "./theme" as theme-*;
-@forward "./ircc-jl-colours" as colour-*;
-@forward "./components/index" as component-*;
-@forward "./layout/layout-grid" as grid-*;
-@forward "./typography/typography" as typography-*;
-
-@use "./theme" as theme;
 @use "./typography/typography" as typography;
-
-@import "~@fortawesome/fontawesome-pro/scss/fontawesome";
+@use "./theme/theme" as theme;
 
 @mixin default {
     @include theme.create();

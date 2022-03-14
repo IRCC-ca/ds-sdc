@@ -1,7 +1,11 @@
-@use "./alert";
-@use "./anchor";
+@use "./alert/class" as alert;
+@use "./anchor/class" as anchor;
+@use "./headings/class" as headings;
+@use "./body/class" as body;
 
 $component-list: (
     alert: alert.$alert,
     anchor: anchor.$anchor,
-)
+    headings: headings.$headings,
+    body: body.$body,
+);
