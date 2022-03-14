@@ -21,7 +21,8 @@ $anchor: (
 );
 @mixin anchor {
   border-radius: var.$fixed-4;
-  padding: 4px;
+  padding: var.$fixed-4;
+  text-decoration-line: underline;
   &:link {
     color: var(--text);
   }
@@ -34,10 +35,5 @@ $anchor: (
   }
   &:visited {
     color: var(--text-visited);
-  }
-
-  &:after {
-    padding-left: var.$relative-0-5;
-    @include font.FA-decor-icon("\f08e", "fa-light");
   }
 }
