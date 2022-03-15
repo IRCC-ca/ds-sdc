@@ -2,10 +2,13 @@
 @use "./anchor/class" as anchor;
 @use "./headings/class" as headings;
 @use "./body/class" as body;
+@use "./focus/class" as focus;
+
 
 $component-list: (
     alert: alert.$alert,
     anchor: anchor.$anchor,
     headings: headings.$headings,
     body: body.$body,
+    focus: focus.$focus,
 );

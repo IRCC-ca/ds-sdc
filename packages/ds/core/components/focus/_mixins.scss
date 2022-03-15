@@ -1,0 +1,24 @@
+@use '../../layout/layout-var' as var;
+
+$focus: (
+  map: (
+    light: (
+        outline-colour: active-700
+    ),
+    dark: (
+        outline-colour: active-600
+    ),
+  ),
+  selectors: "body"
+);
+
+$outline: (
+    inner: var.$fixed-3,
+    outer: var.$fixed-3
+);
+
+@mixin focus {
+    outline: var(--outline-colour) solid map-get($outline, outer);
+    outline-offset: map-get($outline, inner);
+    position: relative;
+}

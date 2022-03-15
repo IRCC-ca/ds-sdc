@@ -20,9 +20,9 @@ $anchor: (
   selectors: 'a, .anchor, .link'
 );
 @mixin anchor {
-  border-radius: var.$fixed-4;
-  padding: var.$fixed-4;
-  text-decoration-line: underline;
+  border-radius: var.$border-radius;
+  padding: var.$fixed-2 var.$fixed-4;
+  display: inline;
   &:link {
     color: var(--text);
   }
@@ -31,7 +31,7 @@ $anchor: (
   }
   &:active {
     color: var(--text-active);
-    background-color: var(--background-active);
+    background-color: #{hsl(var(--background-active))};
   }
   &:visited {
     color: var(--text-visited);
