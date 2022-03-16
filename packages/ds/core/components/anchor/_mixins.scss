@@ -1,5 +1,6 @@
 @use "../../typography/fonts" as font;
 @use "../../layout/layout-var" as var;
+@use "../focus/mixins" as focus;
 $anchor: (
   map: (
     light: (
@@ -28,6 +29,11 @@ $anchor: (
   }
   &:hover {
     color: var(--text-hover);
+  }
+  &:focus {
+    @include focus.focus();
+    box-shadow: none;
+    outline-offset: 0;
   }
   &:active {
     color: var(--text-active);
