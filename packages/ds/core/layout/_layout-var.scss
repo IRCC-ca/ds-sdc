@@ -21,6 +21,11 @@ $relative-0-25: 0.25rem;
 
 $fixed-8: 8px;
 $fixed-4: 4px;
+$fixed-3: 3px;
+$fixed-2: 2px;
+$fixed-1: 1px;
+
+$border-radius: $fixed-4;
 
 @mixin in-phone-layout {
     @media only screen and (min-width: $bp-width-0) and (max-width: $bp-width-phone) {
