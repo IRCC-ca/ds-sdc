@@ -1,4 +1,4 @@
-@use "~@ircc-ca/ds-sdc-core/layout/layout-grid";
+@use "~@ircc-ca/ds-sdc-core/layout/layout-grid" as layouts;
 @use "~@ircc-ca/ds-sdc-core/typography/typography";
 .sidenav {
     grid-column: first / span 1;
@@ -17,7 +17,8 @@
     grid-column: first / last;
     background-color: aquamarine;
 }
+
 .wrapper {
-    @include layout-grid.layout-grid(auto 1fr auto, 1fr auto);
+    @include layouts.grid(auto 1fr auto, 1fr auto);
     height: 100%;
 }

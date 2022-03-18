@@ -1,5 +1,5 @@
 @use '../../layout/layout-var' as var;
-
+@use '../../_util/colour' as colour;
 $focus: (
   map: (
     light: (
@@ -20,7 +20,7 @@ $outline: (
 );
 
 @mixin focus {
-    outline: var(--focus-outline-colour) solid map-get($outline, outer);
+    outline: colour.mix-token(focus-outline-colour) solid map-get($outline, outer);
     outline-offset: map-get($outline, inner);
-    box-shadow: 0 0 0 map-get($outline, inner ) var(--focus-shadow-colour);
+    box-shadow: 0 0 0 map-get($outline, inner ) colour.mix-token(focus-shadow-colour);
 }

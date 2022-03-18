@@ -68,7 +68,7 @@ $gap-width: 20px;
     }
 }
 
-@mixin layout-grid($columns, $rows) {
+@mixin grid($columns, $rows) {
     display: grid;
     grid-template-columns: grid-bounds($columns);
     grid-template-rows: grid-bounds($rows);
