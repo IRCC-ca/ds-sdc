@@ -1,5 +1,6 @@
 @use "../../typography/fonts" as font;
 @use "../../layout/layout-var" as var;
+@use "../../_util/colour" as colour;
 @use "../focus/mixins" as focus;
 $anchor: (
   map: (
@@ -37,7 +38,7 @@ $anchor: (
   }
   &:active {
     color: var(--text-active);
-    background-color: #{hsl(var(--background-active))};
+    background-color: colour.mix-token(background-active);
   }
   &:visited {
     color: var(--text-visited);

@@ -5,6 +5,7 @@
 @use "./focus/class" as focus;
 
 
+// TODO: rename this
 $component-list: (
     alert: alert.$alert,
     anchor: anchor.$anchor,
