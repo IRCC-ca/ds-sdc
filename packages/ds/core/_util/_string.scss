@@ -8,6 +8,7 @@
 
 /// Replace `$search` with `$replace` in `$string`
 /// @author Kitty Giraudel
+/// source https://css-tricks.com/snippets/sass/str-replace-function/
 /// @param {String} $string - Initial string
 /// @param {String} $search - Substring to replace
 /// @param {String} $replace ('') - New value
