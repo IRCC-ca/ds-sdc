@@ -1,5 +1,4 @@
 @import "./mixins";
 .alert {
-    --background: 300, 100%, 50%;
     @include alert();
 }
