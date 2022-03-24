@@ -1,4 +1,5 @@
-@use "../../layout/layout-var" as var;
+@use "../../layout/layout-var" as sizes;
+@use "../../_util/colour" as colour;
 
 $headings: (
     map: (
@@ -13,7 +14,7 @@ $headings: (
     );
 
 @mixin heading {
-    color: var(--text-colour);
+    color: colour.mix-token(text-colour);
     &.emphasis {
         font-family: "heading-emphasis";
       }
@@ -25,31 +26,31 @@ $headings: (
 
 @mixin h1 {
     @include heading;
-    font-size: var.$relative-2-25;
-    line-height: var.$relative-3-25;
+    font-size: sizes.$relative-2-25;
+    line-height: sizes.$relative-3-25;
 }
 @mixin h2 {
     @include heading;
-    font-size: var.$relative-2;
-    line-height: var.$relative-2-75;
+    font-size: sizes.$relative-2;
+    line-height: sizes.$relative-2-75;
 }
 @mixin h3 {
     @include heading;
-    font-size: var.$relative-1-75;
-    line-height: var.$relative-2-5;
+    font-size: sizes.$relative-1-75;
+    line-height: sizes.$relative-2-5;
 }
 @mixin h4 {
     @include heading;
-    font-size: var.$relative-1-5;
-    line-height: var.$relative-1-75;
+    font-size: sizes.$relative-1-5;
+    line-height: sizes.$relative-1-75;
 }
 @mixin h5 {
     @include heading;
-    font-size: var.$relative-1-25;
-    line-height: var.$relative-1-75;
+    font-size: sizes.$relative-1-25;
+    line-height: sizes.$relative-1-75;
 }
 @mixin h6 {
     @include heading;
-    font-size: var.$relative-1;
-    line-height: var.$relative-1-5;
+    font-size: sizes.$relative-1;
+    line-height: sizes.$relative-1-5;
 }

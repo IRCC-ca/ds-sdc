@@ -1,4 +1,4 @@
-@use '../../layout/layout-var' as var;
+@use '../../layout/layout-var' as sizes;
 @use '../../_util/colour' as colour;
 $focus: (
   map: (
@@ -15,8 +15,8 @@ $focus: (
 );
 
 $outline: (
-    inner: var.$fixed-3,
-    outer: var.$fixed-3
+    inner: sizes.$fixed-3,
+    outer: sizes.$fixed-3
 );
 
 @mixin focus {

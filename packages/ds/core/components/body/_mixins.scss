@@ -1,4 +1,5 @@
-@use "../../layout/layout-var" as var;
+@use "../../layout/layout-var" as sizes;
+@use "../../_util/colour" as colour;
 
 $body: (
     map: (
@@ -12,7 +13,7 @@ $body: (
       selectors: ".body1, .body2, .body3, .body4, body"
     );
 @mixin body {
-    color: var(--text-colour);
+    color: colour.mix-token(text-colour);
     strong {
       font-family: "body-emphasis";
     }
@@ -23,21 +24,21 @@ $body: (
 }
 @mixin body1 {
     @include body;
-    font-size: var.$relative-1-25;
-    line-height: var.$relative-1-75;
+    font-size: sizes.$relative-1-25;
+    line-height: sizes.$relative-1-75;
 }
 @mixin body2 {
     @include body;
-    font-size: var.$relative-1;
-    line-height: var.$relative-1-5;
+    font-size: sizes.$relative-1;
+    line-height: sizes.$relative-1-5;
 }
 @mixin body3 {
     @include body;
-    font-size: var.$relative-0-875;
-    line-height: var.$relative-1-25;
+    font-size: sizes.$relative-0-875;
+    line-height: sizes.$relative-1-25;
 }
 @mixin body4 {
     @include body;
-    font-size: var.$relative-0-75;
-    line-height: var.$relative-1-25;
+    font-size: sizes.$relative-0-75;
+    line-height: sizes.$relative-1-25;
 }
