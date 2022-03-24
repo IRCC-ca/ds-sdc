@@ -1,5 +1,5 @@
 @use "../../typography/fonts" as font;
-@use "../../layout/layout-var" as var;
+@use "../../layout/layout-var" as sizes;
 @use "../../_util/colour" as colour;
 @use "../focus/mixins" as focus;
 $anchor: (
@@ -22,14 +22,14 @@ $anchor: (
   selectors: 'a, .anchor, .link'
 );
 @mixin anchor {
-  border-radius: var.$border-radius;
-  padding: var.$fixed-2 var.$fixed-4;
+  border-radius: sizes.$border-radius;
+  padding: sizes.$fixed-2 sizes.$fixed-4;
   display: inline;
   &:link {
-    color: var(--text);
+    color: colour.mix-token(text);
   }
   &:hover {
-    color: var(--text-hover);
+    color: colour.mix-token(text-hover);
   }
   &:focus {
     @include focus.focus();
@@ -37,10 +37,10 @@ $anchor: (
     outline-offset: 0;
   }
   &:active {
-    color: var(--text-active);
+    color: colour.mix-token(text-active);
     background-color: colour.mix-token(background-active);
   }
   &:visited {
-    color: var(--text-visited);
+    color: colour.mix-token(text-visited);
   }
 }
