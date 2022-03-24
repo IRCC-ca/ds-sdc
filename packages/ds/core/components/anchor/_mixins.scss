@@ -26,10 +26,10 @@ $anchor: (
   padding: var.$fixed-2 var.$fixed-4;
   display: inline;
   &:link {
-    color: var(--text);
+    color: colour.mix-token(text);
   }
   &:hover {
-    color: var(--text-hover);
+    color: colour.mix-token(text-hover);
   }
   &:focus {
     @include focus.focus();
@@ -37,10 +37,10 @@ $anchor: (
     outline-offset: 0;
   }
   &:active {
-    color: var(--text-active);
+    color: colour.mix-token(text-active);
     background-color: colour.mix-token(background-active);
   }
   &:visited {
-    color: var(--text-visited);
+    color: colour.mix-token(text-visited);
   }
 }
