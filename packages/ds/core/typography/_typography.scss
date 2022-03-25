@@ -1,4 +1,4 @@
-@use "../layout/layout-var" as var;
+@use "../layout/layout-var" as token;
 @use "fonts";
 @mixin createHeadings {
     @include fonts.Lato-fontFace(
@@ -7,14 +7,6 @@
       $style: normal,
       $fontDir: "~@fontsource/lato/files",
       $fontName: "heading"
-    );
-  
-    @include fonts.Lato-fontFace(
-      $weight: 700,
-      $display: auto,
-      $style: normal,
-      $fontDir: "~@fontsource/lato/files",
-      $fontName: "heading-emphasis"
     );
   }
 
@@ -26,18 +18,13 @@
     $fontDir: "~@fontsource/inter/files",
     $fontName: "body"
   );
-
-  @include fonts.Inter-fontFace(
-    $weight: 600,
-    $display: auto,
-    $style: normal,
-    $fontDir: "~@fontsource/inter/files",
-    $fontName: "body-emphasis"
-  );
-
   body {
     @extend .#{$default-font};
   }
+  strong, .emphasis, b {
+    font-weight: map-get(token.$body-size, bold);
+  }
+  
 }
 
 @mixin create($default-font: "body2") {
