@@ -1,0 +1,104 @@
+%far, %fa-regular {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 400;
+}
+
+%fab, %fa-brands {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+%fas, %fa-solid {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+}
+
+%fal, %fa-light {
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 300;
+}
+
+%fat, %fa-thin {
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 100;
+}
+@mixin create() {
+  $font-root: "~@fortawesome/fontawesome-pro/webfonts";
+  @font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("#{$font-root}/fa-brands-400.woff2") format("woff2"),
+      url("#{$font-root}/fa-brands-400.ttf") format("truetype");
+  }
+
+  .fab,
+  .fa-brands {
+    @extend %fa-brands;
+  }
+
+  @font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("#{$font-root}/fa-regular-400.woff2") format("woff2"),
+      url("#{$font-root}/fa-regular-400.ttf") format("truetype");
+  }
+
+  .far,
+  .fa-regular {
+    @extend %fa-regular;
+  }
+
+  @font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("#{$font-root}/fa-solid-900.woff2") format("woff2"),
+      url("#{$font-root}/fa-solid-900.ttf") format("truetype");
+  }
+
+  .fas,
+  .fa-solid {
+    @extend %fa-solid;
+  }
+
+  @font-face {
+    font-family: 'Font Awesome 6 Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-display: block;
+    src: url('#{$font-root}/fa-light-300.woff2') format('woff2'),
+      url('#{$font-root}/fa-light-300.ttf') format('truetype');
+  }
+  
+  .fal,
+  .fa-light {
+      @extend %fa-light;
+  }
+
+  
+    @font-face {
+    font-family: 'Font Awesome 6 Pro';
+    font-style: normal;
+    font-weight: 100;
+    font-display: block;
+    src: url('#{$font-root}/fa-thin-100.woff2') format('woff2'),
+      url('#{$font-root}/fa-thin-100.ttf') format('truetype');
+  }
+  
+  .fat,
+  .fa-thin {
+      @extend %fa-thin;
+  }
+}
+
+@mixin decor-icon($fa-var, $fa-family) {
+  @extend %#{$fa-family};
+  content: unquote('"#{ $fa-var }"');
+  content: unquote('"#{ $fa-var }"') / "";
+  speak: none;
+}

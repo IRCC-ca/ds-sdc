@@ -1,0 +1,54 @@
+@use "../../layout/layout-var" as token;
+@use "../../_util/colour" as colour;
+
+$headings: (
+    map: (
+        light: (
+            text-colour: neutral-1200
+        ),
+        dark: (
+            text-colour: neutral-200
+        ),
+      ),
+      selectors: ".h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6"
+    );
+
+@mixin heading($level) {
+    color: colour.mix-token(text-colour);
+    & > strong, strong.heading, strong.h#{$level}, .emphasis, b {
+        font-weight: map-get(token.$header-size, bold);
+    }
+    font-family: "heading";
+    font-weight: map-get(token.$header-size, regular);
+}
+
+@mixin h1 {
+    @include heading(1);
+    font-size: token.$relative-2-25;
+    line-height: token.$relative-3-25;
+}
+@mixin h2 {
+    @include heading(2);
+    font-size: token.$relative-2;
+    line-height: token.$relative-2-75;
+}
+@mixin h3 {
+    @include heading(3);
+    font-size: token.$relative-1-75;
+    line-height: token.$relative-2-5;
+}
+@mixin h4 {
+    @include heading(4);
+    font-size: token.$relative-1-5;
+    line-height: token.$relative-1-75;
+}
+@mixin h5 {
+    @include heading(5);
+    font-size: token.$relative-1-25;
+    line-height: token.$relative-1-75;
+}
+@mixin h6 {
+    @include heading(6);
+    font-size: token.$relative-1;
+    line-height: token.$relative-1-5;
+}

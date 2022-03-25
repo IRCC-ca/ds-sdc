@@ -1,0 +1,46 @@
+@use "../../typography/fonts" as font;
+@use "../../layout/layout-var" as sizes;
+@use "../../_util/colour" as colour;
+@use "../focus/mixins" as focus;
+$anchor: (
+  map: (
+    light: (
+      text: cta-700,
+      text-hover: cta-800,
+      text-visited: visited-800,
+      text-active: cta-900,
+      background-active: neutral-300,
+    ),
+    dark: (
+      text: cta-700,
+      text-hover: cta-800,
+      text-visited: visited-800,
+      text-active: cta-900,
+      background-active: neutral-900,
+    ),
+  ),
+  selectors: 'a, .anchor, .link'
+);
+@mixin anchor {
+  border-radius: sizes.$border-radius;
+  padding: sizes.$fixed-2 sizes.$fixed-4;
+  display: inline;
+  &:link {
+    color: colour.mix-token(text);
+  }
+  &:hover {
+    color: colour.mix-token(text-hover);
+  }
+  &:focus {
+    @include focus.focus();
+    box-shadow: none;
+    outline-offset: 0;
+  }
+  &:active {
+    color: colour.mix-token(text-active);
+    background-color: colour.mix-token(background-active);
+  }
+  &:visited {
+    color: colour.mix-token(text-visited);
+  }
+}

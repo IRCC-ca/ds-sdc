@@ -1,0 +1,14 @@
+@use "./alert/class" as alert;
+@use "./anchor/class" as anchor;
+@use "./headings/class" as headings;
+@use "./body/class" as body;
+@use "./focus/class" as focus;
+
+
+// TODO: rename this
+$component-list: (
+    anchor: anchor.$anchor,
+    headings: headings.$headings,
+    body: body.$body,
+    focus: focus.$focus,
+);
