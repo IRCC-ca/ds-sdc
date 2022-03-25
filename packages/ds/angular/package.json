@@ -1,6 +1,6 @@
 {
   "name": "@ircc-ca/ds-sdc-angular",
-  "version": "0.0.1-beta.9",
+  "version": "0.0.1-beta.10",
   "description": "> TODO: description",
   "author": "IRCC-ca",
   "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
@@ -29,7 +29,7 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
-    "@ircc-ca/ds-sdc-core": "^0.0.1-beta.9",
+    "@ircc-ca/ds-sdc-core": "^0.0.1-beta.10",
     "tslib": "^2.3.0"
   },
   "publishConfig": {
