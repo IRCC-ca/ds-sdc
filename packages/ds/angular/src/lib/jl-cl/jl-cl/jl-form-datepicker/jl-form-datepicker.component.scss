@@ -1,0 +1,45 @@
+@import '~/src/assets/style-guide/breakpoints.scss';
+@import '~/src/assets/style-guide/theme';
+
+div.tf-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+
+    .datepicker-input-group {
+        max-width: 508px;
+        display: flex; /* 2. display flex to the rescue */
+        flex-direction: row;
+        ::ng-deep div.tf-container, ::ng-deep div.tf-container > input{
+ 
+            max-width: 153px
+        }
+    
+        @include screen('phone') {
+            display: block;
+            ::ng-deep div.tf-container, ::ng-deep div.tf-container > input{
+                max-width: 100%
+            }
+        }
+    }
+        
+    .datepicker-input-group > * {
+        padding-right: 24px;
+        @include screen('phone') {
+            padding-right: 0px;
+        }
+    }
+
+}
+
+mat-checkbox {
+    margin-top: 9px
+}
+
+::ng-deep .datepicker-input-group{
+    jlcl-label{
+        .label-margin{
+            margin-top: 8px
+        }
+    }
+}

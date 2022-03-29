@@ -1,0 +1,18 @@
+<div class="tf-container" [formGroup]="group">
+    <app-alert *ngIf="config.alert" [type]="'info'" [body]="config.alert" class="no-mobile"></app-alert>
+    <jlcl-label [config]="config" [group]="group"></jlcl-label>
+    <p *ngIf="config.hint" [innerHtml]="config.hint | translate"></p>
+
+    <input #trigger="matAutocompleteTrigger" class="input" type="text" width="100%" marginTop="0"
+        [formControlName]="config.id" [placeholder]="config.placeholder" [attr.aria-labelledby]="config.id + '-lbl'"
+        [attr.aria-required]="isRequired" [matAutocomplete]="auto" [attr.data-test]="'input-' + config.id">
+    <mat-autocomplete [displayWith]="displayAutoComplete" #auto="matAutocomplete"
+        (optionSelected)="optionSelected($event, trigger)">
+        <mat-option *ngFor="let address of addressSuggestions | async" [value]="address">
+            {{address.Text}}, {{address.Description}}
+        </mat-option>
+    </mat-autocomplete>
+
+    <jlcl-validation-list class="validation" [config]="config" [group]="group"></jlcl-validation-list>
+
+</div>

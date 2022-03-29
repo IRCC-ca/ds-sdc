@@ -1,0 +1,97 @@
+@import '~/src/assets/style-guide/breakpoints.scss';
+@import '~/src/assets/style-guide/theme';
+
+@mixin icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+
+    @include screen('phone') {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+    }
+}
+.info-color {
+    background-color: get-color(info, 50);
+}
+.warn-color {
+    background-color: get-color(warning, 50);
+}
+.error-color {
+    background-color: get-color(error, 50);
+}
+.success-color {
+    background-color: get-color(success, 50);
+}
+.tip-color {
+    background-color: get-color(neutral, 50);
+}
+.info-box {
+    width: 685px;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 16px;
+    @include screen('phone') {
+        width: 100%;
+    }
+
+    .singleLineContent {
+        align-items: center;
+        display: flex;
+    }
+    .content {
+        .success-icon {
+            color: get-color(success, 500);
+            @include icon;
+        }
+        .error-icon {
+            color: get-color(error, 500);
+            @include icon;
+        }
+
+        .warn-icon {
+            color: get-color(warning, 500);
+            @include icon;
+        }
+
+        .info-icon {
+            color: get-color(info, 500);
+            @include icon;
+        }
+        .tip-icon {
+            color: get-color(primary, 500);
+            @include icon;
+        }
+
+        .text-content {
+            margin-left: 32px;
+            @include screen('phone') {
+                margin-left: 32px;
+            }
+
+            .description {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+
+        }
+    }
+}
+
+.info-link {
+    margin-top: 8px;
+
+    .launch {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        margin-left: 4px;
+        vertical-align: middle;
+    }
+
+    a {
+        color: inherit;
+    }
+}

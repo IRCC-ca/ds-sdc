@@ -1,0 +1,21 @@
+<div class="info-box" [ngClass]="config.alertType + '-color'">
+    <div [ngClass]="isSingleLine() ? 'singleLineContent content' : 'content'">
+        <mat-icon [ngClass]="getCssClass()">
+            {{iconMap[config.alertType]}}</mat-icon>
+        <div class="text-content">
+            <p class='subtitle2' [innerHtml]="config.label | translate"></p>
+            <div *ngIf="config.content" class="description">
+                <div>
+                    <p class='body2' [innerHtml]="config.content | translate"></p>
+                </div>
+            </div>
+            <div *ngIf="config.link" class="link2 info-link">
+                <a [href]="config.link.url | translate" target="_blank">
+                    {{config.link.name | translate}}
+                    <mat-icon class="launch" aria-hidden="false" aria-label="launch icon">
+                        launch</mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

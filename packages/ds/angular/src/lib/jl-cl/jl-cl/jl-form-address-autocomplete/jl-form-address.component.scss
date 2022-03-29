@@ -1,0 +1,26 @@
+@import '~/src/assets/style-guide/breakpoints.scss';
+@import '~/src/assets/style-guide/theme';
+
+div.tf-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+}
+
+.input {
+    margin-top: 4px;
+    width: 508px;
+    height: 56px;
+    padding-left: 14px;
+    border-radius: 5px;
+    border: 1px solid get-border-color();
+    @include screen('phone') {
+        white-space: normal;
+        width: 100%;
+    }
+}
+
+.validation {
+    font-size: 12px;
+    font-family: 'Noto Sans', sans-serif;
+}

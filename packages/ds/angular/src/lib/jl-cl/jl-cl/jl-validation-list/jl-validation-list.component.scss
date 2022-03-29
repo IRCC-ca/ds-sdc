@@ -1,0 +1,27 @@
+@import '~/src/assets/style-guide/theme';
+
+.jlcl-validation-list {
+    .errorList {
+        display: flex;
+        flex-direction: column;
+        margin: 0, 5rem;
+        position: relative;
+        left: -16px;
+    }
+    .error-container {
+        margin-top: 5px;
+        margin-left: 25px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        font-size: 12px;
+        &::before {
+            font-family: 'Material Icons', sans-serif;
+            content: 'error';
+            font-feature-settings: 'liga' 1;
+            position: relative;
+            left: -26px;
+            color: get-color(error);
+        }
+    }
+}

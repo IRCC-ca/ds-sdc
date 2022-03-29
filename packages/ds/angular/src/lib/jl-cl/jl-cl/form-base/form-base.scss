@@ -1,0 +1,15 @@
+@import '~/src/assets/style-guide/breakpoints.scss';
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-content: inherit;
+    width: 100%;
+    @include screen('phone') {
+        align-content: inherit;
+    }
+
+}
+.child-config-container {
+    margin-top: 10px;
+}

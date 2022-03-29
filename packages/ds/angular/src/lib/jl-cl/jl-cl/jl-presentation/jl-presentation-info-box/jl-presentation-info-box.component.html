@@ -1,0 +1,21 @@
+<div class="info-box">
+    <div class="content">
+        <mat-icon [ngClass]="config.icon + '-icon'" fontSet="material-icons-round">{{config.icon}}
+        </mat-icon>
+        <div class="text-content">
+            <h2>{{config.heading | translate}}</h2>
+            <div class="description">
+                <div class="caption">
+                    {{config.caption | translate}}
+                </div>
+                <div *ngIf="config.link" class="link2 info-link">
+                    <a [href]="config.link.url | translate" target="_blank">
+                        {{config.link.name | translate}}
+                        <mat-icon class="launch" aria-hidden="false" aria-label="launch icon">
+                            launch</mat-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

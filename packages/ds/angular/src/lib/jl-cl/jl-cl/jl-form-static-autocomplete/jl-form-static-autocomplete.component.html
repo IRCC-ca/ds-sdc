@@ -1,0 +1,24 @@
+<div class="tf-container" [formGroup]="group">
+    <h3 *ngIf="config.subText" class="margin">
+        {{config.subText | translate}}
+    </h3>
+    <app-alert *ngIf="config.alert" [type]="'info'" [body]="config.alert" class="no-mobile"></app-alert>
+    <jlcl-label [config]="config" [group]="group"></jlcl-label>
+    <p *ngIf="config.hint" [innerHtml]="config.hint | translate"></p>
+
+    <input [attr.pattern]="config.forceKeypadOnMobile ? '[0-9]*' : null"
+        [attr.inputmode]="config.forceKeypadOnMobile ? 'numeric' : null" #autocompleteInput
+        #trigger="matAutocompleteTrigger" class="input" type="text" width="100%" marginTop="0"
+        [formControlName]="config.id" [placeholder]="(config.placeholder || '') | translate"
+        [attr.aria-labelledby]="config.id + '-lbl'" [attr.data-test]="config.id + '-lbl'"
+        [attr.aria-required]="isRequired" [matAutocomplete]="auto" (blur)="onBlur()">
+    <mat-autocomplete (optionSelected)="optionSelected()" [displayWith]="displayAutoComplete.bind(this)"
+        #auto="matAutocomplete">
+        <mat-option *ngFor="let suggestion of items | async" [value]="suggestion.key">
+            {{suggestion.value}}
+        </mat-option>
+    </mat-autocomplete>
+
+    <jlcl-validation-list class="validation" [config]="config" [group]="group"></jlcl-validation-list>
+
+</div>

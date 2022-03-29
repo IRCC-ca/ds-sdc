@@ -1,0 +1,98 @@
+<div>
+  <div>
+    <jlcl-label [config]="config" [group]="group"></jlcl-label>
+    <span *ngIf="config.hint" [innerHtml]="config.hint | translate"></span>
+  </div>
+  <app-action-button margin="8" type="button1" (actionEvent)="openDialog('add', {})" [icon]="'add'"
+    [ariaLabelledby]="config.id + '-create'" [actionLabel]='config.addButtonLabel'
+    [dataTest]="config.id + '-action-button-create'">
+  </app-action-button>
+  <div class=" no-margin">
+    <app-alert *ngIf="config.alert" [type]="'warn'" [body]="config.alert" class="no-mobile"></app-alert>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" [attr.aria-labelledby]=" config.id + '-lbl'"
+    [attr.data-test]="'mat-table-' + config.id">
+    <ng-container matColumnDef="{{dc | translate}}" *ngFor="let dc of displayColumns; let i = index">
+      <th scope="col" mat-header-cell *matHeaderCellDef>
+        <mat-cell class="subtitle2 col-padding">
+          {{getColumnHeader(dc)}}
+        </mat-cell>
+      </th>
+      <div *ngIf="dc!=='action'; else action">
+        <td mat-cell *matCellDef="let element" [ngClass]="{'rounded-border': hiddenPlaceHolder(4)}"
+          [ngClass]="getMobileViewClassName(dc)" [attr.data-test]="'mat-cell-' + i">
+          <span *ngIf="displayHeaderOnCell(dc)" class="table-element-mobile-view header-mobile-view caption"
+            [attr.data-test]="'mat-cell-' + i + '-value'">
+            {{getColumnHeader(dc)}}:
+          </span>
+          <span class="col-padding" [ngClass]="getContentClassName(dc)" [attr.data-test]="'mat-cell-' + i + '-value'"
+            [innerHtml]="getCellValue(element, dc) | translate"></span>
+        </td>
+      </div>
+      <ng-template #action>
+        <td mat-cell *matCellDef="let element; let i = index;" [ngClass]="{'rounded-border': hiddenPlaceHolder(4)}">
+          <div class="table-element-desktop-view">
+            <app-action-button type="button2" (actionEvent)="openDialog('edit', element)"
+              [actionLabel]="'Table.edit'" [dataTest]="'action-button-edit-' + i"
+              [ariaLabelledby]="'action-button-edit-' + i">
+            </app-action-button>
+            <app-action-button type="button2" (actionEvent)="openDialog('delete', element)"
+              [actionLabel]="'Table.delete'" [dataTest]="'action-button-delete-' + i"
+              [ariaLabelledby]="'action-button-delete-' + i">
+            </app-action-button>
+          </div>
+          <div class="table-element-mobile-view mobile-actions">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+
+          <mat-menu #menu="matMenu" class="mat-elevation-z0">
+            <button mat-menu-item (click)="openDialog('edit', element)" class="button2"
+              [attr.data-test]="'action-button-edit-' + i" [attr.aria-labelledby]="'action-button-edit-' + i">
+              <span>{{'Table.edit' | translate}}</span>
+            </button>
+            <button mat-menu-item (click)="openDialog('delete', element)" class="button2"
+              [attr.data-test]="'action-button-delete-' + i" [attr.aria-labelledby]="'action-button-delete-' + i">
+              <span>{{'Table.delete' | translate}}</span>
+            </button>
+          </mat-menu>
+
+        </td>
+
+      </ng-template>
+    </ng-container>
+
+    <!-- Row definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; let i = index; columns: displayColumns"></tr>
+
+    <!-- place holder if there is nothing or less than 5 rows -->
+    <ng-container matColumnDef="noData">
+      <td mat-cell *matFooterCellDef [attr.colspan]="displayColumns.length">
+        {{"Table.noData" | translate}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="placeholderOne">
+      <td mat-cell *matFooterCellDef [attr.colspan]="displayColumns.length"></td>
+    </ng-container>
+    <ng-container matColumnDef="placeholderTwo">
+      <td mat-cell *matFooterCellDef [attr.colspan]="displayColumns.length"></td>
+    </ng-container>
+    <ng-container matColumnDef="placeholderThird">
+      <td mat-cell *matFooterCellDef [attr.colspan]="displayColumns.length"></td>
+    </ng-container>
+    <ng-container matColumnDef="placeholderFourth">
+      <td mat-cell *matFooterCellDef [attr.colspan]="displayColumns.length"></td>
+    </ng-container>
+    <tr mat-row class="no-bottom-border" *matFooterRowDef="['placeholderOne']" [hidden]="hiddenPlaceHolder(1)"></tr>
+    <tr mat-row class="no-bottom-border" *matFooterRowDef="['placeholderTwo']" [hidden]="hiddenPlaceHolder(2)"></tr>
+    <tr mat-row class="no-bottom-border" *matFooterRowDef="['noData']" [hidden]="hiddenPlaceHolder(0)"></tr>
+    <tr mat-row class="no-bottom-border" *matFooterRowDef="['placeholderThird']" [hidden]="hiddenPlaceHolder(3)"></tr>
+    <tr mat-row *matFooterRowDef="['placeholderFourth']" [hidden]="hiddenPlaceHolder(4)"></tr>
+  </table>
+  <jlcl-validation-list [config]="config" [group]="group">
+  </jlcl-validation-list>
+
+</div>
