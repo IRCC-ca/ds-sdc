@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';
+import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'sample';
@@ -16,7 +16,7 @@ export class AppComponent {
     label: 'test label',
     hint: 'test test',
     placeholder: '',
-  } as IConfig;
+  } as IFieldConfig;
 
   constructor(private translate: TranslateService) {}
 }

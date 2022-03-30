@@ -35,8 +35,8 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
     "paths": {
-      "@angular/*": [
-         "./node_modules/@angular/*"
+      "@*": [
+        "./node_modules/@*"
       ],
    },
   },
