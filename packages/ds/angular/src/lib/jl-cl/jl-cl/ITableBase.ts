@@ -1,5 +1,4 @@
 import { FormGroup } from '@angular/forms';
-import { SortDirection } from '@angular/material/sort';
 import {
     IConfig,
     IDatepickerConfig,
@@ -14,7 +13,6 @@ export interface ITableConfig extends IFormConfig {
     childConfigs: ITableColumnConfig[];
     sort?: {
         columnName?: string;
-        order?: SortDirection;
         customized?: (value: any) => Array<any>;
     };
     columnOrder?: string[];

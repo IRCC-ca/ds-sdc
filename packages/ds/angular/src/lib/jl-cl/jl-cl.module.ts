@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
-import { MaterialModule } from 'src/app/material.module';
-import { ShareModule } from 'src/app/share/share.module';
 import { DynamicFieldDirective } from './jl-cl/dynamic-field.directive';
 import { components } from './jl-cl/forms.module';
 
@@ -14,8 +12,6 @@ import { components } from './jl-cl/forms.module';
         ReactiveFormsModule,
         CommonModule,
         TranslateModule.forChild(),
-        MaterialModule,
-        ShareModule,
         BrowserModule,
     ],
     exports: [...components, DynamicFieldDirective],

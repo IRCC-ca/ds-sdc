@@ -2,6 +2,7 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "./src",
     "outDir": "../../../out-tsc/lib",
     "declaration": true,
     "declarationMap": true,
@@ -11,5 +12,9 @@
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "path": {
+    "@components/*": ["lib/jl-cl/jl-cl/*"],
+    "@services/*":["lib/jl-cl/services/*"]
+  }
 }

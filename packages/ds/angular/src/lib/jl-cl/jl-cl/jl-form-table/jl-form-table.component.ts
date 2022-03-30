@@ -1,18 +1,12 @@
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import {
     ChangeDetectorRef,
     Component,
     Input,
     OnInit,
-    ViewChild
 } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSort, SortDirection } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { TranslateService } from '@ngx-translate/core';
 import { isEmpty, map, property } from 'lodash';
-import { ResizeModalComponent } from 'src/app/share/modal/resize/resize-modal.component';
 import { DynFormBaseComponent } from '../form-base/form-base';
 import { ITableConfig } from '../ITableBase';
 import { TableDialogComponent } from './table-dialog/table-dialog.component';
@@ -39,20 +33,15 @@ export enum SortOrder {
 export class DynTableComponent extends DynFormBaseComponent implements OnInit {
     @Input()
     config!: ITableConfig;
-    dataSource!: MatTableDataSource<any>;
     displayColumns: string[] = [];
     formArray!: FormArray;
     emptyData: any[] = [];
     defaultSortActive = '';
-    defaultOrderDirection: SortDirection = 'desc';
     isMobileView!: boolean;
-    @ViewChild(MatSort) sort!: MatSort;
     constructor(
-        public dialog: MatDialog,
         protected changeRef: ChangeDetectorRef,
         private translate: TranslateService,
         private fb: FormBuilder,
-        private breakpointObserver: BreakpointObserver
     ) {
         super(changeRef);
     }
@@ -73,7 +62,7 @@ export class DynTableComponent extends DynFormBaseComponent implements OnInit {
         this.getDisplayColumnOrder();
         this.createFormArrayForTable();
         this.setDefaultSort();
-        this.onMobileView();
+        // this.onMobileView();
     }
 
     ngAfterViewInit() {
@@ -82,24 +71,6 @@ export class DynTableComponent extends DynFormBaseComponent implements OnInit {
         });
     }
 
-    onMobileView() {
-        this.breakpointObserver
-            .observe(['(max-width: 599px)'])
-            .subscribe((result: BreakpointState) => {
-                if (result.matches && this.config.mobileView?.columnOrder) {
-                    this.isMobileView = true;
-                    this.displayColumns = this.config.mobileView?.columnOrder;
-                } else {
-                    this.isMobileView = false;
-                    this.displayColumns = this.config.columnOrder
-                        ? this.config.columnOrder
-                        : map(this.config.childConfigs, property(['id']));
-                }
-                if (!this.displayColumns.includes('action')) {
-                    this.displayColumns.push('action');
-                }
-            });
-    }
     getDisplayColumnOrder() {
         this.displayColumns = this.config.columnOrder
             ? this.config.columnOrder
@@ -110,8 +81,6 @@ export class DynTableComponent extends DynFormBaseComponent implements OnInit {
     setDefaultSort() {
         const sortObj = this.config.sort;
         this.defaultSortActive = sortObj?.columnName || '';
-        this.defaultOrderDirection =
-            sortObj?.order || this.defaultOrderDirection;
     }
 
     hiddenPlaceHolder(index: number) {
@@ -141,14 +110,6 @@ export class DynTableComponent extends DynFormBaseComponent implements OnInit {
             resort = array.reverse();
         }
 
-        this.dataSource = new MatTableDataSource(resort);
-        this.dataSource.sortingDataAccessor = (data: any, sortHeaderId) => {
-            if (typeof data[sortHeaderId] === 'string') {
-                return data[sortHeaderId].toLocaleLowerCase();
-            }
-            return data[sortHeaderId];
-        };
-        this.dataSource.sort = this.sort;
     }
 
     getColumnHeader(id: string): any {
@@ -180,14 +141,10 @@ export class DynTableComponent extends DynFormBaseComponent implements OnInit {
         delete cloneConfig.validation;
         delete cloneConfig.alert;
         cloneConfig.type = 'form';
-        if (action === 'add' && this.dataSource?.data?.length >= 10) {
-            action = 'disable';
-        }
         const object = {
             action,
             config: cloneConfig,
             group: this.group,
-            dataSource: this.dataSource,
             element,
             tableName: this.config.label,
         };
@@ -197,12 +154,8 @@ export class DynTableComponent extends DynFormBaseComponent implements OnInit {
                   ...TableDialogConfig,
                   data: object,
               };
-        const resizeModalComponent = new ResizeModalComponent(
-            this.breakpointObserver
-        );
         const dialogRef = this.dialog.open(TableDialogComponent, dialogConfig);
         if (!['delete', 'disable'].includes(action)) {
-            resizeModalComponent.resizeDialog(dialogRef, 'auto');
         }
 
         dialogRef.afterClosed().subscribe((res) => {

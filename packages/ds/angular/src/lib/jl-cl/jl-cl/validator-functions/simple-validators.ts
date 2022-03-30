@@ -4,8 +4,6 @@ import {
     ValidationErrors,
     ValidatorFn
 } from '@angular/forms';
-import { YesNoAnswer } from 'src/app/services/lov.service';
-import { TelephoneNumbersModel } from 'src/app/state/model/applicationdetails.state';
 import { IListItem } from '../IFormBase';
 import { ErrorNames } from '../validator-types';
 
@@ -76,12 +74,6 @@ export const validatePrimaryNumber = (
 ): ValidationErrors | null => {
     const group = control as FormArray;
     const formArrayValues = group.value;
-    const index = formArrayValues.findIndex(
-        (value: TelephoneNumbersModel) => value.primary === YesNoAnswer.YES
-    );
-    if (index >= 0 || group.controls.length === 0) {
-        return null;
-    }
     return { [ErrorNames.primaryNumberRequired]: {} };
 };
 

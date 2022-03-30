@@ -1,9 +1,8 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { IField } from 'jl-cl/jl-cl/dynamic-field.directive';
-import { ICurrentStatusInCanadaReadOnlyConfig } from 'jl-cl/jl-cl/IFormBase';
-import { BaseFieldComponent } from 'jl-cl/jl-cl/jl-base-field';
-import { LOVService } from 'src/app/services/lov.service';
+import { IField } from '../../dynamic-field.directive';
+import { ICurrentStatusInCanadaReadOnlyConfig } from '../../IFormBase';
+import { BaseFieldComponent } from '../../jl-base-field';
 
 @Component({
     selector: 'app-jl-presentation-subtitle',
@@ -26,7 +25,6 @@ export class DynCurrentStatusInCanadaReadOnlyComponent
     currentStatus?: string;
     constructor(
         protected changeRef: ChangeDetectorRef,
-        private lovService: LOVService
     ) {
         super(changeRef);
     }
@@ -35,20 +33,12 @@ export class DynCurrentStatusInCanadaReadOnlyComponent
         super.ngOnInit();
 
         this.group.valueChanges.subscribe((value) => {
-            const fromMonthValue = value.currentStatusKnownInfo?.fromDate.month;
-            const toMonthValue = value.currentStatusKnownInfo?.toDate.month;
             const currentStatusValue =
                 value.currentStatusKnownInfo?.currentStatus?.toLowerCase();
 
             this.currentStatus =
                 currentStatusValue?.charAt(0).toUpperCase() +
                 currentStatusValue?.slice(1);
-
-            this.fromMonth = this.lovService.getItemByKey(
-                'Month',
-                fromMonthValue
-            );
-            this.toMonth = this.lovService.getItemByKey('Month', toMonthValue);
         });
     }
 

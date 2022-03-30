@@ -1,14 +1,12 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { MatCheckboxChange } from '@angular/material/checkbox';
-import { BaseFieldComponent } from 'jl-cl/jl-cl/jl-base-field';
-import { LOVService } from 'src/app/services/lov.service';
 import {
     IDatepickerConfig,
     IFormConfig,
     IListType,
     IStaticAutocompleteConfig,
 } from '../IFormBase';
+import { BaseFieldComponent } from '../jl-base-field';
 import { ErrorNames } from '../validator-types';
 
 interface DateItem {
@@ -68,7 +66,6 @@ export class DynDatepickerComponent
     disabled = false;
     constructor(
         changeRef: ChangeDetectorRef,
-        protected lovService: LOVService
     ) {
         super(changeRef);
     }
@@ -82,7 +79,6 @@ export class DynDatepickerComponent
         if (!this.config.useUnknownForMonthAndDay) {
             this.years = this.years.filter((year) => year.key !== '**');
         }
-        this.months = this.lovService.getItemsForLOVKey('Month');
         if (!this.config.useUnknownForMonthAndDay) {
             this.months = this.months.filter((month) => month.key !== '**');
         }
@@ -274,14 +270,6 @@ export class DynDatepickerComponent
         });
     }
 
-    onCheckBoxChange(event: MatCheckboxChange): void {
-        this.disabled = event.checked;
-        if (this.disabled) {
-            this.group.patchValue({
-                [this.config.id]: { year: null, month: null, day: null },
-            });
-        }
-    }
 
     private userSelectedCurrentYear(): boolean {
         const today = new Date();

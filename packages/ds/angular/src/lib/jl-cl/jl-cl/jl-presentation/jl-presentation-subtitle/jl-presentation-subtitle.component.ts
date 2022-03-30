@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { IField } from 'jl-cl/jl-cl/dynamic-field.directive';
-import { ISubtitleConfig } from 'jl-cl/jl-cl/IFormBase';
+import { IField } from '../../dynamic-field.directive';
+import { ISubtitleConfig } from '../../IFormBase';
 
 @Component({
     selector: 'app-jl-presentation-subtitle',

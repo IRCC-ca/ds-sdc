@@ -8,8 +8,8 @@ import {
     ViewChild
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ITableConfig } from 'jl-cl/jl-cl/ITableBase';
+import { ITableConfig } from '../../ITableBase';
+
 
 @Component({
     selector: 'app-table-dialog',
@@ -27,11 +27,7 @@ export class TableDialogComponent implements OnInit {
     deleteContent!: string;
     constructor(
         protected changeRef: ChangeDetectorRef,
-        public dialogRef: MatDialogRef<TableDialogComponent>,
-        @Optional() @Inject(MAT_DIALOG_DATA) public data: any
     ) {
-        this.dialogData = { ...data };
-        dialogRef.disableClose = true;
     }
 
     ngOnInit(): void {
@@ -70,24 +66,7 @@ export class TableDialogComponent implements OnInit {
         }
     }
 
-    onCancel(): void {
-        this.dialogRef.close({ event: 'Cancel' });
-    }
-
-    onDelete(): void {
-        this.dialogRef.close({
-            event: this.action,
-            data: this.dialogGroup.value,
-        });
-    }
-
     onSubmit(): void {
-        if (this.dialogGroup.valid) {
-            this.dialogRef.close({
-                event: this.action,
-                data: this.dialogGroup.controls[this.config.id].value,
-            });
-        }
         this.dialogGroup.markAllAsTouched();
     }
 }

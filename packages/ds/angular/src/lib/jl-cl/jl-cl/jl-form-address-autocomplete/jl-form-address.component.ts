@@ -1,21 +1,14 @@
+import { trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import {
-    MatAutocompleteSelectedEvent,
-    MatAutocompleteTrigger
-} from '@angular/material/autocomplete';
-import {
-    IAddressAutocompleteProps,
-    IAddressAutocompleteType
-} from 'jl-cl/jl-cl/IFormBase';
-import { BaseFieldComponent } from 'jl-cl/jl-cl/jl-base-field';
-import {
+import { Observable, of } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+import { 
     CanadaPostFindResult,
     CanadaPostRetreiveResult,
     CanadaPostService,
-    CanadaPostServiceName
-} from 'jl-cl/services/canada-post.service';
-import { Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+    CanadaPostServiceName } from '../../services/canada-post.service';
+import { IAddressAutocompleteProps, IAddressAutocompleteType } from '../IFormBase';
+import { BaseFieldComponent } from '../jl-base-field';
 
 @Component({
     selector: 'jlcl-address-field',
@@ -43,8 +36,6 @@ export class DynAddressAutocompleteComponent
     }
 
     async optionSelected(
-        $event: MatAutocompleteSelectedEvent,
-        trigger: MatAutocompleteTrigger
     ) {
         const canadaPostID = $event.option.value.Id;
         if ($event.option.value.Next === CanadaPostServiceName.Find) {
