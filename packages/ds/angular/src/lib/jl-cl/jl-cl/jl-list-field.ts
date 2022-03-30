@@ -7,9 +7,9 @@ import { BaseFieldComponent } from './jl-base-field';
 })
 export class ListFieldComponent extends BaseFieldComponent {
     @Input()
-    config!: IListType;
+    override config!: IListType;
 
-    constructor(protected changeRef: ChangeDetectorRef) {
+    constructor(protected override changeRef: ChangeDetectorRef) {
         super(changeRef);
     }
 }

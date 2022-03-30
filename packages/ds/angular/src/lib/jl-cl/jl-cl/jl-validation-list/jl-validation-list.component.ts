@@ -5,6 +5,7 @@ import {
     OnInit,
     ViewEncapsulation
 } from '@angular/core';
+
 import { AbstractControl, FormGroup, ValidatorFn } from '@angular/forms';
 import { IConfig } from '../IFormBase';
 import { IValidator } from '../validator';
@@ -12,7 +13,8 @@ import { IValidator } from '../validator';
 @Component({
     selector: 'jlcl-validation-list',
     templateUrl: './jl-validation-list.component.html',
-    styleUrls: ['./jl-validation-list.component.scss'],
+    // styleUrls: ['./jl-validation-list.component.scss'],
+    styleUrls: ['./jl-validation-list.component.css'],
     encapsulation: ViewEncapsulation.None,
 })
 export class DynValidationListComponent implements OnInit {

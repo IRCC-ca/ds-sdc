@@ -10,5 +10,5 @@ import { BaseFieldComponent } from '../jl-base-field';
 })
 export class DynFormBaseComponent extends BaseFieldComponent implements IField {
     @Input()
-    config!: IFormConfig;
+    override config!: IFormConfig;
 }

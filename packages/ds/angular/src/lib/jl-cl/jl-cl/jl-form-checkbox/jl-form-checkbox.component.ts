@@ -9,5 +9,5 @@ import { BaseFieldComponent } from '../jl-base-field';
 })
 export class DynCheckboxComponent extends BaseFieldComponent {
     @Input()
-    config!: IFieldConfig;
+    override config!: IFieldConfig;
 }

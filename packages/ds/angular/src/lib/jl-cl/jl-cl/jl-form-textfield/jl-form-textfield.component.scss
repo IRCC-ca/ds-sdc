@@ -1,5 +1,5 @@
-@import '~/src/assets/style-guide/breakpoints.scss';
-@import '~/src/assets/style-guide/theme';
+// @import '~/src/assets/style-guide/breakpoints.scss';
+// @import '~/src/assets/style-guide/theme';
 
 div.tf-container {
     display: flex;
@@ -14,10 +14,10 @@ div.tf-container {
     height: 56px;
     border-radius: 5px;
     border: 1px solid get-border-color();
-    @include screen('phone') {
-        white-space: normal;
-        width: 100%;
-    }
+    // @include screen('phone') {
+    //     white-space: normal;
+    //     width: 100%;
+    // }
 }
 
 .inputSubTitle {
@@ -26,23 +26,23 @@ div.tf-container {
     font-family: 'Noto Sans', sans-serif;
     width: 508px;
     height: 22px;
-    @include screen('phone') {
-        white-space: normal;
-        width: 100%;
-    }
+    // @include screen('phone') {
+    //     white-space: normal;
+    //     width: 100%;
+    // }
 }
 
 .no-border {
     margin-top: 4px;
     padding-left: 14px;
-    width: 508px;
+    width: 508px; 
     height: 56px;
     border: none;
     outline: none;
-    @include screen('phone') {
-        white-space: normal;
-        width: 100%;
-    }
+    // @include screen('phone') {
+    //     white-space: normal;
+    //     width: 100%;
+    // }
 }
 
 .validation {

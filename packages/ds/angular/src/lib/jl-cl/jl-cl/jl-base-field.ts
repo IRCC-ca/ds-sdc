@@ -31,7 +31,7 @@ export class BaseFieldComponent implements IField, OnInit, OnDestroy {
     public get isRequired(): boolean {
         return (
             this.config.validation?.find((validator: IValidator) => {
-                return validator === VALIDATORS.required;
+                return validator === VALIDATORS['required'];
             }) !== undefined
         );
     }
@@ -44,7 +44,6 @@ export class BaseFieldComponent implements IField, OnInit, OnDestroy {
     ngOnInit(): void {
         const formTypes: (keyof typeof COMPONENT_TYPES)[] = [
             'form',
-            'datepicker',
         ];
         if (formTypes.includes(this.config.type)) {
             const control = new FormGroup({});

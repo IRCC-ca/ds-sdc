@@ -1,8 +1,0 @@
-<div [ngClass]="{'subtitle-margin': config.noLabelMargin !== true}">
-    <h2 *ngIf="config.textType==='h2'" [innerHtml]="config.label| translate"></h2>
-    <h3 *ngIf="config.textType==='h3'" [innerHtml]="config.label| translate"></h3>
-    <h4 *ngIf="config.textType==='h4'" [innerHtml]="config.label| translate"></h4>
-    <div *ngIf="config.textType==='body1'" class="body1" [innerHtml]="config.label| translate"></div>
-    <div *ngIf="config.textType==='body2'" class="body2" [innerHtml]="config.label| translate"></div>
-    <div *ngIf="config.textType==='subtitle1'" class="subtitle1" [innerHtml]="config.label| translate"></div>
-</div>
