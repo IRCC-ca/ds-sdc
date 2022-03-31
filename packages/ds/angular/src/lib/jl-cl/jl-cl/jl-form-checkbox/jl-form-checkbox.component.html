@@ -1,0 +1,12 @@
+<div [formGroup]="group" class="container">
+    <mat-checkbox width="100%" marginTop="0" [formControlName]="config.id" [attr.aria-labelledby]="config.id + '-lbl'"
+        [attr.data-test]="'mat-checkbox-' + config.id" color="primary" [attr.aria-describedby]="config.id+'-err'" 
+        [attr.aria-invalid]="!formControl.valid" [disabled]="disabled">
+    </mat-checkbox>
+    <section class="text">
+        <body *ngIf="config.subText">
+            {{config.subText | translate}}
+        </body>
+        <jlcl-validation-list [config]="config" [group]="group"></jlcl-validation-list>
+    </section>
+</div>

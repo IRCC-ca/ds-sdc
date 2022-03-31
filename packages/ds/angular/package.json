@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@ircc-ca/ds-sdc-core": "^0.0.1",
+    "@ngx-translate/core": "13",
     "tslib": "^2.3.0"
   },
   "publishConfig": {

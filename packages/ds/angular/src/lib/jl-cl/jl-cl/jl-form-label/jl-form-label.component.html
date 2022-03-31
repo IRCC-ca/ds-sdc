@@ -1,0 +1,14 @@
+<div class="jlcl-label" [ngClass]="{'label-margin': config.noLabelMargin !== true}">
+    <mat-label class="subtitle1" [ngClass]="(isRequired && !config.hideStar) ? 'requiredPrefix' : ''" *ngIf="config.label"
+        textWrap="true"
+        [attr.id]="config.id + '-lbl'" [attr.aria-required]="isRequired">
+        {{ config.label | translate }}
+        <span *ngIf="!config.hideRequiredLabel">
+            <span *ngIf="isRequired" class="required subtitle1" [attr.aria-hidden]="true">{{ 'General.required' |
+                translate }}</span>
+            <span *ngIf="!isRequired" class="optional subtitle1" [attr.aria-hidden]="true">{{ 'General.optional' |
+                translate }}</span>
+        </span>
+    </mat-label>
+    <app-info-bubble *ngIf="config.moreInfo" (infoEvent)="config.moreInfo()"></app-info-bubble>
+</div>

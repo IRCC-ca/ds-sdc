@@ -1,0 +1,3 @@
+<mat-error *ngIf="validatedField.hasError(error.errorName) && error.errorMsg?.length">
+    {{error.errorMsg | translate}}
+</mat-error>

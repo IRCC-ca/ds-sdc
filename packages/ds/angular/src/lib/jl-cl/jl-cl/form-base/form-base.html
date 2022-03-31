@@ -1,0 +1,17 @@
+<form [formGroup]="group">
+    <div class="form-container">
+        <app-alert *ngIf="config.alert" [type]="'info'" [body]="config.alert" class="no-mobile"></app-alert>
+        <jlcl-label *ngIf="config.label" [config]="config" [group]="group"></jlcl-label>
+        <p *ngIf="config.hint" [innerHtml]="config.hint | translate"></p>
+        <div *ngFor="let child of config.childConfigs">
+            <span [hidden]="!(child.hidden === undefined || child.hidden(group) === false)">
+                <ng-container jlclField [config]="child" [group]="localGroup"
+                    [disabled]="(!(child.hidden === undefined || child.hidden(group) === false)) || (child.disabled !== undefined && child.disabled(group) === true)">
+                </ng-container>
+            </span>
+
+        </div>
+        <jlcl-validation-list *ngIf="config.validation" [config]="config" [group]="group"></jlcl-validation-list>
+    </div>
+    <ng-content></ng-content>
+</form>

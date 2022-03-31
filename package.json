@@ -7,6 +7,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-lib": "ng build --project=@ircc-ca/ds-sdc-angular",
+    "build-sample": "ng build --project=sample",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
@@ -22,7 +24,9 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@ircc-ca/ds-sdc-angular": "file:packages/ds/angular",
     "@ircc-ca/ds-sdc-core": "file:packages/ds/core",
+    "@ngx-translate/core": "^14.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
