@@ -1,0 +1,38 @@
+@use '../../_util/color' as color;
+
+$button-category: 'category';
+$button-selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
+
+$primary: (
+  hue-map: (
+    light: (
+      text-color: neutral-1200,
+    ),
+    dark: (
+      text-color: neutral-200,
+    ),
+  ),
+  selectors: $button-selectors,
+);
+$secondary: (
+    hue-map: (
+      light: (
+        text-color: neutral-1200,
+      ),
+      dark: (
+        text-color: neutral-200,
+      ),
+    ),
+    selectors: '#{$button-selectors} { &[#{$button-category}="secondary"]}',
+  );
+
+$sizing: (
+    size-map: (
+
+    ),
+    selectors: $button-selectors,
+);
+
+@mixin button {
+    background-color: color.mix-token(background-color);
+}

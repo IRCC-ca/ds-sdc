@@ -1,9 +1,9 @@
 @use "../../typography/fonts" as font;
 @use "../../layout/layout-var" as sizes;
-@use "../../_util/colour" as colour;
+@use "../../_util/color" as color;
 @use "../focus/mixins" as focus;
 $anchor: (
-  map: (
+  hue-map: (
     light: (
       text: cta-700,
       text-hover: cta-800,
@@ -26,10 +26,10 @@ $anchor: (
   padding: sizes.$fixed-2 sizes.$fixed-4;
   display: inline;
   &:link {
-    color: colour.mix-token(text);
+    color: color.mix-token(text);
   }
   &:hover {
-    color: colour.mix-token(text-hover);
+    color: color.mix-token(text-hover);
   }
   &:focus {
     @include focus.focus();
@@ -37,10 +37,10 @@ $anchor: (
     outline-offset: 0;
   }
   &:active {
-    color: colour.mix-token(text-active);
-    background-color: colour.mix-token(background-active);
+    color: color.mix-token(text-active);
+    background-color: color.mix-token(background-active);
   }
   &:visited {
-    color: colour.mix-token(text-visited);
+    color: color.mix-token(text-visited);
   }
 }

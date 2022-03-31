@@ -7,55 +7,55 @@
 ///
 @mixin varsForMap(
   $hue-map,
-  $colour-map: "",
+  $color-map: "",
   $str-prefix: "",
   $replace: "role"
 ) {
   @each $key, $value in $hue-map {
     @if type-of($value) == map {
-      @include varsForMap($value, $colour-map, #{$str-prefix}-#{$key});
+      @include varsForMap($value, $color-map, #{$str-prefix}-#{$key});
     } @else {
       #{str-prefix(#{$key})}: var(
-        str-prefix(#{str-replace($value, $replace, $colour-map)})
+        str-prefix(#{str-replace($value, $replace, $color-map)})
       );
     }
   }
 }
 @mixin create-component-styles($component-settings, $hue-selector) {
   @if (map.has-key($component-settings, roles) == true) {
-    @each $colour-role in map-get($component-settings, roles) {
+    @each $color-role in map-get($component-settings, roles) {
       #{map-get($component-settings, selectors)} {
-        &[role="#{$colour-role}"] {
+        &[color="#{$color-role}"] {
           @include varsForMap(
-            map-get($component-settings, map, $hue-selector),
-            $colour-role
+            map-get($component-settings, hue-map, $hue-selector),
+            $color-role
           );
         }
       }
     }
   } @else {
     #{map-get($component-settings, selectors)} {
-      @include varsForMap(map-get($component-settings, map, $hue-selector));
+      @include varsForMap(map-get($component-settings, hue-map, $hue-selector));
     }
   }
 }
-@mixin create-global-styles($colour-palette) {
-  @each $colour-role, $colour-map in $colour-palette {
-    @each $hue-key, $hue-val in $colour-map {
-      #{str-prefix(#{$colour-role}-#{$hue-key})}: $hue-val;
+@mixin create-global-styles($color-palette) {
+  @each $color-role, $color-map in $color-palette {
+    @each $hue-key, $hue-val in $color-map {
+      #{str-prefix(#{$color-role}-#{$hue-key})}: $hue-val;
     }
   }
 }
 
 @mixin core($root-palette, $hues, $include-list) {
-  @each $colour-mode, $colour-palette in $root-palette {
-    @if index(($root-palette), ($colour-mode $colour-palette)) == 1 {
+  @each $color-mode, $color-palette in $root-palette {
+    @if index(($root-palette), ($color-mode $color-palette)) == 1 {
       html {
-        @include create-global-styles($colour-palette);
+        @include create-global-styles($color-palette);
       }
     } @else {
-      html[mode="#{$colour-mode}"] {
-        @include create-global-styles($colour-palette);
+      html[mode="#{$color-mode}"] {
+        @include create-global-styles($color-palette);
       }
     }
   }

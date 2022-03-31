@@ -1,20 +1,20 @@
 @use "../../layout/layout-var" as token;
-@use "../../_util/colour" as colour;
+@use "../../_util/color" as color;
 
 $headings: (
-    map: (
+    hue-map: (
         light: (
-            text-colour: neutral-1200
+            text-color: neutral-1200
         ),
         dark: (
-            text-colour: neutral-200
+            text-color: neutral-200
         ),
       ),
       selectors: ".h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6"
     );
 
 @mixin heading($level) {
-    color: colour.mix-token(text-colour);
+    color: color.mix-token(text-color);
     & > strong, strong.heading, strong.h#{$level}, .emphasis, b {
         font-weight: map-get(token.$header-size, bold);
     }

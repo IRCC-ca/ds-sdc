@@ -3,6 +3,7 @@
 @use "./headings/class" as headings;
 @use "./body/class" as body;
 @use "./focus/class" as focus;
+@use "./button/class" as button;
 
 
 // TODO: rename this
@@ -11,4 +12,5 @@ $component-list: (
     headings: headings.$headings,
     body: body.$body,
     focus: focus.$focus,
+    primary: button.$primary,
 );

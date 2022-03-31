@@ -102,3 +102,6 @@
   content: unquote('"#{ $fa-var }"') / "";
   speak: none;
 }
+@mixin font-icon($fa-family) {
+  @extend %#{$fa-family};
+}
