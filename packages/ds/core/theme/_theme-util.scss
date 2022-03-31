@@ -15,7 +15,7 @@
     @if type-of($value) == map {
       @include varsForMap($value, $color-map, #{$str-prefix}-#{$key});
     } @else {
-      #{str-prefix(#{$key})}: var(
+      #{$key}: var(
         str-prefix(#{str-replace($value, $replace, $color-map)})
       );
     }
@@ -27,7 +27,7 @@
       #{map-get($component-settings, selectors)} {
         &[color="#{$color-role}"] {
           @include varsForMap(
-            map-get($component-settings, hue-map, $hue-selector),
+            map-get($component-settings, map, $hue-selector),
             $color-role
           );
         }
@@ -35,7 +35,7 @@
     }
   } @else {
     #{map-get($component-settings, selectors)} {
-      @include varsForMap(map-get($component-settings, hue-map, $hue-selector));
+      @include varsForMap(map-get($component-settings, map, $hue-selector));
     }
   }
 }
@@ -47,7 +47,7 @@
   }
 }
 
-@mixin core($root-palette, $hues, $include-list) {
+@mixin core($root-palette, $hues, $color-maps) {
   @each $color-mode, $color-palette in $root-palette {
     @if index(($root-palette), ($color-mode $color-palette)) == 1 {
       html {
@@ -62,14 +62,14 @@
   @each $hue-theme in $hues {
     @media (prefers-color-scheme: $hue-theme) {
       html {
-        @each $component-name, $component-config in $include-list {
+        @each $component-name, $component-config in $color-maps {
           @include create-component-styles($component-config, $hue-theme);
         }
       }
         $alt-theme: list-filter($hues, $hue-theme);
         @each $alt-hue in $alt-theme {
           html[theme="#{$alt-hue}"] {
-            @each $component-name, $component-config in $include-list {
+            @each $component-name, $component-config in $color-maps {
               @include create-component-styles($component-config, $alt-hue);
             }
           }

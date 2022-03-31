@@ -1,0 +1,35 @@
+@import "../_util/string";
+
+@import "../_util/list";
+
+@mixin varsForMap($size-map, $str-prefix: "") {
+    @debug ($size-map);
+  @each $key, $value in $size-map {
+    @if type-of($value) == map {
+      // recurse downwards
+      @include varsForMap($value, #{$str-prefix}-#{$key});
+    } @else {
+      #{$key}: $value;
+    }
+  }
+}
+
+@mixin create-component-sizes($component-map, $sizes, $default-size) {
+  #{map-get($component-map, selectors)} {
+    @include varsForMap(map-get($component-map, map, $default-size));
+
+    $specified-sizes: list-filter($sizes, $default-size);
+
+    @each $specified-size in $specified-sizes {
+      &[size="#{$specified-size}"] {
+        @include varsForMap(map-get($component-map, map, $specified-size));
+      }
+    }
+  }
+}
+
+@mixin core($size-maps, $sizes, $default-size) {
+    @each $component-name, $component-map in $size-maps {
+      @include create-component-sizes($component-map, $sizes, $default-size);
+    }
+}

@@ -1,14 +1,14 @@
 @use '../../layout/layout-var' as sizes;
 @use '../../_util/color' as color;
 $focus: (
-  hue-map: (
+  map: (
     light: (
-        focus-outline-color: active-700,
-        focus-shadow-color: neutral-100
+        --focus-outline-color: active-700,
+        --focus-shadow-color: neutral-100
     ),
     dark: (
-        focus-outline-color: active-600,
-        focus-shadow-color: neutral-1200
+        --focus-outline-color: active-600,
+        --focus-shadow-color: neutral-1200
     ),
   ),
   selectors: "body"

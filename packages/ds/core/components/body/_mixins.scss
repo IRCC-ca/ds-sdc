@@ -1,12 +1,12 @@
 @use "../../layout/layout-var" as token;
 @use "../../_util/color" as color;
 $body: (
-  hue-map: (
+  map: (
     light: (
-      text-color: neutral-1200,
+      --text-color: neutral-1200,
     ),
     dark: (
-      text-color: neutral-200,
+      --text-color: neutral-200,
     ),
   ),
   selectors: ".body1, .body2, .body3, .body4, body",
