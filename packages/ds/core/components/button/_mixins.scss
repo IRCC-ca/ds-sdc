@@ -43,6 +43,9 @@ $sizing: (
         small: (
         ),
         standard: (
+        ),
+        all: (
+            --max-width: 400px
         )
     ),
     selectors: $button-selectors,
@@ -50,4 +53,5 @@ $sizing: (
 
 @mixin button {
     color: color.mix-token(text-color);
+    max-width: var(--max-width);
 }

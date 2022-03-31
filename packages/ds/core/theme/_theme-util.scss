@@ -64,9 +64,13 @@
       html {
         @each $component-name, $component-config in $color-maps {
           @include create-component-styles($component-config, $hue-theme);
+          @if map-get($component-config, map, all) != null {
+            @include create-component-styles($component-config, all);
+          }
         }
       }
         $alt-theme: list-filter($hues, $hue-theme);
+        $alt-theme: list-filter($alt-theme, all);
         @each $alt-hue in $alt-theme {
           html[theme="#{$alt-hue}"] {
             @each $component-name, $component-config in $color-maps {
