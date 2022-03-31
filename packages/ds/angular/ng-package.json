@@ -3,5 +3,6 @@
   "dest": "../../../dist/angular",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["@ircc-ca/ds-sdc-core", "@ngx-translate/core"]
 }
