@@ -1,5 +1,6 @@
 @use "../layout/layout-var" as token;
 @use "fonts";
+@forward "fonts" as fonts-*;
 @mixin createHeadings {
     @include fonts.Lato-fontFace(
       $weight: 400,

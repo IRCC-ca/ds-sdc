@@ -1,19 +1,19 @@
-@use "../../_util/colour" as colour;
+@use "../../_util/color" as color;
 $alert: (
   map: (
     light: (
-        background: role-300,
-        border: role-700,
-        icon: role-800,
-        icon-hover: role-900,
-        text: neutral-1100,
+        --background: var(--role-300),
+        --border: var(--role-700),
+        --icon: var(--role-800),
+        --icon-hover: var(--role-900),
+        --text: var(--neutral-1100),
     ),
     dark: (
-        background: role-700,
-        border: role-700,
-        icon: role-800,
-        icon-hover: role-900,
-        text: neutral-100,
+        --background: var(--role-700),
+        --border: var(--role-700),
+        --icon: var(--role-800),
+        --icon-hover: var(--role-900),
+        --text: var(--neutral-100),
     ),
   ),
   roles: (
@@ -25,6 +25,6 @@ $alert: (
   selectors: ".alert"
 );
 @mixin alert {
-  background-color: colour.mix-token(background);
-  color: colour.mix-token(text);
+  background-color: color.mix-token(background);
+  color: color.mix-token(text);
 }

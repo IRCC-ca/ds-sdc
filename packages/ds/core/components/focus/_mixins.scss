@@ -1,14 +1,14 @@
 @use '../../layout/layout-var' as sizes;
-@use '../../_util/colour' as colour;
+@use '../../_util/color' as color;
 $focus: (
   map: (
     light: (
-        focus-outline-colour: active-700,
-        focus-shadow-colour: neutral-100
+        --focus-outline-color: var(--active-700),
+        --focus-shadow-color: var(--neutral-100),
     ),
     dark: (
-        focus-outline-colour: active-600,
-        focus-shadow-colour: neutral-1200
+        --focus-outline-color: var(--active-600),
+        --focus-shadow-color: var(--neutral-1200),
     ),
   ),
   selectors: "body"
@@ -20,7 +20,7 @@ $outline: (
 );
 
 @mixin focus {
-    outline: colour.mix-token(focus-outline-colour) solid map-get($outline, outer);
+    outline: color.mix-token(focus-outline-color) solid map-get($outline, outer);
     outline-offset: map-get($outline, inner);
-    box-shadow: 0 0 0 map-get($outline, inner ) colour.mix-token(focus-shadow-colour);
+    box-shadow: 0 0 0 map-get($outline, inner ) color.mix-token(focus-shadow-color);
 }

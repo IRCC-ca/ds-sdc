@@ -3,12 +3,20 @@
 @use "./headings/class" as headings;
 @use "./body/class" as body;
 @use "./focus/class" as focus;
+@use "./button/class" as button;
 
 
-// TODO: rename this
-$component-list: (
-    anchor: anchor.$anchor,
-    headings: headings.$headings,
-    body: body.$body,
-    focus: focus.$focus,
+$include-list: (
+    color-maps: (
+        anchor: anchor.$anchor,
+        headings: headings.$headings,
+        body: body.$body,
+        focus: focus.$focus,
+        button-primary: button.$primary,
+        button-secondary: button.$secondary,
+        button-plain: button.$plain,
+    ),
+    size-maps: (
+        button-sizing: button.$sizing,
+    )
 );
