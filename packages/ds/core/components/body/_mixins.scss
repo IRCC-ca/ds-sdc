@@ -3,10 +3,10 @@
 $body: (
   map: (
     light: (
-      --text-color: neutral-1200,
+      --text-color: var(--neutral-1200),
     ),
     dark: (
-      --text-color: neutral-200,
+      --text-color: var(--neutral-200),
     ),
   ),
   selectors: ".body1, .body2, .body3, .body4, body",

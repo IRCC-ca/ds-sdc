@@ -22,7 +22,3 @@
     @include layouts.grid(auto 1fr auto, 1fr auto);
     height: 100%;
 }
-
-.font::before {
-    @include typography.fonts-FA-decor-icon('\e2df', 'fa-solid');
-}

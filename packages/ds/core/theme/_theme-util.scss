@@ -15,9 +15,7 @@
     @if type-of($value) == map {
       @include varsForMap($value, $color-map, #{$str-prefix}-#{$key});
     } @else {
-      #{$key}: var(
-        str-prefix(#{str-replace($value, $replace, $color-map)})
-      );
+      #{$key}: #{str-replace($value, $replace, $color-map)};
     }
   }
 }

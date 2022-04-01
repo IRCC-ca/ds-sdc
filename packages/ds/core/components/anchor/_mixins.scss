@@ -5,16 +5,16 @@
 $anchor: (
   map: (
     light: (
-      --background-active: neutral-300,
+      --background-active: var(--neutral-300),
     ),
     dark: (
-      --background-active: neutral-900,
+      --background-active: var(--neutral-900),
     ),
     all: (
-      --text-hover: cta-800,
-      --text-visited: visited-800,
-      --text-active: cta-900,
-      --text: cta-700,
+      --text-hover: var(--cta-800),
+      --text-visited: var(--visited-800),
+      --text-active: var(--cta-900),
+      --text: var(--cta-700),
     ),
   ),
   selectors: 'a, .anchor, .link'
