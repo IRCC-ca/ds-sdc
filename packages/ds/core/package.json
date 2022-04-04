@@ -34,7 +34,6 @@
   "dependencies": {
     "@fontsource/inter": "^4.5.4",
     "@fontsource/lato": "^4.5.2",
-    "@fortawesome/fontawesome-pro": "^6.0.0",
-    "@ngx-translate/core": "13"
+    "@fortawesome/fontawesome-pro": "^6.0.0"
   }
 }
