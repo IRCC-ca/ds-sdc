@@ -1,9 +1,10 @@
 @use '../../_util/string' as string;
+@use 'sass:string'as sass-string;
 @use '../../_util/color' as color;
 @use '../../layout/layout-var'as token;
 
 $button-category: 'category';
-$button-selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
+$button-selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"],';
 
 $primary: (
   map: (
@@ -28,7 +29,7 @@ $primary: (
     roles: (cta,
       critical,
   ),
-  selectors: string.str-replace($button-selectors, ',', ':not([category]),')+string.str-replace($button-selectors, ',', '[#{$button-category}="primary"],'),
+  selectors: #{ sass-string.unquote(string.str-replace($button-selectors, ',', '[category="primary"],')) + sass-string.unquote(string.str-replace($button-selectors, ',', ':not([category]),')) },
 );
 $secondary: (
     map: (
@@ -104,6 +105,7 @@ $sizing: (
 
 @mixin primary {
   @include button();
+  @debug #{ sass-string.unquote(string.str-replace($button-selectors, ',', '[category="primary"],')) + sass-string.unquote(string.str-replace($button-selectors, ',', ':not([category]),')) };
   background-color: color.mix-token(background-color);
   color: color.mix-token(text-color);
 
