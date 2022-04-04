@@ -18,8 +18,11 @@
     "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
   },
   "scripts": {
-    "test": "echo \"Tests not implemented\"",
-    "lint": "echo \"Linting not implemented\""
+    "test": "ng test --watch=false --code-coverage=true",
+    "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
+    "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
+    "lint:style": "stylelint \"src/**/*.scss\"",
+    "lint": "ng lint & npm run lint:style"
   },
   "bugs": {
     "url": "https://github.com/IRCC-ca/ds-sdc/issues"
@@ -29,6 +32,7 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
+    "@angular-eslint/schematics": "^13.2.0",
     "@ircc-ca/ds-sdc-core": "^0.0.2-beta.1",
     "@ngx-translate/core": "13",
     "tslib": "^2.3.0"
@@ -37,5 +41,9 @@
     "access": "restricted",
     "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
     "tag": "ds-sdc-angular"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2"
   }
 }
