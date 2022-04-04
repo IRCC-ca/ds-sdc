@@ -28,32 +28,26 @@ $primary: (
     roles: (cta,
       critical,
   ),
-  selectors: $button-selectors,
+  selectors: string.str-replace($button-selectors, ',', ':not([category]),')+string.str-replace($button-selectors, ',', '[#{$button-category}="primary"],'),
 );
 $secondary: (
     map: (
       light: (
         --text-color: var(--role-700),
         --text-color-disabled: var(--role-300),
-        --background-color: var(--neutral-100),
-        --background-color-hover: var(--neutral-200),
-        --background-color-active: var(--neutral-300),
-        --background-color-disabled: var(--neutral-100),
+        --border-color-active: var(--role-900),
+        --background-color: var(--neutral-900),
         --default-opacity: "0",
-        --hover-opacity: "0.5",
-        --active-opacity: "0.75",
-        --active-disabled: "0.75",
+        --hover-opacity: "0.06",
+        --active-opacity: "0.12",
       ),
       dark: (
         --text-color: var(--role-200),
         --text-color-disabled: var(--role-1000),
-        --background-color: var(--neutral-1200),
-        --background-color-hover: var(--neutral-1100),
-        --background-color-active: var(--neutral-1000),
-        --background-color-disabled: var(--neutral-1200),
+        --background-color: var(--neutral-300),
         --default-opacity: "0",
-        --hover-opacity: "0.5",
-        --active-opacity: "0.75",
+        --hover-opacity: "0.06",
+        --active-opacity: "0.12",
         ),
         all: (--border-style: solid,
           --border-color: var(--text-color),
@@ -83,7 +77,7 @@ $sizing: (
           --horizontal-padding: 16px,
           --vertical-padding: 8px,
         ),
-        standard: (
+        large: (
           --font-size: token.$relative-1-25,
           --line-height: token.$relative-1-75,
           --horizontal-padding: 20px,
@@ -103,6 +97,9 @@ $sizing: (
   max-width: 400px;
   text-align: center;
   padding: var(--vertical-padding) var(--horizontal-padding);
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 @mixin primary {
@@ -116,6 +113,7 @@ $sizing: (
 
   &:active {
     background-color: color.mix-token(background-color-active);
+    border-color: color.mix-token(border-color-active);
   }
 
   &:disabled {
@@ -126,6 +124,20 @@ $sizing: (
 }
 @mixin secondary {
   @include button();
+  background-color: color.mix-token(background-color, var(--default-opacity));
+  
+  &:hover {
+    background-color: color.mix-token(background-color, var(--hover-opacity));
+  }
+  
+  &:active {
+    background-color: color.mix-token(background-color, var(--active-opacity));
+  }
+  
+  &:disabled {
+    background-color: color.mix-token(background-color);
+    color: color.mix-token(text-color-disabled);
+  }
 }
 
 @mixin plain {}
