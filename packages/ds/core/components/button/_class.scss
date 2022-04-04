@@ -1,5 +1,14 @@
 @import "./mixins";
 
-#{$button-selectors} {
-    @include button();
+#{$button-selectors},
+#{$button-selectors}[category="primary"] {
+    @include primary();
+}
+
+#{$button-selectors}[category="secondary"] {
+    @include secondary();
+}
+
+#{$button-selectors}[category="plain"] {
+    @include plain();
 }

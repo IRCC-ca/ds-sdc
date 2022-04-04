@@ -22,10 +22,6 @@ $primary: (
       --background-color-disabled: var(--role-300),
     ),
     all: (--border-style: none,
-      --default-opacity: "1",
-      --hover-opacity: "1",
-      --active-opacity: "1",
-      --disabled-opacity: "1",
       --text-color-disabled: var(--text-color),
     ),
     ),
@@ -98,32 +94,38 @@ $sizing: (
 );
 
 @mixin button {
-  background-color: color.mix-token(background-color, var(--default-opacity));
-  color: color.mix-token(text-color);
   border-radius: token.$border-radius;
   border-style: var(--border-style);
-  border-color: var(--border-color);
-  font-family: "heading";
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  display: flex;
-  justify-content: center;
+  font-family: "heading";
   max-width: 400px;
+  text-align: center;
   padding: var(--vertical-padding) var(--horizontal-padding);
-  
+}
+
+@mixin primary {
+  @include button();
+  background-color: color.mix-token(background-color);
+  color: color.mix-token(text-color);
+
   &:hover {
-    background-color: color.mix-token(background-color-hover, var(--hover-opacity));
+    background-color: color.mix-token(background-color-hover);
   }
-  
+
   &:active {
-    background-color: color.mix-token(background-color-active, var(--active-opacity));
+    background-color: color.mix-token(background-color-active);
   }
-  
+
   &:disabled {
-    background-color: color.mix-token(background-color-disabled, var(--disabled-opacity));
+    background-color: color.mix-token(background-color-disabled);
     cursor: not-allowed;
-    border-color: color.mix-token(border-color-disabled);
     color: color.mix-token(text-color-disabled);
   }
 }
+@mixin secondary {
+  @include button();
+}
+
+@mixin plain {}
