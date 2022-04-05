@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class IconComponent implements OnInit {
 
   @Input() unicode!: string;
-  @Input() fontFamily!: string;
+  @Input() fontFamily!: 'fa-solid' | 'fa-thin' | 'fa-light' | 'fa-regular' | 'fa-brands';
   @Input() ariaLabel?: string;
 
   constructor() { }
