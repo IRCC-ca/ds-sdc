@@ -2,17 +2,21 @@
 $alert: (
   map: (
     light: (
+      role: (
         --background: var(--role-300),
         --border: var(--role-700),
         --icon: var(--role-800),
         --icon-hover: var(--role-900),
+      ),
         --text: var(--neutral-1100),
     ),
     dark: (
+      role: (
         --background: var(--role-700),
         --border: var(--role-700),
         --icon: var(--role-800),
         --icon-hover: var(--role-900),
+      ),
         --text: var(--neutral-100),
     ),
   ),

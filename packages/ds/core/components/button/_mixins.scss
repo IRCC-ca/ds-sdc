@@ -1,91 +1,114 @@
-@use '../../_util/string' as string;
-@use 'sass:string'as sass-string;
-@use '../../_util/color' as color;
-@use '../../layout/layout-var'as token;
+@use "../../_util/string" as string;
+@use "sass:string" as sass-string;
+@use "../../_util/color" as color;
+@use "../../layout/layout-var" as token;
 
-$button-category: 'category';
-$button-selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"],';
+$button-category: "[category]";
+$button-selectors: 'button[category], input[type="button"][category], input[type="reset"][category], input[type="submit"][category], *[role="button"][category]';
 
 $primary: (
   map: (
     light: (
-      --text-color: var(--neutral-100),
-      --background-color: var(--role-700),
-      --background-color-hover: var(--role-800),
-      --background-color-active: var(--role-900),
-      --background-color-disabled: var(--role-300),
+      role: (
+        --background-color: var(--role-700),
+        --background-color-hover: var(--role-800),
+        --background-color-active: var(--role-900),
+        --background-color-disabled: var(--role-300),
       ),
-      dark: (
-      --text-color: var(--neutral-1200),
-      --background-color: var(--role-600),
-      --background-color-hover: var(--role-500),
-      --background-color-active: var(--role-400),
-      --background-color-disabled: var(--role-300),
+      --text-color: var(--neutral-100),
     ),
-    all: (--border-style: none,
+    dark: (
+      role: (
+        --background-color: var(--role-600),
+        --background-color-hover: var(--role-500),
+        --background-color-active: var(--role-400),
+        --background-color-disabled: var(--role-300),
+      ),
+      --text-color: var(--neutral-1200),
+    ),
+    all: (
+      --border-style: none,
       --text-color-disabled: var(--text-color),
     ),
-    ),
-    roles: (cta,
-      critical,
   ),
-  selectors: #{ sass-string.unquote(string.str-replace($button-selectors, ',', '[category="primary"],')) + sass-string.unquote(string.str-replace($button-selectors, ',', ':not([category]),')) },
+  roles: (
+    cta,
+    critical,
+  ),
+  selectors: #{sass-string.unquote(
+      string.str-replace($button-selectors, $button-category, '[category="primary"]')
+    ) + ', ' +
+    sass-string.unquote(
+      string.str-replace($button-selectors, $button-category, ":not([category])")
+    )},
 );
 $secondary: (
-    map: (
-      light: (
+  map: (
+    light: (
+      role: (
         --text-color: var(--role-700),
         --text-color-disabled: var(--role-300),
         --border-color-active: var(--role-900),
-        --background-color: var(--neutral-900),
-        --default-opacity: "0",
-        --hover-opacity: "0.06",
-        --active-opacity: "0.12",
       ),
-      dark: (
+      --background-color: var(--neutral-900),
+    ),
+    dark: (
+      role: (
         --text-color: var(--role-200),
         --text-color-disabled: var(--role-1000),
-        --background-color: var(--neutral-300),
-        --default-opacity: "0",
-        --hover-opacity: "0.06",
-        --active-opacity: "0.12",
-        ),
-        all: (--border-style: solid,
-          --border-color: var(--text-color),
-          --border-color-disabled: var(--text-color-disabled)
+        --border-color-active: var(--role-400),
       ),
+      --background-color: var(--neutral-300),
     ),
-    roles: (cta, critical),
-    selectors: string.str-replace($button-selectors, ',', '[#{$button-category}="secondary"],'),
+    all: (
+      --border-style: solid,
+      --border-color: var(--text-color),
+      --border-color-disabled: var(--text-color-disabled),
+      --default-opacity: "0",
+      --hover-opacity: "0.06",
+      --active-opacity: "0.12",
+    ),
+  ),
+  roles: (
+    cta,
+    critical,
+  ),
+  selectors:
+    string.str-replace(
+      $button-selectors,
+      $button-category,
+      '[category="secondary"]'
+    ),
 );
 $plain: (
-    map: (
-      light: (
-        --text-color: var(--cta-1200),
-      ),
-      dark: (
-        --text-color: var(--cta-1200),
-      ),
+  map: (
+    light: (
+      --text-color: var(--cta-1200),
     ),
-    selectors: string.str-replace($button-selectors, ',', '[#{$button-category}="plain"],'),
+    dark: (
+      --text-color: var(--cta-1200),
+    ),
+  ),
+  selectors:
+    string.str-replace($button-selectors, $button-category, '[category="plain"]'),
 );
 
 $sizing: (
-    map: (
-        small: (
-          --font-size: token.$relative-1,
-          --line-height: token.$relative-1-5,
-          --horizontal-padding: 16px,
-          --vertical-padding: 8px,
-        ),
-        large: (
-          --font-size: token.$relative-1-25,
-          --line-height: token.$relative-1-75,
-          --horizontal-padding: 20px,
-          --vertical-padding: 12px,
-        )
+  map: (
+    small: (
+      --font-size: token.$relative-1,
+      --line-height: token.$relative-1-5,
+      --horizontal-padding: 16px,
+      --vertical-padding: 8px,
     ),
-    selectors: $button-selectors,
+    large: (
+      --font-size: token.$relative-1-25,
+      --line-height: token.$relative-1-75,
+      --horizontal-padding: 20px,
+      --vertical-padding: 12px,
+    ),
+  ),
+  selectors: string.str-replace($button-selectors, $button-category, ''),
 );
 
 @mixin button {
@@ -104,8 +127,6 @@ $sizing: (
 }
 
 @mixin primary {
-  @include button();
-  @debug #{ sass-string.unquote(string.str-replace($button-selectors, ',', '[category="primary"],')) + sass-string.unquote(string.str-replace($button-selectors, ',', ':not([category]),')) };
   background-color: color.mix-token(background-color);
   color: color.mix-token(text-color);
 
@@ -125,21 +146,21 @@ $sizing: (
   }
 }
 @mixin secondary {
-  @include button();
   background-color: color.mix-token(background-color, var(--default-opacity));
-  
+
   &:hover {
     background-color: color.mix-token(background-color, var(--hover-opacity));
   }
-  
+
   &:active {
     background-color: color.mix-token(background-color, var(--active-opacity));
   }
-  
+
   &:disabled {
     background-color: color.mix-token(background-color);
     color: color.mix-token(text-color-disabled);
   }
 }
 
-@mixin plain {}
+@mixin plain {
+}
