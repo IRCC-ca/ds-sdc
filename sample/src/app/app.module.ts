@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 // TODO: update path to the package
 import { JlClModule } from 'packages/ds/angular/src/lib/jl-cl/jl-cl.module';
-import { JlTemplateModule } from 'packages/ds/angular/src/public-api';
+import { JlCommonModule, JlTemplateModule } from 'packages/ds/angular/src/public-api';
 
 import { AppComponent } from './app.component';
 
@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
     TranslateModule.forRoot(),
     JlClModule,
     JlTemplateModule,
+    JlCommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

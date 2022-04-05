@@ -1,0 +1,6 @@
+@use "~@ircc-ca/ds-sdc-core/typography/typography";
+
+.font-icon:before {
+    --font-unicode: '\f6b0';
+    @include typography.fonts-FA-variable-icon(--font-unicode);
+}

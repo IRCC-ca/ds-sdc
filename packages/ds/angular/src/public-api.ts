@@ -8,3 +8,4 @@ export * from './lib/angular.module';
 
 export * from './template/jl-template.module'
 export * from './lib/jl-cl/jl-cl.module'
+export * from './common/jl-common.module'
