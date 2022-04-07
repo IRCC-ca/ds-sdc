@@ -1,7 +1,6 @@
-
-@use "../../_util/string" as string;
 @import "./mixins";
-#{string.str-replace($button-selectors, $button-category, '')} {
+
+#{$button-selectors} {
     @include button();
     &[category="primary"],
     &:not([category]) {

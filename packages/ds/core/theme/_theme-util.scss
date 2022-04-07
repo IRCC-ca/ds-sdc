@@ -1,77 +1,106 @@
-@use "sass:map";
-@import "../_util/string";
-@import "../_util/list";
+@use 'sass:map';
+@use 'sass:string' as sass-string;
+@import '../_util/string';
+@import '../_util/list';
 
-///
-///
-///
-@mixin varsForMap($hue-map, $color-map: "", $replace: "role") {
-  @each $key, $value in $hue-map {
-    @if type-of($value) != map {
-      #{$key}: #{str-replace($value, $replace, $color-map)};
+@mixin wrapMap($selectors, $index: 1) {
+    @if type-of($selectors) == list {
+        #{sass-string.unquote(nth($selectors, $index))} {
+            @if $index < length($selectors) {
+                @include wrapMap($selectors, $index + 1) {
+                    @content;
+                }
+            } @else {
+                @content;
+            }
+        }
+    } @else {
+        #{$selectors} {
+            @content;
+        }
     }
-  }
+}
+///
+///
+///
+@mixin varsForMap($hue-map, $color-map: '', $replace: 'role') {
+    @each $key, $value in $hue-map {
+        @if type-of($value) != map {
+            #{$key}: #{str-replace($value, $replace, $color-map)};
+        }
+    }
 }
 @mixin create-component-styles($component-settings, $hue-selector) {
-  #{map-get($component-settings, selectors)} {
-    @include varsForMap(map-get($component-settings, map, $hue-selector));
-    @if map.has-key($component-settings, roles) {
-      @each $color-role in map-get($component-settings, roles) {
-        &[color="#{$color-role}"] {
-          @include varsForMap(
-            map-get($component-settings, map, $hue-selector, role),
-            $color-role
-          );
+    $selectors: map-get($component-settings, selectors);
+    @include wrapMap($selectors) {
+        @include varsForMap(map-get($component-settings, map, $hue-selector));
+        @if map.has-key($component-settings, roles) {
+            @each $color-role in map-get($component-settings, roles) {
+                &[color='#{$color-role}'] {
+                    @include varsForMap(
+                        map-get($component-settings, map, $hue-selector, role),
+                        $color-role
+                    );
+                }
+            }
         }
-      }
     }
-  }
 }
 @mixin create-global-styles($color-palette) {
-  @each $color-role, $color-map in $color-palette {
-    @each $hue-key, $hue-val in $color-map {
-      #{str-prefix(#{$color-role}-#{$hue-key})}: $hue-val;
+    @each $color-role, $color-map in $color-palette {
+        @each $hue-key, $hue-val in $color-map {
+            #{str-prefix(#{$color-role}-#{$hue-key})}: $hue-val;
+        }
     }
-  }
 }
 
 @mixin core($root-palette, $hues, $color-maps) {
-  @each $color-mode, $color-palette in $root-palette {
-    @if index(($root-palette), ($color-mode $color-palette)) == 1 {
-      html {
-        @include create-global-styles($color-palette);
-      }
-    } @else {
-      html[mode="#{$color-mode}"] {
-        @include create-global-styles($color-palette);
-      }
-    }
-  }
-  @each $hue-theme in $hues {
-    @each $component-name, $component-config in $color-maps {
-      @if map-get($component-config, map, all) !=null {
-        html {
-          #{map-get($component-config, selectors)} {
-            @include varsForMap(map-get($component-config, map, all));
-          }
+    @each $color-mode, $color-palette in $root-palette {
+        @if index(($root-palette), ($color-mode $color-palette)) == 1 {
+            html {
+                @include create-global-styles($color-palette);
+            }
+        } @else {
+            html[mode='#{$color-mode}'] {
+                @include create-global-styles($color-palette);
+            }
         }
-      }
     }
-    @media (prefers-color-scheme: $hue-theme) {
-      html {
+    @each $hue-theme in $hues {
         @each $component-name, $component-config in $color-maps {
-          @include create-component-styles($component-config, $hue-theme);
+            @if map-get($component-config, map, all) !=null {
+                html {
+                    $selectors: map-get($component-config, selectors);
+
+                    @include wrapMap($selectors) {
+                        @include varsForMap(
+                            map-get($component-config, map, all)
+                        );
+                    }
+                }
+            }
         }
-      }
-      $alt-theme: list-filter($hues, $hue-theme);
-      $alt-theme: list-filter($alt-theme, all);
-      @each $alt-hue in $alt-theme {
-        html[theme="#{$alt-hue}"] {
-          @each $component-name, $component-config in $color-maps {
-            @include create-component-styles($component-config, $alt-hue);
-          }
+        @media (prefers-color-scheme: $hue-theme) {
+            html {
+                @each $component-name, $component-config in $color-maps {
+                    @include create-component-styles(
+                        $component-config,
+                        $hue-theme
+                    );
+                }
+            }
+            $alt-theme: list-filter($hues, $hue-theme);
+            $alt-theme: list-filter($alt-theme, all);
+            @each $alt-hue in $alt-theme {
+                html[theme='#{$alt-hue}'] {
+                    @each $component-name, $component-config in $color-maps {
+                        @include create-component-styles(
+                            $component-config,
+                            $alt-hue
+                        );
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

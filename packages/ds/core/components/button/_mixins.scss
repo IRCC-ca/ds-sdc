@@ -3,8 +3,7 @@
 @use "../../_util/color" as color;
 @use "../../layout/layout-var" as token;
 
-$button-category: "[category]";
-$button-selectors: 'button[category], input[type="button"][category], input[type="reset"][category], input[type="submit"][category], *[role="button"][category]';
+$button-selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
 
 $primary: (
   map: (
@@ -35,12 +34,10 @@ $primary: (
     cta,
     critical,
   ),
-  selectors: #{sass-string.unquote(
-      string.str-replace($button-selectors, $button-category, '[category="primary"]')
-    ) + ', ' +
-    sass-string.unquote(
-      string.str-replace($button-selectors, $button-category, ":not([category])")
-    )},
+  selectors: (
+    $button-selectors,
+    '&[category="primary"], &:not([category])',
+  ),
 );
 $secondary: (
   map: (
@@ -73,12 +70,10 @@ $secondary: (
     cta,
     critical,
   ),
-  selectors:
-    string.str-replace(
-      $button-selectors,
-      $button-category,
-      '[category="secondary"]'
-    ),
+  selectors: (
+    $button-selectors,
+    '&[category="secondary"]',
+  )
 );
 $plain: (
   map: (
@@ -89,8 +84,10 @@ $plain: (
       --text-color: var(--cta-1200),
     ),
   ),
-  selectors:
-    string.str-replace($button-selectors, $button-category, '[category="plain"]'),
+  selectors: (
+    $button-selectors,
+    '&[category="plain"]',
+  )
 );
 
 $sizing: (
@@ -108,7 +105,7 @@ $sizing: (
       --vertical-padding: 12px,
     ),
   ),
-  selectors: string.str-replace($button-selectors, $button-category, ''),
+  selectors: $button-selectors,
 );
 
 @mixin button {
