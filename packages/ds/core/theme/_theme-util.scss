@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'sass:string' as sass-string;
+@use 'sass:list';
 @import '../_util/string';
 @import '../_util/list';
 
@@ -35,16 +36,24 @@
     @include wrapMap($selectors) {
         @include varsForMap(map-get($component-settings, map, $hue-selector));
         @if map.has-key($component-settings, roles) {
-            @each $color-role in map-get($component-settings, roles) {
-                &[color='#{$color-role}'] {
-                    @include varsForMap(
-                        map-get($component-settings, map, $hue-selector, role),
-                        $color-role
-                    );
-                }
-            }
-        }
+          $roles: map-get($component-settings, roles);
+          &:not([color]), &[color='#{list.nth($roles, 1)}']{
+            @include varsForMap(
+              map-get($component-settings, map, $hue-selector, role),
+              list.nth($roles, 1)
+          );
+          }
+          @for $hue from 2 through length($roles) {
+            &[color='#{list-nth($roles, $hue)}']{
+              @include varsForMap(
+                map-get($component-settings, map, $hue-selector, role),
+                list.nth($roles, $hue)
+              );
+          }
+
+          }
     }
+  }
 }
 @mixin create-global-styles($color-palette) {
     @each $color-role, $color-map in $color-palette {
