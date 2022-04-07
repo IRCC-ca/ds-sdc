@@ -58,8 +58,10 @@ $secondary: (
       --background-color: var(--neutral-300),
     ),
     all: (
+      role: (
+        --border-color: var(--role-800),
+      ),
       --border-style: solid,
-      --border-color: var(--text-color),
       --border-color-disabled: var(--text-color-disabled),
       --default-opacity: "0",
       --hover-opacity: "0.06",
@@ -78,11 +80,28 @@ $secondary: (
 $plain: (
   map: (
     light: (
-      --text-color: var(--cta-1200),
+      role: (
+        --text-color: var(--role-700),
+        --text-color-disabled: var(--role-300),
+      ),
+      --background-color: var(--neutral-900),
     ),
     dark: (
-      --text-color: var(--cta-1200),
+      role: (
+        --text-color: var(--role-200),
+        --text-color-disabled: var(--role-1000),
+      ),
+      --background-color: var(--neutral-300),
     ),
+    all: (
+      --default-opacity: "0",
+      --hover-opacity: "0.06",
+      --active-opacity: "0.12",
+    )
+  ),
+  roles: (
+    cta,
+    critical,
   ),
   selectors: (
     $button-selectors,
@@ -144,7 +163,8 @@ $sizing: (
 }
 @mixin secondary {
   background-color: color.mix-token(background-color, var(--default-opacity));
-
+  border-color: color.mix-token(border-color);
+  color: color.mix-token(text-color);
   &:hover {
     background-color: color.mix-token(background-color, var(--hover-opacity));
   }
@@ -154,10 +174,23 @@ $sizing: (
   }
 
   &:disabled {
-    background-color: color.mix-token(background-color);
+    background-color: inherit;
     color: color.mix-token(text-color-disabled);
   }
 }
 
 @mixin plain {
+  
+  background-color: color.mix-token(background-color, var(--default-opacity));
+  color: color.mix-token(text-color);
+  &:hover {
+    background-color: color.mix-token(background-color, var(--hover-opacity));
+  }
+
+  &:active {
+    background-color: color.mix-token(background-color, var(--active-opacity));
+  }
+  &:disabled {
+    color: color.mix-token(text-color-disabled);
+  }
 }

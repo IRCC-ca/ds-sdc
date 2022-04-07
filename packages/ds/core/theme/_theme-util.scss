@@ -44,7 +44,7 @@
           );
           }
           @for $hue from 2 through length($roles) {
-            &[color='#{list-nth($roles, $hue)}']{
+            &[color='#{list.nth($roles, $hue)}']{
               @include varsForMap(
                 map-get($component-settings, map, $hue-selector, role),
                 list.nth($roles, $hue)
