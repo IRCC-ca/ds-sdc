@@ -1,0 +1,13 @@
+@use "../tokens/template-const" as template-const;
+@use "../util/integer" as integer;
+@mixin create($surface-start: 1) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            counter-set: surface $surface-start;
+            @debug integer.mod(10, 5);
+        }
+    }
+
+
+
+}

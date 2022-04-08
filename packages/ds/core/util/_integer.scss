@@ -1,0 +1,5 @@
+
+@function mod($a, $b) {
+    $floor: calc($a/$b - .5);
+    @return calc($a - $b * $floor)
+}

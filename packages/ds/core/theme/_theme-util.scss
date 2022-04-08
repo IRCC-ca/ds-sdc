@@ -1,6 +1,5 @@
 @use "sass:map";
-@import "../_util/string";
-@import "../_util/list";
+@import "../util/list";
 
 ///
 ///
@@ -37,26 +36,9 @@
     }
   }
 }
-@mixin create-global-styles($color-palette) {
-  @each $color-role, $color-map in $color-palette {
-    @each $hue-key, $hue-val in $color-map {
-      #{str-prefix(#{$color-role}-#{$hue-key})}: $hue-val;
-    }
-  }
-}
+
 
 @mixin core($root-palette, $hues, $color-maps) {
-  @each $color-mode, $color-palette in $root-palette {
-    @if index(($root-palette), ($color-mode $color-palette)) == 1 {
-      html {
-        @include create-global-styles($color-palette);
-      }
-    } @else {
-      html[mode="#{$color-mode}"] {
-        @include create-global-styles($color-palette);
-      }
-    }
-  }
   @each $hue-theme in $hues {
     @media (prefers-color-scheme: $hue-theme) {
       html {

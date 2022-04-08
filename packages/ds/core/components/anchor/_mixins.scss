@@ -1,6 +1,6 @@
 @use "../../typography/fonts" as font;
 @use "../../layout/layout-var" as sizes;
-@use "../../_util/color" as color;
+@use "../../util/color" as color;
 @use "../focus/mixins" as focus;
 $anchor: (
   map: (

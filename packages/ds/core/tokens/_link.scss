@@ -1,0 +1,17 @@
+@use '../../util/color' as color;
+@use './text' as text;
+@use '../util/theme' as theme;
+@use './template-const' as template-const;
+
+@mixin link {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.color-scheme(
+                $light: (
+                ),
+                $dark: (
+                )
+            );
+        }
+    }
+}

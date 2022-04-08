@@ -1,0 +1,36 @@
+@use '../util/color' as color;
+@use './text' as text;
+@use '../util/theme' as theme;
+@use './template-const' as template-const;
+@mixin global($neutral, $accent) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.color-scheme(
+                $light: (
+                    --surface1: color.mix-token($neutral, 100),
+                    --surface2: color.mix-token($neutral, 200),
+                    --surface3: color.mix-token($neutral, 100),
+                    --generic-hover: color.mix-token($neutral, 900, 0.06),
+                    --generic-active: color.mix-token($neutral, 900, 0.12),
+                    --border: color.mix-token($neutral, 800),
+                    --border-hover: color.mix-token($neutral, 900),
+                    --divider: color.mix-token($neutral, 300),
+                    --border-disabled: color.mix-token($neutral, 300),
+                    --dimmer: color.mix-token($neutral, 1100),
+                ),
+                $dark: (
+                    --surface1: color.mix-token($neutral, 1200),
+                    --surface2: color.mix-token($neutral, 1100),
+                    --surface3: color.mix-token($neutral, 1200),
+                    --generic-hover: color.mix-token($neutral, 400, 0.06),
+                    --generic-active: color.mix-token($neutral, 400, 0.12),
+                    --border: color.mix-token($neutral, 500),
+                    --border-hover: color.mix-token($neutral, 400),
+                    --divider: color.mix-token($neutral, 1000),
+                    --border-disabled: color.mix-token($neutral, 1000),
+                    --dimmer: color.mix-token($neutral, 200),
+                )
+            );
+        }
+    }
+}

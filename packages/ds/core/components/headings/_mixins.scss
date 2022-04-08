@@ -1,5 +1,5 @@
 @use "../../layout/layout-var" as token;
-@use "../../_util/color" as color;
+@use "../../util/color" as color;
 
 $headings: (
     map: (
@@ -18,7 +18,7 @@ $headings: (
     & > strong, strong.heading, strong.h#{$level}, .emphasis, b {
         font-weight: map-get(token.$header-size, bold);
     }
-    font-family: "heading";
+    font-family: "Lato";
     font-weight: map-get(token.$header-size, regular);
 }
 

@@ -1,7 +1,19 @@
+@use "./typography/fonts" as fonts;
 @use "./typography/typography" as typography;
+@use "./paint/paint" as paint;
 @use "./theme/theme" as theme;
 
 @mixin default {
-    @include theme.create();
+    @include create-globals();
+    @include create-components();
+}
+
+@mixin create-globals() {
+    @include theme.default();
+    @include fonts.create();
+}
+
+@mixin create-components() {
     @include typography.create();
+    @include paint.create();
 }
