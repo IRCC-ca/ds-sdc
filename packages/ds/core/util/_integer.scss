@@ -1,5 +1,4 @@
-
+@use "sass:math" as math;
 @function mod($a, $b) {
-    $floor: calc($a/$b - .5);
-    @return calc($a - $b * $floor)
+    @return calc($a - $b * math.floor($a / $b))
 }
