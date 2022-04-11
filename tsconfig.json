@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "angular": [
+      "@ircc-ca/ds-sdc-angular": [
         "dist/angular/angular",
         "dist/angular"
       ]

@@ -2,12 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
-
-// TODO: update path to the package
-import { JlClModule } from 'packages/ds/angular/src/lib/jl-cl/jl-cl.module';
-import { JlCommonModule, JlTemplateModule } from 'packages/ds/angular/src/public-api';
-
 import { AppComponent } from './app.component';
+
+import { JlTemplateModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';
 
 @NgModule({
   declarations: [
@@ -18,7 +15,6 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule.forRoot(),
-    JlClModule,
     JlTemplateModule,
     JlCommonModule,
   ],
