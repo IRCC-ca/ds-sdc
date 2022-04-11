@@ -2,12 +2,14 @@
 @use "../util/integer" as integer;
 @mixin create($surface-start: 1) {
     @at-root {
+        $surface-level: $surface-start;
         #{template-const.$root-selectors} {
-            counter-set: surface $surface-start;
-            @debug integer.mod(14, 5);
+            @include backgroundLevel($surface-level);
         }
     }
-
-
-
 }
+
+@mixin backgroundLevel($counter) {
+    $name: --surface#{$counter};
+    background: var($name);
+};
