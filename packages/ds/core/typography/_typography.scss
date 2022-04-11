@@ -1,6 +1,7 @@
 @use '../layout/layout-var' as token;
 @use 'fonts';
 @forward 'fonts' as fonts-*;
+
 @mixin createHeadings {
     @include fonts.Lato-fontFace(
         $weight: 400,
@@ -19,9 +20,11 @@
         $fontDir: '~@fontsource/inter/files',
         $fontName: 'body'
     );
+    
     body {
         @extend .#{$default-font};
     }
+    
     strong,
     .emphasis,
     b {

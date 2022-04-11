@@ -1,5 +1,5 @@
 @function str-prefix($name, $prefix: '--') {
-    @if str-index($name, $prefix) == null {
+    @if not str-index($name, $prefix) {
         @return #{$prefix}#{$name};
     } @else {
         @return $name;

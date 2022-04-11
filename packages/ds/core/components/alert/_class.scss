@@ -1,4 +1,5 @@
 @import './mixins';
+
 .alert {
     @include alert();
 }

@@ -1,7 +1,8 @@
 @use './theme-util' as theme;
 @use '../components/index' as components;
 @use './size-util' as size;
-@import './ircc-jl-colours.scss';
+@import './ircc-jl-colours';
+
 @mixin create(
     $root-palette: $journeylab-palette,
     $hues: (

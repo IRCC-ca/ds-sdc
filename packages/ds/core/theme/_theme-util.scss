@@ -62,7 +62,7 @@
                         $component-config,
                         $hue-theme
                     );
-                    @if map-get($component-config, map, all) != null {
+                    @if map-get($component-config, map, all) {
                         @include create-component-styles(
                             $component-config,
                             all
