@@ -1,3 +1,5 @@
+@use 'sass:string';
+
 %far,
 %fa-regular {
     font-family: 'Font Awesome 6 Pro';
@@ -102,7 +104,7 @@
 
 @mixin decor-icon($fa-var, $fa-family) {
     @extend %#{$fa-family};
-    content: unquote('"#{ $fa-var }"');
+    content: string.unquote('"#{ $fa-var }"');
     speak: none;
 }
 @mixin variable-icon($fa-var) {

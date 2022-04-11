@@ -1,5 +1,7 @@
+@use 'sass:string';
+
 @function str-prefix($name, $prefix: '--') {
-    @if not str-index($name, $prefix) {
+    @if not string.index($name, $prefix) {
         @return #{$prefix}#{$name};
     } @else {
         @return $name;
@@ -14,7 +16,7 @@
 /// @param {String} $replace ('') - New value
 /// @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
-    $index: str-index($string, $search);
+    $index: string.index($string, $search);
 
     @if $index {
         @return str-slice($string, 1, $index - 1) + $replace +

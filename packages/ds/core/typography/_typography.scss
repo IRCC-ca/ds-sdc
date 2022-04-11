@@ -1,5 +1,6 @@
 @use '../layout/layout-var' as token;
 @use 'fonts';
+@use 'sass:map';
 @forward 'fonts' as fonts-*;
 
 @mixin createHeadings {
@@ -28,7 +29,7 @@
     strong,
     .emphasis,
     b {
-        font-weight: map-get(token.$body-size, bold);
+        font-weight: map.get(token.$body-size, bold);
     }
 }
 

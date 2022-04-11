@@ -1,5 +1,7 @@
 @use '../../layout/layout-var' as token;
 @use '../../_util/color' as color;
+@use 'sass:map';
+
 $body: (
     map: (
         light: (
@@ -14,10 +16,11 @@ $body: (
 @mixin body($level) {
     color: color.mix-token(text-color);
     * > strong.body#{$level} {
-        font-weight: map-get(token.$body-size, bold);
+        font-weight: map.get(token.$body-size, bold);
     }
-    font-family: 'body';
-    font-weight: map-get(token.$body-size, regular);
+    
+    font-family: 'body' serif;
+    font-weight: map.get(token.$body-size, regular);
 }
 @mixin body1 {
     @include body(1);

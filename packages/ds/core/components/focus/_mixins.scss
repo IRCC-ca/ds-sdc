@@ -1,5 +1,7 @@
 @use '../../layout/layout-var' as sizes;
 @use '../../_util/color' as color;
+@use  'sass:map';
+
 $focus: (
     map: (
         light: (
@@ -20,8 +22,8 @@ $outline: (
 );
 
 @mixin focus {
-    outline: color.mix-token(focus-outline-color) solid map-get($outline, outer);
-    outline-offset: map-get($outline, inner);
-    box-shadow: 0 0 0 map-get($outline, inner)
+    outline: color.mix-token(focus-outline-color) solid map.get($outline, outer);
+    outline-offset: map.get($outline, inner);
+    box-shadow: 0 0 0 map.get($outline, inner)
         color.mix-token(focus-shadow-color);
 }

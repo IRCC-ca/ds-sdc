@@ -1,5 +1,6 @@
 @use '../../layout/layout-var' as token;
 @use '../../_util/color' as color;
+@use 'sass:map';
 
 $headings: (
     map: (
@@ -20,11 +21,11 @@ $headings: (
     strong.h#{$level},
     .emphasis,
     b {
-        font-weight: map-get(token.$header-size, bold);
+        font-weight: map.get(token.$header-size, bold);
     }
     
     font-family: 'heading';
-    font-weight: map-get(token.$header-size, regular);
+    font-weight: map.get(token.$header-size, regular);
 }
 
 @mixin h1 {
