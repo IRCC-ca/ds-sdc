@@ -1,30 +1,30 @@
-@use "../../_util/color" as color;
+@use '../../_util/color' as color;
 $alert: (
-  map: (
-    light: (
-        --background: var(--role-300),
-        --border: var(--role-700),
-        --icon: var(--role-800),
-        --icon-hover: var(--role-900),
-        --text: var(--neutral-1100),
+    map: (
+        light: (
+            --background: var(--role-300),
+            --border: var(--role-700),
+            --icon: var(--role-800),
+            --icon-hover: var(--role-900),
+            --text: var(--neutral-1100),
+        ),
+        dark: (
+            --background: var(--role-700),
+            --border: var(--role-700),
+            --icon: var(--role-800),
+            --icon-hover: var(--role-900),
+            --text: var(--neutral-100),
+        ),
     ),
-    dark: (
-        --background: var(--role-700),
-        --border: var(--role-700),
-        --icon: var(--role-800),
-        --icon-hover: var(--role-900),
-        --text: var(--neutral-100),
+    roles: (
+        information,
+        critical,
+        warning,
+        success,
     ),
-  ),
-  roles: (
-    information,
-    critical,
-    warning,
-    success,
-  ),
-  selectors: ".alert"
+    selectors: '.alert',
 );
 @mixin alert {
-  background-color: color.mix-token(background);
-  color: color.mix-token(text);
+    background-color: color.mix-token(background);
+    color: color.mix-token(text);
 }

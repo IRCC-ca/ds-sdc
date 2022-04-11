@@ -1,129 +1,154 @@
 @use '../../_util/string' as string;
 @use '../../_util/color' as color;
-@use '../../layout/layout-var'as token;
+@use '../../layout/layout-var' as token;
 
 $button-category: 'category';
 $button-selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
 
 $primary: (
-  map: (
-    light: (
-      --text-color: var(--neutral-100),
-      --background-color: var(--role-700),
-      --background-color-hover: var(--role-800),
-      --background-color-active: var(--role-900),
-      --background-color-disabled: var(--role-300),
-      ),
-      dark: (
-      --text-color: var(--neutral-1200),
-      --background-color: var(--role-600),
-      --background-color-hover: var(--role-500),
-      --background-color-active: var(--role-400),
-      --background-color-disabled: var(--role-300),
+    map: (
+        light: (
+            --text-color: var(--neutral-100),
+            --background-color: var(--role-700),
+            --background-color-hover: var(--role-800),
+            --background-color-active: var(--role-900),
+            --background-color-disabled: var(--role-300),
+        ),
+        dark: (
+            --text-color: var(--neutral-1200),
+            --background-color: var(--role-600),
+            --background-color-hover: var(--role-500),
+            --background-color-active: var(--role-400),
+            --background-color-disabled: var(--role-300),
+        ),
+        all: (
+            --border-style: none,
+            --default-opacity: '1',
+            --hover-opacity: '1',
+            --active-opacity: '1',
+            --disabled-opacity: '1',
+            --text-color-disabled: var(--text-color),
+        ),
     ),
-    all: (--border-style: none,
-      --default-opacity: "1",
-      --hover-opacity: "1",
-      --active-opacity: "1",
-      --disabled-opacity: "1",
-      --text-color-disabled: var(--text-color),
+    roles: (
+        cta,
+        critical,
     ),
-    ),
-    roles: (cta,
-      critical,
-  ),
-  selectors: $button-selectors,
+    selectors: $button-selectors,
 );
 $secondary: (
     map: (
-      light: (
-        --text-color: var(--role-700),
-        --text-color-disabled: var(--role-300),
-        --background-color: var(--neutral-100),
-        --background-color-hover: var(--neutral-200),
-        --background-color-active: var(--neutral-300),
-        --background-color-disabled: var(--neutral-100),
-        --default-opacity: "0",
-        --hover-opacity: "0.5",
-        --active-opacity: "0.75",
-        --active-disabled: "0.75",
-      ),
-      dark: (
-        --text-color: var(--role-200),
-        --text-color-disabled: var(--role-1000),
-        --background-color: var(--neutral-1200),
-        --background-color-hover: var(--neutral-1100),
-        --background-color-active: var(--neutral-1000),
-        --background-color-disabled: var(--neutral-1200),
-        --default-opacity: "0",
-        --hover-opacity: "0.5",
-        --active-opacity: "0.75",
+        light: (
+            --text-color: var(--role-700),
+            --text-color-disabled: var(--role-300),
+            --background-color: var(--neutral-100),
+            --background-color-hover: var(--neutral-200),
+            --background-color-active: var(--neutral-300),
+            --background-color-disabled: var(--neutral-100),
+            --default-opacity: '0',
+            --hover-opacity: '0.5',
+            --active-opacity: '0.75',
+            --active-disabled: '0.75',
         ),
-        all: (--border-style: solid,
-          --border-color: var(--text-color),
-          --border-color-disabled: var(--text-color-disabled)
-      ),
+        dark: (
+            --text-color: var(--role-200),
+            --text-color-disabled: var(--role-1000),
+            --background-color: var(--neutral-1200),
+            --background-color-hover: var(--neutral-1100),
+            --background-color-active: var(--neutral-1000),
+            --background-color-disabled: var(--neutral-1200),
+            --default-opacity: '0',
+            --hover-opacity: '0.5',
+            --active-opacity: '0.75',
+        ),
+        all: (
+            --border-style: solid,
+            --border-color: var(--text-color),
+            --border-color-disabled: var(--text-color-disabled),
+        ),
     ),
-    roles: (cta, critical),
-    selectors: string.str-replace($button-selectors, ',', '[#{$button-category}="secondary"],'),
+    roles: (
+        cta,
+        critical,
+    ),
+    selectors:
+        string.str-replace(
+            $button-selectors,
+            ',',
+            '[#{$button-category}="secondary"],'
+        ),
 );
 $plain: (
     map: (
-      light: (
-        --text-color: var(--cta-1200),
-      ),
-      dark: (
-        --text-color: var(--cta-1200),
-      ),
+        light: (
+            --text-color: var(--cta-1200),
+        ),
+        dark: (
+            --text-color: var(--cta-1200),
+        ),
     ),
-    selectors: string.str-replace($button-selectors, ',', '[#{$button-category}="plain"],'),
+    selectors:
+        string.str-replace(
+            $button-selectors,
+            ',',
+            '[#{$button-category}="plain"],'
+        ),
 );
 
 $sizing: (
     map: (
         small: (
-          --font-size: token.$relative-1,
-          --line-height: token.$relative-1-5,
-          --horizontal-padding: 16px,
-          --vertical-padding: 8px,
+            --font-size: token.$relative-1,
+            --line-height: token.$relative-1-5,
+            --horizontal-padding: 16px,
+            --vertical-padding: 8px,
         ),
         standard: (
-          --font-size: token.$relative-1-25,
-          --line-height: token.$relative-1-75,
-          --horizontal-padding: 20px,
-          --vertical-padding: 12px,
-        )
+            --font-size: token.$relative-1-25,
+            --line-height: token.$relative-1-75,
+            --horizontal-padding: 20px,
+            --vertical-padding: 12px,
+        ),
     ),
     selectors: $button-selectors,
 );
 
 @mixin button {
-  background-color: color.mix-token(background-color, var(--default-opacity));
-  color: color.mix-token(text-color);
-  border-radius: token.$border-radius;
-  border-style: var(--border-style);
-  border-color: var(--border-color);
-  font-family: "heading";
-  font-weight: var(--font-weight);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  display: flex;
-  justify-content: center;
-  max-width: 400px;
-  padding: var(--vertical-padding) var(--horizontal-padding);
-  
-  &:hover {
-    background-color: color.mix-token(background-color-hover, var(--hover-opacity));
-  }
-  
-  &:active {
-    background-color: color.mix-token(background-color-active, var(--active-opacity));
-  }
-  
-  &:disabled {
-    background-color: color.mix-token(background-color-disabled, var(--disabled-opacity));
-    cursor: not-allowed;
-    border-color: color.mix-token(border-color-disabled);
-    color: color.mix-token(text-color-disabled);
-  }
+    background-color: color.mix-token(background-color, var(--default-opacity));
+    color: color.mix-token(text-color);
+    border-radius: token.$border-radius;
+    border-style: var(--border-style);
+    border-color: var(--border-color);
+    font-family: 'heading';
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    padding: var(--vertical-padding) var(--horizontal-padding);
+
+    &:hover {
+        background-color: color.mix-token(
+            background-color-hover,
+            var(--hover-opacity)
+        );
+    }
+
+    &:active {
+        background-color: color.mix-token(
+            background-color-active,
+            var(--active-opacity)
+        );
+    }
+
+    &:disabled {
+        background-color: color.mix-token(
+            background-color-disabled,
+            var(--disabled-opacity)
+        );
+        cursor: not-allowed;
+        border-color: color.mix-token(border-color-disabled);
+        color: color.mix-token(text-color-disabled);
+    }
 }

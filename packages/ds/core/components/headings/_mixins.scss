@@ -1,5 +1,5 @@
-@use "../../layout/layout-var" as token;
-@use "../../_util/color" as color;
+@use '../../layout/layout-var' as token;
+@use '../../_util/color' as color;
 
 $headings: (
     map: (
@@ -9,16 +9,20 @@ $headings: (
         dark: (
             --text-color: var(--neutral-200),
         ),
-      ),
-      selectors: ".h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6"
-    );
+    ),
+    selectors: '.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6',
+);
 
 @mixin heading($level) {
     color: color.mix-token(text-color);
-    & > strong, strong.heading, strong.h#{$level}, .emphasis, b {
+    & > strong,
+    strong.heading,
+    strong.h#{$level},
+    .emphasis,
+    b {
         font-weight: map-get(token.$header-size, bold);
     }
-    font-family: "heading";
+    font-family: 'heading';
     font-weight: map-get(token.$header-size, regular);
 }
 

@@ -1,10 +1,9 @@
-@use "./alert/class" as alert;
-@use "./anchor/class" as anchor;
-@use "./headings/class" as headings;
-@use "./body/class" as body;
-@use "./focus/class" as focus;
-@use "./button/class" as button;
-
+@use './alert/class' as alert;
+@use './anchor/class' as anchor;
+@use './headings/class' as headings;
+@use './body/class' as body;
+@use './focus/class' as focus;
+@use './button/class' as button;
 
 $include-list: (
     color-maps: (
@@ -18,5 +17,5 @@ $include-list: (
     ),
     size-maps: (
         button-sizing: button.$sizing,
-    )
+    ),
 );

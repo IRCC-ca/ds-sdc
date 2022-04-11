@@ -1,4 +1,3 @@
-
 @function mix-token($color-token, $opacity: 1) {
     @return #{hsla(var(--#{$color-token}), #{$opacity})};
 }

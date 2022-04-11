@@ -1,35 +1,36 @@
-@use "../layout/layout-var" as token;
-@use "fonts";
-@forward "fonts" as fonts-*;
+@use '../layout/layout-var' as token;
+@use 'fonts';
+@forward 'fonts' as fonts-*;
 @mixin createHeadings {
     @include fonts.Lato-fontFace(
-      $weight: 400,
-      $display: auto,
-      $style: normal,
-      $fontDir: "~@fontsource/lato/files",
-      $fontName: "heading"
+        $weight: 400,
+        $display: auto,
+        $style: normal,
+        $fontDir: '~@fontsource/lato/files',
+        $fontName: 'heading'
     );
-  }
-
-@mixin createBody($default-font) {
-  @include fonts.Inter-fontFace(
-    $weight: 400,
-    $display: auto,
-    $style: normal,
-    $fontDir: "~@fontsource/inter/files",
-    $fontName: "body"
-  );
-  body {
-    @extend .#{$default-font};
-  }
-  strong, .emphasis, b {
-    font-weight: map-get(token.$body-size, bold);
-  }
-  
 }
 
-@mixin create($default-font: "body2") {
-  @include createHeadings();
-  @include createBody($default-font);
-  @include fonts.FA-create();
+@mixin createBody($default-font) {
+    @include fonts.Inter-fontFace(
+        $weight: 400,
+        $display: auto,
+        $style: normal,
+        $fontDir: '~@fontsource/inter/files',
+        $fontName: 'body'
+    );
+    body {
+        @extend .#{$default-font};
+    }
+    strong,
+    .emphasis,
+    b {
+        font-weight: map-get(token.$body-size, bold);
+    }
+}
+
+@mixin create($default-font: 'body2') {
+    @include createHeadings();
+    @include createBody($default-font);
+    @include fonts.FA-create();
 }

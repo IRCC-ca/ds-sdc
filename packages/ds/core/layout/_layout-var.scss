@@ -28,12 +28,12 @@ $fixed-1: 1px;
 $border-radius: $fixed-4;
 $body-size: (
     regular: 400,
-    bold: 600
+    bold: 600,
 );
 
 $header-size: (
     regular: 400,
-    bold: 700
+    bold: 700,
 );
 
 @mixin in-phone-layout {

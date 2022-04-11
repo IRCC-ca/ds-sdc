@@ -1,4 +1,4 @@
-@import "layout-var";
+@import 'layout-var';
 
 $gap-width: 20px;
 
@@ -57,7 +57,6 @@ $gap-width: 20px;
     }
 }
 
-
 .header-area-responsive {
     @extend .content-area-responsive;
     grid-column: first / last;
@@ -77,15 +76,16 @@ $gap-width: 20px;
 @mixin panel-column($column-count: 1) {
     .panel-#{$column-count}-column {
         @extend %mod-grid;
-        grid-template-columns: grid-bounds(repeat(#{$column-count}, minmax(auto, 1fr)));
+        grid-template-columns: grid-bounds(
+            repeat(#{$column-count}, minmax(auto, 1fr))
+        );
         &-margins {
             @extend %mod-grid-margins;
             @extend .panel-#{$column-count}-column;
         }
-}
+    }
 }
 
 @include panel-column(1);
 @include panel-column(2);
 @include panel-column(3);
-

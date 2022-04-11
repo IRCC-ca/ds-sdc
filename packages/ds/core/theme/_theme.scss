@@ -2,7 +2,27 @@
 @use '../components/index' as components;
 @use './size-util' as size;
 @import './ircc-jl-colours.scss';
-@mixin create($root-palette: $journeylab-palette, $hues: (light, dark), $include-list: components.$include-list, $sizes: (small, standard), $default-size: 'standard') {
-  @include theme.core($root-palette, $hues, map-get($include-list, color-maps));
-  @include size.core(map-get($include-list, size-maps), $sizes, $default-size);
+@mixin create(
+    $root-palette: $journeylab-palette,
+    $hues: (
+        light,
+        dark,
+    ),
+    $include-list: components.$include-list,
+    $sizes: (
+        small,
+        standard,
+    ),
+    $default-size: 'standard'
+) {
+    @include theme.core(
+        $root-palette,
+        $hues,
+        map-get($include-list, color-maps)
+    );
+    @include size.core(
+        map-get($include-list, size-maps),
+        $sizes,
+        $default-size
+    );
 }

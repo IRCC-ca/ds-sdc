@@ -1,4 +1,6 @@
-@import "./mixins";
-a, .anchor, .link {
+@import './mixins';
+a,
+.anchor,
+.link {
     @include anchor;
 }
