@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { IIconConfig } from 'packages/ds/angular/src/common/icon/icon.component';
 import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';
 
 @Component({
@@ -17,6 +18,16 @@ export class AppComponent {
     hint: 'test test',
     placeholder: '',
   } as IFieldConfig;
+
+  alicornIconConfig = {
+    unicode: 'f6b0',
+    fontFamily: 'fa-solid',
+  } as IIconConfig;
+
+  rocketIconConfig = {
+    unicode: 'e027',
+    fontFamily: 'fa-solid',
+  } as IIconConfig;
 
   constructor(private translate: TranslateService) {}
 }
