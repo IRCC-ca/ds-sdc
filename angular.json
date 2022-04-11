@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "@ircc-ca-ds/angular": {
+    "@ircc-ca/ds-sdc-angular": {
       "projectType": "library",
       "root": "packages/ds/angular",
       "sourceRoot": "packages/ds/angular/src",

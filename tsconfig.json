@@ -3,10 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@ircc-ca/ds-sdc-angular/*": [
+        "packages/ds/angular/*"
+      ],
       "@ircc-ca/ds-sdc-angular": [
-        "dist/angular/angular",
-        "dist/angular"
-      ]
+        "packages/ds/angular"
+      ],
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -34,10 +36,5 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "paths": {
-      "@*": [
-        "./node_modules/@*"
-      ],
-   },
   },
 }

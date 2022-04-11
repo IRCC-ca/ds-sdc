@@ -2,14 +2,22 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@ircc-ca/ds-sdc-angular/*": [
+        "dist/angular/*"
+      ],
+      "@ircc-ca/ds-sdc-angular": [
+        "dist/angular"
+      ],
+    },
   },
   "files": [
     "src/main.ts",
     "src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
   ],
   "exclude": [
     "**/*.stories.*"
