@@ -4,5 +4,4 @@ import { Component } from '@angular/core';
     template: ` <p>angular works!</p> `,
     styles: [],
 })
-export class AngularComponent{
-}
+export class AngularComponent {}

@@ -18,31 +18,31 @@ $body: (
     * > strong.body#{$level} {
         font-weight: map.get(token.$body-size, bold);
     }
-    
+
     font-family: body, serif;
     font-weight: map.get(token.$body-size, regular);
 }
 @mixin body1 {
     @include body(1);
-    
+
     font-size: token.$relative-1-25;
     line-height: token.$relative-1-75;
 }
 @mixin body2 {
     @include body(2);
-    
+
     font-size: token.$relative-1;
     line-height: token.$relative-1-5;
 }
 @mixin body3 {
     @include body(3);
-    
+
     font-size: token.$relative-0-875;
     line-height: token.$relative-1-25;
 }
 @mixin body4 {
     @include body(4);
-    
+
     font-size: token.$relative-0-75;
     line-height: token.$relative-1-25;
 }

@@ -1,6 +1,6 @@
 @import './mixins';
 
- /* stylelint-disable-next-line selector-max-universal */
+/* stylelint-disable-next-line selector-max-universal */
 *:focus {
     @include focus();
 }

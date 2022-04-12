@@ -16,11 +16,10 @@ describe('FooterComponent', () => {
         fixture = TestBed.createComponent(IconComponent);
         component = fixture.componentInstance;
         const config: IIconConfig = {
-            fontFamily:'fa-brands',
-            unicode: 'e027'
-        }
-        component.iconConfig = config,
-        fixture.detectChanges();
+            fontFamily: 'fa-brands',
+            unicode: 'e027',
+        };
+        (component.iconConfig = config), fixture.detectChanges();
     });
 
     it('should create', () => {

@@ -21,12 +21,12 @@
         $fontDir: '~@fontsource/inter/files',
         $fontName: 'body'
     );
-    
+
     body {
         /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
         @extend .#{$default-font};
     }
-    
+
     strong,
     .emphasis,
     b {

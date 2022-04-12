@@ -104,7 +104,7 @@
 
 @mixin decor-icon($fa-var, $fa-family) {
     @extend %#{$fa-family};
-    
+
     content: string.unquote('"#{ $fa-var }"');
     speak: none;
 }
