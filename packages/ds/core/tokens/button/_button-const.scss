@@ -1,0 +1,43 @@
+@use "../../util/theme"as theme;
+@use "../../util/size"as size;
+@use "../template-const"as template-const;
+$selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
+
+@mixin button($category: 'primary', $color: 'cta') {
+    #{$selectors} {
+
+        @include theme.selector($category,
+            'category',
+            'primary') {
+            @if not $color {
+                @content;
+            }
+
+            @else {
+                @include theme.selector($color,
+                    'color',
+                    'cta'
+
+                ) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin button-size {
+    @at-root {
+        #{template-const.$root-selectors} {
+            #{$selectors} {
+                @include size.selector(small) {
+                    @extend .h6;
+                }
+
+                @include size.selector(large) {
+                    @extend .h5;
+                }
+            }
+        }
+    }
+}

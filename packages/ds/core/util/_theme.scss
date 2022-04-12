@@ -1,3 +1,4 @@
+@use "../tokens/template-const"as template-const;
 @mixin color-scheme($light, $dark, $all: ()) {
     @media(prefers-color-scheme: dark) {
         @include tokens-for-map($dark);
@@ -14,8 +15,55 @@
     @include tokens-for-map($all);
 }
 
+@mixin light {
+    @at-root {
+        #{template-const.$root-selectors} {
+
+            @media(prefers-color-scheme: light) {
+                @content;
+            }
+
+            @media(prefers-color-scheme: dark) {
+                &[theme=light] {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin dark {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @media(prefers-color-scheme: dark) {
+                @content;
+            }
+
+            @media(prefers-color-scheme: light) {
+                &[theme=dark] {
+                    @content;
+                }
+            }
+        }
+    }
+}
 @mixin tokens-for-map($map) {
     @each $property, $token in $map {
         #{$property}: #{$token};
+    }
+}
+@mixin selector ($value, $attribute, $default) {
+    @if $value==$default {
+
+        &:not([#{$attribute}]),
+        &[#{$attribute}="#{$value}"] {
+            @content;
+        }
+    }
+
+    @else {
+        &[#{$attribute}="#{$value}"] {
+            @content;
+        }
     }
 }

@@ -2,18 +2,26 @@
 @use "./typography/typography" as typography;
 @use "./paint/paint" as paint;
 @use "./theme/theme" as theme;
+@use "./tokens/link"as link;
+@use "./tokens/focus"as focus;
+@use "./tokens/disable" as disable;
 
-@mixin default {
-    @include create-globals();
+@mixin default($palette: 'default', $size: 'large') {
+    @include create-globals($palette, $size);
     @include create-components();
 }
 
-@mixin create-globals() {
-    @include theme.default();
+@mixin create-globals($palette, $size) {
+    @include theme.default($palette, $size);
     @include fonts.create();
 }
 
 @mixin create-components() {
     @include typography.create();
     @include paint.create();
+    @include link.create();
+
+    @include focus.create();
+
+    @include disable.create();
 }

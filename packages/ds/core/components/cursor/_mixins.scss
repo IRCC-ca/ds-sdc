@@ -1,8 +1,0 @@
-@mixin disabled {
-    @media (prefers-reduced-data: reduce) {
-        cursor: not-allowed;
-    }
-    @media (prefers-reduced-data: no-preference) {
-        cursor: not-allowed;
-    }
-}

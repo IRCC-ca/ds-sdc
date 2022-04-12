@@ -1,0 +1,55 @@
+@use '../util/color' as color;
+@use '../util/theme' as theme;
+@use './template-const' as template-const;
+@use './sizes' as sizes;
+
+@mixin focus($outer-palette) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.light {
+                @include selector {
+                    @include theme.tokens-for-map(
+                        (
+                            --focus-border: color.mix-token($outer-palette, 700),
+                            --focus-border-weak:
+                                color.mix-token($outer-palette, 200),
+                        )
+                    );
+                }
+            }
+            @include theme.dark {
+                @include selector {
+                    @include theme.tokens-for-map(
+                        (
+                            --focus-border: color.mix-token($outer-palette, 600),
+                            --focus-border-weak:
+                                color.mix-token($outer-palette, 1100),
+                        )
+                    );
+                }
+            }
+        }
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include selector {
+                @include layout();
+            }
+        }
+    }
+}
+
+@mixin layout {
+    outline: var(--focus-border) solid sizes.$outline-width;
+    outline-offset: sizes.$outline-width;
+    box-shadow: 0 0 0 sizes.$outline-width var(--surface1);
+}
+
+@mixin selector {
+    *:focus {
+        @content;
+    }
+}
