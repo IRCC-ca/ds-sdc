@@ -1,0 +1,20 @@
+@use "./template-const" as template-const;
+
+@mixin layout {
+    cursor: not-allowed;
+}
+@mixin selector {
+    *:disabled {
+        @content;
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include selector {
+                @include layout();
+            }
+        }
+    }
+}

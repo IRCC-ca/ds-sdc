@@ -2,10 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'storybook-button',
-  template: `<div class="alert" role="critical">
-    <strong>Title</strong>
-    <p>body text</p>
-  </div>`,
+  template: `<button style="color: black">{{ this.label }}</button>`,
   styleUrls: ['./button.css'],
 })
 export default class ButtonComponent {

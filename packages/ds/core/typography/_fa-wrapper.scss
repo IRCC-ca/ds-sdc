@@ -99,6 +99,12 @@
 @mixin decor-icon($fa-var, $fa-family) {
   @extend %#{$fa-family};
   content: unquote('"#{ $fa-var }"');
-  content: unquote('"#{ $fa-var }"') / "";
   speak: none;
+}
+@mixin variable-icon($fa-var) {
+  content: var($fa-var);
+  speak: none;
+}
+@mixin font-icon($fa-family) {
+  @extend %#{$fa-family};
 }

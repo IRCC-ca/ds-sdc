@@ -1,0 +1,4 @@
+@use "sass:math" as math;
+@function mod($a, $b) {
+    @return calc($a - $b * math.floor(math.div($a, $b)))
+}

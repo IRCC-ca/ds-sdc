@@ -1,0 +1,60 @@
+@import "./sizes";
+
+$heading: (
+    level: (
+        1: (
+            font-size: $relative-2-25,
+            line-height: $relative-3-25,
+        ),
+        2: (
+            font-size: $relative-2,
+            line-height: $relative-2-75,
+        ),
+        3: (
+            font-size: $relative-1-75,
+            line-height: $relative-2-5,
+        ),
+        4: (
+            font-size: $relative-1-5,
+            line-height: $relative-2-25,
+        ),
+        5: (
+            font-size: $relative-1-25,
+            line-height: $relative-1-75,
+        ),
+        6: (
+            font-size: $relative-1,
+            line-height: $relative-1-5,
+        ),
+    ),
+    weight: (
+        regular: 400,
+        emphasis: 700,
+    ),
+    family: "Lato"
+);
+$body: (
+    level: (
+        1: (
+            font-size: $relative-1-25,
+            line-height: $relative-1-75,
+        ),
+        2: (
+            font-size: $relative-1,
+            line-height: $relative-1-5,
+        ),
+        3: (
+            font-size: $relative-0-875,
+            line-height: $relative-1-25,
+        ),
+        4: (
+            font-size: $relative-0-75,
+            line-height: $relative-1-25,
+        )
+    ),
+    weight: (
+        regular: 400,
+        emphasis: 600,
+    ),
+    family: "Inter"
+);

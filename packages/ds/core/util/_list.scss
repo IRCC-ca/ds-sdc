@@ -1,0 +1,13 @@
+@function filter($list, $filter) {
+    $returnList: ();
+    $bracketed: is-bracketed($list);
+    $separator: list-separator($list);
+    @each $item in $list {
+        @if type-of($filter) == 'list' {
+            @if index($filter, $item) == null { $returnList: append($returnList, $item)}
+        } @else {
+            @if $item != $filter { $returnList: append($returnList, $item); }
+        }
+    }
+    @return join((), $returnList, $separator, $bracketed);
+}
