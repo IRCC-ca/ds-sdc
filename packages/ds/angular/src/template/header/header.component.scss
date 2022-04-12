@@ -1,5 +1,5 @@
-@use "~@ircc-ca/ds-sdc-core/typography/typography";
+@use '~@ircc-ca/ds-sdc-core/typography/typography';
 
-.font:before {
+.font::before {
     @include typography.fonts-FA-decor-icon('\e2df', 'fa-solid');
 }

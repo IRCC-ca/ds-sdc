@@ -1,4 +1,4 @@
-@import "./sizes";
+@import './sizes';
 
 $heading: (
     level: (
@@ -31,7 +31,7 @@ $heading: (
         regular: 400,
         emphasis: 700,
     ),
-    family: "Lato"
+    family: 'Lato',
 );
 $body: (
     level: (
@@ -50,11 +50,11 @@ $body: (
         4: (
             font-size: $relative-0-75,
             line-height: $relative-1-25,
-        )
+        ),
     ),
     weight: (
         regular: 400,
         emphasis: 600,
     ),
-    family: "Inter"
+    family: 'Inter',
 );
