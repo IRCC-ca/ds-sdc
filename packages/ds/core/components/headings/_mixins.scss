@@ -24,7 +24,7 @@ $headings: (
         font-weight: map.get(token.$header-size, bold);
     }
     
-    font-family: 'heading';
+    font-family: heading, serif;
     font-weight: map.get(token.$header-size, regular);
 }
 

@@ -19,7 +19,7 @@ $body: (
         font-weight: map.get(token.$body-size, bold);
     }
     
-    font-family: 'body' serif;
+    font-family: body, serif;
     font-weight: map.get(token.$body-size, regular);
 }
 @mixin body1 {

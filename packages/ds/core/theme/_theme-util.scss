@@ -62,6 +62,7 @@
                         $component-config,
                         $hue-theme
                     );
+                    /* stylelint-disable-next-line max-nesting-depth */
                     @if map-get($component-config, map, all) {
                         @include create-component-styles(
                             $component-config,
@@ -73,7 +74,9 @@
             $alt-theme: list-filter($hues, $hue-theme);
             $alt-theme: list-filter($alt-theme, all);
             @each $alt-hue in $alt-theme {
+                /* stylelint-disable-next-line max-nesting-depth */
                 html[theme='#{$alt-hue}'] {
+                    /* stylelint-disable-next-line max-nesting-depth */
                     @each $component-name, $component-config in $color-maps {
                         @include create-component-styles(
                             $component-config,

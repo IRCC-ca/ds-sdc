@@ -119,7 +119,7 @@ $sizing: (
     border-radius: token.$border-radius;
     border-style: var(--border-style);
     border-color: var(--border-color);
-    font-family: 'heading' serif;
+    font-family: heading, serif;
     font-weight: var(--font-weight);
     font-size: var(--font-size);
     line-height: var(--line-height);

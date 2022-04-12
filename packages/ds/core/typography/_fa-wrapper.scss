@@ -2,31 +2,31 @@
 
 %far,
 %fa-regular {
-    font-family: 'Font Awesome 6 Pro';
+    font-family: 'Font Awesome 6 Pro', serif;
     font-weight: 400;
 }
 
 %fab,
 %fa-brands {
-    font-family: 'Font Awesome 6 Brands';
+    font-family: 'Font Awesome 6 Brands', serif;
     font-weight: 400;
 }
 
 %fas,
 %fa-solid {
-    font-family: 'Font Awesome 6 Pro';
+    font-family: 'Font Awesome 6 Pro', serif;
     font-weight: 900;
 }
 
 %fal,
 %fa-light {
-    font-family: 'Font Awesome 6 Pro';
+    font-family: 'Font Awesome 6 Pro', serif;
     font-weight: 300;
 }
 
 %fat,
 %fa-thin {
-    font-family: 'Font Awesome 6 Pro';
+    font-family: 'Font Awesome 6 Pro', serif;
     font-weight: 100;
 }
 @mixin create() {
@@ -104,6 +104,7 @@
 
 @mixin decor-icon($fa-var, $fa-family) {
     @extend %#{$fa-family};
+    
     content: string.unquote('"#{ $fa-var }"');
     speak: none;
 }
