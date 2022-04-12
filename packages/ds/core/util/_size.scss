@@ -1,0 +1,22 @@
+@use "./list"as list;
+@use "./theme"as theme;
+$size-mode: '';
+$sizes: (small, large);
+
+@mixin set-mode($new-mode: large) {
+    $size-mode: $new-mode !global;
+}
+
+@mixin selector ($value: small) {
+
+    @include theme.selector($value: $value,
+        $attribute: size,
+        $default: $size-mode,
+    ) {
+        @content;
+    }
+}
+
+@function get-alt-mode() {
+    @return list.filter($sizes, $size-mode);
+}

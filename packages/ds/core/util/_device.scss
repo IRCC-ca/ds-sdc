@@ -1,0 +1,25 @@
+@use "../tokens/sizes" as sizes;
+
+@mixin if-hover {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin in-phone-layout {
+    @media only screen and (min-width: sizes.$bp-width-0) and (max-width: sizes.$bp-width-phone) {
+        @content;
+    }
+}
+@mixin in-tablet-layout {
+    @media only screen and (min-width: sizes.$bp-width-phone) and (max-width: sizes.$bp-width-tablet) {
+        @content;
+    }
+}
+@mixin in-desktop-layout {
+    @media only screen and (min-width: sizes.$bp-width-tablet) {
+        @content;
+    }
+}

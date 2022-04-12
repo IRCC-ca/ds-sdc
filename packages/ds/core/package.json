@@ -1,46 +1,46 @@
 {
-    "name": "@ircc-ca/ds-sdc-core",
-    "version": "0.0.2-beta.4",
-    "description": "> TODO: description",
-    "author": "IRCC-ca",
-    "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
-    "license": "MIT",
-    "directories": {
-        "lib": "lib",
-        "test": "__tests__"
-    },
-    "main": "_theme.scss",
-    "files": [
-        "node_modules/@fortawesome/*/**",
-        "node_modules/@fontsource/*/**",
-        "**.scss"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
-    },
-    "scripts": {
-        "test": "echo \"Tests not implemented\"",
-        "format": "prettier \"./**/**.{ts,json,css,scss,html}\" --write",
-        "format:check": "prettier \"./**/**.{ts,json,css,scss,html}\" --check",
-        "lint:style": "stylelint \"./**/**.scss\"",
-        "lint": "npm run lint:style"
-    },
-    "bugs": {
-        "url": "https://github.com/IRCC-ca/ds-sdc/issues"
-    },
-    "publishConfig": {
-        "access": "restricted",
-        "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
-        "tag": "ds-sdc-core"
-    },
-    "dependencies": {
-        "@fontsource/inter": "^4.5.4",
-        "@fontsource/lato": "^4.5.2",
-        "@fortawesome/fontawesome-pro": "^6.0.0"
-    },
-    "devDependencies": {
-        "eslint-config-prettier": "^8.5.0",
-        "prettier": "^2.6.2"
-    }
+  "name": "@ircc-ca/ds-sdc-core",
+  "version": "0.0.2",
+  "description": "> TODO: description",
+  "author": "IRCC-ca",
+  "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "main": "_theme.scss",
+  "files": [
+    "node_modules/@fortawesome/*/**",
+    "node_modules/@fontsource/*/**",
+    "**.scss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
+  },
+  "scripts": {
+    "test": "echo \"Tests not implemented\"",
+    "format": "prettier \"./**/**.{ts,json,css,scss,html}\" --write",
+    "format:check": "prettier \"./**/**.{ts,json,css,scss,html}\" --check",
+    "lint:style": "stylelint \"./**/**.scss\"",
+    "lint": "npm run lint:style"
+  },
+  "bugs": {
+    "url": "https://github.com/IRCC-ca/ds-sdc/issues"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
+    "tag": "ds-sdc-core"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^4.5.4",
+    "@fontsource/lato": "^4.5.2",
+    "@fortawesome/fontawesome-pro": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2"
+  }
 }

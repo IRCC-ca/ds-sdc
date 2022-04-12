@@ -103,15 +103,14 @@
 }
 
 @mixin decor-icon($fa-var, $fa-family) {
-    @extend %#{$fa-family};
-
-    content: string.unquote('"#{ $fa-var }"');
-    speak: none;
+  @extend %#{$fa-family};
+  content: unquote('"#{ $fa-var }"');
+  speak: none;
 }
 @mixin variable-icon($fa-var) {
-    content: var($fa-var);
-    speak: none;
+  content: var($fa-var);
+  speak: none;
 }
 @mixin font-icon($fa-family) {
-    @extend %#{$fa-family};
+  @extend %#{$fa-family};
 }

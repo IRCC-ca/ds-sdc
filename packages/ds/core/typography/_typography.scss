@@ -1,41 +1,118 @@
-@use '../layout/layout-var' as token;
 @use 'fonts';
-@use 'sass:map';
-@forward 'fonts' as fonts-*;
+@use '../tokens/text'as text;
+@use "../util/size"as size;
+@use '../util/color'as color;
+@use "../tokens/template-const"as template-const;
+@forward 'fonts'as fonts-*;
 
-@mixin createHeadings {
-    @include fonts.Lato-fontFace(
-        $weight: 400,
-        $display: auto,
-        $style: normal,
-        $fontDir: '~@fontsource/lato/files',
-        $fontName: 'heading'
-    );
+@mixin fontSize($map, $level) {
+  font-size: map-get($map, $level, font-size);
+  line-height: map-get($map, $level, line-height);
 }
 
-@mixin createBody($default-font) {
-    @include fonts.Inter-fontFace(
-        $weight: 400,
-        $display: auto,
-        $style: normal,
-        $fontDir: '~@fontsource/inter/files',
-        $fontName: 'body'
-    );
+@mixin emphasis($weight) {
 
-    body {
-        /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
-        @extend .#{$default-font};
-    }
-
-    strong,
-    .emphasis,
-    b {
-        font-weight: map.get(token.$body-size, bold);
-    }
+  & strong,
+  & .emphasis,
+  & b,
+  & .bold {
+    font-weight: $weight;
+  }
 }
 
-@mixin create($default-font: 'body2') {
-    @include createHeadings();
-    @include createBody($default-font);
-    @include fonts.FA-create();
+@mixin headings {
+  %heading {
+    color: var(--text-primary);
+    font-weight: map-get(text.$heading, weight, regular);
+    font-family: map-get(text.$heading, family);
+    @include emphasis(map-get(text.$heading, weight, emphasis));
+  }
+
+  #{template-const.$root-selectors} {
+
+    h1,
+    .h1 {
+      @extend %heading;
+      @include fontSize(map-get(text.$heading, level), 1);
+    }
+
+    h2,
+    .h2 {
+      @extend %heading;
+      @include fontSize(map-get(text.$heading, level), 2);
+    }
+
+    h3,
+    .h3 {
+      @extend %heading;
+      @include fontSize(map-get(text.$heading, level), 3);
+    }
+
+    h4,
+    .h4 {
+      @extend %heading;
+      @include fontSize(map-get(text.$heading, level), 4);
+    }
+
+    h5,
+    .h5 {
+      @extend %heading;
+      @include fontSize(map-get(text.$heading, level), 5);
+    }
+
+    h6,
+    .h6 {
+      @extend %heading;
+      @include fontSize(map-get(text.$heading, level), 6);
+    }
+  }
+}
+
+@mixin body() {
+  %body {
+    color: var(--text-primary);
+    font-weight: map-get(text.$body, weight, regular);
+    font-family: map-get(text.$body, family);
+    @include emphasis(map-get(text.$body, weight, emphasis));
+  }
+
+  #{template-const.$root-selectors} {
+    .body1 {
+      @extend %body;
+      @include fontSize(map-get(text.$body, level), 1);
+    }
+
+    .body2 {
+      @extend %body;
+      @include fontSize(map-get(text.$body, level), 1);
+    }
+
+    .body3 {
+      @extend %body;
+      @include fontSize(map-get(text.$body, level), 1);
+    }
+
+    .body4 {
+      @extend %body;
+      @include fontSize(map-get(text.$body, level), 1);
+    }
+
+    @include size.selector(small) {
+      body {
+        @extend .body3;
+      }
+    }
+
+    @include size.selector(large) {
+      body {
+        @extend .body2;
+      }
+    }
+  }
+
+}
+
+@mixin create() {
+  @include body();
+  @include headings();
 }

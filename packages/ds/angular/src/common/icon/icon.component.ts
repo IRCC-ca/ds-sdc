@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 export const FONT_FAMILIES = {
     ['fa-solid']: null,
@@ -8,25 +8,34 @@ export const FONT_FAMILIES = {
     ['fa-brands']: null,
 };
 
-export interface IIconConfig {
-    ariaLabel?: string;
-    unicode: string;
-    fontFamily: keyof typeof FONT_FAMILIES;
+export interface IIconConfig{
+  ariaLabel?: string;
+  unicode: string;
+  fontFamily: keyof typeof FONT_FAMILIES;
 }
 
 @Component({
-    selector: 'jds-font-icon',
-    templateUrl: './icon.component.html',
-    styleUrls: ['./icon.component.scss'],
+  selector: 'font-icon',
+  templateUrl: './icon.component.html',
+  styleUrls: ['./icon.component.scss']
 })
+
 export class IconComponent {
-    @Input() iconConfig!: IIconConfig;
 
-    public get formattedIcon(): string {
-        return "'" + '\\' + this.iconConfig.unicode + "'";
-    }
+  @Input() iconConfig!: IIconConfig;
 
-    public get isHidden(): boolean {
-        return this.iconConfig.ariaLabel === '';
-    }
+  constructor() {}
+
+  public get formattedIcon(): string {
+    return(
+      "'" + '\\' + this.iconConfig.unicode + "'"
+    );
+}
+
+  public get isHidden(): boolean {
+      return(
+        this.iconConfig.ariaLabel === ''
+      );
+  }
+
 }

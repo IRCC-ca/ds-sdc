@@ -1,6 +1,4 @@
-@use 'sass:list';
-
-@function list-filter($list, $filter) {
+@function filter($list, $filter) {
     $returnList: ();
     $bracketed: is-bracketed($list);
     $separator: list.separator($list);
