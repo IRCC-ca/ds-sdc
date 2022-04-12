@@ -1,5 +1,3 @@
-@import '../_util/list';
-
 @mixin varsForMap($size-map, $str-prefix: '') {
     @each $key, $value in $size-map {
         @if type-of($value) == map {
