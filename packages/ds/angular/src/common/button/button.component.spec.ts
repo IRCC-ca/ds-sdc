@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JlFormLinkComponent } from './jl-form-link.component';
+import { ButtonComponent } from './button.component';
 
-describe('JlFormLinkComponent', () => {
-  let component: JlFormLinkComponent;
-  let fixture: ComponentFixture<JlFormLinkComponent>;
+describe('FooterComponent', () => {
+  let component: ButtonComponent;
+  let fixture: ComponentFixture<ButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JlFormLinkComponent ]
+      declarations: [ ButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JlFormLinkComponent);
+    fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

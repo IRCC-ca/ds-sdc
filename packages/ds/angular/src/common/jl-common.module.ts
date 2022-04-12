@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { IconComponent } from './icon/icon.component';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
     declarations: [
