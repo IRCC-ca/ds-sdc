@@ -19,6 +19,7 @@
   },
   "scripts": {
     "test": "ng test --watch=false --code-coverage=true",
+    "test:watch": "ng test --watch=true --code-coverage=true",
     "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
     "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
     "lint:style": "stylelint \"src/**/*.scss\"",

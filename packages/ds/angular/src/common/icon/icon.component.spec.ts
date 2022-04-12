@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IconComponent } from './icon.component';
+import { IconComponent, IIconConfig } from './icon.component';
 
 describe('FooterComponent', () => {
     let component: IconComponent;
@@ -15,6 +15,11 @@ describe('FooterComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(IconComponent);
         component = fixture.componentInstance;
+        const config: IIconConfig = {
+            fontFamily:'fa-brands',
+            unicode: 'e027'
+        }
+        component.iconConfig = config,
         fixture.detectChanges();
     });
 
