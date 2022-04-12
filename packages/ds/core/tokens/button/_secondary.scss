@@ -4,9 +4,9 @@
 @use '../template-const' as template-const;
 @use './button-const' as button-const;
 @use '../../util/device' as device;
+@use '../sizes' as sizes;
 
 @mixin button-secondary($palette) {
-    @include button-const.button-size();
 
     @include button-const.button($category: 'secondary', $color: null) {
         @include device.if-hover {
@@ -50,5 +50,34 @@
                 )
             );
         }
+    }
+}
+
+@mixin create() {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include button-const.button($category: 'secondary', $color: null) {
+                @include layout ();
+            }
+        }
+    }
+}
+
+@mixin layout() {
+    @include button-const.layout();
+    box-shadow: sizes.$border-style;
+    background-color: var(--background);
+    @include device.if-hover {
+        background-color: var(--generic-hover);
+    }
+    &:active {
+        background-color: var(--generic-active);
+    }
+    &:disabled {
+        --text: var(--text-disabled);
+    }
+    &:focus {
+        box-shadow: sizes.$border-style, sizes.$focus-shadow;
+
     }
 }

@@ -1,24 +1,16 @@
-@use "../../util/theme"as theme;
-@use "../../util/size"as size;
-@use "../template-const"as template-const;
+@use '../../util/theme' as theme;
+@use '../../util/size' as size;
+@use '../template-const' as template-const;
+@use '../sizes' as token-size;
 $selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
 
 @mixin button($category: 'primary', $color: 'cta') {
-    #{$selectors} {
-
-        @include theme.selector($category,
-            'category',
-            'primary') {
+    @include selectors {
+        @include theme.selector($category, 'category', 'primary') {
             @if not $color {
                 @content;
-            }
-
-            @else {
-                @include theme.selector($color,
-                    'color',
-                    'cta'
-
-                ) {
+            } @else {
+                @include theme.selector($color, 'color', 'cta') {
                     @content;
                 }
             }
@@ -27,17 +19,29 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
 }
 
 @mixin button-size {
-    @at-root {
-        #{template-const.$root-selectors} {
-            #{$selectors} {
-                @include size.selector(small) {
-                    @extend .h6;
-                }
 
-                @include size.selector(large) {
-                    @extend .h5;
-                }
-            }
+        @include size.selector(small) {
+            @extend .h6;
+            padding: token-size.$small-padding;
         }
+
+        @include size.selector(large) {
+            @extend .h5;
+            padding: token-size.$large-padding;
+        }
+}
+
+@mixin selectors {
+    #{$selectors} {
+        @content;
     }
+}
+
+@mixin layout {
+    border-radius: token-size.$border-radius;
+    border-style: none;
+    justify-content: center;
+    max-width: token-size.$max-button-width;
+    @include button-size();
+    color: var(--text);
 }

@@ -7,7 +7,6 @@
 @use '../../util/device' as device;
 
 @mixin button-primary($palette, $text-palette) {
-    @include button-const.button-size();
 
     @include theme.light {
         @include button-const.button($color: $palette) {
@@ -35,4 +34,30 @@
                 ));
         }
     }
+}
+
+@mixin create() {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include button-const.button($color: null) {
+                @include layout ();
+            }
+        }
+    }
+}
+
+@mixin layout() {
+    @include button-const.layout();
+
+    background-color: var(--background);
+    @include device.if-hover {
+        background-color: var(--background-hover);
+    }
+    &:active {
+        background-color: var(--background-active);
+    }
+    &:disabled {
+        background-color: var(--background-disabled);
+    }
+
 }

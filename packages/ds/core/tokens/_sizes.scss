@@ -19,11 +19,23 @@ $relative-0-75: 0.75rem;
 $relative-0-5: 0.5rem;
 $relative-0-25: 0.25rem;
 
+
+$fixed-400: 400px;
+$fixed-20: 20px;
+$fixed-16: 16px;
+$fixed-12: 12px;
 $fixed-8: 8px;
 $fixed-4: 4px;
 $fixed-3: 3px;
 $fixed-2: 2px;
 $fixed-1: 1px;
+$fixed-0: 0px;
 
 $border-radius: $fixed-4;
+$border-style: $fixed-0 $fixed-0 $fixed-0 $fixed-1 var(--border) inset;
 $outline-width: $fixed-3;
+$focus-shadow: 0 0 0 $outline-width var(--surface1);
+
+$max-button-width: $fixed-400;
+$small-padding: $fixed-8 $fixed-16;
+$large-padding: $fixed-12 $fixed-20;

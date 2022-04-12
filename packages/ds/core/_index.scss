@@ -5,6 +5,8 @@
 @use "./tokens/link"as link;
 @use "./tokens/focus"as focus;
 @use "./tokens/disable" as disable;
+@use "./tokens/button/primary" as button-primary;
+@use "./tokens/button/secondary" as button-secondary;
 
 @mixin default($palette: 'default', $size: 'large') {
     @include create-globals($palette, $size);
@@ -20,6 +22,8 @@
     @include typography.create();
     @include paint.create();
     @include link.create();
+    @include button-primary.create();
+    @include button-secondary.create();
 
     @include focus.create();
 

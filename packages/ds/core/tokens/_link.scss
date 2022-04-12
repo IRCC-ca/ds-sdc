@@ -68,10 +68,8 @@
         color: var(--text);
     }
     @include device.if-hover {
-        &:hover {
             color: var(--text-hover);
             background-color: var(--generic-hover);
-        }
     }
 
 

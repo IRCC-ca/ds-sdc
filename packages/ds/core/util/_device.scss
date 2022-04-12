@@ -2,7 +2,9 @@
 
 @mixin if-hover {
     @media (any-hover: hover) {
-        @content;
+        &:hover {
+            @content;
+        }
     }
 }
 

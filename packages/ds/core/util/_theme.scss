@@ -55,14 +55,14 @@
 @mixin selector ($value, $attribute, $default) {
     @if $value==$default {
 
-        &:not([#{$attribute}]),
-        &[#{$attribute}="#{$value}"] {
+        &:where(:not([#{$attribute}])),
+        &:where([#{$attribute}="#{$value}"]) {
             @content;
         }
     }
 
     @else {
-        &[#{$attribute}="#{$value}"] {
+        &:where([#{$attribute}="#{$value}"]) {
             @content;
         }
     }
