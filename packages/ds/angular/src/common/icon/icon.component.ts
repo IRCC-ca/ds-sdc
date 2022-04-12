@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 export const FONT_FAMILIES = {
     ['fa-solid']: null,
@@ -15,14 +15,12 @@ export interface IIconConfig {
 }
 
 @Component({
-    selector: 'font-icon',
+    selector: 'jds-font-icon',
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent {
     @Input() iconConfig!: IIconConfig;
-
-    constructor() {}
 
     public get formattedIcon(): string {
         return "'" + '\\' + this.iconConfig.unicode + "'";

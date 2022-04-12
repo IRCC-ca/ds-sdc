@@ -1,7 +1,7 @@
 @use '~@ircc-ca/ds-sdc-core/typography/typography';
 
 .font-icon {
-    &:before {
+    &::before {
         --font-unicode: inherit;
         @include typography.fonts-FA-variable-icon(--font-unicode);
     }
