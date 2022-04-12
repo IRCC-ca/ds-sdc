@@ -75,9 +75,9 @@
     }
     &:disabled {
         --text: var(--text-disabled);
+        background-color: var(--background);
     }
     &:focus {
         box-shadow: sizes.$border-style, sizes.$focus-shadow;
-
     }
 }
