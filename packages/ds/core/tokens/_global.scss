@@ -2,35 +2,43 @@
 @use './text' as text;
 @use '../util/theme' as theme;
 @use './template-const' as template-const;
+@use '../util/device' as device;
 @mixin global($neutral, $accent) {
     @at-root {
         #{template-const.$root-selectors} {
-            @include theme.color-scheme(
-                $light: (
+            @include theme.light {
+                @include device.if-hover {
+                    @include theme.tokens-for-map((
+                        --generic-hover: color.mix-token($neutral, 900, 0.06),
+                        --border-hover: color.mix-token($neutral, 900),));
+                }
+                @include theme.tokens-for-map((
                     --surface1: color.mix-token($neutral, 100),
                     --surface2: color.mix-token($neutral, 200),
-                    --surface3: color.mix-token($neutral, 100),
-                    --generic-hover: color.mix-token($neutral, 900, 0.06),
                     --generic-active: color.mix-token($neutral, 900, 0.12),
                     --border: color.mix-token($neutral, 800),
-                    --border-hover: color.mix-token($neutral, 900),
                     --divider: color.mix-token($neutral, 300),
                     --border-disabled: color.mix-token($neutral, 300),
                     --dimmer: color.mix-token($neutral, 1100),
-                ),
-                $dark: (
+                    ));
+            }
+            @include theme.dark {
+                @include device.if-hover {
+                    @include theme.tokens-for-map((
+                        --generic-hover: color.mix-token($neutral, 400, 0.06),
+                        --border-hover: color.mix-token($neutral, 400),
+                        ));
+                }
+                @include theme.tokens-for-map((
                     --surface1: color.mix-token($neutral, 1200),
                     --surface2: color.mix-token($neutral, 1100),
-                    --surface3: color.mix-token($neutral, 1200),
-                    --generic-hover: color.mix-token($neutral, 400, 0.06),
                     --generic-active: color.mix-token($neutral, 400, 0.12),
                     --border: color.mix-token($neutral, 500),
-                    --border-hover: color.mix-token($neutral, 400),
                     --divider: color.mix-token($neutral, 1000),
                     --border-disabled: color.mix-token($neutral, 1000),
                     --dimmer: color.mix-token($neutral, 200),
-                )
-            );
+                    ));
+            }
         }
     }
 }

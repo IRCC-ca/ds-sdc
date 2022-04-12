@@ -2,16 +2,19 @@
 @use '../util/theme' as theme;
 @use './template-const' as template-const;
 @use './sizes' as sizes;
+@use '../util/device' as device;
 
 @mixin link($palette, $visited-palette) {
     @at-root {
         #{template-const.$root-selectors} {
             @include theme.light {
                 @include anchor-selector {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 800)};
+                    }
                     @include theme.tokens-for-map(
                         (
                             --text: color.mix-token($palette, 700),
-                            --text-hover: color.mix-token($palette, 800),
                             --text-active: color.mix-token($palette, 900),
                             --text-visited:
                                 color.mix-token($visited-palette, 700),
@@ -22,10 +25,12 @@
 
             @include theme.dark {
                 @include anchor-selector {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 500)};
+                    }
                     @include theme.tokens-for-map(
                         (
                             --text: color.mix-token($palette, 600),
-                            --text-hover: color.mix-token($palette, 500),
                             --text-active: color.mix-token($palette, 400),
                             --text-visited:
                                 color.mix-token($visited-palette, 600),
@@ -62,11 +67,13 @@
     &:link {
         color: var(--text);
     }
-
-    &:hover {
-        color: var(--text-hover);
-        background-color: var(--generic-hover);
+    @include device.if-hover {
+        &:hover {
+            color: var(--text-hover);
+            background-color: var(--generic-hover);
+        }
     }
+
 
     &:focus {
         box-shadow: none;
