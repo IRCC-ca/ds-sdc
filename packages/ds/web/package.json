@@ -1,0 +1,46 @@
+{
+  "name": "@ircc-ca/ds-sdc-web",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "author": "IRCC-ca",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/web/web.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "web": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "bugs": {
+    "url": "https://github.com/IRCC-ca/ds-sdc/issues"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
+    "tag": "ds-sdc-web"
+  },
+  "dependencies": {
+    "@ircc-ca/ds-sdc-core": "0.0.2"
+  },
+  "devDependencies": {
+    "@stencil/angular-output-target": "^0.4.0",
+    "@stencil/core": "^2.13.0",
+    "puppeteer": "^10.0.0"
+  },
+  "license": "MIT"
+}

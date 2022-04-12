@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@ircc-ca/ds-sdc-core": "^0.0.2",
+    "@stencil/core": "^2.15.0",
     "tslib": "^2.3.0"
   },
   "publishConfig": {

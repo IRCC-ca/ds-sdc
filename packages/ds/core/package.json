@@ -38,7 +38,8 @@
     "@angular-eslint/schematics": "^13.2.0",
     "@fontsource/inter": "^4.5.4",
     "@fontsource/lato": "^4.5.2",
-    "@fortawesome/fontawesome-pro": "^6.0.0"
+    "@fortawesome/fontawesome-pro": "^6.0.0",
+    "@stencil/core": "^2.15.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
