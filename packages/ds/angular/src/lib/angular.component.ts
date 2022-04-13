@@ -1,20 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 @Component({
-  selector: 'lib-angular',
-  template: `
-    <p>
-      angular works!
-    </p>
-  `,
-  styles: [
-  ]
+    selector: 'jds-angular',
+    template: ` <p>angular works!</p> `,
+    styles: [],
 })
-export class AngularComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class AngularComponent {}

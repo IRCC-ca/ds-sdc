@@ -7,7 +7,6 @@
 @use '../sizes' as sizes;
 
 @mixin button-secondary($palette) {
-
     @include button-const.button($category: 'secondary', $color: null) {
         @include device.if-hover {
             --background-hover: #{var(--generic-hover)};
@@ -57,7 +56,7 @@
     @at-root {
         #{template-const.$root-selectors} {
             @include button-const.button($category: 'secondary', $color: null) {
-                @include layout ();
+                @include layout();
             }
         }
     }
@@ -65,18 +64,23 @@
 
 @mixin layout() {
     @include button-const.layout();
+
     box-shadow: sizes.$border-style;
     background-color: var(--background);
     @include device.if-hover {
         background-color: var(--generic-hover);
     }
+
     &:active {
         background-color: var(--generic-active);
     }
+
     &:disabled {
         --text: var(--text-disabled);
+
         background-color: var(--background);
     }
+
     &:focus {
         box-shadow: sizes.$border-style, sizes.$focus-shadow;
     }

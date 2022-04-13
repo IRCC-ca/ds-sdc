@@ -1,4 +1,4 @@
-@use "../tokens/sizes" as sizes;
+@use '../tokens/sizes' as sizes;
 
 @mixin if-hover {
     @media (any-hover: hover) {

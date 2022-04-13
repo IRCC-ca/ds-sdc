@@ -3,15 +3,9 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from './icon/icon.component';
 
 @NgModule({
-    declarations: [
-        IconComponent
-    ],
-    imports: [
-        CommonModule
-    ],
-    exports: [
-        IconComponent
-    ],
+    declarations: [IconComponent],
+    imports: [CommonModule],
+    exports: [IconComponent],
     providers: [],
 })
-export class JlCommonModule { }
+export class JlCommonModule {}
