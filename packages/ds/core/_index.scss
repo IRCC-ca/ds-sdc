@@ -7,6 +7,7 @@
 @use './tokens/disable' as disable;
 @use './tokens/button/primary' as button-primary;
 @use './tokens/button/secondary' as button-secondary;
+@use './tokens/button/plain' as button-plain;
 
 @mixin default($palette: 'default', $size: 'large') {
     @include create-globals($palette, $size);
@@ -24,6 +25,7 @@
     @include link.create();
     @include button-primary.create();
     @include button-secondary.create();
+    @include button-plain.create();
 
     @include focus.create();
 
