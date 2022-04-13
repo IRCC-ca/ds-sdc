@@ -1,5 +1,6 @@
 @use '../theme/ircc-jl-colours' as tokens;
-@use "sass:list";
+@use 'sass:map';
+@use 'sass:list';
 @import '../tokens/template-const';
 $color-mode: '';
 @mixin set-mode($new-mode: default) {
@@ -7,6 +8,11 @@ $color-mode: '';
 }
 
 @function mix-token($palette, $shade: 1200, $opacity: 1) {
-    $color: map-get(tokens.$journeylab-palette, $color-mode, $palette, $shade);
-        @return #{hsla($hue: list.nth($color, 1), $saturation: list.nth($color, 2), $lightness: list.nth($color, 3), $alpha: $opacity)};
+    $color: map.get(tokens.$journeylab-palette, $color-mode, $palette, $shade);
+    @return #{hsla(
+            $hue: list.nth($color, 1),
+            $saturation: list.nth($color, 2),
+            $lightness: list.nth($color, 3),
+            $alpha: $opacity
+        )};
 }

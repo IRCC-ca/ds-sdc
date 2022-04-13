@@ -1,5 +1,5 @@
-@use "../tokens/template-const" as template-const;
-@use "../util/integer" as integer;
+@use '../tokens/template-const' as template-const;
+@use '../util/integer' as integer;
 @mixin create($surface-start: 1) {
     @at-root {
         $surface-level: $surface-start;
@@ -11,5 +11,6 @@
 
 @mixin backgroundLevel($counter) {
     $name: --surface#{$counter};
+
     background: var($name);
-};
+} ;

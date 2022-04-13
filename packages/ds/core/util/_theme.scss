@@ -1,14 +1,17 @@
-@use "../tokens/template-const"as template-const;
+@use '../tokens/template-const' as template-const;
+
 @mixin color-scheme($light, $dark, $all: ()) {
-    @media(prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
         @include tokens-for-map($dark);
-        &[theme=light] {
+
+        &[theme='light'] {
             @include tokens-for-map($light);
         }
     }
-    @media(prefers-color-scheme: light) {
+    @media (prefers-color-scheme: light) {
         @include tokens-for-map($light);
-        &[theme=dark] {
+
+        &[theme='dark'] {
             @include tokens-for-map($dark);
         }
     }
@@ -18,13 +21,12 @@
 @mixin light {
     @at-root {
         #{template-const.$root-selectors} {
-
-            @media(prefers-color-scheme: light) {
+            @media (prefers-color-scheme: light) {
                 @content;
             }
 
-            @media(prefers-color-scheme: dark) {
-                &[theme=light] {
+            @media (prefers-color-scheme: dark) {
+                &[theme='light'] {
                     @content;
                 }
             }
@@ -35,12 +37,12 @@
 @mixin dark {
     @at-root {
         #{template-const.$root-selectors} {
-            @media(prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: dark) {
                 @content;
             }
 
-            @media(prefers-color-scheme: light) {
-                &[theme=dark] {
+            @media (prefers-color-scheme: light) {
+                &[theme='dark'] {
                     @content;
                 }
             }
@@ -52,17 +54,18 @@
         #{$property}: #{$token};
     }
 }
-@mixin selector ($value, $attribute, $default) {
-    @if $value==$default {
-
+@mixin selector(
+    $value,
+    $attribute,
+    $default
+) {
+    @if $value == $default {
         &:where(:not([#{$attribute}])),
-        &:where([#{$attribute}="#{$value}"]) {
+        &:where([#{$attribute}='#{$value}']) {
             @content;
         }
-    }
-
-    @else {
-        &:where([#{$attribute}="#{$value}"]) {
+    } @else {
+        &:where([#{$attribute}='#{$value}']) {
             @content;
         }
     }

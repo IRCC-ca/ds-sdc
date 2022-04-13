@@ -1,4 +1,4 @@
-@import "./mixins";
+@import './mixins';
 
 #{$button-selectors} {
     @include button();
