@@ -14,3 +14,14 @@ export * from './template/header/header.component';
 
 export * from './common/button/button.component';
 export * from './common/icon/icon.component';
+
+// DIRECTIVES
+export * from './stencil-generated/components'
+export * from './stencil-generated/index'
+// import * as d from './stencil-generated/components';
+// export const DIRECTIVES = [
+//   d.MyComponent
+// ];
+
+// PACKAGE MODULE
+// export { IRCCModule } from './stencil-generated/web-module';

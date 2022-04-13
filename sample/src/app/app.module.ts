@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
 
 import { JlTemplateModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular'
+import { IRCCModule } from '@ircc-ca/ds-sdc-angular/src/stencil-generated/web-module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { JlTemplateModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular'
     TranslateModule.forRoot(),
     JlTemplateModule,
     JlCommonModule,
+    IRCCModule
   ],
   providers: [],
   bootstrap: [AppComponent],

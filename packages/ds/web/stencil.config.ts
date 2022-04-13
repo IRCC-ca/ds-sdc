@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { angularOutputTarget } from '@stencil/angular-output-target';
 
 export const config: Config = {
   namespace: 'web',
@@ -17,5 +18,10 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+    angularOutputTarget({
+      componentCorePackage: '@ircc-ca/ds-sdc-web',
+      directivesProxyFile: '../angular/src/stencil-generated/components.ts',
+      directivesArrayFile: '../angular/src/stencil-generated/index.ts'
+    }),
   ],
 };

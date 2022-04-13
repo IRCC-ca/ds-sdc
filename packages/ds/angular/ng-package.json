@@ -4,5 +4,5 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": ["@ircc-ca/ds-sdc-core"]
+  "allowedNonPeerDependencies": ["@ircc-ca/ds-sdc-core", "@stencil/core"]
 }
