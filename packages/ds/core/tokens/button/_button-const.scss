@@ -19,16 +19,12 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
     }
 }
 
-@mixin button-size {
+@mixin button-size-padding {
     @include size.selector(small) {
-        @extend .h6;
-
         padding: token-size.$small-padding;
     }
 
     @include size.selector(large) {
-        @extend .h5;
-
         padding: token-size.$large-padding;
     }
 }
@@ -46,6 +42,26 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
     max-width: token-size.$max-button-width;
 
     @include button-size();
+    @include button-size-padding();
 
     color: var(--text);
+}
+
+@mixin layout-round {
+    border-radius: 99999px;
+    border-style: none;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    @include button-size();
+
+    color: var(--text);
+}
+@mixin button-size {
+    @include size.selector(small) {
+        @extend .h6;
+    }
+
+    @include size.selector(large) {
+        @extend .h5;
+    }
 }

@@ -6,9 +6,11 @@
 @use './button-const' as button-const;
 @use '../../util/device' as device;
 
+$primary: 'primary';
+
 @mixin button-primary($palette, $text-palette) {
     @include theme.light {
-        @include button-const.button($color: $palette) {
+        @include button-const.button($category: $primary, $color: $palette) {
             @include device.if-hover {
                 --background-hover: #{color.mix-token($palette, 800)};
             }
@@ -24,7 +26,7 @@
     }
 
     @include theme.dark {
-        @include button-const.button($color: $palette) {
+        @include button-const.button($category: $primary, $color: $palette) {
             @include device.if-hover {
                 --background-hover: #{color.mix-token($palette, 500)};
             }
@@ -43,7 +45,7 @@
 @mixin create() {
     @at-root {
         #{template-const.$root-selectors} {
-            @include button-const.button($color: null) {
+            @include button-const.button($category: $primary, $color: null) {
                 @include layout();
             }
         }
