@@ -6,10 +6,10 @@
 @use '../../util/device' as device;
 @use '../sizes' as sizes;
 
-$plain: 'plain';
+$round: 'round';
 
-@mixin button-plain($palette) {
-    @include button-const.button($category: $plain, $color: null) {
+@mixin button-round($palette) {
+    @include button-const.button($category: $round, $color: null) {
         @include device.if-hover {
             --background-hover: #{var(--generic-hover)};
         }
@@ -22,7 +22,7 @@ $plain: 'plain';
     }
 
     @include theme.light {
-        @include button-const.button($category: $plain, $color: $palette) {
+        @include button-const.button($category: $round, $color: $palette) {
             @include theme.tokens-for-map(
                 (
                     --text: color.mix-token($palette, 700),
@@ -33,7 +33,7 @@ $plain: 'plain';
     }
 
     @include theme.dark {
-        @include button-const.button($category: $plain, $color: $palette) {
+        @include button-const.button($category: $round, $color: $palette) {
             @include theme.tokens-for-map(
                 (
                     --text: color.mix-token($palette, 600),
@@ -47,7 +47,7 @@ $plain: 'plain';
 @mixin create() {
     @at-root {
         #{template-const.$root-selectors} {
-            @include button-const.button($category: $plain, $color: null) {
+            @include button-const.button($category: $round, $color: null) {
                 @include layout();
             }
         }
@@ -55,7 +55,7 @@ $plain: 'plain';
 }
 
 @mixin layout() {
-    @include button-const.layout();
+    @include button-const.layout-round();
 
     background-color: var(--background);
     @include device.if-hover {
