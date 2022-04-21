@@ -1,12 +1,14 @@
-@use "./typography/fonts" as fonts;
-@use "./typography/typography" as typography;
-@use "./paint/paint" as paint;
-@use "./theme/theme" as theme;
-@use "./tokens/link"as link;
-@use "./tokens/focus"as focus;
-@use "./tokens/disable" as disable;
-@use "./tokens/button/primary" as button-primary;
-@use "./tokens/button/secondary" as button-secondary;
+@use './typography/fonts' as fonts;
+@use './typography/typography' as typography;
+@use './paint/paint' as paint;
+@use './theme/theme' as theme;
+@use './tokens/link' as link;
+@use './tokens/focus' as focus;
+@use './tokens/disable' as disable;
+@use './tokens/button/primary' as button-primary;
+@use './tokens/button/secondary' as button-secondary;
+@use './tokens/button/plain' as button-plain;
+@use './tokens/button/round' as button-round;
 
 @mixin default($palette: 'default', $size: 'large') {
     @include create-globals($palette, $size);
@@ -24,6 +26,8 @@
     @include link.create();
     @include button-primary.create();
     @include button-secondary.create();
+    @include button-plain.create();
+    @include button-round.create();
 
     @include focus.create();
 

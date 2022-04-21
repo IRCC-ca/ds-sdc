@@ -1,3 +1,4 @@
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
 @use '../../util/theme' as theme;
 @use '../../util/size' as size;
 @use '../template-const' as template-const;
@@ -18,17 +19,14 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
     }
 }
 
-@mixin button-size {
+@mixin button-size-padding {
+    @include size.selector(small) {
+        padding: token-size.$small-padding;
+    }
 
-        @include size.selector(small) {
-            @extend .h6;
-            padding: token-size.$small-padding;
-        }
-
-        @include size.selector(large) {
-            @extend .h5;
-            padding: token-size.$large-padding;
-        }
+    @include size.selector(large) {
+        padding: token-size.$large-padding;
+    }
 }
 
 @mixin selectors {
@@ -42,6 +40,28 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
     border-style: none;
     justify-content: center;
     max-width: token-size.$max-button-width;
+
     @include button-size();
+    @include button-size-padding();
+
     color: var(--text);
+}
+
+@mixin layout-round {
+    border-radius: 99999px;
+    border-style: none;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    @include button-size();
+
+    color: var(--text);
+}
+@mixin button-size {
+    @include size.selector(small) {
+        @extend .h6;
+    }
+
+    @include size.selector(large) {
+        @extend .h5;
+    }
 }

@@ -6,8 +6,10 @@
 @use '../../util/device' as device;
 @use '../sizes' as sizes;
 
-@mixin button-secondary($palette) {
-    @include button-const.button($category: 'secondary', $color: null) {
+$round: 'round';
+
+@mixin button-round($palette) {
+    @include button-const.button($category: $round, $color: null) {
         @include device.if-hover {
             --background-hover: #{var(--generic-hover)};
         }
@@ -15,37 +17,27 @@
             (
                 --background-active: var(--generic-active),
                 --background: color.mix-token(neutral, 600, 0),
-                --border: var(--text),
-                --border-disabled: var(--text-disabled),
             )
         );
     }
 
     @include theme.light {
-        @include button-const.button($category: 'secondary', $color: $palette) {
-            @include device.if-hover {
-                --border-hover: #{color.mix-token($palette, 800)};
-            }
+        @include button-const.button($category: $round, $color: $palette) {
             @include theme.tokens-for-map(
                 (
                     --text: color.mix-token($palette, 700),
                     --text-disabled: color.mix-token($palette, 300),
-                    --border-active: color.mix-token($palette, 900),
                 )
             );
         }
     }
 
     @include theme.dark {
-        @include button-const.button($category: 'secondary', $color: $palette) {
-            @include device.if-hover {
-                --border-hover: #{color.mix-token($palette, 500)};
-            }
+        @include button-const.button($category: $round, $color: $palette) {
             @include theme.tokens-for-map(
                 (
                     --text: color.mix-token($palette, 600),
                     --text-disabled: color.mix-token($palette, 1000),
-                    --border-active: color.mix-token($palette, 400),
                 )
             );
         }
@@ -55,7 +47,7 @@
 @mixin create() {
     @at-root {
         #{template-const.$root-selectors} {
-            @include button-const.button($category: 'secondary', $color: null) {
+            @include button-const.button($category: $round, $color: null) {
                 @include layout();
             }
         }
@@ -63,9 +55,8 @@
 }
 
 @mixin layout() {
-    @include button-const.layout();
+    @include button-const.layout-round();
 
-    box-shadow: sizes.$border-style;
     background-color: var(--background);
     @include device.if-hover {
         background-color: var(--generic-hover);
@@ -79,9 +70,5 @@
         --text: var(--text-disabled);
 
         background-color: var(--background);
-    }
-
-    &:focus {
-        box-shadow: sizes.$border-style, sizes.$focus-shadow;
     }
 }

@@ -1,4 +1,5 @@
-@import "layout-var";
+/* stylelint-disable property-no-unknown, selector-max-universal, scss/at-extend-no-missing-placeholder */
+@import 'layout-var';
 
 $gap-width: 20px;
 
@@ -7,6 +8,7 @@ $gap-width: 20px;
 }
 %mod-layout {
     column-gap: $gap-width;
+
     &-margins {
         @extend %mod-layout;
         @include in-phone-layout {
@@ -26,10 +28,12 @@ $gap-width: 20px;
 
 %mod-flex {
     @extend %mod-layout;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
+
     &-margins {
         @extend %mod-flex;
         @extend %mod-layout-margins;
@@ -38,30 +42,36 @@ $gap-width: 20px;
 
 %mod-grid {
     @extend %mod-layout;
+
     display: grid;
     justify-items: center;
     justify-tracks: center;
+
     > * {
         grid-column: auto / span 1;
     }
+
     &-margins {
         @extend %mod-grid;
         @extend %mod-layout-margins;
     }
 }
+
 .content-area-responsive {
     @extend %mod-flex;
+
     &-margins {
         @extend .content-area-responsive;
         @extend %mod-flex-margins;
     }
 }
 
-
 .header-area-responsive {
     @extend .content-area-responsive;
+
     grid-column: first / last;
     grid-row: first / 2;
+
     &-margins {
         @extend .header-area-responsive;
         @extend .content-area-responsive-margins;
@@ -77,15 +87,18 @@ $gap-width: 20px;
 @mixin panel-column($column-count: 1) {
     .panel-#{$column-count}-column {
         @extend %mod-grid;
-        grid-template-columns: grid-bounds(repeat(#{$column-count}, minmax(auto, 1fr)));
+
+        grid-template-columns: grid-bounds(
+            repeat(#{$column-count}, minmax(auto, 1fr))
+        );
+
         &-margins {
             @extend %mod-grid-margins;
             @extend .panel-#{$column-count}-column;
         }
-}
+    }
 }
 
 @include panel-column(1);
 @include panel-column(2);
 @include panel-column(3);
-

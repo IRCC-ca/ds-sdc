@@ -20,4 +20,4 @@ import { LinkComponent } from './link/link.component';
     ],
     providers: [],
 })
-export class JlCommonModule { }
+export class JlCommonModule {}
