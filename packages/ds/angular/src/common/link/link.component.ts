@@ -16,9 +16,6 @@ export class LinkComponent{
 
   linkIconConfig!: IIconConfig;
 
-  constructor() {
-  }
-
   public get getIcon(): string[] {
     if (this.download) {
       return ['f56d', 'fa-solid'];
