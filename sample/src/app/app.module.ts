@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
 
-import { JlTemplateModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular'
+import { JlCommonModule } from '@ircc-ca/ds-sdc-angular'
 
 @NgModule({
   declarations: [
@@ -15,7 +15,6 @@ import { JlTemplateModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular'
     FormsModule,
     ReactiveFormsModule,
     TranslateModule.forRoot(),
-    JlTemplateModule,
     JlCommonModule,
   ],
   providers: [],
