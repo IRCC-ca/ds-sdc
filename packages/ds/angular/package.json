@@ -34,7 +34,7 @@
   "peerDependencies": {
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0",
-    "@ircc-ca/ds-sdc-web": "^0.0.1"
+    "@ircc-ca/ds-sdc-web": "^0.0.2-beta.2"
   },
   "dependencies": {
     "@ircc-ca/ds-sdc-core": "^0.0.5",
