@@ -34,5 +34,5 @@ jobs:
         else
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
         fi
-
+        npx lerna run build
         npx lerna publish from-git --yes

@@ -11,10 +11,8 @@
     },
     "main": "_theme.scss",
     "files": [
-        "node_modules/@fortawesome/*/**",
-        "node_modules/@fontsource/*/**",
         "**.scss",
-        "assets/**"
+        "assets/**" 
     ],
     "repository": {
         "type": "git",
