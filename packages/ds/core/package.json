@@ -12,7 +12,7 @@
     "main": "_theme.scss",
     "files": [
         "**.scss",
-        "assets/**"
+        "assets/**" 
     ],
     "repository": {
         "type": "git",

@@ -1,0 +1,4 @@
+@use '@ircc-ca/ds-sdc-core/tokens/link' as link;
+
+@include link.create();
+@include link.link(cta, visited);
