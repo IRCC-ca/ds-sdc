@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { IRCCModule } from '@ircc-ca/ds-sdc-angular';
+import { JlCommonModule } from '@ircc-ca/ds-sdc-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
         FormsModule,
         ReactiveFormsModule,
         TranslateModule.forRoot(),
-        IRCCModule,
+        JlCommonModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

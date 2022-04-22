@@ -11,7 +11,8 @@
     },
     "main": "_theme.scss",
     "files": [
-        "**.scss"
+        "**.scss",
+        "assets/**"
     ],
     "repository": {
         "type": "git",
