@@ -20,7 +20,7 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build",
     "web": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -35,11 +35,12 @@
     "tag": "ds-sdc-web"
   },
   "dependencies": {
-    "@ircc-ca/ds-sdc-core": "0.0.2"
+    "@ircc-ca/ds-sdc-core": "^0.0.5"
   },
   "devDependencies": {
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.13.0",
+    "@stencil/sass": "^1.5.2",
     "puppeteer": "^10.0.0"
   },
   "license": "MIT"

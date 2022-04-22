@@ -1,9 +1,9 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
-  styleUrl: 'my-component.css',
+  styleUrl: 'my-component.scss',
   shadow: true,
 })
 export class MyComponent {
@@ -22,11 +22,12 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+  @Prop() theme: string;
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return <div>Hello, World! I'm <a href="styles.css">test</a> {this.getText()}</div>;
   }
 }

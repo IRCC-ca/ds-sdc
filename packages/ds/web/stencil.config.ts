@@ -1,8 +1,10 @@
-import { Config } from '@stencil/core';
 import { angularOutputTarget } from '@stencil/angular-output-target';
+import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'web',
+  plugins: [sass()],
   outputTargets: [
     {
       type: 'dist',
@@ -21,7 +23,7 @@ export const config: Config = {
     angularOutputTarget({
       componentCorePackage: '@ircc-ca/ds-sdc-web',
       directivesProxyFile: '../angular/src/stencil-generated/components.ts',
-      directivesArrayFile: '../angular/src/stencil-generated/index.ts'
+      directivesArrayFile: '../angular/src/stencil-generated/index.ts',
     }),
   ],
 };
