@@ -13,7 +13,8 @@
     "files": [
         "node_modules/@fortawesome/*/**",
         "node_modules/@fontsource/*/**",
-        "**.scss"
+        "**.scss",
+        "assets/**"
     ],
     "repository": {
         "type": "git",
