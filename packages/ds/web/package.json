@@ -13,7 +13,7 @@
   "unpkg": "dist/web/web.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
   },
   "files": [
     "dist/",
