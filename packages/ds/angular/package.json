@@ -34,7 +34,7 @@
   "peerDependencies": {
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0",
-    "@ircc-ca/ds-sdc-web": "^0.0.5"
+    "@ircc-ca/ds-sdc-web": "^0.0.1"
   },
   "dependencies": {
     "@ircc-ca/ds-sdc-core": "^0.0.3-beta.2",
@@ -49,6 +49,6 @@
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.6.2",
-    "@ircc-ca/ds-sdc-web": "^0.0.5"
+    "@ircc-ca/ds-sdc-web": "^0.0.1"
   }
 }
