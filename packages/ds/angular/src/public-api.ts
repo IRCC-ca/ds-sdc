@@ -8,6 +8,7 @@ export * from './common/footer/footer.component';
 export * from './common/header/header.component';
 export * from './common/icon/icon.component';
 export * from './common/jl-common.module';
+export { JlCommonModule } from './common/jl-common.module';
 export * from './common/link/link.component';
 export * from './stencil-generated/components';
 export * from './stencil-generated/index';
