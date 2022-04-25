@@ -9,7 +9,7 @@
         "lib": "lib",
         "test": "__tests__"
     },
-    "main": "_theme.scss",
+    "main": "_index.scss",
     "files": [
         "**/*.scss",
         "assets/**"
