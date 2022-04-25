@@ -9,7 +9,7 @@
     "lint": "lerna run lint",
     "format": "lerna run format",
     "web": "lerna run web",
-    "prepublish": "lerna run build --since HEAD~1 --concurrency=1",
+    "prepublish": "lerna run build --concurrency=1",
     "build-sample": "ng build --project=sample",
     "watch": "ng build --watch --configuration development",
     "test": "lerna run test",
