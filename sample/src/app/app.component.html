@@ -1,7 +1,8 @@
 
   <!-- Next Steps -->
   <div class="wrapper">
-    <h1 class="masthead">Test Page <a href="#nowhere">asdasd</a></h1>
+    <jds-header></jds-header>
+    <jds-footer></jds-footer>
     <div class="sidenav panel-1-column" hidden="true">
       <h2>Panel <strong>asudnasd</strong></h2>
       <div>
@@ -11,11 +12,17 @@
         <br />
         <button color="cta" disabled="true">Default</button>
         <br />
-        <button color="cta" style="width: 164px" category="secondary">Default</button>
+        <button color="cta" style="width: 164px" category="round">
+          <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>
+        </button>
         <br />
-        <button color="cta" category="secondary">Default</button>
+        <button color="cta" category="round">
+          <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>
+        </button>
         <br />
-        <button color="cta" category="secondary" disabled="true">Default</button>
+        <button color="cta" category="round" disabled="true">
+          <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>
+        </button>
       </div>
       <nav>
         <ul>
@@ -39,9 +46,12 @@
       <p>What do you want to do next with your app?</p>
       <a href="www.github.com"><span class="font" aria-hidden></span> Github</a>
       <input size="small" color="critical" type="button" value="Default">
-      <font-icon [iconConfig]="alicornIconConfig"></font-icon>
-      <lib-header></lib-header>
-      <lib-footer></lib-footer>
+      <my-component first="Stencil" last="Name" middle="test"></my-component>
+
+      <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>
+      <my-component first="Stencil" last="Name"></my-component>
+      <jds-header></jds-header>
+      <jds-footer></jds-footer>
       <a href="www.github.com">Github</a>
       <p>What do you want to do next with your app?</p>
       <p>What do you want to do next with your app?</p>
@@ -65,38 +75,44 @@
         <br>
         <div>
           <jds-button size="small" ariaLabel="blah blah one" color="CTA" category="primary">Small, CTA, primary</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah two" color="CTA" category="primary">Large, CTA, primary</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah three" color="CTA" category="secondary">Small, CTA, primary, secondary</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah four" color="CTA" category="secondary">Large, CTA, primary, secondary</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah five" color="CTA" category="plain">Small, CTA, plain</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah six" color="CTA" category="plain">Large, CTA, plain</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah one" color="critical" category="primary">Small, critical, primary</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah two" color="critical" category="primary">Large, critical, primary</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah three" color="critical" category="secondary">Small, critical, secondary</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah four" color="critical" category="secondary">Large, critical, secondary</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah five" color="critical" category="plain">Small, critical, plain</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah six" color="critical" category="plain">Large, critical, plain</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah one" color="CTA" category="primary" input="submit">Small, CTA, primary, submit type</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah two" color="critical" category="primary" input="reset">Large, critical, reset type</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah five" color="critical" category="plain" input="button">Small, critical, plain, button type</jds-button>
-          <br>
-          <jds-button size="small" ariaLabel="blah blah one" color="CTA" category="primary"><font-icon [iconConfig]="rocketIconConfig"></font-icon>Small, CTA, primary, left icon</jds-button>
-          <br>
-          <jds-button size="large" ariaLabel="blah blah two" color="CTA" category="primary">Large, CTA, primary, right icon<font-icon [iconConfig]="alicornIconConfig"></font-icon></jds-button>
+          <br />
+          <jds-button size="large" color="CTA" category="primary">Large, CTA, primary</jds-button>
+          <br />
+          <jds-button size="small" color="CTA" category="secondary">Small, CTA, primary, secondary</jds-button>
+          <br />
+          <jds-button size="large" color="CTA" category="secondary">Large, CTA, primary, secondary</jds-button>
+          <br />
+          <jds-button size="small" color="CTA" category="plain">Small, CTA, plain</jds-button>
+          <br />
+          <jds-button size="large" color="CTA" category="plain">Large, CTA, plain</jds-button>
+          <br />
+          <jds-button size="small" color="critical" category="primary">Small, critical, primary</jds-button>
+          <br />
+          <jds-button size="large" color="critical" category="primary">Large, critical, primary</jds-button>
+          <br />
+          <jds-button size="small" color="critical" category="secondary">Small, critical, secondary</jds-button>
+          <br />
+          <jds-button size="large" color="critical" category="secondary">Large, critical, secondary</jds-button>
+          <br />
+          <jds-button size="small" color="critical" category="plain">Small, critical, plain</jds-button>
+          <br />
+          <jds-button size="large" color="critical" category="plain">Large, critical, plain</jds-button>
+          <br />
+          <jds-button size="small" color="CTA" category="primary" input="submit">Small, CTA, primary, submit type</jds-button>
+          <br />
+          <jds-button size="large" color="critical" category="primary" input="reset">Large, critical, reset type</jds-button>
+          <br />
+          <jds-button size="small" color="critical" category="plain" input="button">Small, critical, plain, button type</jds-button>
+          <br />
+          <jds-button size="small" ariaLabel="This button has an icon on the left" color="CTA" category="primary"><jds-font-icon [iconConfig]="rocketIconConfig"></jds-font-icon>Small, CTA, primary, left icon</jds-button>
+          <br />
+          <jds-button size="large" ariaLabel="This button has an icon on the right" color="CTA" category="primary">Large, CTA, primary, right icon<jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon></jds-button>
         </div>
+        <jds-link [href]="'https://www.github.com'" [target]="'_blank'">A link to Github</jds-link>
+        <jds-link [href]="'/styles.css'" [download]="'superStylish'">A file download link</jds-link>
+        <jds-link [href]="'tel:+'" [target]="'_blank'">A telephone link</jds-link>
+        <jds-link [href]="'mailto:someone@example.com'" [target]="'_blank'">A mailto link</jds-link>
+        <jds-link [href]="'#section2'" [target]="'_blank'">A no-icon link</jds-link>
+        <jds-link [href]="'https://www.github.com'" [target]="'_blank'" [ariaLabel]="'A link to Github'">A link to Github with the ariaLabel overridden</jds-link>
       </div>
   </div>

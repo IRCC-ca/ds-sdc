@@ -1,5 +1,5 @@
-@use "./list"as list;
-@use "./theme"as theme;
+@use './list' as list;
+@use './theme' as theme;
 $size-mode: '';
 $sizes: (small, large);
 
@@ -16,7 +16,6 @@ $sizes: (small, large);
         @content;
     }
 }
-
 @function get-alt-mode() {
     @return list.filter($sizes, $size-mode);
 }

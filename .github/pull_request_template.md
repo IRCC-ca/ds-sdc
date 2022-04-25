@@ -1,22 +1,6 @@
----
-    name: Pull Request
-    about: Contribute a solution for a problem
-    title: '[PR] <title>'
-    labels: PR, Needs Review
-    assignees: ''
----
-<!--
-  How to write a good PR title:
-
-- Prefix it with [ComponentName] (if applicable), for example: [Button]
-- Start with a verb, for example: Add, Delete, Improve, Fix…
-- Give as much context as necessary and as little as possible
-- Prefix it with [WIP] while it's a work in progress
--->
-
 '### Why are these changes introduced?
 
-- [ ] Related [issue](https://example.com/issue/123)
+- Related Issue: <https://example.com/issue/123>
 
 <!--
   Context about the problem that's being addressed.

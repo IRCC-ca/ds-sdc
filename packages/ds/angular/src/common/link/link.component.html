@@ -1,0 +1,6 @@
+<a [attr.href]="href" [attr.download]="download" [attr.target]="target" [attr.aria-label]="ariaLabel">
+    <span class="font">
+        <ng-content [attr.aria-hidden]="isHidden"></ng-content>
+    </span>
+    <jds-font-icon *ngIf="hasIcon" class="icon" [iconConfig]="linkIconConfig"></jds-font-icon>
+</a>

@@ -1,4 +1,5 @@
-@use "./template-const" as template-const;
+/* stylelint-disable selector-max-universal */
+@use './template-const' as template-const;
 
 @mixin layout {
     cursor: not-allowed;

@@ -1,24 +1,29 @@
-
-@use "../util/color" as color;
-@use "../util/size"as size;
-@use "../tokens/text-global" as text-global;
-@use "../tokens/global" as global;
-@use "../tokens/button/primary"as button-primary;
-@use "../tokens/button/secondary"as button-secondary;
-@use "../tokens/focus"as focus;
-@use "../tokens/link"as link;
+@use '../util/color' as color;
+@use '../util/size' as size;
+@use '../tokens/text-global' as text-global;
+@use '../tokens/global' as global;
+@use '../tokens/button/primary' as button-primary;
+@use '../tokens/button/secondary' as button-secondary;
+@use '../tokens/button/plain' as button-plain;
+@use '../tokens/button/round' as button-round;
+@use '../tokens/focus' as focus;
+@use '../tokens/link' as link;
 
 @mixin default($palette, $size) {
-  @include color.set-mode($palette);
-  @include size.set-mode($size);
+    @include color.set-mode($palette);
+    @include size.set-mode($size);
 
-  @include button-primary.button-primary(cta, neutral);
-  @include button-primary.button-primary(critical, neutral);
-  @include button-secondary.button-secondary(cta);
-  @include button-secondary.button-secondary(critical);
-  
-  @include link.link(cta, visited);
-  @include text-global.text-global(neutral);
-  @include global.global(neutral, selected);
-  @include focus.focus(focus);
+    @include button-primary.button-primary(cta, neutral);
+    @include button-primary.button-primary(critical, neutral);
+    @include button-secondary.button-secondary(cta);
+    @include button-secondary.button-secondary(critical);
+    @include button-plain.button-plain(cta);
+    @include button-plain.button-plain(critical);
+    @include button-round.button-round(cta);
+    @include button-round.button-round(critical);
+
+    @include link.link(cta, visited);
+    @include text-global.text-global(neutral);
+    @include global.global(neutral, selected);
+    @include focus.focus(focus);
 }

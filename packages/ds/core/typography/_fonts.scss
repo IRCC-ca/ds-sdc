@@ -1,12 +1,10 @@
-@forward "~@fontsource/lato/scss/mixins" as Lato-*;
-@forward "~@fontsource/inter/scss/mixins" as Inter-*;
-@forward "./fa-wrapper" as FA-*;
-@use "./fa-wrapper" as FA;
+@forward '~@fontsource/lato/scss/mixins' as Lato-*;
+@forward '~@fontsource/inter/scss/mixins' as Inter-*;
+@forward './fa-wrapper' as FA-*;
+@use './fa-wrapper' as FA;
 @use '../tokens/text' as text;
-@use "~@fontsource/lato/scss/mixins" as Lato;
-@use "~@fontsource/inter/scss/mixins" as Inter;
-
-
+@use '~@fontsource/lato/scss/mixins' as Lato;
+@use '~@fontsource/inter/scss/mixins' as Inter;
 
 @mixin create-headings {
     @include Lato.fontFace(
