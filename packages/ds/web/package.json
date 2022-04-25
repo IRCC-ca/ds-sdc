@@ -34,11 +34,10 @@
     "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
     "tag": "ds-sdc-web"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@ircc-ca/ds-sdc-core": "^0.0.5"
   },
   "devDependencies": {
-    "@ircc-ca/ds-sdc-core": "^0.0.5",
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.13.0",
     "@stencil/sass": "^1.5.2",
