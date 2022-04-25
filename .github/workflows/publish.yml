@@ -31,11 +31,11 @@ jobs:
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor}}@users.noreply.github.com"
 
+        npx lerna bootstrap
         if [ ${{ github.base_ref }} = main ]; then
           npx lerna version --conventional-commits --conventional-graduate --yes
         else
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
         fi
-        npx lerna bootstrap
         npx lerna run build
         npx lerna publish from-git --yes
