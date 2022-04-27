@@ -156,7 +156,7 @@
                     }
                 ]
             },
-            "templateData": "\n  <!-- Next Steps -->\n  <div class=\"wrapper\">\n    <jds-header></jds-header>\n    <jds-footer></jds-footer>\n    <div class=\"sidenav panel-1-column\" hidden=\"true\">\n      <h2>Panel <strong>asudnasd</strong></h2>\n      <div>\n        <button color=\"cta\" style=\"width: 164px\">Default</button>\n        <br />\n        <button color=\"cta\">Default</button>\n        <br />\n        <button color=\"cta\" disabled=\"true\">Default</button>\n        <br />\n        <button color=\"cta\" style=\"width: 164px\" category=\"round\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n        <br />\n        <button color=\"cta\" category=\"round\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n        <br />\n        <button color=\"cta\" category=\"round\" disabled=\"true\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n      </div>\n      <nav>\n        <ul>\n          <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\n          <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\n          <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\n          <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\n          <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\n        </ul>\n      </nav>\n    </div>\n    <div class=\"content-area-responsive-margins\">\n      <h2>Next Steps</h2>\n      <p>What do you want to do next with your app? <a href=\"#nothere\">What do you want to do next with your app?</a> What do\n        you want to do\n        next with your app?</p>\n      <p><strong>asdasdasd</strong>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <a href=\"www.github.com\"><span class=\"font\" aria-hidden></span> Github</a>\n      <input size=\"small\" color=\"critical\" type=\"button\" value=\"Default\">\n      <my-component first=\"Stencil\" last=\"Name\" middle=\"test\"></my-component>\n\n      <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n      <my-component first=\"Stencil\" last=\"Name\"></my-component>\n      <jds-header></jds-header>\n      <jds-footer></jds-footer>\n      <a href=\"www.github.com\">Github</a>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      </div>\n      <div class=\"sidenav2 panel-1-column\">\n        <h2>Panel</h2>\n        <br>\n        <nav>\n          <ul>\n            <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\n            <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\n            <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\n            <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\n            <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\n          </ul>\n        </nav>\n        <br>\n        <div>\n          <jds-button size=\"small\" ariaLabel=\"blah blah one\" color=\"CTA\" category=\"primary\">Small, CTA, primary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"primary\">Large, CTA, primary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"secondary\">Small, CTA, primary, secondary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"secondary\">Large, CTA, primary, secondary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"plain\">Small, CTA, plain</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"plain\">Large, CTA, plain</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"primary\">Small, critical, primary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\">Large, critical, primary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"secondary\">Small, critical, secondary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"secondary\">Large, critical, secondary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\">Small, critical, plain</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"plain\">Large, critical, plain</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"primary\" input=\"submit\">Small, CTA, primary, submit type</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\" input=\"reset\">Large, critical, reset type</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\">Small, critical, plain, button type</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"true\">DISABLED</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"false\"> Not DISABLED</jds-button>\n          <br />\n          <jds-button size=\"small\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"primary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon>Small, CTA, primary, left icon</jds-button>\n          <br />\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the right\" color=\"CTA\" category=\"primary\">Large, CTA, primary, right icon<jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon></jds-button>\n        </div>\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\">A link to Github</jds-link>\n        <jds-link [href]=\"'/styles.css'\" [download]=\"'superStylish'\">A file download link</jds-link>\n        <jds-link [href]=\"'tel:+'\" [target]=\"'_blank'\">A telephone link</jds-link>\n        <jds-link [href]=\"'mailto:someone@example.com'\" [target]=\"'_blank'\">A mailto link</jds-link>\n        <jds-link [href]=\"'#section2'\" [target]=\"'_blank'\">A no-icon link</jds-link>\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\" [ariaLabel]=\"'A link to Github'\">A link to Github with the ariaLabel overridden</jds-link>\n      </div>\n  </div>"
+            "templateData": "\n  <!-- Next Steps -->\n  <div class=\"wrapper\">\n    <jds-header></jds-header>\n    <jds-footer></jds-footer>\n    <div class=\"sidenav panel-1-column\" hidden=\"true\">\n      <h2>Panel <strong>asudnasd</strong></h2>\n      <div>\n        <button color=\"cta\" style=\"width: 164px\">Default</button>\n        <br />\n        <button color=\"cta\">Default</button>\n        <br />\n        <button color=\"cta\" disabled=\"true\">Default</button>\n        <br />\n        <button color=\"cta\" style=\"width: 164px\" category=\"round\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n        <br />\n        <button color=\"cta\" category=\"round\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n        <br />\n        <button color=\"cta\" category=\"round\" disabled=\"true\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n      </div>\n      <nav>\n        <ul>\n          <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\n          <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\n          <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\n          <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\n          <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\n        </ul>\n      </nav>\n    </div>\n    <div class=\"content-area-responsive-margins\">\n      <h2>Next Steps</h2>\n      <p>What do you want to do next with your app? <a href=\"#nothere\">What do you want to do next with your app?</a> What do\n        you want to do\n        next with your app?</p>\n      <p><strong>asdasdasd</strong>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <a href=\"www.github.com\"><span class=\"font\" aria-hidden></span> Github</a>\n      <input size=\"small\" color=\"critical\" type=\"button\" value=\"Default\">\n      <my-component first=\"Stencil\" last=\"Name\" middle=\"test\"></my-component>\n\n      <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n      <my-component first=\"Stencil\" last=\"Name\"></my-component>\n      <jds-header></jds-header>\n      <jds-footer></jds-footer>\n      <a href=\"www.github.com\">Github</a>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      </div>\n      <div class=\"sidenav2 panel-1-column\">\n        <h2>Panel</h2>\n        <br>\n        <nav>\n          <ul>\n            <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\n            <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\n            <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\n            <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\n            <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\n          </ul>\n        </nav>\n        <br>\n        <div>\n          <jds-button size=\"small\" ariaLabel=\"blah blah one\" color=\"CTA\" category=\"primary\">Small, CTA, primary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"primary\">Large, CTA, primary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"secondary\">Small, CTA, primary, secondary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"secondary\">Large, CTA, primary, secondary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"plain\">Small, CTA, plain</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"plain\">Large, CTA, plain</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"primary\">Small, critical, primary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\">Large, critical, primary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"secondary\">Small, critical, secondary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"secondary\">Large, critical, secondary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\">Small, critical, plain</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"plain\">Large, critical, plain</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"primary\" input=\"submit\">Small, CTA, primary, submit type</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\" input=\"reset\">Large, critical, reset type</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\">Small, critical, plain, button type</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"true\">DISABLED</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"false\"> Not DISABLED</jds-button>\n          <br />\n          <jds-button size=\"small\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"primary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon>Small, CTA, primary, left icon</jds-button>\n          <br />\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the right\" color=\"CTA\" category=\"primary\">Large, CTA, primary, right icon<jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon></jds-button>\n          <br />\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"secondary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon></jds-button>\n          <br />\n        </div>\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\">A link to Github</jds-link>\n        <jds-link [href]=\"'/styles.css'\" [download]=\"'superStylish'\">A file download link</jds-link>\n        <jds-link [href]=\"'tel:+'\" [target]=\"'_blank'\">A telephone link</jds-link>\n        <jds-link [href]=\"'mailto:someone@example.com'\" [target]=\"'_blank'\">A mailto link</jds-link>\n        <jds-link [href]=\"'#section2'\" [target]=\"'_blank'\">A no-icon link</jds-link>\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\" [ariaLabel]=\"'A link to Github'\">A link to Github with the ariaLabel overridden</jds-link>\n      </div>\n  </div>"
         },
         {
             "name": "ButtonComponent",
@@ -1072,7 +1072,27 @@
                 "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
             },
             {
+                "name": "BtnIconConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "IIconConfig",
+                "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+            },
+            {
                 "name": "ButtonWithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<IconComponent>",
+                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n  },\n  template: `<jds-button \n  [category]=\"category\"\n  [ariaLabel]=\"ariaLabel\"\n  [color]=\"color\"\n  [size]=\"size\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-button>`\n})"
+            },
+            {
+                "name": "ButtonWithIconAndText",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -1232,24 +1252,24 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "IConConfig",
+                "name": "IconButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Link.stories.ts",
+                "file": "stories/Icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args)  => ({\n  props: {\n    ...args,\n  },\n  template: `\n  <jds-link \n  [download]=\"download\"\n  [href]=\"href\"\n  [target]=\"target\"\n  [ariaLabel]=\"ariaLabel\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-link>`\n})"
+            },
+            {
+                "name": "IconConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IIconConfig",
                 "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
-            },
-            {
-                "name": "LinkWithIcon",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Link.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<IconComponent>",
-                "defaultValue": "(args) => ({\n  props: {...args},\n  template: `\n    <jds-link \n    [download]=\"download\"\n    [href]=\"href\"\n    [target]=\"target\"\n    [ariaLabel]=\"ariaLabel\"\n    >\n    <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n    {{ ngContent }}</jds-link>\n  `\n})"
             },
             {
                 "name": "LoggedIn",
@@ -1512,7 +1532,27 @@
                     "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
                 },
                 {
+                    "name": "BtnIconConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IIconConfig",
+                    "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+                },
+                {
                     "name": "ButtonWithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<IconComponent>",
+                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n  },\n  template: `<jds-button \n  [category]=\"category\"\n  [ariaLabel]=\"ariaLabel\"\n  [color]=\"color\"\n  [size]=\"size\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-button>`\n})"
+                },
+                {
+                    "name": "ButtonWithIconAndText",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -1606,6 +1646,26 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "IconButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args)  => ({\n  props: {\n    ...args,\n  },\n  template: `\n  <jds-link \n  [download]=\"download\"\n  [href]=\"href\"\n  [target]=\"target\"\n  [ariaLabel]=\"ariaLabel\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-link>`\n})"
+                },
+                {
+                    "name": "IconConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IIconConfig",
+                    "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -1680,26 +1740,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "IConConfig",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "IIconConfig",
-                    "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
-                },
-                {
-                    "name": "LinkWithIcon",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Link.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<IconComponent>",
-                    "defaultValue": "(args) => ({\n  props: {...args},\n  template: `\n    <jds-link \n    [download]=\"download\"\n    [href]=\"href\"\n    [target]=\"target\"\n    [ariaLabel]=\"ariaLabel\"\n    >\n    <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n    {{ ngContent }}</jds-link>\n  `\n})"
                 },
                 {
                     "name": "Template",
@@ -2234,7 +2274,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "BtnIconConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "ButtonWithIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonWithIconAndText",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2354,6 +2414,26 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "IconButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -2365,26 +2445,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Link.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "IConConfig",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Link.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LinkWithIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -28,29 +28,3 @@ const configDefault: IIconConfig = {
 Default.args = { 
   iconConfig: configDefault
 }
-
-export const IconButton: Story = (args)  => ({
-  props: {
-    ...args,
-  },
-  template: `
-  <jds-link 
-  [download]="download"
-  [href]="href"
-  [target]="target"
-  [ariaLabel]="ariaLabel"
-  >
-  <jds-font-icon [iconConfig]="iconConfig"></jds-font-icon>
-  </jds-link>`
-});
-const IconConfig: IIconConfig = {
-  fontFamily: 'fa-solid',
-  unicode: 'f6b0'
-}
-
-IconButton.args = {
-  iconConfig: IconConfig,
-  ariaLabel:'aria',
-  href: 'https://www.github.com',
-  target: '_blank'
-}

@@ -104,6 +104,5 @@ const BtnIconConfig: IIconConfig = {
 }
 
 ButtonWithIcon.args = {
-  iconConfig: BtnIconConfig,
-  category: 'plain'
+  iconConfig: BtnIconConfig
 }
