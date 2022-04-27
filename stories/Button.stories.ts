@@ -1,42 +1,36 @@
-// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import Button from './button.component';
+import { ButtonComponent } from '@ircc-ca/ds-sdc-angular';
 
-// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as Meta;
+  title: 'Button',
+  component: ButtonComponent,
+  args: {
+    ngContent: 'Label',
+  }
+} as Meta<ButtonComponent>;
 
-// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<Button> = (args: Button) => ({
-  props: args,
+const Template: Story<ButtonComponent> = (args) => ({
+  props: {...args},
+  template: `<jds-button 
+    [category]="category"
+    [ariaLabel]="ariaLabel"
+    [color]="color"
+    [size]="size"
+    [type]="type"
+    >{{ ngContent }}</jds-button>`
 });
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
+// TODO: temp until the styling is fixed
+// [disabled]="disabled"
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
+export const Default = Template.bind({});
+Default.args = {
+  ariaLabel: 'aria text',
+  category: 'primary',
+  disabled: false
+}
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true
+}

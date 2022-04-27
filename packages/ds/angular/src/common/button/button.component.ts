@@ -12,4 +12,5 @@ export class ButtonComponent {
     @Input() iconPosition?: 'left' | 'right' = 'left';
     @Input() type?: 'button' | 'submit' | 'reset' = 'button';
     @Input() ariaLabel?: string;
+    @Input() disabled?: boolean;
 }
