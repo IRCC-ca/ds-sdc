@@ -9,7 +9,7 @@ export class ButtonComponent {
     @Input() category?: 'primary' | 'secondary' | 'plain' = 'primary';
     @Input() size?: 'small' | 'large' = 'large';
     @Input() color?: 'critical' | 'CTA' = 'CTA';
-    @Input() iconPosition?: 'left' | 'right' = 'left';
     @Input() type?: 'button' | 'submit' | 'reset' = 'button';
     @Input() ariaLabel?: string;
+    @Input() disabled?: boolean;
 }
