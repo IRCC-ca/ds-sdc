@@ -12,6 +12,9 @@ describe('my-component', () => {
         <mock:shadow-root>
           <div>
             Hello, World! I'm
+            <a href="styles.css">
+              test
+            </a>
           </div>
         </mock:shadow-root>
       </my-component>
@@ -27,7 +30,11 @@ describe('my-component', () => {
       <my-component first="Stencil" last="'Don't call me a framework' JS">
         <mock:shadow-root>
           <div>
-            Hello, World! I'm Stencil 'Don't call me a framework' JS
+            Hello, World! I'm  
+            <a href="styles.css">
+              test
+            </a>
+            Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
       </my-component>
