@@ -104,9 +104,16 @@
           <br />
           <jds-button size="small" color="critical" category="plain" input="button">Small, critical, plain, button type</jds-button>
           <br />
+          <jds-button size="small" color="critical" category="plain" input="button" [disabled]="true">DISABLED</jds-button>
+          <br />
+          <jds-button size="small" color="critical" category="plain" input="button" [disabled]="false"> Not DISABLED</jds-button>
+          <br />
           <jds-button size="small" ariaLabel="This button has an icon on the left" color="CTA" category="primary"><jds-font-icon [iconConfig]="rocketIconConfig"></jds-font-icon>Small, CTA, primary, left icon</jds-button>
           <br />
           <jds-button size="large" ariaLabel="This button has an icon on the right" color="CTA" category="primary">Large, CTA, primary, right icon<jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon></jds-button>
+          <br />
+          <jds-button size="large" ariaLabel="This button has an icon on the left" color="CTA" category="secondary"><jds-font-icon [iconConfig]="rocketIconConfig"></jds-font-icon></jds-button>
+          <br />
         </div>
         <jds-link [href]="'https://www.github.com'" [target]="'_blank'">A link to Github</jds-link>
         <jds-link [href]="'/styles.css'" [download]="'superStylish'">A file download link</jds-link>

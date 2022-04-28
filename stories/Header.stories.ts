@@ -1,35 +1,19 @@
-import { moduleMetadata } from '@storybook/angular';
-import { CommonModule } from '@angular/common';
-import type { Story, Meta } from '@storybook/angular';
+import { Story } from '@storybook/angular';
+import type { Meta } from '@storybook/angular';
 
-import Button from './button.component';
-import Header from './header.component';
+import {HeaderComponent} from '@ircc-ca/ds-sdc-angular'
 
 export default {
-  title: 'Example/Header',
-  component: Header,
-  decorators: [
-    moduleMetadata({
-      declarations: [Button],
-      imports: [CommonModule],
-    }),
-  ],
+  title: 'Header',
+  component: HeaderComponent,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/angular/configure/story-layout
     layout: 'fullscreen',
   },
 } as Meta;
 
-const Template: Story<Header> = (args: Header) => ({
+const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
   props: args,
 });
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {
-    name: 'Jane Doe',
-  },
-};
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+export const header = Template.bind({});

@@ -1,42 +1,108 @@
-// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import Button from './button.component';
+import { ButtonComponent, IconComponent, IIconConfig } from '@ircc-ca/ds-sdc-angular';
+import { moduleMetadata } from '@storybook/angular';
+import { CommonModule } from '@angular/common';
 
-// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  title: 'Button',
+  component: ButtonComponent,
+  args: {
+    ngContent: 'Label',
   },
-} as Meta;
+  decorators: [
+    moduleMetadata({
+      declarations: [ButtonComponent, IconComponent],
+      imports: [CommonModule],
+    }),
+  ],
+} as Meta<ButtonComponent>;
 
-// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<Button> = (args: Button) => ({
-  props: args,
+const Template: Story<ButtonComponent> = (args) => ({
+  props: {...args},
+  template: `<jds-button 
+    [category]="category"
+    [ariaLabel]="ariaLabel"
+    [color]="color"
+    [size]="size"
+    [type]="type"
+    [disabled]="disabled"
+    >{{ ngContent }}</jds-button>`
 });
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/angular/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
-};
+  ariaLabel: 'aria text',
+  category: 'primary',
+  disabled: false
+}
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
-};
+  ariaLabel: 'aria text',
+  category: 'secondary',
+  disabled: false
+}
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
+export const Plain = Template.bind({})
+Plain.args = {
+  ariaLabel: 'aria text',
+  category: 'plain',
+  disabled: false
+}
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const Disabled = Template.bind({});
+Disabled.args = {
+  category: 'primary',
+  disabled: true
+}
+
+export const ButtonWithIconAndText: Story<IconComponent> = (args) => ({
+  props: {
+    ...args,
+  },
+  template: `<jds-button 
+  [category]="category"
+  [ariaLabel]="ariaLabel"
+  [color]="color"
+  [size]="size"
+  [type]="type"
+  [disabled]="disabled"
+  >
+  <jds-font-icon [iconConfig]="iconConfig"></jds-font-icon>
+  {{ ngContent }}</jds-button>`
+});
+
+const BtnConfig: IIconConfig = {
+  fontFamily: 'fa-solid',
+  unicode: 'f6b0'
+}
+
+ButtonWithIconAndText.args = {
+  iconConfig: BtnConfig,
+}
+
+
+export const ButtonWithIcon: Story<IconComponent> = (args) => ({
+  props: {
+    ...args,
+  },
+  template: `<jds-button 
+  [category]="category"
+  [ariaLabel]="ariaLabel"
+  [color]="color"
+  [size]="size"
+  [type]="type"
+  [disabled]="disabled"
+  >
+  <jds-font-icon [iconConfig]="iconConfig"></jds-font-icon>
+  </jds-button>`
+});
+
+const BtnIconConfig: IIconConfig = {
+  fontFamily: 'fa-solid',
+  unicode: 'f6b0'
+}
+
+ButtonWithIcon.args = {
+  iconConfig: BtnIconConfig
+}
