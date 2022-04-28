@@ -25,8 +25,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-builders/jest:run",
-          "options": {}
+          "builder": "@angular-builders/jest:run"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
