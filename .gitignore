@@ -43,3 +43,6 @@ Thumbs.db
 
 # logging
 **/*debug.log
+
+# Jest
+packages/ds/angular/coverage
