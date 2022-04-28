@@ -1,12 +1,8 @@
-/* tslint:disable */
+/* eslint-disable */
 /* auto-generated angular directive proxies */
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
-import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
-
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
+import { ProxyCmp } from './angular-component-lib/utils';
 import { Components } from '@ircc-ca/ds-sdc-web';
-
-
-
 
 export declare interface MyComponent extends Components.MyComponent {}
 

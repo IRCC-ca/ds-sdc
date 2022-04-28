@@ -22,6 +22,9 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+   /**
+   * Theme
+   */
   @Prop() theme: string;
   private getText(): string {
     return format(this.first, this.middle, this.last);
