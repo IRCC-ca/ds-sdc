@@ -71,6 +71,11 @@
                 "glob": "**/*",
                 "input": "sample/src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ircc-ca/ds-sdc-core/assets",
+                "output": "assets"
               }
             ],
             "styles": [
