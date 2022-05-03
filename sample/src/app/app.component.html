@@ -8,9 +8,27 @@
       <div>
         <button color="cta" style="width: 164px">Default</button>
         <br />
-        <button color="cta">Default</button>
+        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input">
+        <label for="checkbox_input">core input</label>
         <br />
-        <button color="cta" disabled="true">Default</button>
+        <jds-checkbox></jds-checkbox>
+        <br />
+        <jds-radio-button></jds-radio-button>
+        <br />
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label class="label" for="html">core radio</label>
+        <br/>
+        <input type="radio" id="html" name="fav_language" value="HTML" required>
+        <label class="label" for="html">invalid core radio</label>
+        <br />
+        <input type="radio" id="html" name="fav_language" value="HTML" disabled>
+        <label class="label" for="html">core radio disabled</label>
+        <br />
+        <input type="radio" id="html" name="fav_language" value="HTML" disabled required checked>
+        <label class="label" for="html">core radio disabled, error</label>
+        <br />
+        <input type="radio" id="html" name="fav_language" value="HTML" disabled checked>
+        <label class="label" for="html">core radio disabled, no error</label>
         <br />
         <button color="cta" style="width: 164px" category="round">
           <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>

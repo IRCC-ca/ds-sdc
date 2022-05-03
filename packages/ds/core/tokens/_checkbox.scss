@@ -1,0 +1,81 @@
+@use '../util/color' as color;
+@use '../util/theme' as theme;
+@use './template-const' as template-const;
+@use './sizes' as sizes;
+@use '../util/device' as device;
+
+@mixin checkbox($palette, $visited-palette) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.light {
+                // @include anchor-selector {
+                //     @include device.if-hover {
+                //         --text-hover: #{color.mix-token($palette, 800)};
+                //     }
+                //     @include theme.tokens-for-map(
+                //         (
+                //             --text: color.mix-token($palette, 700),
+                //             --text-active: color.mix-token($palette, 900),
+                //             --text-visited:
+                //                 color.mix-token($visited-palette, 700),
+                //         )
+                //     );
+                // }
+            }
+
+            @include theme.dark {
+                // @include anchor-selector {
+                //     @include device.if-hover {
+                //         --text-hover: #{color.mix-token($palette, 500)};
+                //     }
+                //     @include theme.tokens-for-map(
+                //         (
+                //             --text: color.mix-token($palette, 600),
+                //             --text-active: color.mix-token($palette, 400),
+                //             --text-visited:
+                //                 color.mix-token($visited-palette, 600),
+                //         )
+                //     );
+                // }
+            }
+        }
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            // @include anchor-selector() {
+            //     @include layout();
+            // }
+        }
+    }
+}
+
+@mixin layout {
+    border-radius: sizes.$border-radius;
+    padding: sizes.$fixed-2 sizes.$fixed-4;
+    display: inline;
+
+    &:link {
+        color: var(--text);
+    }
+    @include device.if-hover {
+        color: var(--text-hover);
+        background-color: var(--generic-hover);
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline-offset: 0;
+    }
+
+    &:active {
+        color: var(--text-active);
+        background-color: var(--generic-active);
+    }
+
+    &:visited {
+        color: var(--text-visited);
+    }
+}

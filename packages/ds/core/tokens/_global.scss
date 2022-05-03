@@ -3,7 +3,8 @@
 @use '../util/theme' as theme;
 @use './template-const' as template-const;
 @use '../util/device' as device;
-@mixin global($neutral, $accent) {
+
+@mixin global($neutral, $accent, $formcontrol, $critical) {
     @at-root {
         #{template-const.$root-selectors} {
             @include theme.light {
@@ -25,6 +26,8 @@
                         --divider: color.mix-token($neutral, 300),
                         --border-disabled: color.mix-token($neutral, 300),
                         --dimmer: color.mix-token($neutral, 1100),
+                        --formcontrol: color.mix-token($formcontrol, 700),
+                        --formcontrol-error: color.mix-token($critical, 700)
                     )
                 );
             }
@@ -47,6 +50,8 @@
                         --divider: color.mix-token($neutral, 1000),
                         --border-disabled: color.mix-token($neutral, 1000),
                         --dimmer: color.mix-token($neutral, 200),
+                        // TODO: update
+                        --formcontrol: color.mix-token($formcontrol, 700)
                     )
                 );
             }

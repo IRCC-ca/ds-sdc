@@ -1,0 +1,160 @@
+@use '../util/color' as color;
+@use '../util/theme' as theme;
+@use '../util/size' as size;
+@use '../util/device' as device;
+@use './template-const' as template-const;
+@use './sizes' as token-size;
+
+@mixin selectors {
+    input[type='radio'] {
+        @content;
+    }
+}
+
+@mixin radiobutton($palette, $focus, $critical) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            // TODO: clean this section
+            @include theme.light {
+                @include selectors {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 800)};
+                    }
+                    @include theme.tokens-for-map(
+                        (
+                            --check-critical-background: color.mix-token($critical, 100),
+                            --check-critical-active: color.mix-token($critical, 900),
+                            --check-disabled-error: color.mix-token($critical, 300),
+                            --check-disabled: color.mix-token($focus, 300),
+                            --check-active: color.mix-token($focus, 800),
+                            --text: color.mix-token($palette, 700),
+                            --checked:
+                                color.mix-token($focus, 700),
+                        )
+                    );
+                }
+            }
+            // TODO: clean this section
+            @include theme.dark {
+                @include selectors {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 500)};
+                    }
+                    @include theme.tokens-for-map(
+                        (
+                            --text: color.mix-token($palette, 600),
+                            --text-active: color.mix-token($palette, 400),
+                            --text-visited:
+                                color.mix-token($focus, 600),
+                        )
+                    );
+                }
+            }
+        }
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include selectors() {
+                @include layout();
+            }
+        }
+    }
+}
+
+@mixin layout {
+    border-radius: 100%;
+    height: 24px;
+    width: 24px;
+    appearance: none;
+    box-sizing: border-box;
+    border: 1px solid var(--border-disabled);
+    
+    // @include radiobutton-size();
+    @include radiobutton-size-padding();
+
+    @include device.if-hover {
+        color: var(--formcontrol-hover);
+    }
+
+    &:checked {
+        margin: 0 12px;
+        border: 6px solid var(--formcontrol);
+        
+        & + label::before {
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+        }
+
+        &:active, &:hover {
+            border: 6px solid var(--check-active);
+            background-color: var(--surface1);
+        }
+    }
+
+    &:disabled {
+        & + label {
+            color: var(--text-disabled);
+        }
+        
+        &:invalid, &:required {
+            border: 6px solid var(--check-disabled-error);
+            background-color: var(--surface1);
+        }
+            
+        &:checked {
+            border: 6px solid var(--check-disabled);
+            background-color: var(--surface1);
+        }
+    }
+
+    // error states
+     &:required, &:invalid {
+        border: 1px solid var(--formcontrol-error);
+        background-color: var(--check-critical-background);
+        
+        &:checked {
+            border: 6px solid var(--formcontrol-error);
+            background-color: var(--surface1);
+            
+            & + label::before {
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        &:active, &:hover {
+            border: 6px solid var(--check-critical-active);
+            background-color: var(--surface1);
+         }
+    }   
+}
+
+// TODO: utilize this
+@mixin radiobutton-size-padding {
+    @include size.selector(small) {
+        //TODO:add padding
+        // padding: token-size.$small-padding;
+    }
+
+    @include size.selector(large) {
+        // TODO: add padding
+        // padding: token-size.$large-padding;
+    }
+}
+
+
+// TODO: utilize this
+@mixin radiobutton-size {
+    @include size.selector(small) {
+        @extend .h6;
+    }
+
+    @include size.selector(large) {
+        @extend .h5;
+    }
+}

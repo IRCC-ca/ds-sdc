@@ -4,6 +4,8 @@
 
 // DIRECTIVES
 export * from './common/button/button.component';
+export * from './common/checkbox/checkbox.component';
+export * from './common/radio-button/radio-button.component';
 export * from './common/footer/footer.component';
 export * from './common/header/header.component';
 export * from './common/icon/icon.component';
