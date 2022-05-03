@@ -1,5 +1,8 @@
 @use 'sass:string';
-
+/// Add $prefix to the beginning of a string if not present
+/// @param {String} $name - Initial string
+/// @param {String} $prefix ('--') prefix string
+/// @return {String} - Updated string
 @function str-prefix($name, $prefix: '--') {
     @if not string.index($name, $prefix) {
         @return #{$prefix}#{$name};

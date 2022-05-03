@@ -1,5 +1,7 @@
 @use '../tokens/sizes' as sizes;
 
+
+/// Content included within this mixin will only be included if hover states are supported by the device.
 @mixin if-hover {
     @media (any-hover: hover) {
         &:hover {
@@ -8,16 +10,21 @@
     }
 }
 
+/// Content included within this mixin will only be included if the device is determined to fall within the phone viewport range
 @mixin in-phone-layout {
     @media only screen and (min-width: sizes.$bp-width-0) and (max-width: sizes.$bp-width-phone) {
         @content;
     }
 }
+
+/// Content included within this mixin will only be included if the device is determined to fall within the tablet viewport range.
 @mixin in-tablet-layout {
     @media only screen and (min-width: sizes.$bp-width-phone) and (max-width: sizes.$bp-width-tablet) {
         @content;
     }
 }
+
+///Content included within this mixin will only be included if the device is determined to fall within the desktop viewport range.
 @mixin in-desktop-layout {
     @media only screen and (min-width: sizes.$bp-width-tablet) {
         @content;

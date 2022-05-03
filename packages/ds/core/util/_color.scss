@@ -2,11 +2,21 @@
 @use 'sass:map';
 @use 'sass:list';
 @import '../tokens/template-const';
+
+/// global color constant
 $color-mode: '';
+
+/// override the color mode setting (required before theme creation)
+/// @param {String} new-mode - new setting for color mode, as defined in palette theme
 @mixin set-mode($new-mode: default) {
+    // overrides the color mode
     $color-mode: $new-mode !global;
 }
 
+/// Mix token using the journeylab palette
+/// @param {String} $palette - Palette key to reference for generating token, as defined in palette
+/// @param {Number} $shade - Shade key to reference for generating token, as defined in palette
+/// @param {Number} $opacity - Normalized opacity on a 0 - 1 scale
 @function mix-token($palette, $shade: 1200, $opacity: 1) {
     $color: map.get(tokens.$journeylab-palette, $color-mode, $palette, $shade);
     @return #{hsla(
