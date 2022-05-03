@@ -22,8 +22,6 @@
     @include button-plain.button-plain(critical);
     @include button-round.button-round(cta);
     @include button-round.button-round(critical);
-    @include radio.radio(cta, neutral);
-
 
     @include link.link(cta, visited);
     @include text-global.text-global(neutral);
