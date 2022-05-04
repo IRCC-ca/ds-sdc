@@ -37,7 +37,7 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
-    "@ircc-ca/ds-sdc-core": "^0.0.5",
+    "@ircc-ca/ds-sdc-core": "^0.0.7",
     "@ircc-ca/ds-sdc-web": "^0.0.3",
     "tslib": "^2.3.0"
   },

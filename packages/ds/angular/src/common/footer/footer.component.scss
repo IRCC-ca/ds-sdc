@@ -19,7 +19,7 @@
     margin-left: sizes.$fixed-20;
     align-self: center;
       @include device.in-phone-layout () {
-        margin-left: 36px;
+        margin-left: sizes.$fixed-36;
       }
   }
 
