@@ -84,17 +84,17 @@
 
         .body2 {
             @extend %body;
-            @include fontSize(map.get(text.$body, level), 1);
+            @include fontSize(map.get(text.$body, level), 2);
         }
 
         .body3 {
             @extend %body;
-            @include fontSize(map.get(text.$body, level), 1);
+            @include fontSize(map.get(text.$body, level), 3);
         }
 
         .body4 {
             @extend %body;
-            @include fontSize(map.get(text.$body, level), 1);
+            @include fontSize(map.get(text.$body, level), 4);
         }
 
         @include size.selector(small) {
