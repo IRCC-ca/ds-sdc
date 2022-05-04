@@ -12,7 +12,9 @@
 
 /// Default theme, should be included for most applications, and can be customized through the prameters
 /// @param {String} $palette ('default') - the palette from the theme to construct the components with
-/// @param {String} $size ('large') - The text size to default to, Client-facing applications should be constructed with large text, Officer-facing applications should be constructed with small text.
+/// @param {String} $size ('large') - The text size to default to,
+/// Client-facing applications should be constructed with large text
+/// Officer-facing applications should be constructed with small text.
 @mixin default($palette: 'default', $size: 'large') {
     @include create-globals($palette, $size);
     @include create-item-layouts();
@@ -20,7 +22,9 @@
 
 /// the global level tokens to construct layouts
 /// @param {String} $palette ('default') - the palette from the theme to construct the components with
-/// @param {String} $size ('large') - The text size to default to, Client-facing applications should be constructed with large text, Officer-facing applications should be constructed with small text.
+/// @param {String} $size ('large') - The text size to default to,
+/// Client-facing applications should be constructed with large text
+/// Officer-facing applications should be constructed with small text.
 @mixin create-globals($palette, $size) {
     @include theme.default($palette, $size);
     @include fonts.create();

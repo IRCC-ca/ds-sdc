@@ -62,7 +62,9 @@
     }
 }
 
-/// Content will be displayed conditionally based on matching the attribute being assigned to the value, or if the attribute is not assigned if it matches the default.
+/// Content will be displayed conditionally based on matching the attribute
+/// being assigned to the value, or if the attribute is not assigned if it
+/// matches the default.
 /// @param {String} $value - The value the conditional is dependent on
 /// @param {String} $attribute - The attribute to check for the conditional
 /// @param {String} $default - If the attribute is not assigned, will match value to default

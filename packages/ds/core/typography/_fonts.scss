@@ -6,6 +6,7 @@
 @use '~@fontsource/lato/scss/mixins' as Lato;
 @use '~@fontsource/inter/scss/mixins' as Inter;
 
+/// Creates heading font
 @mixin create-headings {
     @include Lato.fontFace(
         $weight: map-get(text.$heading, weight, regular),
@@ -16,6 +17,7 @@
     );
 }
 
+/// Creates body font
 @mixin create-body() {
     @include Inter.fontFace(
         $weight: map-get(text.$body, weight, regular),
@@ -26,6 +28,7 @@
     );
 }
 
+/// Creates fonts used in design system
 @mixin create() {
     @include create-body();
     @include create-headings();
