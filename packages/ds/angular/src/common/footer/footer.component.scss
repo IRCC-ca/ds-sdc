@@ -1,0 +1,30 @@
+@use '~@ircc-ca/ds-sdc-core/tokens/sizes';
+@use '~@ircc-ca/ds-sdc-core/layout/layout-grid';
+@use '~@ircc-ca/ds-sdc-core/util/device';
+
+.footing {
+    margin-top: sizes.$fixed-16;
+    margin-bottom: sizes.$fixed-16;
+  }
+
+  .grid-container {
+    display: grid;
+    @include layout-grid.grid(max-content auto, auto);
+    * {grid-column: auto / span 1};
+    
+    align-items: center;
+  }
+
+  .item1 {
+    margin-left: sizes.$fixed-20;
+    align-self: center;
+      @include device.in-phone-layout () {
+        margin-left: 36px;
+      }
+  }
+
+  .item2 {
+    justify-self: end;
+    align-self: center;
+    margin-right: sizes.$fixed-20;
+  }
