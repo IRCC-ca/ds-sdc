@@ -1,5 +1,6 @@
 @use 'sass:string';
 
+/// Placeholders for fontawesome constants - will be extended when create mixin is included
 %far,
 %fa-regular {
     font-family: 'Font Awesome 6 Pro', serif;
@@ -29,6 +30,7 @@
     font-family: 'Font Awesome 6 Pro', serif;
     font-weight: 100;
 }
+/// Mixin to include to define all fontawesome fonts used in the design system
 @mixin create() {
     $font-root: '~@fortawesome/fontawesome-pro/webfonts';
     @font-face {
@@ -102,16 +104,19 @@
     }
 }
 
+/// Use this mixin to add a static icon in a pseudo element that supports content
+/// eg: ::before, ::after
 @mixin decor-icon($fa-var, $fa-family) {
     @extend %#{$fa-family};
 
     content: string.unquote('"#{ $fa-var }"');
     speak: none;
 }
+
+/// Use this mixin to add a dynamic icon in a pseudo element that supports content
+/// eg: ::before,.::after using a css property
+/// @param {String} $fa-var css property name
 @mixin variable-icon($fa-var) {
     content: var($fa-var);
     speak: none;
-}
-@mixin font-icon($fa-family) {
-    @extend %#{$fa-family};
 }

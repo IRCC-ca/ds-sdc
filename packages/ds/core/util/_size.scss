@@ -1,12 +1,19 @@
 @use './list' as list;
 @use './theme' as theme;
+/// global size constant
 $size-mode: '';
+
+/// Available size list
 $sizes: (small, large);
 
+/// override the size mode setting (required before theme creation)
+/// @param {String} new-mode - new setting for size mode, as defined in $sizes map
 @mixin set-mode($new-mode: large) {
     $size-mode: $new-mode !global;
 }
 
+/// Content included within this mixin will only be included if the size aligns to the value passed
+/// @param {String} $value key from $sizes list, when size aligns to $value, content will display
 @mixin selector ($value: small) {
 
     @include theme.selector($value: $value,
@@ -16,6 +23,9 @@ $sizes: (small, large);
         @content;
     }
 }
+
+/// Get the non-selected size mode
+/// @returns the inverse of the selected size mode.
 @function get-alt-mode() {
     @return list.filter($sizes, $size-mode);
 }

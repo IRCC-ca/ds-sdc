@@ -1,8 +1,8 @@
-@use '../util/color' as color;
-@use './text' as text;
-@use '../util/theme' as theme;
-@use './template-const' as template-const;
-@use '../util/device' as device;
+@use '../../util/color' as color;
+@use '../text' as text;
+@use '../../util/theme' as theme;
+@use '../template-const' as template-const;
+@use '../../util/device' as device;
 @mixin global($neutral, $accent) {
     @at-root {
         #{template-const.$root-selectors} {

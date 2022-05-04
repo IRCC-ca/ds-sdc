@@ -1,5 +1,5 @@
 /* stylelint-disable property-no-unknown, selector-max-universal, scss/at-extend-no-missing-placeholder */
-@import 'layout-var';
+@use '../util/device';
 
 $gap-width: 20px;
 
@@ -11,15 +11,15 @@ $gap-width: 20px;
 
     &-margins {
         @extend %mod-layout;
-        @include in-phone-layout {
+        @include device.in-phone-layout {
             margin-left: 16px;
             margin-right: 16px;
         }
-        @include in-tablet-layout {
+        @include device.in-tablet-layout {
             margin-left: 40px;
             margin-right: 40px;
         }
-        @include in-desktop-layout {
+        @include device.in-desktop-layout {
             margin-left: 20px;
             margin-right: 20px;
         }

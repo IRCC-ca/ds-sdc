@@ -1,3 +1,6 @@
+/// @param {List} $list The source list
+/// @param {List or Item} $filter The items to remove from the list
+/// @returns The filtered list
 @function filter($list, $filter) {
     $returnList: ();
     $bracketed: is-bracketed($list);

@@ -1,5 +1,8 @@
 @use '../tokens/template-const' as template-const;
-
+/// Add $prefix to the beginning of a string if not present
+/// @param {Map} $light - Map of variables to initialize in light mode
+/// @param {Map} $dark - Map of variables to initialize in dark mode
+/// @param {Map} $all (()) - Map of variables to initialize with no conditions
 @mixin color-scheme($light, $dark, $all: ()) {
     @media (prefers-color-scheme: dark) {
         @include tokens-for-map($dark);
@@ -18,6 +21,7 @@
     @include tokens-for-map($all);
 }
 
+/// Content passed to this mixin will only be displayed in light mode
 @mixin light {
     @at-root {
         #{template-const.$root-selectors} {
@@ -34,6 +38,7 @@
     }
 }
 
+/// Content passed to this mixin will only be displayed in dark mode
 @mixin dark {
     @at-root {
         #{template-const.$root-selectors} {
@@ -49,11 +54,20 @@
         }
     }
 }
+
+/// Content passed to this mixin will only be displayed in light mode
 @mixin tokens-for-map($map) {
     @each $property, $token in $map {
         #{$property}: #{$token};
     }
 }
+
+/// Content will be displayed conditionally based on matching the attribute
+/// being assigned to the value, or if the attribute is not assigned if it
+/// matches the default.
+/// @param {String} $value - The value the conditional is dependent on
+/// @param {String} $attribute - The attribute to check for the conditional
+/// @param {String} $default - If the attribute is not assigned, will match value to default
 @mixin selector(
     $value,
     $attribute,

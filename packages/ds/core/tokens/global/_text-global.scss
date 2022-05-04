@@ -1,7 +1,7 @@
-@use '../util/color' as color;
-@use './text' as text;
-@use '../util/theme' as theme;
-@use './template-const' as template-const;
+@use '../../util/color' as color;
+@use '../text' as text;
+@use '../../util/theme' as theme;
+@use '../template-const' as template-const;
 @mixin text-global($palette) {
     @at-root {
         #{template-const.$root-selectors} {
