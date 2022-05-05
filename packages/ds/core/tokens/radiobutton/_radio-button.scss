@@ -1,9 +1,9 @@
-@use '../util/color' as color;
-@use '../util/theme' as theme;
-@use '../util/size' as size;
-@use '../util/device' as device;
-@use './template-const' as template-const;
-@use './sizes' as token-size;
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/size' as size;
+@use '../../util/device' as device;
+@use '../template-const' as template-const;
+@use '../sizes' as token-size;
 
 @mixin selector {
     input[type='radio'] {
@@ -72,6 +72,16 @@
         }
     }
 
+    &:active {
+        border: 1px solid var(--border);
+        background-color: var(--generic-active);
+
+        &:disabled {
+            border: 1px solid var(--border-disabled);
+            background-color: var(--surface1);
+        }
+    }
+
     // Checked state
     &:checked {
         border: 6px solid var(--formcontrol);
@@ -83,16 +93,6 @@
 
         &:disabled {
             border: 6px solid var(--formcontrol-disabled);
-            background-color: var(--surface1);
-        }
-    }
-
-    &:active {
-        border: 1px solid var(--border);
-        background-color: var(--generic-active);
-
-        &:disabled {
-            border: 1px solid var(--border-disabled);
             background-color: var(--surface1);
         }
     }
@@ -142,21 +142,13 @@
         height: token-size.$relative-1-25;
         width: token-size.$relative-1-25;
 
-        & + label {
-            // content:'';
-            color:red;
-            @extend .body3;
-        }
+        @extend .body3;
     }
 
     @include size.selector(large) {
         height: token-size.$relative-1-5;
         width: token-size.$relative-1-5;
 
-        & + label {
-            // content: '';
-            color: green;
-            @extend .body2
-        } 
+        @extend .body2
     }
 }

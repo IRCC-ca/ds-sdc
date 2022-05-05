@@ -1,9 +1,11 @@
-@use '../util/color' as color;
-@use '../util/theme' as theme;
-@use '../util/size' as size;
-@use '../util/device' as device;
-@use './template-const' as template-const;
-@use './sizes' as token-size;
+/* stylelint-disable */
+// TODO: reenable stylelint
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/device' as device;
+@use '../../util/size' as size;
+@use '../template-const' as template-const;
+@use '../sizes' as token-size;
 
 @mixin selector {
     input[type='checkbox'] {
