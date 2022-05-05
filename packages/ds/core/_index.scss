@@ -2,27 +2,38 @@
 @use './typography/typography' as typography;
 @use './paint/paint' as paint;
 @use './theme/theme' as theme;
-@use './tokens/link' as link;
-@use './tokens/checkbox' as checkbox;
-@use './tokens/radio-button' as radiobutton;
-@use './tokens/focus' as focus;
-@use './tokens/disable' as disable;
+@use './tokens/link/link' as link;
+@use './tokens/radiobutton/radio-button' as radiobutton;
+@use './tokens/checkbox/checkbox' as checkbox;
+@use './tokens/partial/focus' as focus;
+@use './tokens/partial/disable' as disable;
 @use './tokens/button/primary' as button-primary;
 @use './tokens/button/secondary' as button-secondary;
 @use './tokens/button/plain' as button-plain;
 @use './tokens/button/round' as button-round;
 
+/// Default theme, should be included for most applications, and can be customized through the prameters
+/// @param {String} $palette ('default') - the palette from the theme to construct the components with
+/// @param {String} $size ('large') - The text size to default to,
+/// Client-facing applications should be constructed with large text
+/// Officer-facing applications should be constructed with small text.
 @mixin default($palette: 'default', $size: 'large') {
     @include create-globals($palette, $size);
-    @include create-components();
+    @include create-item-layouts();
 }
 
+/// the global level tokens to construct layouts
+/// @param {String} $palette ('default') - the palette from the theme to construct the components with
+/// @param {String} $size ('large') - The text size to default to,
+/// Client-facing applications should be constructed with large text
+/// Officer-facing applications should be constructed with small text.
 @mixin create-globals($palette, $size) {
     @include theme.default($palette, $size);
     @include fonts.create();
 }
 
-@mixin create-components() {
+/// the item level tokens to construct layouts
+@mixin create-item-layouts() {
     @include typography.create();
     @include paint.create();
     @include link.create();
@@ -35,7 +46,6 @@
 
     @include disable.create();
 
-    // TODO: move this, only for testing
     @include checkbox.create();
     @include radiobutton.create();
 }

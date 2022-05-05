@@ -7,11 +7,16 @@
 @forward 'fonts' as fonts-*;
 @use 'sass:map';
 
+/// references sass variables to create font level specific properties
+/// @param {Map} $map - the map of fonts to reference
+/// @param {Number} $level - the font level to reference
 @mixin fontSize($map, $level) {
     font-size: map.get($map, $level, font-size);
     line-height: map.get($map, $level, line-height);
 }
 
+/// Defines font weight for emphasis elements
+/// @param {Number} $weight font-weight to use for emphasis on parent
 @mixin emphasis($weight) {
     & strong,
     & .emphasis,
@@ -21,6 +26,7 @@
     }
 }
 
+/// Defines heading levels
 @mixin headings {
     %heading {
         color: var(--text-primary);
@@ -68,7 +74,8 @@
     }
 }
 
-@mixin body() {
+/// Defines body levels
+@mixin body {
     %body {
         color: var(--text-primary);
         font-weight: map.get(text.$body, weight, regular);
@@ -84,17 +91,17 @@
 
         .body2 {
             @extend %body;
-            @include fontSize(map.get(text.$body, level), 1);
+            @include fontSize(map.get(text.$body, level), 2);
         }
 
         .body3 {
             @extend %body;
-            @include fontSize(map.get(text.$body, level), 1);
+            @include fontSize(map.get(text.$body, level), 3);
         }
 
         .body4 {
             @extend %body;
-            @include fontSize(map.get(text.$body, level), 1);
+            @include fontSize(map.get(text.$body, level), 4);
         }
 
         @include size.selector(small) {
@@ -111,6 +118,8 @@
     }
 }
 
+
+/// Defines typography used in the design system
 @mixin create() {
     @include body();
     @include headings();
