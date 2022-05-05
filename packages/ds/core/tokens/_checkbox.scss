@@ -1,42 +1,47 @@
 @use '../util/color' as color;
 @use '../util/theme' as theme;
-@use './template-const' as template-const;
-@use './sizes' as sizes;
+@use '../util/size' as size;
 @use '../util/device' as device;
+@use './template-const' as template-const;
+@use './sizes' as token-size;
 
-@mixin checkbox($palette, $visited-palette) {
+@mixin selector {
+    input[type='checkbox'] {
+        @content;
+    }
+}
+
+@mixin checkbox($palette, $focus, $critical) {
     @at-root {
         #{template-const.$root-selectors} {
             @include theme.light {
-                // @include anchor-selector {
-                //     @include device.if-hover {
-                //         --text-hover: #{color.mix-token($palette, 800)};
-                //     }
-                //     @include theme.tokens-for-map(
-                //         (
-                //             --text: color.mix-token($palette, 700),
-                //             --text-active: color.mix-token($palette, 900),
-                //             --text-visited:
-                //                 color.mix-token($visited-palette, 700),
-                //         )
-                //     );
-                // }
+                @include selector {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 800)};
+                    }
+                    @include theme.tokens-for-map(
+                        (
+                            --text: color.mix-token($palette, 700),
+                            --text-active: color.mix-token($palette, 900),
+                        )
+                    );
+                }
             }
 
             @include theme.dark {
-                // @include anchor-selector {
-                //     @include device.if-hover {
-                //         --text-hover: #{color.mix-token($palette, 500)};
-                //     }
-                //     @include theme.tokens-for-map(
-                //         (
-                //             --text: color.mix-token($palette, 600),
-                //             --text-active: color.mix-token($palette, 400),
-                //             --text-visited:
-                //                 color.mix-token($visited-palette, 600),
-                //         )
-                //     );
-                // }
+                @include selector {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 500)};
+                    }
+                    @include theme.tokens-for-map(
+                        (
+                            --text: color.mix-token($palette, 600),
+                            --text-active: color.mix-token($palette, 400),
+                            --text-visited:
+                                color.mix-token($focus, 600),
+                        )
+                    );
+                }
             }
         }
     }
@@ -45,37 +50,90 @@
 @mixin create {
     @at-root {
         #{template-const.$root-selectors} {
-            // @include anchor-selector() {
-            //     @include layout();
-            // }
+            @include selector() {
+                @include layout();
+            }
         }
     }
 }
 
 @mixin layout {
-    border-radius: sizes.$border-radius;
-    padding: sizes.$fixed-2 sizes.$fixed-4;
-    display: inline;
+    border-radius: token-size.$border-radius;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    outline: 0;
+    box-sizing: border-box;
+    background-color: var(--surface1);
+    border: 1px solid var(--border);
 
-    &:link {
-        color: var(--text);
-    }
-    @include device.if-hover {
-        color: var(--text-hover);
-        background-color: var(--generic-hover);
-    }
+      @include checkbox-size();
 
-    &:focus {
-        box-shadow: none;
-        outline-offset: 0;
+      @include device.if-hover {
+        color: var(--formcontrol-hover);
     }
 
-    &:active {
-        color: var(--text-active);
-        background-color: var(--generic-active);
+    &:before {
+        content: "";
+        display: block;
     }
 
-    &:visited {
-        color: var(--text-visited);
+    &:checked  {
+        background: var(--formcontrol);
+
+        // draw the checkmark
+        &:before { 
+            text-align: center;
+            display: inline-block;
+            left: calc(50% - 8px / 2);
+            top: calc(50% - 16px / 2);
+            width: 8px;
+            height: 16px;
+            margin: 0px 6px;
+            border: solid var(--surface1);
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        &:required {
+            background: var(--formcontrol-error);
+        }
+
+        &:disabled {
+            background: var(--formcontrol-disabled);
+        }
+    }
+
+    &:required, &:invalid {
+        border: 1px solid var(--formcontrol-error);
+        background: var(--formcontrol-critical-background);
+
+        &:disabled {
+            background: var(--critical-border-disabled); 
+        };
+    }
+
+    &:disabled {
+        background: var(--border-disabled);
+        
+        & + label {
+            color: var(--text-disabled);
+        }
+    }
+}
+
+@mixin checkbox-size {
+    @include size.selector(small) {
+        width: token-size.$relative-1-25;
+        height: token-size.$relative-1-25;
+
+        @extend .body3;
+    }
+
+    @include size.selector(large) {
+        width: token-size.$relative-1-5;
+        height: token-size.$relative-1-5;
+
+        @extend .body2;
     }
 }

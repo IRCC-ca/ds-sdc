@@ -29,6 +29,6 @@
     @include global.global(neutral, selected, focus, critical);
     @include focus.focus(focus);
 
-      // TODO: move this, only for testing
-      @include radiobutton.radiobutton(neutral, focus, critical);
+    @include radiobutton.radiobutton(neutral, focus, critical);
+    @include checkbox.checkbox(neutral, focus, critical);
 }

@@ -8,27 +8,57 @@
       <div>
         <button color="cta" style="width: 164px">Default</button>
         <br />
-        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input">
-        <label for="checkbox_input">core input</label>
+        <input type="checkbox" id="checkbox_input1" name="checkbox_input1" value="checkbox_input1">
+        <label for="checkbox_input1">core checkbox</label>
+        <br />
+        <input type="checkbox" id="checkbox_input1" name="checkbox_input1" value="checkbox_input1" size="small">
+        <label for="checkbox_input1">core checkbox small</label>
+        <br />
+        <input type="checkbox" id="checkbox_input1" name="checkbox_input1" value="checkbox_input1" size="large">
+        <label for="checkbox_input1">core checkbox large</label>
+        <br />
+        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input" checked>
+        <label for="checkbox_input">core checkbox checked</label>
+        <br />
+        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input" disabled>
+        <label for="checkbox_input">core checkbox disabled</label>
+        <br />
+        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input" disabled required checked>
+        <label for="checkbox_input">core checkbox, error, disabled</label>
+        <br />
+        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input" disabled checked>
+        <label for="checkbox_input">core checkbox, no error disabled</label>
+        <br />
+        <input type="checkbox" id="checkbox_input" name="checkbox_input" value="checkbox_input" required>
+        <label for="checkbox_input">core checkbox required, error</label>
         <br />
         <jds-checkbox></jds-checkbox>
         <br />
         <jds-radio-button></jds-radio-button>
         <br />
-        <input type="radio" id="html" name="fav_language" value="HTML">
-        <label class="label" for="html">core radio</label>
+        <input type="radio" id="html1" name="fav_language1" value="HTML1">
+        <label class="label" for="html1">core radio</label>
         <br/>
-        <input type="radio" id="html" name="fav_language" value="HTML" required>
-        <label class="label" for="html">invalid core radio</label>
+        <input type="radio" id="html2" name="fav_language2" value="HTML2" size="small">
+        <label class="label" for="html2">core radio small</label>
+        <br/>
+        <input type="radio" id="html3" name="fav_language3" value="HTML3" size="large">
+        <label class="label" for="html3">core radio large</label>
+        <br/>
+        <input type="radio" id="html4" name="fav_language4" value="HTML4" size="small" required>
+        <label class="label" for="html4">invalid core radio</label>
         <br />
-        <input type="radio" id="html" name="fav_language" value="HTML" disabled>
-        <label class="label" for="html">core radio disabled</label>
+        <input type="radio" id="html5" name="fav_language5" value="HTML5" disabled>
+        <label class="label" for="html5">core radio disabled</label>
         <br />
-        <input type="radio" id="html" name="fav_language" value="HTML" disabled required checked>
-        <label class="label" for="html">core radio disabled, error</label>
+        <input type="radio" id="html6" name="fav_language6" value="HTML6" disabled required checked>
+        <label class="label" for="html6">core radio disabled, error, checked</label>
         <br />
-        <input type="radio" id="html" name="fav_language" value="HTML" disabled checked>
-        <label class="label" for="html">core radio disabled, no error</label>
+        <input type="radio" id="html7" name="fav_language7" value="HTML7" disabled checked>
+        <label class="label" for="html7">core radio disabled, checked</label>
+        <br />
+        <input type="radio" id="html8" name="fav_language8" value="HTML8" disabled required>
+        <label class="label" for="html8">core radio disabled, required</label>
         <br />
         <button color="cta" style="width: 164px" category="round">
           <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>
