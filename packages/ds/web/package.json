@@ -1,6 +1,6 @@
 {
   "name": "@ircc-ca/ds-sdc-web",
-  "version": "0.0.3",
+  "version": "0.0.4-beta.0",
   "description": "Stencil Component Starter",
   "author": "IRCC-ca",
   "main": "dist/index.cjs.js",
@@ -24,7 +24,8 @@
     "web": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "lint": "eslint src/**/*{.ts,.tsx}"
   },
   "bugs": {
     "url": "https://github.com/IRCC-ca/ds-sdc/issues"
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.13.0",
+    "@stencil/eslint-plugin": "^0.4.0",
     "@stencil/sass": "^1.5.2",
     "puppeteer": "^10.0.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@ircc-ca/ds-sdc-angular",
-  "version": "0.0.7",
+  "version": "0.0.8-beta.0",
   "description": "> TODO: description",
   "author": "IRCC-ca",
   "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
@@ -18,8 +18,9 @@
     "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
   },
   "scripts": {
-    "test": "ng test --watch=false --code-coverage=true --browsers=ChromeHeadless",
-    "test:watch": "ng test --watch=true --code-coverage=true",
+    "test": "ng test",
+    "test:cov": "ng test --coverage",
+    "test:watch": "ng test --watch",
     "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
     "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
     "lint:style": "stylelint \"src/**/*.scss\"",
@@ -36,8 +37,8 @@
     "@angular/core": "^13.1.0"
   },
   "dependencies": {
-    "@ircc-ca/ds-sdc-core": "^0.0.5",
-    "@ircc-ca/ds-sdc-web": "^0.0.3",
+    "@ircc-ca/ds-sdc-core": "^0.0.8-beta.0",
+    "@ircc-ca/ds-sdc-web": "^0.0.4-beta.0",
     "tslib": "^2.3.0"
   },
   "publishConfig": {

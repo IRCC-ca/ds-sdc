@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "IIconConfig",
-            "id": "interface-IIconConfig-9abd37042da71431c65c655cafc32eaa5cf9808bb7d64caf8c63679df5812c900457a465a72c6dd5b8e39b35dda53d396ed73e9eadd44830b10cc0e8eaa66f8f",
+            "id": "interface-IIconConfig-0ce5187df87b1ce0377297752e8d3917800a511a627ab0ca41e5c8d4129f02ad2a5b503f500d06dba246e9546b2ee7abb82de02dad7e7fdda0750a44acd7693b",
             "file": "packages/ds/angular/src/common/icon/icon.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport const FONT_FAMILIES = {\n    ['fa-solid']: null,\n    ['fa-thin']: null,\n    ['fa-light']: null,\n    ['fa-regular']: null,\n    ['fa-brands']: null,\n};\n\nexport interface IIconConfig {\n    ariaLabel?: string;\n    unicode: string;\n    fontFamily: keyof typeof FONT_FAMILIES;\n}\n\n@Component({\n    selector: 'jds-font-icon',\n    templateUrl: './icon.component.html',\n    styleUrls: ['./icon.component.scss'],\n})\nexport class IconComponent {\n    @Input() iconConfig!: IIconConfig;\n\n    public get formattedIcon(): string {\n        return \"'\" + '\\\\' + this.iconConfig.unicode + \"'\";\n    }\n\n    public get isHidden(): boolean {\n        return this.iconConfig.ariaLabel === '';\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nexport const FONT_FAMILIES = {\r\n    ['fa-solid']: null,\r\n    ['fa-thin']: null,\r\n    ['fa-light']: null,\r\n    ['fa-regular']: null,\r\n    ['fa-brands']: null,\r\n};\r\n\r\nexport interface IIconConfig {\r\n    ariaLabel?: string;\r\n    unicode: string;\r\n    fontFamily: keyof typeof FONT_FAMILIES;\r\n}\r\n\r\n@Component({\r\n    selector: 'jds-font-icon',\r\n    templateUrl: './icon.component.html',\r\n    styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent {\r\n    @Input() iconConfig!: IIconConfig;\r\n\r\n    public get formattedIcon(): string {\r\n        return \"'\" + '\\\\' + this.iconConfig.unicode + \"'\";\r\n    }\r\n\r\n    public get isHidden(): boolean {\r\n        return this.iconConfig.ariaLabel === '';\r\n    }\r\n}\r\n",
             "properties": [
                 {
                     "name": "ariaLabel",
@@ -44,12 +44,12 @@
         },
         {
             "name": "User",
-            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
             "file": "stories/User.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {}\n",
+            "sourceCode": "export interface User {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": []
@@ -63,7 +63,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-cf7641c28f88a3781484b54f394a574f2967440761c5f7f316da6f73acc36655551b37b229f620f3082cb93316dae0ecfc21ac68a555ac991f94e35d5cd9b316",
+            "id": "component-AppComponent-fa47d0cd2b1bbfe00a0a690993a0c40c8912034841a7938346e108ba2393f85917b7191c063fe91f34445944d2b4882fee7d082f4c119695bf4b50da502a58a0",
             "file": "sample/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -84,7 +84,7 @@
             "propertiesClass": [
                 {
                     "name": "alicornIconConfig",
-                    "defaultValue": "{\n        unicode: 'f6b0',\n        fontFamily: 'fa-solid',\n    } as IIconConfig",
+                    "defaultValue": "{\r\n        unicode: 'f6b0',\r\n        fontFamily: 'fa-solid',\r\n    } as IIconConfig",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -94,7 +94,7 @@
                 },
                 {
                     "name": "rocketIconConfig",
-                    "defaultValue": "{\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig",
+                    "defaultValue": "{\r\n        unicode: 'e027',\r\n        fontFamily: 'fa-solid',\r\n    } as IIconConfig",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -121,11 +121,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateService } from '@ngx-translate/core';\n// import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';\n\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n    title = 'sample';\n\n    // config = {\n    //   id: 'firstName',\n    //   type: 'input',\n    //   label: 'test label',\n    //   hint: 'test test',\n    //   placeholder: '',\n    // } as IFieldConfig;\n\n    alicornIconConfig = {\n        unicode: 'f6b0',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    rocketIconConfig = {\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    constructor(private translate: TranslateService) {}\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular';\r\nimport { TranslateService } from '@ngx-translate/core';\r\n// import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';\r\n\r\n@Component({\r\n    selector: 'app-root',\r\n    templateUrl: './app.component.html',\r\n    styleUrls: ['./app.component.scss'],\r\n})\r\nexport class AppComponent {\r\n    title = 'sample';\r\n\r\n    // config = {\r\n    //   id: 'firstName',\r\n    //   type: 'input',\r\n    //   label: 'test label',\r\n    //   hint: 'test test',\r\n    //   placeholder: '',\r\n    // } as IFieldConfig;\r\n\r\n    alicornIconConfig = {\r\n        unicode: 'f6b0',\r\n        fontFamily: 'fa-solid',\r\n    } as IIconConfig;\r\n\r\n    rocketIconConfig = {\r\n        unicode: 'e027',\r\n        fontFamily: 'fa-solid',\r\n    } as IIconConfig;\r\n\r\n    constructor(private translate: TranslateService) {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use \"~@ircc-ca/ds-sdc-core/layout/layout-grid\" as layouts;\n@use \"~@ircc-ca/ds-sdc-core/typography/typography\";\n.sidenav {\n    grid-column: first / span 1;\n    height: 100%;\n    > * {\n        grid-column: auto / span 1;\n    }\n}\n.sidenav2 {\n    grid-column: span 1 / last;\n}\n.masthead {\n    grid-row: 1 / 2;\n    grid-column: first / last;\n    background-color: aquamarine;\n}\n\n.wrapper {\n    @include layouts.grid(auto 1fr auto, 1fr auto);\n    height: 100%;\n}",
+                    "data": "@use \"~@ircc-ca/ds-sdc-core/layout/layout-grid\" as layouts;\r\n@use \"~@ircc-ca/ds-sdc-core/typography/typography\";\r\n.sidenav {\r\n    grid-column: first / span 1;\r\n    height: 100%;\r\n    > * {\r\n        grid-column: auto / span 1;\r\n    }\r\n}\r\n.sidenav2 {\r\n    grid-column: span 1 / last;\r\n}\r\n.masthead {\r\n    grid-row: 1 / 2;\r\n    grid-column: first / last;\r\n    background-color: aquamarine;\r\n}\r\n\r\n.wrapper {\r\n    @include layouts.grid(auto 1fr auto, 1fr auto);\r\n    height: 100%;\r\n}",
                     "styleUrl": "./app.component.scss"
                 }
             ],
@@ -156,11 +156,11 @@
                     }
                 ]
             },
-            "templateData": "\n  <!-- Next Steps -->\n  <div class=\"wrapper\">\n    <jds-header></jds-header>\n    <jds-footer></jds-footer>\n    <div class=\"sidenav panel-1-column\" hidden=\"true\">\n      <h2>Panel <strong>asudnasd</strong></h2>\n      <div>\n        <button color=\"cta\" style=\"width: 164px\">Default</button>\n        <br />\n        <button color=\"cta\">Default</button>\n        <br />\n        <button color=\"cta\" disabled=\"true\">Default</button>\n        <br />\n        <button color=\"cta\" style=\"width: 164px\" category=\"round\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n        <br />\n        <button color=\"cta\" category=\"round\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n        <br />\n        <button color=\"cta\" category=\"round\" disabled=\"true\">\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n        </button>\n      </div>\n      <nav>\n        <ul>\n          <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\n          <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\n          <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\n          <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\n          <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\n        </ul>\n      </nav>\n    </div>\n    <div class=\"content-area-responsive-margins\">\n      <h2>Next Steps</h2>\n      <p>What do you want to do next with your app? <a href=\"#nothere\">What do you want to do next with your app?</a> What do\n        you want to do\n        next with your app?</p>\n      <p><strong>asdasdasd</strong>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <a href=\"www.github.com\"><span class=\"font\" aria-hidden></span> Github</a>\n      <input size=\"small\" color=\"critical\" type=\"button\" value=\"Default\">\n      <my-component first=\"Stencil\" last=\"Name\" middle=\"test\"></my-component>\n\n      <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\n      <my-component first=\"Stencil\" last=\"Name\"></my-component>\n      <jds-header></jds-header>\n      <jds-footer></jds-footer>\n      <a href=\"www.github.com\">Github</a>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      <p>What do you want to do next with your app?</p>\n      </div>\n      <div class=\"sidenav2 panel-1-column\">\n        <h2>Panel</h2>\n        <br>\n        <nav>\n          <ul>\n            <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\n            <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\n            <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\n            <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\n            <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\n          </ul>\n        </nav>\n        <br>\n        <div>\n          <jds-button size=\"small\" ariaLabel=\"blah blah one\" color=\"CTA\" category=\"primary\">Small, CTA, primary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"primary\">Large, CTA, primary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"secondary\">Small, CTA, primary, secondary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"secondary\">Large, CTA, primary, secondary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"plain\">Small, CTA, plain</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"CTA\" category=\"plain\">Large, CTA, plain</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"primary\">Small, critical, primary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\">Large, critical, primary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"secondary\">Small, critical, secondary</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"secondary\">Large, critical, secondary</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\">Small, critical, plain</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"plain\">Large, critical, plain</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"CTA\" category=\"primary\" input=\"submit\">Small, CTA, primary, submit type</jds-button>\n          <br />\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\" input=\"reset\">Large, critical, reset type</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\">Small, critical, plain, button type</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"true\">DISABLED</jds-button>\n          <br />\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"false\"> Not DISABLED</jds-button>\n          <br />\n          <jds-button size=\"small\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"primary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon>Small, CTA, primary, left icon</jds-button>\n          <br />\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the right\" color=\"CTA\" category=\"primary\">Large, CTA, primary, right icon<jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon></jds-button>\n          <br />\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"secondary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon></jds-button>\n          <br />\n        </div>\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\">A link to Github</jds-link>\n        <jds-link [href]=\"'/styles.css'\" [download]=\"'superStylish'\">A file download link</jds-link>\n        <jds-link [href]=\"'tel:+'\" [target]=\"'_blank'\">A telephone link</jds-link>\n        <jds-link [href]=\"'mailto:someone@example.com'\" [target]=\"'_blank'\">A mailto link</jds-link>\n        <jds-link [href]=\"'#section2'\" [target]=\"'_blank'\">A no-icon link</jds-link>\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\" [ariaLabel]=\"'A link to Github'\">A link to Github with the ariaLabel overridden</jds-link>\n      </div>\n  </div>"
+            "templateData": "\r\n  <!-- Next Steps -->\r\n  <div class=\"wrapper\">\r\n    <jds-header></jds-header>\r\n    <jds-footer></jds-footer>\r\n    <div class=\"sidenav panel-1-column\" hidden=\"true\">\r\n      <h2>Panel <strong>asudnasd</strong></h2>\r\n      <div>\r\n        <button color=\"cta\" style=\"width: 164px\">Default</button>\r\n        <br />\r\n        <button color=\"cta\">Default</button>\r\n        <br />\r\n        <button color=\"cta\" disabled=\"true\">Default</button>\r\n        <br />\r\n        <button color=\"cta\" style=\"width: 164px\" category=\"round\">\r\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\r\n        </button>\r\n        <br />\r\n        <button color=\"cta\" category=\"round\">\r\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\r\n        </button>\r\n        <br />\r\n        <button color=\"cta\" category=\"round\" disabled=\"true\">\r\n          <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\r\n        </button>\r\n      </div>\r\n      <nav>\r\n        <ul>\r\n          <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\r\n          <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\r\n          <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\r\n          <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\r\n          <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\r\n        </ul>\r\n      </nav>\r\n    </div>\r\n    <div class=\"content-area-responsive-margins\">\r\n      <h2>Next Steps</h2>\r\n      <p>What do you want to do next with your app? <a href=\"#nothere\">What do you want to do next with your app?</a> What do\r\n        you want to do\r\n        next with your app?</p>\r\n      <p><strong>asdasdasd</strong>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <a href=\"www.github.com\"><span class=\"font\" aria-hidden></span> Github</a>\r\n      <input size=\"small\" color=\"critical\" type=\"button\" value=\"Default\">\r\n      <my-component first=\"Stencil\" last=\"Name\" middle=\"test\"></my-component>\r\n\r\n      <jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon>\r\n      <my-component first=\"Stencil\" last=\"Name\"></my-component>\r\n      <jds-header></jds-header>\r\n      <jds-footer></jds-footer>\r\n      <a href=\"www.github.com\">Github</a>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      <p>What do you want to do next with your app?</p>\r\n      </div>\r\n      <div class=\"sidenav2 panel-1-column\">\r\n        <h2>Panel</h2>\r\n        <br>\r\n        <nav>\r\n          <ul>\r\n            <li><a href=\"#nowhere\" title=\"Lorum ipsum dolor sit amet\">Lorem</a></li>\r\n            <li><a href=\"#nowhere\" title=\"Aliquam tincidunt mauris eu risus\">Aliquam</a></li>\r\n            <li><a href=\"#nowhere\" title=\"Morbi in sem quis dui placerat ornare\">Morbi</a></li>\r\n            <li><a href=\"#nowhere\" title=\"Praesent dapibus, neque id cursus faucibus\">Praesent</a></li>\r\n            <li><a href=\"#nowhere\" title=\"Pellentesque fermentum dolor\">Pellentesque</a></li>\r\n          </ul>\r\n        </nav>\r\n        <br>\r\n        <div>\r\n          <jds-button size=\"small\" ariaLabel=\"blah blah one\" color=\"CTA\" category=\"primary\">Small, CTA, primary</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"CTA\" category=\"primary\">Large, CTA, primary</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"CTA\" category=\"secondary\">Small, CTA, primary, secondary</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"CTA\" category=\"secondary\">Large, CTA, primary, secondary</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"CTA\" category=\"plain\">Small, CTA, plain</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"CTA\" category=\"plain\">Large, CTA, plain</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"critical\" category=\"primary\">Small, critical, primary</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\">Large, critical, primary</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"critical\" category=\"secondary\">Small, critical, secondary</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"critical\" category=\"secondary\">Large, critical, secondary</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\">Small, critical, plain</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"critical\" category=\"plain\">Large, critical, plain</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"CTA\" category=\"primary\" input=\"submit\">Small, CTA, primary, submit type</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" color=\"critical\" category=\"primary\" input=\"reset\">Large, critical, reset type</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\">Small, critical, plain, button type</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"true\">DISABLED</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" color=\"critical\" category=\"plain\" input=\"button\" [disabled]=\"false\"> Not DISABLED</jds-button>\r\n          <br />\r\n          <jds-button size=\"small\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"primary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon>Small, CTA, primary, left icon</jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the right\" color=\"CTA\" category=\"primary\">Large, CTA, primary, right icon<jds-font-icon [iconConfig]=\"alicornIconConfig\"></jds-font-icon></jds-button>\r\n          <br />\r\n          <jds-button size=\"large\" ariaLabel=\"This button has an icon on the left\" color=\"CTA\" category=\"secondary\"><jds-font-icon [iconConfig]=\"rocketIconConfig\"></jds-font-icon></jds-button>\r\n          <br />\r\n        </div>\r\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\">A link to Github</jds-link>\r\n        <jds-link [href]=\"'/styles.css'\" [download]=\"'superStylish'\">A file download link</jds-link>\r\n        <jds-link [href]=\"'tel:+'\" [target]=\"'_blank'\">A telephone link</jds-link>\r\n        <jds-link [href]=\"'mailto:someone@example.com'\" [target]=\"'_blank'\">A mailto link</jds-link>\r\n        <jds-link [href]=\"'#section2'\" [target]=\"'_blank'\">A no-icon link</jds-link>\r\n        <jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\" [ariaLabel]=\"'A link to Github'\">A link to Github with the ariaLabel overridden</jds-link>\r\n      </div>\r\n  </div>"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-efa877ca7c27c2de24787ed6a20600fa6a7ae4a27e410127a050a309b05177063d93491211180fba11048b5668487d66f0f8c10db43bf6276269390b54411c26",
+            "id": "component-ButtonComponent-999c1a6e7a1bc31d27d889497d7b3d98e819ef7bf5f1b5b4c68ea3d3683d1f6bc38226b49888ff252ceb8eaf6eb3033b25515c0cdf8d7190cbeb3b8b5b8c6370",
             "file": "packages/ds/angular/src/common/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -240,7 +240,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'jds-button',\n    templateUrl: './button.component.html',\n    styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent {\n    @Input() category?: 'primary' | 'secondary' | 'plain' = 'primary';\n    @Input() size?: 'small' | 'large' = 'large';\n    @Input() color?: 'critical' | 'CTA' = 'CTA';\n    @Input() type?: 'button' | 'submit' | 'reset' = 'button';\n    @Input() ariaLabel?: string;\n    @Input() disabled?: boolean;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'jds-button',\r\n    templateUrl: './button.component.html',\r\n    styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent {\r\n    @Input() category?: 'primary' | 'secondary' | 'plain' = 'primary';\r\n    @Input() size?: 'small' | 'large' = 'large';\r\n    @Input() color?: 'critical' | 'CTA' = 'CTA';\r\n    @Input() type?: 'button' | 'submit' | 'reset' = 'button';\r\n    @Input() ariaLabel?: string;\r\n    @Input() disabled?: boolean;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -249,11 +249,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<button\n    [attr.aria-label]=\"ariaLabel\"\n    [attr.color]=\"color\"\n    [attr.category]=\"category\"\n    [attr.size]=\"size\"\n    [attr.type]=\"type\"\n    [disabled]=\"disabled\"\n>\n    <ng-content></ng-content>\n</button>\n"
+            "templateData": "<button\r\n    [attr.aria-label]=\"ariaLabel\"\r\n    [attr.color]=\"color\"\r\n    [attr.category]=\"category\"\r\n    [attr.size]=\"size\"\r\n    [attr.type]=\"type\"\r\n    [disabled]=\"disabled\"\r\n>\r\n    <ng-content></ng-content>\r\n</button>\r\n"
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-ebf964e932cb136b095b51c4d7768988f61ae934d67712dfb575a23b8d5b366d156ccdb0a3f0bafcfb38a3491c0748ec877f0fa5c3fd7b226ff6bbc579103f68",
+            "id": "component-FooterComponent-8f1f893660b0bae90f2dac3d7a66842053e9999ff9a90d6a407501c876e53abae389bb16f2973104a1f549cb5d09020800a4a69916b1f4db3dd3635879e77aeb",
             "file": "packages/ds/angular/src/common/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -280,7 +280,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'jds-footer',\n    templateUrl: './footer.component.html',\n    styleUrls: ['./footer.component.css'],\n})\nexport class FooterComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'jds-footer',\r\n    templateUrl: './footer.component.html',\r\n    styleUrls: ['./footer.component.css'],\r\n})\r\nexport class FooterComponent {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -289,11 +289,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<p>footer works!</p>\n"
+            "templateData": "<p>footer works!</p>\r\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-455b34077e87149e407a3e20b04947dd42fbbed432b189f6a874697dc3013c161148aebf12554b84d5cb95f8eeaa6c8092e3cc2d613efc9f3a00b4f05d9e865a",
+            "id": "component-HeaderComponent-2ef0e0dca71b08b03743588000ed981798c68c7a1f33b86bd82f5207cba28d05dcc4fafc39dcd19e07515261c5a9e454fa627af34544a901c187845680bd6748",
             "file": "stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -352,14 +352,14 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  // styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"wrapper\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <storybook-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></storybook-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></storybook-button>\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            primary\r\n            size=\"small\"\r\n            primary=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></storybook-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  // styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-4113d49a7485474ef2b68686a026d7612b0584f03efecd95943fe7c91caa90ca8ec8622cec3c8f6ab65268f644101d7fdb8abb02705014c49716d4712c67c0d8-1",
+            "id": "component-HeaderComponent-e1ea3f12eedd9d6470dd9d59c8b2f633993c9e88cef06aa52cc32e5837edb07883d6c37cd8ba3527434ef365cd46d861478ea8561470cf58a768057ba0af1bea-1",
             "file": "packages/ds/angular/src/common/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -386,7 +386,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'jds-header',\n    templateUrl: './header.component.html',\n    styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n    selector: 'jds-header',\r\n    templateUrl: './header.component.html',\r\n    styleUrls: ['./header.component.scss'],\r\n})\r\nexport class HeaderComponent {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -398,11 +398,11 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "HeaderComponent-1",
-            "templateData": "<p><span class=\"font\" aria-hidden=\"true\"></span>header works!</p>\n"
+            "templateData": "<p><span class=\"font\" aria-hidden=\"true\"></span>header works!</p>\r\n"
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-9abd37042da71431c65c655cafc32eaa5cf9808bb7d64caf8c63679df5812c900457a465a72c6dd5b8e39b35dda53d396ed73e9eadd44830b10cc0e8eaa66f8f",
+            "id": "component-IconComponent-0ce5187df87b1ce0377297752e8d3917800a511a627ab0ca41e5c8d4129f02ad2a5b503f500d06dba246e9546b2ee7abb82de02dad7e7fdda0750a44acd7693b",
             "file": "packages/ds/angular/src/common/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -438,11 +438,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport const FONT_FAMILIES = {\n    ['fa-solid']: null,\n    ['fa-thin']: null,\n    ['fa-light']: null,\n    ['fa-regular']: null,\n    ['fa-brands']: null,\n};\n\nexport interface IIconConfig {\n    ariaLabel?: string;\n    unicode: string;\n    fontFamily: keyof typeof FONT_FAMILIES;\n}\n\n@Component({\n    selector: 'jds-font-icon',\n    templateUrl: './icon.component.html',\n    styleUrls: ['./icon.component.scss'],\n})\nexport class IconComponent {\n    @Input() iconConfig!: IIconConfig;\n\n    public get formattedIcon(): string {\n        return \"'\" + '\\\\' + this.iconConfig.unicode + \"'\";\n    }\n\n    public get isHidden(): boolean {\n        return this.iconConfig.ariaLabel === '';\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nexport const FONT_FAMILIES = {\r\n    ['fa-solid']: null,\r\n    ['fa-thin']: null,\r\n    ['fa-light']: null,\r\n    ['fa-regular']: null,\r\n    ['fa-brands']: null,\r\n};\r\n\r\nexport interface IIconConfig {\r\n    ariaLabel?: string;\r\n    unicode: string;\r\n    fontFamily: keyof typeof FONT_FAMILIES;\r\n}\r\n\r\n@Component({\r\n    selector: 'jds-font-icon',\r\n    templateUrl: './icon.component.html',\r\n    styleUrls: ['./icon.component.scss'],\r\n})\r\nexport class IconComponent {\r\n    @Input() iconConfig!: IIconConfig;\r\n\r\n    public get formattedIcon(): string {\r\n        return \"'\" + '\\\\' + this.iconConfig.unicode + \"'\";\r\n    }\r\n\r\n    public get isHidden(): boolean {\r\n        return this.iconConfig.ariaLabel === '';\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '~@ircc-ca/ds-sdc-core/typography/typography';\n\n.font-icon {\n    &::before {\n        --font-unicode: inherit;\n        @include typography.fonts-FA-variable-icon(--font-unicode);\n    }\n}\n",
+                    "data": "@use '~@ircc-ca/ds-sdc-core/typography/typography';\r\n\r\n.font-icon {\r\n    &::before {\r\n        --font-unicode: inherit;\r\n        @include typography.fonts-FA-variable-icon(--font-unicode);\r\n    }\r\n}\r\n",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -467,11 +467,11 @@
                     }
                 }
             },
-            "templateData": "<span\n    class=\"font-icon\"\n    [attr.aria-hidden]=\"isHidden\"\n    [attr.aria-label]=\"iconConfig.ariaLabel\"\n    [style.--font-unicode]=\"formattedIcon\"\n    [ngClass]=\"iconConfig.fontFamily\"\n></span>\n"
+            "templateData": "<span\r\n    class=\"font-icon\"\r\n    [attr.aria-hidden]=\"isHidden\"\r\n    [attr.aria-label]=\"iconConfig.ariaLabel\"\r\n    [style.--font-unicode]=\"formattedIcon\"\r\n    [ngClass]=\"iconConfig.fontFamily\"\r\n></span>\r\n"
         },
         {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-88ff3fe9010f20c657c21dbc7f7441745244420973e8cff9ea4e3a1244f55d96da9f64303daec06ada22bf586837c2afa5b5de2de0d2a9a7121800725fa18fe1",
+            "id": "component-LinkComponent-88ac7b208347fecc88b7584c298d4506020c5f7165e232e2c072d687245426feb60cdce62906d993d906f5fab9b24f43aa597315d501f77362d506838104aa9a",
             "file": "packages/ds/angular/src/common/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -555,11 +555,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { IIconConfig } from '../icon/icon.component';\n\n@Component({\n  selector: 'jds-link',\n  templateUrl: './link.component.html',\n  styleUrls: ['./link.component.scss']\n})\n\nexport class LinkComponent{\n\n  @Input() download?: string;   //if developer is specifying a download in the href, they need to specify a download name in order for the \"download icon\" to appear next to it\n  @Input() href!: string;\n  @Input() target?: '_blank' | '_parent' | '_self' | '_top';\n  @Input() ariaLabel?: string;\n\n  linkIconConfig!: IIconConfig;\n\n  public get getIcon(): string[] {\n    if (this.download) {\n      return ['f56d', 'fa-solid'];\n    } else {\n      switch (this.href?.substr(0, 4)) {\n        case ('http'):\n          return ['f08e', 'fa-regular'];\n        case ('mail'):\n          return ['f0e0', 'fa-solid'];\n        case ('tel:'):\n          return ['f095', 'fa-solid'];\n        default:\n          return ['', ''];\n      }\n    }\n  }\n\n  public buildIconConfig() {\n    this.linkIconConfig = {\n      unicode: this.getIcon[0],\n      fontFamily: this.getIcon[1],\n    } as IIconConfig;\n  }\n\n  public get hasIcon(): boolean {\n    if (\n      (this.download !== undefined)\n    ||\n    (this.href?.substr(0, 4) === 'http')\n    ||\n    (this.href?.substr(0, 4) === 'mail')\n    ||\n    (this.href?.substr(0, 4) === 'tel:')\n    )\n    {\n      this.buildIconConfig();\n      return true;\n    } else {\n      return false;\n    }\n  }\n\n  public get isHidden(): boolean {\n    return(\n      this.ariaLabel === ''\n    );\n}\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { IIconConfig } from '../icon/icon.component';\r\n\r\n@Component({\r\n  selector: 'jds-link',\r\n  templateUrl: './link.component.html',\r\n  styleUrls: ['./link.component.scss']\r\n})\r\n\r\nexport class LinkComponent{\r\n\r\n  @Input() download?: string;   //if developer is specifying a download in the href, they need to specify a download name in order for the \"download icon\" to appear next to it\r\n  @Input() href!: string;\r\n  @Input() target?: '_blank' | '_parent' | '_self' | '_top';\r\n  @Input() ariaLabel?: string;\r\n\r\n  linkIconConfig!: IIconConfig;\r\n\r\n  public get getIcon(): string[] {\r\n    if (this.download) {\r\n      return ['f56d', 'fa-solid'];\r\n    } else {\r\n      switch (this.href?.substr(0, 4)) {\r\n        case ('http'):\r\n          return ['f08e', 'fa-regular'];\r\n        case ('mail'):\r\n          return ['f0e0', 'fa-solid'];\r\n        case ('tel:'):\r\n          return ['f095', 'fa-solid'];\r\n        default:\r\n          return ['', ''];\r\n      }\r\n    }\r\n  }\r\n\r\n  public buildIconConfig() {\r\n    this.linkIconConfig = {\r\n      unicode: this.getIcon[0],\r\n      fontFamily: this.getIcon[1],\r\n    } as IIconConfig;\r\n  }\r\n\r\n  public get hasIcon(): boolean {\r\n    if (\r\n      (this.download !== undefined)\r\n    ||\r\n    (this.href?.substr(0, 4) === 'http')\r\n    ||\r\n    (this.href?.substr(0, 4) === 'mail')\r\n    ||\r\n    (this.href?.substr(0, 4) === 'tel:')\r\n    )\r\n    {\r\n      this.buildIconConfig();\r\n      return true;\r\n    } else {\r\n      return false;\r\n    }\r\n  }\r\n\r\n  public get isHidden(): boolean {\r\n    return(\r\n      this.ariaLabel === ''\r\n    );\r\n}\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use '~@ircc-ca/ds-sdc-core/tokens/sizes';\n\n.icon {\n    padding-left: sizes.$fixed-8;\n    padding-right: sizes.$fixed-8;\n}",
+                    "data": "@use '~@ircc-ca/ds-sdc-core/tokens/sizes';\r\n\r\n.icon {\r\n    padding-left: sizes.$fixed-8;\r\n    padding-right: sizes.$fixed-8;\r\n}",
                     "styleUrl": "./link.component.scss"
                 }
             ],
@@ -593,7 +593,7 @@
                     }
                 }
             },
-            "templateData": "<a [attr.href]=\"href\" [attr.download]=\"download\" [attr.target]=\"target\" [attr.aria-label]=\"ariaLabel\">\n    <span class=\"font\">\n        <ng-content [attr.aria-hidden]=\"isHidden\"></ng-content>\n    </span>\n    <jds-font-icon *ngIf=\"hasIcon\" class=\"icon\" [iconConfig]=\"linkIconConfig\"></jds-font-icon>\n</a>\n"
+            "templateData": "<a [attr.href]=\"href\" [attr.download]=\"download\" [attr.target]=\"target\" [attr.aria-label]=\"ariaLabel\">\r\n    <span class=\"font\">\r\n        <ng-content [attr.aria-hidden]=\"isHidden\"></ng-content>\r\n    </span>\r\n    <jds-font-icon *ngIf=\"hasIcon\" class=\"icon\" [iconConfig]=\"linkIconConfig\"></jds-font-icon>\r\n</a>\r\n"
         },
         {
             "name": "MyComponent",
@@ -703,7 +703,7 @@
         },
         {
             "name": "MyComponent",
-            "id": "component-MyComponent-53ad912a100ee3f1fc78b5eed26516ac7ab541a3a746141821e9769242cb88e98049550b7396207d0882b36c08685c5fdecb9ec92e0bf6fe95b3834192b9964f-1",
+            "id": "component-MyComponent-c61c3a56b846cd037988c58d9aecefc224781c79372bb125dbb67b8cc0efc06d0685d916950b89aad1c26b53d88d4f4b04c7ebd7aab2f1b948d6585670c6c5f2-1",
             "file": "packages/ds/web/src/components/my-component/my-component.tsx",
             "encapsulation": [],
             "entryComponents": [],
@@ -813,7 +813,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, h, Prop } from '@stencil/core';\nimport { format } from '../../utils/utils';\n\n@Component({\n  tag: 'my-component',\n  styleUrl: 'my-component.scss',\n  shadow: true,\n})\nexport class MyComponent {\n  /**\n   * The first name\n   */\n  @Prop() first: string;\n\n  /**\n   * The middle name\n   */\n  @Prop() middle: string;\n\n  /**\n   * The last name\n   */\n  @Prop() last: string;\n\n  @Prop() theme: string;\n  private getText(): string {\n    return format(this.first, this.middle, this.last);\n  }\n\n  render() {\n    return <div>Hello, World! I'm <a href=\"styles.css\">test</a> {this.getText()}</div>;\n  }\n}\n",
+            "sourceCode": "import { Component, h, Prop } from '@stencil/core';\r\nimport { format } from '../../utils/utils';\r\n\r\n@Component({\r\n  tag: 'my-component',\r\n  styleUrl: 'my-component.scss',\r\n  shadow: true,\r\n})\r\nexport class MyComponent {\r\n  /**\r\n   * The first name\r\n   */\r\n  @Prop() first: string;\r\n\r\n  /**\r\n   * The middle name\r\n   */\r\n  @Prop() middle: string;\r\n\r\n  /**\r\n   * The last name\r\n   */\r\n  @Prop() last: string;\r\n\r\n  @Prop() theme: string;\r\n  private getText(): string {\r\n    return format(this.first, this.middle, this.last);\r\n  }\r\n\r\n  render() {\r\n    return <div>Hello, World! I'm <a href=\"styles.css\">test</a> {this.getText()}</div>;\r\n  }\r\n}\r\n",
             "tag": "my-component",
             "styleUrl": "my-component.scss",
             "shadow": true,
@@ -826,7 +826,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
+            "id": "component-PageComponent-1fc7c24c98b4f0b0f413d91f5a6126f11ad55647457f5a7f372b7f83fe8ecd6dbe67b5ca4b826ed20b9bfbc04d5606b15f82a203b1311f98b18bd28ec9f4fc7c",
             "file": "stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -894,11 +894,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  template: `<article>\r\n    <storybook-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"doLogout()\"\r\n      (onLogin)=\"doLogin()\"\r\n      (onCreateAccount)=\"doCreateAccount()\"\r\n    ></storybook-header>\r\n    <section>\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Storybook tutorials\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport default class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": "section {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\nsection h2 {\r\n  font-weight: 900;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nsection p {\r\n  margin: 1em 0;\r\n}\r\n\r\nsection a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\nsection ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\nsection li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\nsection .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\nsection .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\nsection .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\nsection .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
@@ -908,13 +908,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-5885d1c1ae5d8af114de0552a0788ae6dcf14ded380414f3fd430873cb6f5db6f97221896cbf3262c24d47f664daa980d160e3f1c9f7063354abab2e3d8cc939",
+            "id": "module-AppModule-6d1c04666e4ab85e5afeeff41a5eeacd3750e59e148b47090e751f4021a149eb3db7948afbc6f5c628a0d77bf0f3211d8f4f15143857fca37e1ac017ba7ed0ba",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "sample/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n    declarations: [AppComponent],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        JlCommonModule,\n        IRCCModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\r\nimport { TranslateModule } from '@ngx-translate/core';\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n    declarations: [AppComponent],\r\n    imports: [\r\n        BrowserModule,\r\n        FormsModule,\r\n        ReactiveFormsModule,\r\n        TranslateModule.forRoot(),\r\n        JlCommonModule,\r\n        IRCCModule,\r\n    ],\r\n    providers: [],\r\n    bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -959,13 +959,13 @@
         },
         {
             "name": "IRCCModule",
-            "id": "module-IRCCModule-17dad1e283297dbae4dc3869a7e42e36dfed1b03681f5459f23f87c6718ec979f5b0d37018fb56a7c5ba5b1670406aafbb4c2e2a2cfe2413ebd5c1a1e512607f",
+            "id": "module-IRCCModule-e5d05bd34ebf3366cd240e24d2d3e7330633411f0c11ca82d029b07d290d5ebd5029530b8869ccad9ec5d3baea645e468b737f463641cc5297d47e6647ceba63",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "packages/ds/angular/src/web-module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { DIRECTIVES } from './stencil-generated';\n\nconst DECLARATIONS = [\n    // proxies\n    ...DIRECTIVES,\n];\n\n@NgModule({\n    declarations: DECLARATIONS,\n    exports: DECLARATIONS,\n    imports: [],\n    providers: [],\n})\nexport class IRCCModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { DIRECTIVES } from './stencil-generated';\r\n\r\nconst DECLARATIONS = [\r\n    // proxies\r\n    ...DIRECTIVES,\r\n];\r\n\r\n@NgModule({\r\n    declarations: DECLARATIONS,\r\n    exports: DECLARATIONS,\r\n    imports: [],\r\n    providers: [],\r\n})\r\nexport class IRCCModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -995,13 +995,13 @@
         },
         {
             "name": "JlCommonModule",
-            "id": "module-JlCommonModule-428a0717e5fef6461ffd30584f214d7402a97b15a170deec96ad955eebaa28afe0bbaee436a25b5e9050f6e2a802d431b8c801e434fdf4c76db18a9794ca1805",
+            "id": "module-JlCommonModule-30d740d43a157f25b96dfc4b548a612c1c87060fa892c2471afd4b9bf7d54f656a0887485f3980b27f625f129d079b811f3fbf4c5bae2d410422d1964a00af87",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "packages/ds/angular/src/common/jl-common.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IconComponent } from './icon/icon.component';\nimport { ButtonComponent } from './button/button.component';\nimport { LinkComponent } from './link/link.component';\nimport { HeaderComponent } from './header/header.component'\nimport { FooterComponent } from './footer/footer.component'\n\n@NgModule({\n    declarations: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    imports: [\n        CommonModule\n    ],\n    exports: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    providers: [],\n})\nexport class JlCommonModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { IconComponent } from './icon/icon.component';\r\nimport { ButtonComponent } from './button/button.component';\r\nimport { LinkComponent } from './link/link.component';\r\nimport { HeaderComponent } from './header/header.component'\r\nimport { FooterComponent } from './footer/footer.component'\r\n\r\n@NgModule({\r\n    declarations: [\r\n        IconComponent,\r\n        ButtonComponent,\r\n        LinkComponent,\r\n        HeaderComponent,\r\n        FooterComponent\r\n    ],\r\n    imports: [\r\n        CommonModule\r\n    ],\r\n    exports: [\r\n        IconComponent,\r\n        ButtonComponent,\r\n        LinkComponent,\r\n        HeaderComponent,\r\n        FooterComponent\r\n    ],\r\n    providers: [],\r\n})\r\nexport class JlCommonModule {}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1069,7 +1069,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IIconConfig",
-                "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+                "defaultValue": "{\r\n  fontFamily: 'fa-solid',\r\n  unicode: 'f6b0'\r\n}"
             },
             {
                 "name": "BtnIconConfig",
@@ -1079,7 +1079,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IIconConfig",
-                "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+                "defaultValue": "{\r\n  fontFamily: 'fa-solid',\r\n  unicode: 'f6b0'\r\n}"
             },
             {
                 "name": "ButtonWithIcon",
@@ -1089,7 +1089,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<IconComponent>",
-                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n  },\n  template: `<jds-button \n  [category]=\"category\"\n  [ariaLabel]=\"ariaLabel\"\n  [color]=\"color\"\n  [size]=\"size\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-button>`\n})"
+                "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  template: `<jds-button \r\n  [category]=\"category\"\r\n  [ariaLabel]=\"ariaLabel\"\r\n  [color]=\"color\"\r\n  [size]=\"size\"\r\n  [type]=\"type\"\r\n  [disabled]=\"disabled\"\r\n  >\r\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\r\n  </jds-button>`\r\n})"
             },
             {
                 "name": "ButtonWithIconAndText",
@@ -1099,7 +1099,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<IconComponent>",
-                "defaultValue": "(args) => ({\n  props: {\n    ...args,\n  },\n  template: `<jds-button \n  [category]=\"category\"\n  [ariaLabel]=\"ariaLabel\"\n  [color]=\"color\"\n  [size]=\"size\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  {{ ngContent }}</jds-button>`\n})"
+                "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  template: `<jds-button \r\n  [category]=\"category\"\r\n  [ariaLabel]=\"ariaLabel\"\r\n  [color]=\"color\"\r\n  [size]=\"size\"\r\n  [type]=\"type\"\r\n  [disabled]=\"disabled\"\r\n  >\r\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\r\n  {{ ngContent }}</jds-button>`\r\n})"
             },
             {
                 "name": "config",
@@ -1109,7 +1109,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Config",
-                "defaultValue": "{\n  namespace: 'web',\n  plugins: [sass()],\n  outputTargets: [\n    {\n      type: 'dist',\n      esmLoaderPath: '../loader',\n    },\n    {\n      type: 'dist-custom-elements',\n    },\n    {\n      type: 'docs-readme',\n    },\n    {\n      type: 'www',\n      serviceWorker: null, // disable service workers\n    },\n    angularOutputTarget({\n      componentCorePackage: '@ircc-ca/ds-sdc-web',\n      directivesProxyFile: '../angular/src/stencil-generated/components.ts',\n      directivesArrayFile: '../angular/src/stencil-generated/index.ts',\n    }),\n  ],\n}"
+                "defaultValue": "{\r\n  namespace: 'web',\r\n  plugins: [sass()],\r\n  outputTargets: [\r\n    {\r\n      type: 'dist',\r\n      esmLoaderPath: '../loader',\r\n    },\r\n    {\r\n      type: 'dist-custom-elements',\r\n    },\r\n    {\r\n      type: 'docs-readme',\r\n    },\r\n    {\r\n      type: 'www',\r\n      serviceWorker: null, // disable service workers\r\n    },\r\n    angularOutputTarget({\r\n      componentCorePackage: '@ircc-ca/ds-sdc-web',\r\n      directivesProxyFile: '../angular/src/stencil-generated/components.ts',\r\n      directivesArrayFile: '../angular/src/stencil-generated/index.ts',\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "configDefault",
@@ -1119,7 +1119,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "IIconConfig",
-                "defaultValue": "{\n  unicode: 'f6b0',\n  fontFamily: 'fa-solid',\n}"
+                "defaultValue": "{\r\n  unicode: 'f6b0',\r\n  fontFamily: 'fa-solid',\r\n}"
             },
             {
                 "name": "context",
@@ -1149,7 +1149,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n    // proxies\n    ...DIRECTIVES,\n]"
+                "defaultValue": "[\r\n    // proxies\r\n    ...DIRECTIVES,\r\n]"
             },
             {
                 "name": "Default",
@@ -1209,7 +1209,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
@@ -1219,7 +1219,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "FONT_FAMILIES",
@@ -1229,7 +1229,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n    ['fa-solid']: null,\n    ['fa-thin']: null,\n    ['fa-light']: null,\n    ['fa-regular']: null,\n    ['fa-brands']: null,\n}"
+                "defaultValue": "{\r\n    ['fa-solid']: null,\r\n    ['fa-thin']: null,\r\n    ['fa-light']: null,\r\n    ['fa-regular']: null,\r\n    ['fa-brands']: null,\r\n}"
             },
             {
                 "name": "footer",
@@ -1250,26 +1250,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "IconButton",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "(args)  => ({\n  props: {\n    ...args,\n  },\n  template: `\n  <jds-link \n  [download]=\"download\"\n  [href]=\"href\"\n  [target]=\"target\"\n  [ariaLabel]=\"ariaLabel\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-link>`\n})"
-            },
-            {
-                "name": "IconConfig",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "IIconConfig",
-                "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
             },
             {
                 "name": "LoggedIn",
@@ -1377,17 +1357,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
-                "defaultValue": "(args) => ({\n  props: {...args},\n  template: `<jds-button \n    [category]=\"category\"\n    [ariaLabel]=\"ariaLabel\"\n    [color]=\"color\"\n    [size]=\"size\"\n    [type]=\"type\"\n    [disabled]=\"disabled\"\n    >{{ ngContent }}</jds-button>`\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Footer.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args) => ({\r\n  props: {...args},\r\n  template: `<jds-button \r\n    [category]=\"category\"\r\n    [ariaLabel]=\"ariaLabel\"\r\n    [color]=\"color\"\r\n    [size]=\"size\"\r\n    [type]=\"type\"\r\n    [disabled]=\"disabled\"\r\n    >{{ ngContent }}</jds-button>`\r\n})"
             },
             {
                 "name": "Template",
@@ -1397,7 +1367,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1407,7 +1377,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<IconComponent>",
-                "defaultValue": "(args: IconComponent) => ({\n  props: {...args},\n  template: `<jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>`\n})"
+                "defaultValue": "(args: IconComponent) => ({\r\n  props: {...args},\r\n  template: `<jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>`\r\n})"
             },
             {
                 "name": "Template",
@@ -1417,7 +1387,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<LinkComponent>",
-                "defaultValue": "(args: LinkComponent) => ({\n  props: {...args},\n  template: `\n    <jds-link \n    [download]=\"download\"\n    [href]=\"href\"\n    [target]=\"target\"\n    [ariaLabel]=\"ariaLabel\"\n    >{{ ngContent }}</jds-link>\n  `\n})"
+                "defaultValue": "(args: LinkComponent) => ({\r\n  props: {...args},\r\n  template: `\r\n    <jds-link \r\n    [download]=\"download\"\r\n    [href]=\"href\"\r\n    [target]=\"target\"\r\n    [ariaLabel]=\"ariaLabel\"\r\n    >{{ ngContent }}</jds-link>\r\n  `\r\n})"
             },
             {
                 "name": "Template",
@@ -1427,7 +1397,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [
@@ -1529,7 +1509,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IIconConfig",
-                    "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+                    "defaultValue": "{\r\n  fontFamily: 'fa-solid',\r\n  unicode: 'f6b0'\r\n}"
                 },
                 {
                     "name": "BtnIconConfig",
@@ -1539,7 +1519,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IIconConfig",
-                    "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
+                    "defaultValue": "{\r\n  fontFamily: 'fa-solid',\r\n  unicode: 'f6b0'\r\n}"
                 },
                 {
                     "name": "ButtonWithIcon",
@@ -1549,7 +1529,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<IconComponent>",
-                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n  },\n  template: `<jds-button \n  [category]=\"category\"\n  [ariaLabel]=\"ariaLabel\"\n  [color]=\"color\"\n  [size]=\"size\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-button>`\n})"
+                    "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  template: `<jds-button \r\n  [category]=\"category\"\r\n  [ariaLabel]=\"ariaLabel\"\r\n  [color]=\"color\"\r\n  [size]=\"size\"\r\n  [type]=\"type\"\r\n  [disabled]=\"disabled\"\r\n  >\r\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\r\n  </jds-button>`\r\n})"
                 },
                 {
                     "name": "ButtonWithIconAndText",
@@ -1559,7 +1539,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<IconComponent>",
-                    "defaultValue": "(args) => ({\n  props: {\n    ...args,\n  },\n  template: `<jds-button \n  [category]=\"category\"\n  [ariaLabel]=\"ariaLabel\"\n  [color]=\"color\"\n  [size]=\"size\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  {{ ngContent }}</jds-button>`\n})"
+                    "defaultValue": "(args) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  template: `<jds-button \r\n  [category]=\"category\"\r\n  [ariaLabel]=\"ariaLabel\"\r\n  [color]=\"color\"\r\n  [size]=\"size\"\r\n  [type]=\"type\"\r\n  [disabled]=\"disabled\"\r\n  >\r\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\r\n  {{ ngContent }}</jds-button>`\r\n})"
                 },
                 {
                     "name": "Disabled",
@@ -1609,7 +1589,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args) => ({\n  props: {...args},\n  template: `<jds-button \n    [category]=\"category\"\n    [ariaLabel]=\"ariaLabel\"\n    [color]=\"color\"\n    [size]=\"size\"\n    [type]=\"type\"\n    [disabled]=\"disabled\"\n    >{{ ngContent }}</jds-button>`\n})"
+                    "defaultValue": "(args) => ({\r\n  props: {...args},\r\n  template: `<jds-button \r\n    [category]=\"category\"\r\n    [ariaLabel]=\"ariaLabel\"\r\n    [color]=\"color\"\r\n    [size]=\"size\"\r\n    [type]=\"type\"\r\n    [disabled]=\"disabled\"\r\n    >{{ ngContent }}</jds-button>`\r\n})"
                 }
             ],
             "packages/ds/web/stencil.config.ts": [
@@ -1621,7 +1601,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Config",
-                    "defaultValue": "{\n  namespace: 'web',\n  plugins: [sass()],\n  outputTargets: [\n    {\n      type: 'dist',\n      esmLoaderPath: '../loader',\n    },\n    {\n      type: 'dist-custom-elements',\n    },\n    {\n      type: 'docs-readme',\n    },\n    {\n      type: 'www',\n      serviceWorker: null, // disable service workers\n    },\n    angularOutputTarget({\n      componentCorePackage: '@ircc-ca/ds-sdc-web',\n      directivesProxyFile: '../angular/src/stencil-generated/components.ts',\n      directivesArrayFile: '../angular/src/stencil-generated/index.ts',\n    }),\n  ],\n}"
+                    "defaultValue": "{\r\n  namespace: 'web',\r\n  plugins: [sass()],\r\n  outputTargets: [\r\n    {\r\n      type: 'dist',\r\n      esmLoaderPath: '../loader',\r\n    },\r\n    {\r\n      type: 'dist-custom-elements',\r\n    },\r\n    {\r\n      type: 'docs-readme',\r\n    },\r\n    {\r\n      type: 'www',\r\n      serviceWorker: null, // disable service workers\r\n    },\r\n    angularOutputTarget({\r\n      componentCorePackage: '@ircc-ca/ds-sdc-web',\r\n      directivesProxyFile: '../angular/src/stencil-generated/components.ts',\r\n      directivesArrayFile: '../angular/src/stencil-generated/index.ts',\r\n    }),\r\n  ],\r\n}"
                 }
             ],
             "stories/Icon.stories.ts": [
@@ -1633,7 +1613,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "IIconConfig",
-                    "defaultValue": "{\n  unicode: 'f6b0',\n  fontFamily: 'fa-solid',\n}"
+                    "defaultValue": "{\r\n  unicode: 'f6b0',\r\n  fontFamily: 'fa-solid',\r\n}"
                 },
                 {
                     "name": "Default",
@@ -1646,26 +1626,6 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "IconButton",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "(args)  => ({\n  props: {\n    ...args,\n  },\n  template: `\n  <jds-link \n  [download]=\"download\"\n  [href]=\"href\"\n  [target]=\"target\"\n  [ariaLabel]=\"ariaLabel\"\n  >\n  <jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>\n  </jds-link>`\n})"
-                },
-                {
-                    "name": "IconConfig",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "IIconConfig",
-                    "defaultValue": "{\n  fontFamily: 'fa-solid',\n  unicode: 'f6b0'\n}"
-                },
-                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -1673,7 +1633,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<IconComponent>",
-                    "defaultValue": "(args: IconComponent) => ({\n  props: {...args},\n  template: `<jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>`\n})"
+                    "defaultValue": "(args: IconComponent) => ({\r\n  props: {...args},\r\n  template: `<jds-font-icon [iconConfig]=\"iconConfig\"></jds-font-icon>`\r\n})"
                 }
             ],
             "sample/src/test.ts": [
@@ -1727,7 +1687,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n    // proxies\n    ...DIRECTIVES,\n]"
+                    "defaultValue": "[\r\n    // proxies\r\n    ...DIRECTIVES,\r\n]"
                 }
             ],
             "stories/Link.stories.ts": [
@@ -1749,7 +1709,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<LinkComponent>",
-                    "defaultValue": "(args: LinkComponent) => ({\n  props: {...args},\n  template: `\n    <jds-link \n    [download]=\"download\"\n    [href]=\"href\"\n    [target]=\"target\"\n    [ariaLabel]=\"ariaLabel\"\n    >{{ ngContent }}</jds-link>\n  `\n})"
+                    "defaultValue": "(args: LinkComponent) => ({\r\n  props: {...args},\r\n  template: `\r\n    <jds-link \r\n    [download]=\"download\"\r\n    [href]=\"href\"\r\n    [target]=\"target\"\r\n    [ariaLabel]=\"ariaLabel\"\r\n    >{{ ngContent }}</jds-link>\r\n  `\r\n})"
                 }
             ],
             "packages/ds/angular/src/stencil-generated/angular-component-lib/utils.ts": [
@@ -1815,7 +1775,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "sample/src/environments/environment.ts": [
@@ -1827,7 +1787,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "packages/ds/angular/src/common/icon/icon.component.ts": [
@@ -1839,7 +1799,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n    ['fa-solid']: null,\n    ['fa-thin']: null,\n    ['fa-light']: null,\n    ['fa-regular']: null,\n    ['fa-brands']: null,\n}"
+                    "defaultValue": "{\r\n    ['fa-solid']: null,\r\n    ['fa-thin']: null,\r\n    ['fa-light']: null,\r\n    ['fa-regular']: null,\r\n    ['fa-brands']: null,\r\n}"
                 }
             ],
             "stories/Footer.stories.ts": [
@@ -1861,7 +1821,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<FooterComponent>",
-                    "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: FooterComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "stories/Header.stories.ts": [
@@ -1883,7 +1843,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: HeaderComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "stories/Page.stories.ts": [
@@ -1915,7 +1875,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -2405,26 +2365,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "IconButton",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "IconConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

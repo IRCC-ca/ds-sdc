@@ -25,12 +25,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "packages/ds/angular/src/test.ts",
-            "tsConfig": "packages/ds/angular/tsconfig.spec.json",
-            "karmaConfig": "packages/ds/angular/karma.conf.js"
-          }
+          "builder": "@angular-builders/jest:run"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -75,6 +70,11 @@
               {
                 "glob": "**/*",
                 "input": "sample/src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ircc-ca/ds-sdc-core/assets",
                 "output": "assets"
               }
             ],
@@ -132,24 +132,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "sample:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "sample/src/test.ts",
-            "polyfills": "sample/src/polyfills.ts",
-            "tsConfig": "sample/tsconfig.spec.json",
-            "karmaConfig": "sample/karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "sample/src/favicon.ico",
-              "sample/src/assets"
-            ],
-            "styles": [
-              "sample/src/styles.scss"
-            ],
-            "scripts": []
           }
         }
       }
