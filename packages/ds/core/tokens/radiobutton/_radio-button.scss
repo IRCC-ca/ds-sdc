@@ -48,89 +48,108 @@
     margin: 0 12px;
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
-    border: 1px solid var(--border-disabled);
-    
+    box-shadow: token-size.$border-style;
+
+    --border: var(--form-border);
+
     @include radiobutton-size();
+    @include checked();
+    @include mixed-state();
 
     @include device.if-hover {
         color: var(--formcontrol-hover);
     }
 
     &:hover  {
-        border: 1px solid var(--border-hover);
+        --border: var(--border-hover);
     }
 
-    // Disabled state
+    &:active {
+        background-color: var(--generic-active);
+    }
+
     &:disabled {
         --border: var(--border-disabled);
-        
+       
         background-color: var(--surface1);
 
         & + label {
             color: var(--text-disabled);
         }
-    }
 
-    &:active {
-        border: 1px solid var(--border);
-        background-color: var(--generic-active);
+        &:active {
+            --border: var(--border-disabled);
 
-        &:disabled {
-            border: 1px solid var(--border-disabled);
-            background-color: var(--surface1);
+                background-color: var(--surface1);
+        }
+
+        &:required{
+            --border: var(--critical-border-disabled);
+           
+            background-color: var(--critical-background-weak-disabled);
+
+            &:active {
+                --border: var(--critical-border-disabled);
+           
+                background-color: var(--critical-background-weak-disabled);
+            }
         }
     }
+}
 
-    // Checked state
+@mixin checked {
     &:checked {
-        border: 6px solid var(--formcontrol);
+        --border: var(--formcontrol);
+        
+        box-shadow: token-size.$border-style-6;
+        background-color: var(--surface1);
 
         &:active, &:hover {
-            border: 6px solid var(--formcontrol-hover);
-            background-color: var(--surface1);
+            --border: var(--formcontrol-hover);
         }
 
         &:disabled {
-            border: 6px solid var(--formcontrol-disabled);
-            background-color: var(--surface1);
+            --border: var(--formcontrol-disabled);
+
+            &:active {
+                --border: var(--formcontrol-disabled);
+            }
         }
     }
-        
-    // error states
-     &:required, &:invalid {
-        border: 1px solid var(--formcontrol-error);
+}
+
+@mixin mixed-state {
+    &:required, &:invalid {
+        --border: var(--formcontrol-error);
+
         background-color: var(--formcontrol-critical-background);
         
         &:hover {
-            border: 1px solid var(--formcontrol-critical-border);
+            --border: var(--formcontrol-critical-border);
+
             background-color: var(--formcontrol-critical-hover);
         }
 
         &:active {
-            border: 1px solid var(--formcontrol-critical-border);
+            --border: var(--formcontrol-critical-border);
+
             background-color: var(--formcontrol-critical-disabled);
          }
-
-         &:disabled {
-            border: 1px solid var(--critical-border-disabled);
-            background-color: var(--critical-background-weak-disabled);
-         }
-
+        
          &:checked {
-            border: 6px solid var(--formcontrol-error);
+            box-shadow: token-size.$border-style-6;
             background-color: var(--surface1);
 
             &:active {
-                border: 6px solid var(--critical-active);
+                --border: var(--critical-active);
             }
 
             &:hover {
-                border: 6px solid var(--formcontrol-critical-border);
+                --border: var(--formcontrol-critical-border);
             }
 
             &:disabled {
-                border: 6px solid var(--formcontrol-critical-disabled);
-                background-color: var(--surface1);
+                --border: var(--formcontrol-critical-disabled);
             }
          }
     }   

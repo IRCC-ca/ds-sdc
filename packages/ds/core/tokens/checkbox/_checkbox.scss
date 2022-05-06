@@ -49,9 +49,11 @@
     outline: 0;
     box-sizing: border-box;
     background-color: var(--surface1);
-    border: 1px solid var(--border);
+    border: 1px solid var(--form-border);
 
     @include checkbox-size();
+    @include checked();
+    @include mixed-state();
 
     @include device.if-hover {
         color: var(--formcontrol-hover);
@@ -62,6 +64,16 @@
         display: block;
     }
 
+    &:disabled {
+        background: var(--border-disabled);
+        
+        & + label {
+            color: var(--text-disabled);
+        }
+    }
+}
+
+@mixin checked {
     &:checked  {
         background: var(--formcontrol);
 
@@ -71,8 +83,8 @@
             display: inline-block;
             left: calc(50% - 8px / 2);
             top: calc(50% - 16px / 2);
-            width: 8px;
-            height: 16px;
+            width: token-size.$relative-0-5;
+            height: token-size.$relative-1;
             margin: 0 6px;
             border: solid var(--surface1);
             border-width: 0 3px 3px 0;
@@ -87,7 +99,9 @@
             background: var(--formcontrol-disabled);
         }
     }
+}
 
+@mixin mixed-state {
     &:required, &:invalid {
         --border: var(--formcontrol-error);
         
@@ -96,14 +110,6 @@
         &:disabled {
             background: var(--critical-border-disabled); 
         };
-    }
-
-    &:disabled {
-        background: var(--border-disabled);
-        
-        & + label {
-            color: var(--text-disabled);
-        }
     }
 }
 

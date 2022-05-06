@@ -1,7 +1,5 @@
 # Radio button styles
 
-Documentation under development
-
 ## Usage
 
 ### Selectors
@@ -9,22 +7,20 @@ Documentation under development
 The following rules will apply with any of the following html tags
 
 ```html
-<a></a>
-// any element with the class of "link"
-<element class="link"></element>
+<input type="radio">
 ```
 
 ## Theming
 
 These elements can be included in a custom theme as a mixin.
 
-### Link
+### Radiobutton
 
-The link is a text element that can redirect users to a new page. It can be included in a custom theme by adding the following with 2 parameters.
+The radiobutton is an element that allows users to check one option. It can be included in a custom theme by adding the following with 3 parameters.
 
 ```scss
-@use './link';
-@include link.link($palette, $visited-palette);
+@use './radiobutton';
+@include radiobutton.radiobutton($palette, $focus, $critical);
 ```
 
-The mixin can be called once with `$palette` defining the unvisited link color usage variables. The `$visited-palette` property will define the visited link color usage variables.
+The mixin can be called once with `$palette` defining the unchecked radiobutton color usage variables. The `$focus` property will define unchecked radiobutton color usage variables. The `$critical`properties will define the radiobutton with an error color palettes.
