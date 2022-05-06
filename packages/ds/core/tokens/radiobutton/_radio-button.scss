@@ -1,0 +1,172 @@
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/size' as size;
+@use '../../util/device' as device;
+@use '../template-const' as template-const;
+@use '../sizes' as token-size;
+
+@mixin selector {
+    [type='radio'] {
+        @content;
+    }
+}
+
+@mixin radiobutton($palette, $focus, $critical) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.light {
+                @include selector {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 800)};
+                    }
+                }
+            }
+            @include theme.dark {
+                @include selector {
+                    @include device.if-hover {
+                        --text-hover: #{color.mix-token($palette, 500)};
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include selector() {
+                @include layout();
+            }
+        }
+    }
+}
+
+@mixin layout {
+    border-radius: token-size.$border-circle;
+    appearance: none;
+    margin: 0 12px;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    box-shadow: token-size.$border-style;
+
+    --border: var(--form-border);
+
+    @include radiobutton-size();
+    @include checked();
+    @include mixed-state();
+
+    @include device.if-hover {
+        color: var(--formcontrol-hover);
+    }
+
+    &:hover  {
+        --border: var(--border-hover);
+    }
+
+    &:active {
+        background-color: var(--generic-active);
+    }
+
+    &:disabled {
+        --border: var(--border-disabled);
+       
+        background-color: var(--surface1);
+
+        & + label {
+            color: var(--text-disabled);
+        }
+
+        &:active {
+            --border: var(--border-disabled);
+
+                background-color: var(--surface1);
+        }
+
+        &:required{
+            --border: var(--critical-border-disabled);
+           
+            background-color: var(--critical-background-weak-disabled);
+
+            &:active {
+                --border: var(--critical-border-disabled);
+           
+                background-color: var(--critical-background-weak-disabled);
+            }
+        }
+    }
+}
+
+@mixin checked {
+    &:checked {
+        --border: var(--formcontrol);
+        
+        box-shadow: token-size.$border-style-6;
+        background-color: var(--surface1);
+
+        &:active, &:hover {
+            --border: var(--formcontrol-hover);
+        }
+
+        &:disabled {
+            --border: var(--formcontrol-disabled);
+
+            &:active {
+                --border: var(--formcontrol-disabled);
+            }
+        }
+    }
+}
+
+@mixin mixed-state {
+    &:required, &:invalid {
+        --border: var(--formcontrol-error);
+
+        background-color: var(--formcontrol-critical-background);
+        
+        &:hover {
+            --border: var(--formcontrol-critical-border);
+
+            background-color: var(--formcontrol-critical-hover);
+        }
+
+        &:active {
+            --border: var(--formcontrol-critical-border);
+
+            background-color: var(--formcontrol-critical-disabled);
+         }
+        
+         &:checked {
+            box-shadow: token-size.$border-style-6;
+            background-color: var(--surface1);
+
+            &:active {
+                --border: var(--critical-active);
+            }
+
+            &:hover {
+                --border: var(--formcontrol-critical-border);
+            }
+
+            &:disabled {
+                --border: var(--formcontrol-critical-disabled);
+            }
+         }
+    }   
+}
+
+@mixin radiobutton-size {
+    @include size.selector(small) {
+        height: token-size.$relative-1-25;
+        width: token-size.$relative-1-25;
+
+        @extend .body3;
+    }
+
+    @include size.selector(large) {
+        height: token-size.$relative-1-5;
+        width: token-size.$relative-1-5;
+
+        @extend .body2
+    }
+}

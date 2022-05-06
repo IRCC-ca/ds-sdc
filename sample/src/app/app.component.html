@@ -9,9 +9,31 @@
       <div>
         <button color="cta" style="width: 164px">Default</button>
         <br />
-        <button color="cta">Default</button>
+        <jds-radio-button>Angular package radiobutton</jds-radio-button>
         <br />
-        <button color="cta" disabled="true">Default</button>
+        <input type="radio" id="html1" name="fav_language1" value="HTML1">
+        <label class="label" for="html1">core radio</label>
+        <br/>
+        <input type="radio" id="html2" name="fav_language2" value="HTML2" size="small">
+        <label class="label" for="html2">core radio small</label>
+        <br/>
+        <input type="radio" id="html3" name="fav_language3" value="HTML3" size="large">
+        <label class="label" for="html3">core radio large</label>
+        <br/>
+        <input type="radio" id="html4" name="fav_language4" value="HTML4" size="small" required>
+        <label class="label" for="html4">invalid core radio</label>
+        <br />
+        <input type="radio" id="html5" name="fav_language5" value="HTML5" disabled>
+        <label class="label" for="html5">core radio disabled</label>
+        <br />
+        <input type="radio" id="html6" name="fav_language6" value="HTML6" disabled required checked>
+        <label class="label" for="html6">core radio disabled, error, checked</label>
+        <br />
+        <input type="radio" id="html7" name="fav_language7" value="HTML7" disabled checked>
+        <label class="label" for="html7">core radio disabled, checked</label>
+        <br />
+        <input type="radio" id="html8" name="fav_language8" value="HTML8" disabled required>
+        <label class="label" for="html8">core radio disabled, required</label>
         <br />
         <button color="cta" style="width: 164px" category="round">
           <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>

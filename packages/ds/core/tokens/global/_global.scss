@@ -3,7 +3,8 @@
 @use '../../util/theme' as theme;
 @use '../template-const' as template-const;
 @use '../../util/device' as device;
-@mixin global($neutral, $accent) {
+
+@mixin global($neutral, $accent,$formcontrol, $critical) {
     @at-root {
         #{template-const.$root-selectors} {
             @include theme.light {
@@ -21,10 +22,23 @@
                         --surface1: color.mix-token($neutral, 100),
                         --surface2: color.mix-token($neutral, 200),
                         --generic-active: color.mix-token($neutral, 900, 0.12),
-                        --border: color.mix-token($neutral, 800),
+                        --border-hover: color.mix-token($neutral, 900),
+                        --form-border: color.mix-token($neutral, 800),
                         --divider: color.mix-token($neutral, 300),
-                        --border-disabled: color.mix-token($neutral, 300),
+                        --border-disabled: color.mix-token($neutral, 300), 
                         --dimmer: color.mix-token($neutral, 1100),
+                        --formcontrol-disabled: color.mix-token($formcontrol, 300), 
+                        --formcontrol: color.mix-token($formcontrol, 700), 
+                        --formcontrol-hover: color.mix-token($formcontrol, 800), 
+                        --critical-background-weak-disabled: color.mix-token($critical, 100, 0.5),
+                        --formcontrol-critical-background: color.mix-token($critical, 100), 
+                        --formcontrol-critical-hover: color.mix-token($critical, 200),
+                        --formcontrol-critical-disabled: color.mix-token($critical, 300),
+                        --critical-border-disabled: color.mix-token($critical, 300),
+                        --formcontrol-error: color.mix-token($critical, 700),
+                        --formcontrol-critical-border: color.mix-token($critical, 800),
+                        --critical-active: color.mix-token($critical, 900)
+                       
                     )
                 );
             }
@@ -43,10 +57,23 @@
                         --surface1: color.mix-token($neutral, 1200),
                         --surface2: color.mix-token($neutral, 1100),
                         --generic-active: color.mix-token($neutral, 400, 0.12),
+                        --border-hover: color.mix-token($neutral, 400),
                         --border: color.mix-token($neutral, 500),
+                        --form-border: color.mix-token($neutral, 800),
                         --divider: color.mix-token($neutral, 1000),
                         --border-disabled: color.mix-token($neutral, 1000),
                         --dimmer: color.mix-token($neutral, 200),
+                        --formcontrol: color.mix-token($formcontrol, 600),
+                        --formcontrol-disabled: color.mix-token($formcontrol, 1000), 
+                        --formcontrol-hover: color.mix-token($formcontrol, 900), 
+                        --critical-background-weak-disabled: color.mix-token($critical, 1200, 0.5),
+                        --formcontrol-critical-background: color.mix-token($critical, 1200), 
+                        --formcontrol-critical-hover: color.mix-token($critical, 1100),
+                        --formcontrol-critical-disabled: color.mix-token($critical, 1000),
+                        --critical-border-disabled: color.mix-token($critical, 1000),
+                        --formcontrol-error: color.mix-token($critical, 600),
+                        --formcontrol-critical-border: color.mix-token($critical, 500),
+                        --critical-active: color.mix-token($critical, 400)
                     )
                 );
             }

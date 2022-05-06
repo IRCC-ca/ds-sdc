@@ -26,6 +26,7 @@ $fixed-20: 20px;
 $fixed-16: 16px;
 $fixed-12: 12px;
 $fixed-8: 8px;
+$fixed-6: 6px;
 $fixed-4: 4px;
 $fixed-3: 3px;
 $fixed-2: 2px;
@@ -33,7 +34,9 @@ $fixed-1: 1px;
 $fixed-0: 0px;
 
 $border-radius: $fixed-4;
+$border-circle: 99999px;
 $border-style: $fixed-0 $fixed-0 $fixed-0 $fixed-1 var(--border) inset;
+$border-style-6: $fixed-0 $fixed-0 $fixed-0 $fixed-6 var(--border) inset;
 $outline-width: $fixed-3;
 $focus-shadow: 0 0 0 $outline-width var(--surface1);
 
