@@ -1,0 +1,37 @@
+@use '../../util/theme';
+@use "./button-const";
+
+@mixin nav($direction: 'row') {
+    @include selectors() {
+        @include theme.selector($direction, 'direction', 'row') {
+            @include wrap($direction) {
+                @include button-const.layout();
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+        
+    }
+}
+
+@mixin selectors {
+    nav {
+        @content;
+    }
+}
+
+@mixin wrap($direction: 'row') {
+    width: 100%;
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+            ::marker {
+                content: none;
+            }
+        li {
+            @content;
+        }
+    }
+}
