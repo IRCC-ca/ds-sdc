@@ -1,5 +1,3 @@
-/* stylelint-disable */
-// TODO: reenable stylelint
 @use '../../util/color' as color;
 @use '../../util/theme' as theme;
 @use '../../util/device' as device;
@@ -8,7 +6,7 @@
 @use '../sizes' as token-size;
 
 @mixin selector {
-    input[type='checkbox'] {
+    [type='checkbox'] {
         @content;
     }
 }
@@ -21,12 +19,6 @@
                     @include device.if-hover {
                         --text-hover: #{color.mix-token($palette, 800)};
                     }
-                    @include theme.tokens-for-map(
-                        (
-                            --text: color.mix-token($palette, 700),
-                            --text-active: color.mix-token($palette, 900),
-                        )
-                    );
                 }
             }
 
@@ -35,14 +27,6 @@
                     @include device.if-hover {
                         --text-hover: #{color.mix-token($palette, 500)};
                     }
-                    @include theme.tokens-for-map(
-                        (
-                            --text: color.mix-token($palette, 600),
-                            --text-active: color.mix-token($palette, 400),
-                            --text-visited:
-                                color.mix-token($focus, 600),
-                        )
-                    );
                 }
             }
         }
@@ -61,22 +45,20 @@
 
 @mixin layout {
     border-radius: token-size.$border-radius;
-    width: 20px;
-    height: 20px;
     appearance: none;
     outline: 0;
     box-sizing: border-box;
     background-color: var(--surface1);
     border: 1px solid var(--border);
 
-      @include checkbox-size();
+    @include checkbox-size();
 
-      @include device.if-hover {
+    @include device.if-hover {
         color: var(--formcontrol-hover);
     }
 
-    &:before {
-        content: "";
+    &::before {
+        content: '';
         display: block;
     }
 
@@ -84,14 +66,14 @@
         background: var(--formcontrol);
 
         // draw the checkmark
-        &:before { 
+        &::before { 
             text-align: center;
             display: inline-block;
             left: calc(50% - 8px / 2);
             top: calc(50% - 16px / 2);
             width: 8px;
             height: 16px;
-            margin: 0px 6px;
+            margin: 0 6px;
             border: solid var(--surface1);
             border-width: 0 3px 3px 0;
             transform: rotate(45deg);
@@ -107,7 +89,8 @@
     }
 
     &:required, &:invalid {
-        border: 1px solid var(--formcontrol-error);
+        --border: var(--formcontrol-error);
+        
         background: var(--formcontrol-critical-background);
 
         &:disabled {

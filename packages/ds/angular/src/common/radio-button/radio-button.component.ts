@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./radio-button.component.css']
 })
 export class RadioButtonComponent  { 
-  @Input() size?: 'small' | 'large' = 'large';
+  @Input() size?: 'small' | 'large';
   @Input() ariaLabel?: string;
   @Input() disabled?: boolean;
 }

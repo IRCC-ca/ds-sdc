@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./checkbox.component.css']
 })
 export class CheckboxComponent { 
-  @Input() size?: 'small' | 'large' = 'large';
+  @Input() size?: 'small' | 'large';
   @Input() ariaLabel?: string;
   @Input() disabled?: boolean;
 }

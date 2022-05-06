@@ -6,7 +6,7 @@
 @use '../sizes' as token-size;
 
 @mixin selector {
-    input[type='radio'] {
+    [type='radio'] {
         @content;
     }
 }
@@ -14,7 +14,6 @@
 @mixin radiobutton($palette, $focus, $critical) {
     @at-root {
         #{template-const.$root-selectors} {
-            // TODO: clean this section
             @include theme.light {
                 @include selector {
                     @include device.if-hover {
@@ -22,7 +21,6 @@
                     }
                 }
             }
-            // TODO: clean this section
             @include theme.dark {
                 @include selector {
                     @include device.if-hover {
@@ -45,7 +43,7 @@
 }
 
 @mixin layout {
-    border-radius: 99999px;
+    border-radius: token-size.$border-circle;
     appearance: none;
     margin: 0 12px;
     aspect-ratio: 1 / 1;
@@ -64,7 +62,8 @@
 
     // Disabled state
     &:disabled {
-        border: 1px solid var(--border-disabled);
+        --border: var(--border-disabled);
+        
         background-color: var(--surface1);
 
         & + label {
