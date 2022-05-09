@@ -29,16 +29,7 @@
                         --dimmer: color.mix-token($neutral, 1100),
                         --formcontrol-disabled: color.mix-token($formcontrol, 300), 
                         --formcontrol: color.mix-token($formcontrol, 700), 
-                        --formcontrol-hover: color.mix-token($formcontrol, 800), 
-                        --critical-background-weak-disabled: color.mix-token($critical, 100, 0.5),
-                        --formcontrol-critical-background: color.mix-token($critical, 100), 
-                        --formcontrol-critical-hover: color.mix-token($critical, 200),
-                        --formcontrol-critical-disabled: color.mix-token($critical, 300),
-                        --critical-border-disabled: color.mix-token($critical, 300),
-                        --formcontrol-error: color.mix-token($critical, 700),
-                        --formcontrol-critical-border: color.mix-token($critical, 800),
-                        --critical-active: color.mix-token($critical, 900)
-                       
+                        --formcontrol-hover: color.mix-token($formcontrol, 800)
                     )
                 );
             }
@@ -64,15 +55,7 @@
                         --dimmer: color.mix-token($neutral, 200),
                         --formcontrol: color.mix-token($formcontrol, 600),
                         --formcontrol-disabled: color.mix-token($formcontrol, 1000), 
-                        --formcontrol-hover: color.mix-token($formcontrol, 900), 
-                        --critical-background-weak-disabled: color.mix-token($critical, 1200, 0.5),
-                        --formcontrol-critical-background: color.mix-token($critical, 1200), 
-                        --formcontrol-critical-hover: color.mix-token($critical, 1100),
-                        --formcontrol-critical-disabled: color.mix-token($critical, 1000),
-                        --critical-border-disabled: color.mix-token($critical, 1000),
-                        --formcontrol-error: color.mix-token($critical, 600),
-                        --formcontrol-critical-border: color.mix-token($critical, 500),
-                        --critical-active: color.mix-token($critical, 400)
+                        --formcontrol-hover: color.mix-token($formcontrol, 900)
                     )
                 );
             }

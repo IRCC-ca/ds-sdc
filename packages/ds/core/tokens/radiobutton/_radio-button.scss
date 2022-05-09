@@ -11,6 +11,46 @@
     }
 }
 
+@mixin radiobutton($palette) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.light {
+                @include selector {
+                    @include theme.tokens-for-map(
+                        (
+                            --critical-background-weak-disabled: color.mix-token($palette, 100, 0.5),
+                            --formcontrol-critical-background: color.mix-token($palette, 100), 
+                            --formcontrol-critical-hover: color.mix-token($palette, 200),
+                            --formcontrol-critical-disabled: color.mix-token($palette, 300),
+                            --critical-border-disabled: color.mix-token($palette, 300),
+                            --formcontrol-error: color.mix-token($palette, 700),
+                            --formcontrol-critical-border: color.mix-token($palette, 800),
+                            --critical-active: color.mix-token($palette, 900)
+                        )
+                    );
+                }
+            }
+
+            @include theme.dark {
+                @include selector {
+                    @include theme.tokens-for-map(
+                        (
+                            --critical-background-weak-disabled: color.mix-token($palette, 1200, 0.5),
+                            --formcontrol-critical-background: color.mix-token($palette, 1200), 
+                            --formcontrol-critical-hover: color.mix-token($palette, 1100),
+                            --formcontrol-critical-disabled: color.mix-token($palette, 1000),
+                            --critical-border-disabled: color.mix-token($palette, 1000),
+                            --formcontrol-error: color.mix-token($palette, 600),
+                            --formcontrol-critical-border: color.mix-token($palette, 500),
+                            --critical-active: color.mix-token($palette, 400)
+                        )
+                    );
+                }
+            }
+        }
+    }
+}
+
 @mixin create {
     @at-root {
         #{template-const.$root-selectors} {
