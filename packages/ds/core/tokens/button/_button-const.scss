@@ -47,7 +47,7 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
 }
 
 @mixin layout-round {
-    border-radius: token-size.$border-circle;
+    border-radius: token-size.$border-radius-circle;
     border-style: none;
     justify-content: center;
     aspect-ratio: 1 / 1;

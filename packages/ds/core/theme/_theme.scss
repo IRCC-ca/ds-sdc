@@ -28,8 +28,6 @@
     @include text-global.text-global(neutral);
     @include global.global(neutral, selected, focus, critical);
     @include focus.focus(focus);
-
-    @include radiobutton.radiobutton(neutral, focus, critical);
 }
 
 /// This mixin is used to define the common elements used in all themes.

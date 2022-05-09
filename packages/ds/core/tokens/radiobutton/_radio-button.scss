@@ -11,27 +11,6 @@
     }
 }
 
-@mixin radiobutton($palette, $focus, $critical) {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include selector {
-                    @include device.if-hover {
-                        --text-hover: #{color.mix-token($palette, 800)};
-                    }
-                }
-            }
-            @include theme.dark {
-                @include selector {
-                    @include device.if-hover {
-                        --text-hover: #{color.mix-token($palette, 500)};
-                    }
-                }
-            }
-        }
-    }
-}
-
 @mixin create {
     @at-root {
         #{template-const.$root-selectors} {
@@ -43,18 +22,16 @@
 }
 
 @mixin layout {
-    border-radius: token-size.$border-circle;
+    border-radius: token-size.$border-radius-circle;
     appearance: none;
-    margin: 0 12px;
+    margin: token-size.$form-control-margin;
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
 
-    --border: var(--form-border);
-
     @include radiobutton-size();
     @include checked();
-    @include mixed-state();
+    @include invalid-state();
 
     @include device.if-hover {
         color: var(--formcontrol-hover);
@@ -118,8 +95,8 @@
     }
 }
 
-@mixin mixed-state {
-    &:required, &:invalid {
+@mixin invalid-state {
+    &:invalid {
         --border: var(--formcontrol-error);
 
         background-color: var(--formcontrol-critical-background);
