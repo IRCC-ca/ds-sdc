@@ -78,7 +78,7 @@
     &:checked {
         --border: var(--formcontrol);
         
-        box-shadow: token-size.$border-style-6;
+        box-shadow: token-size.$radio-selected-border-radius;
         background-color: var(--surface1);
 
         &:active, &:hover {
@@ -114,7 +114,7 @@
          }
         
          &:checked {
-            box-shadow: token-size.$border-style-6;
+            box-shadow: token-size.$radio-selected-border-radius;
             background-color: var(--surface1);
 
             &:active {
