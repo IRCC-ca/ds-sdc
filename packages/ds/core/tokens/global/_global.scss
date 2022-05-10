@@ -26,10 +26,8 @@
                         --border-hover: color.mix-token($neutral, 900),
                         --divider: color.mix-token($neutral, 300),
                         --border-disabled: color.mix-token($neutral, 300), 
-                        --dimmer: color.mix-token($neutral, 1100),
-                        --formcontrol-disabled: color.mix-token($formcontrol, 300), 
-                        --formcontrol: color.mix-token($formcontrol, 700), 
-                        --formcontrol-hover: color.mix-token($formcontrol, 800)
+                        --dimmer: color.mix-token($neutral, 1100)
+                        
                     )
                 );
             }
@@ -52,10 +50,7 @@
                         --border: color.mix-token($neutral, 500),
                         --divider: color.mix-token($neutral, 1000),
                         --border-disabled: color.mix-token($neutral, 1000),
-                        --dimmer: color.mix-token($neutral, 200),
-                        --formcontrol: color.mix-token($formcontrol, 600),
-                        --formcontrol-disabled: color.mix-token($formcontrol, 1000), 
-                        --formcontrol-hover: color.mix-token($formcontrol, 900)
+                        --dimmer: color.mix-token($neutral, 200)
                     )
                 );
             }
