@@ -8,12 +8,13 @@
 @use '../tokens/button/round' as button-round;
 @use '../tokens/partial/focus' as focus;
 @use '../tokens/link/link' as link;
+@use "./ircc-jl-colors" as jl;
 
 /// This mixin is used to define the expected element styling configuration for the default theme.
 /// @param {String} $palette - the palette key to construct from the palette theme
 /// @param {String} $size - the size key to construct default sizes for elements
 @mixin default($palette, $size) {
-    @include required-common-theme($palette, $size);
+    @include required-common-theme(jl.$journeylab-palette, $palette, $size);
     @include button-primary.button-primary(cta, neutral);
     @include button-primary.button-primary(critical, neutral);
     @include button-secondary.button-secondary(cta);
@@ -30,9 +31,11 @@
 }
 
 /// This mixin is used to define the common elements used in all themes.
-/// @param {String} $palette - the palette key to construct from the palette theme
+/// @param {Map} $root-palette - the palette map to be used for the construction of the theme
+/// @param {String} $palette-key - the palette key to construct from the palette theme
 /// @param {String} $size - the size key to construct default sizes for elements
-@mixin required-common-theme($palette, $size) {
-    @include color.set-mode($palette);
+@mixin required-common-theme($root-palette, $palette-key, $size) {
+    @include color.set-palette($root-palette);
+    @include color.set-mode($palette-key);
     @include size.set-mode($size);
 }

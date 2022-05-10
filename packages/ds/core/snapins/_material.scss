@@ -1,0 +1,43 @@
+@use '../util/color';
+
+$primary-palette: format-palette(cta);
+$accent-palette: format-palette(active);
+$warn-palette: format-palette(critical);
+
+
+/// Defines a material formatted palette
+@function format-palette($palette) {
+    @return (
+        50: color.mix-token($palette, 100),
+        100: color.mix-token($palette, 200),
+        200: color.mix-token($palette, 300),
+        300: color.mix-token($palette, 400),
+        400: color.mix-token($palette, 500),
+        500: color.mix-token($palette, 600),
+        600: color.mix-token($palette, 700),
+        700: color.mix-token($palette, 800),
+        800: color.mix-token($palette, 900),
+        900: color.mix-token($palette, 1000),
+        contrast: (
+            50: get-contrast($palette, 100),
+            100: get-contrast($palette, 200),
+            200: get-contrast($palette, 300),
+            300: get-contrast($palette, 400),
+            400: get-contrast($palette, 500),
+            500: get-contrast($palette, 600),
+            600: get-contrast($palette, 700),
+            700: get-contrast($palette, 800),
+            800: get-contrast($palette, 900),
+            900: get-contrast($palette, 1000),
+        )
+    );
+}
+
+@function get-contrast($palette, $level) {
+    $lightness: list.nth(color.get-raw-color($palette, $level), 3);
+    @if $lightness < 55% {
+        @return color.mix-token(neutral, 1200);
+    } @else {
+        @return color.mix-token(neutral, 100);
+    }
+}
