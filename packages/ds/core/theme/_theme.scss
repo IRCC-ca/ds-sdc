@@ -28,7 +28,7 @@
     @include text-global.text-global(neutral);
     @include global.global(neutral, selected);
     @include focus.focus(focus);
-    @include nav.nav('row');
+    @include nav.nav('row', neutral);
 }
 
 /// This mixin is used to define the common elements used in all themes.

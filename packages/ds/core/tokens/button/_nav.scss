@@ -1,13 +1,23 @@
 @use '../../util/theme';
 @use "./button-const";
+@use "./plain";
+@use "../template-const";
+@use "../../util/device";
 
-@mixin nav($direction: 'row') {
+@mixin tokens($palette) {
+    @include plain.tokens($palette);
+}
+
+@mixin nav($direction: 'row', $palette) {
     @include selectors() {
         @include theme.selector($direction, 'direction', 'row') {
             @include wrap($direction) {
-                @include button-const.layout();
-                a {
-                    text-decoration: none;
+
+                a:any-link {
+                    @include tokens($palette);
+                }
+                @include button-const.selectors {
+                    @include tokens($palette);
                 }
             }
         }
@@ -16,13 +26,18 @@
 }
 
 @mixin selectors {
-    nav {
-        @content;
+    @at-root {
+        #{template-const.$root-selectors} {
+            nav {
+                @content;
+            }
+        }
+
     }
+
 }
 
 @mixin wrap($direction: 'row') {
-    width: 100%;
     ul {
         display: flex;
         flex-direction: row;
@@ -31,7 +46,15 @@
                 content: none;
             }
         li {
+            display: contents;
             @content;
         }
     }
+}
+
+@mixin layout() {
+    --text: var(--text-primary);
+    text-decoration: none;
+
+    @include button-const.layout();
 }
