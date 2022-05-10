@@ -4,7 +4,7 @@ $primary-palette: format-palette(cta);
 $accent-palette: format-palette(active);
 $warn-palette: format-palette(critical);
 
-
+$lightness-breakpoint: 55%;
 /// Defines a material formatted palette
 @function format-palette($palette) {
     @return (
@@ -35,7 +35,7 @@ $warn-palette: format-palette(critical);
 
 @function get-contrast($palette, $level) {
     $lightness: list.nth(color.get-raw-color($palette, $level), 3);
-    @if $lightness < 55% {
+    @if $lightness < $lightness-breakpoint {
         @return color.mix-token(neutral, 1200);
     } @else {
         @return color.mix-token(neutral, 100);
