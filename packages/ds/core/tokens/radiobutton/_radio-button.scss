@@ -115,6 +115,7 @@
             @include device.if-hover {
                 --border: var(--formcontrol-hover);
             }
+            
             &:active {
                 --border: var(--formcontrol-hover);
             }
