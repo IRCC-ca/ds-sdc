@@ -11,7 +11,7 @@
 @use './tokens/button/plain' as button-plain;
 @use './tokens/button/round' as button-round;
 
-/// Default theme, should be included for most applications, and can be customized through the prameters
+/// Default theme, should be included for most applications, and can be customized through the parameters
 /// @param {String} $palette ('default') - the palette from the theme to construct the components with
 /// @param {String} $size ('large') - The text size to default to,
 /// Client-facing applications should be constructed with large text
