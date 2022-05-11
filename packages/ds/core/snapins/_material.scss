@@ -1,12 +1,13 @@
 @use '../util/color';
 @use 'sass:list';
-/// This snapin is intended as a stop-gap during development, it is not recommended for use in production applications, but included due to popular demand.
-/// If components from the secondary design system are desired with the color palette system of IRCC-ca integrated, this palette snapin can be used to output in the desired format
-/// Usage indicates an acknowledgement of risk of unexpected behaviour, as it is not supported by the core design systems team.
-/// Optimizations and improvements are welcome as PR's at <https://github.com/IRCC-ca/ds-sdc/pulls>
 
-
-
+/** This snapin is intended as a stop-gap during development,
+it is not recommended for use in production applications, but included due to popular demand.
+If components from the secondary design system are desired with the color palette system of IRCC-ca integrated,
+this palette snapin can be used to output in the desired format
+Usage indicates an acknowledgement of risk of unexpected behaviour,
+as it is not supported by the core design systems team.
+Optimizations and improvements are welcome as PR's at <https://github.com/IRCC-ca/ds-sdc/pulls> */
 
 /* The following is a sample integration of a secondary design system (Material).
 
@@ -39,10 +40,6 @@ $mat-color: (
     @include mat.all-component-colors($my-theme);
 }
 */
-
-
-
-
 
 $lightness-breakpoint: 55%;
 @function get-contrast($palette, $level) {
@@ -89,5 +86,3 @@ $lightness-breakpoint: 55%;
         warn: format-palette(critical),
         ));
 }
-
-

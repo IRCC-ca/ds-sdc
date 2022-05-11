@@ -8,7 +8,7 @@
 @use '../tokens/button/round' as button-round;
 @use '../tokens/partial/focus' as focus;
 @use '../tokens/link/link' as link;
-@use "./ircc-jl-colors" as jl;
+@use './ircc-jl-colors' as jl;
 
 /// This mixin is used to define the expected element styling configuration for the default theme.
 /// @param {String} $palette - the palette key to construct from the palette theme

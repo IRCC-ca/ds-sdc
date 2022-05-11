@@ -14,7 +14,9 @@ $color-mode: '' !global;
     $color-mode: $new-mode !global;
 }
 
-/// @param {Map} $palette - set the palette to be used when generating components, multiple modes can be passed to allow for generating corresponding stylesheets.
+/// @param {Map} $palette - set the palette to be used when generating
+// components, multiple modes can be passed to allow for generating
+// corresponding stylesheets.
 @mixin set-palette($palette: tokens.$journeylab-palette) {
     $root-palette: $palette !global;
 }
