@@ -9,6 +9,12 @@ export default {
   args: {
     ngContent: 'Link'
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=83%3A685'
+    }
+  },
   decorators: [
     moduleMetadata({
       declarations: [LinkComponent, IconComponent],

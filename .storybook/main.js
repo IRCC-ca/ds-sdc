@@ -5,7 +5,13 @@ module.exports = {
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
-    '@storybook/addon-docs',  
+    'storybook-addon-designs',
+    { 
+     name: '@storybook/addon-docs',
+     options: {
+      transcludeMarkdown: true,
+     }
+    },
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",

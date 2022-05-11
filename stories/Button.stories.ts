@@ -9,6 +9,12 @@ export default {
   args: {
     ngContent: 'Label',
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url:'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=8%3A62'
+    }
+  },
   decorators: [
     moduleMetadata({
       declarations: [ButtonComponent, IconComponent],
