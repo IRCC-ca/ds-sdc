@@ -1,27 +1,21 @@
-import { Meta } from '@storybook/addon-docs';
+# Disable
 
-<Meta title="Core/Tokens/Focus" />
-
-# Focus
-
-This class describes common functionality that applies to all elements that are focusable.
+This class describes common functionality that applies to all elements that are non-intractable.
 
 ## Usage
 
-This applies to any element with the `:focus` pseudoclass.
+This applies to any element with the `:disabled` pseudoclass.
 
 Should you override the styling of the pseudoclass and lose functionality, it can be re-added to your element by using the following.
 
 ```scss
-@use './focus';
-&:focus {
-    @include focus.selector() {
-        @include focus.layout();
+@use './disable';
+&:disabled {
+    @include disable.selector() {
+        @include disable.layout();
     }
 }
 ```
-
-in your styles.
 
 If an element requires specific styling, these styles can be overridden.
 

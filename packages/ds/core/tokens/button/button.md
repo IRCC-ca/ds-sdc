@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/addon-docs';
-
-<Meta title="Core/Tokens/Button" />
-
 # Button styles
 
 ## Usage

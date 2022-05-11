@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/addon-docs';
-
-<Meta title="Core/Theme" />
-
 # Theme
 
 Functionality relating to theming the design system

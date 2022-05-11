@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/addon-docs';
-
-<Meta title="Core/Tokens/Link" />
-
 # Link styles
 
 ## Usage

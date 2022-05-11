@@ -1,7 +1,3 @@
-import { Meta } from '@storybook/addon-docs';
-
-<Meta title="Core/Layout" />
-
 # Layout
 
 Functionality to aid in creating layouts

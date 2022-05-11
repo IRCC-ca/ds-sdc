@@ -1,9 +1,3 @@
-import { Meta } from "@storybook/addon-docs";
-
-<Meta
-    title="Core/Tokens/Global"
-/>
-
 # Global
 
 Creates tokens relating to generic global elements, including surface and form control common colors.
