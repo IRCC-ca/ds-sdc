@@ -112,7 +112,10 @@
         }
 
         &:enabled {
-            &:active, &:hover {
+            @include device.if-hover {
+                --border: var(--formcontrol-hover);
+            }
+            &:active {
                 --border: var(--formcontrol-hover);
             }
         }
@@ -125,7 +128,7 @@
         --background-color: var(--formcontrol-critical-background);
 
         &:enabled {
-            &:hover {
+            @include device.if-hover {
                 --border: var(--formcontrol-critical-border);
                 --background-color: var(--formcontrol-critical-hover);
             }
