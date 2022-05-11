@@ -1,6 +1,6 @@
-@use "~@ircc-ca/ds-sdc-core/layout/layout-grid" as layouts;
-@use "~@ircc-ca/ds-sdc-core/typography/typography";
-@use "~@ircc-ca/ds-sdc-core/util/device";
+@use '~@ircc-ca/ds-sdc-core/layout/layout-grid' as layouts;
+@use '~@ircc-ca/ds-sdc-core/typography/typography';
+@use '~@ircc-ca/ds-sdc-core/util/device';
 
 .nav-section {
     @include layouts.grid(1fr 1fr, auto);
@@ -12,8 +12,9 @@
     }
     column-gap: 20px;
     row-gap: 20px;
+    
     button {
-        width: -webkit-fill-available;
+        width: fill-available;
         justify-self: center;
     }
 }

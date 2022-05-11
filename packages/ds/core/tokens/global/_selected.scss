@@ -1,7 +1,7 @@
 @use '../../util/device';
 @use '../../util/theme';
 
-@mixin validation($navigation, $valid, $invalid) {
+@mixin selected($navigation) {
     @at-root {
         #{template-const.$root-selectors} {
             nav {
@@ -23,30 +23,7 @@
                         --navigation-weak-hover: color.mix-token($navigation, 1100);
                     }
                 }
-            }
-            * {
-                &:checked,
-                &:indeterminate,
-                &:valid,
-                &:user-valid {
-                    @include theme.light() {
-                        --formcontrol: color.mix-token($valid, 700);
-                        --formcontrol-disabled: color.mix-token($valid, 300);
-                        @media (any-hover: hover) {
-                            --formcontrol-hover: color.mix-token($valid, 800);
                         }
-                    }
-                    @include theme.dark() {
-                    }
-                }
-                &:invalid,
-                &:user-invalid {
-                    @include theme.light() {
-                    }
-                    @include theme.dark() {
-                    }
-                }
-            }
         }
     }
 }

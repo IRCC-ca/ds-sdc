@@ -1,16 +1,16 @@
 @use '~@ircc-ca/ds-sdc-core/typography/typography';
-:host {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: flex-start;
-  .main-nav {
-      flex-grow: 1;
-  }
-  > *:not(jds-header, jds-footer) {
-      margin: 0px 10%;
-  }
 
+:host {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    .main-nav {
+        flex-grow: 1;
+    }
+    > *:not(jds-header, jds-footer) {
+        margin: 0 10%;
+    }
 }
 .open_in_new {
     &::after {
