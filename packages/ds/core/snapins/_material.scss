@@ -1,0 +1,88 @@
+@use '../util/color';
+@use 'sass:list';
+
+/** This snapin is intended as a stop-gap during development,
+it is not recommended for use in production applications, but included due to popular demand.
+If components from the secondary design system are desired with the color palette system of IRCC-ca integrated,
+this palette snapin can be used to output in the desired format
+Usage indicates an acknowledgement of risk of unexpected behaviour,
+as it is not supported by the core design systems team.
+Optimizations and improvements are welcome as PR's at <https://github.com/IRCC-ca/ds-sdc/pulls> */
+
+/* The following is a sample integration of a secondary design system (Material).
+
+//styles.scss
+@use '@angular/material' as mat;
+@use '~@ircc-ca/ds-sdc-core/snapins/material' as ircc-mat;
+@use '~@ircc-ca/ds-sdc-core/util/theme';
+
+$mat-palettes: ircc-mat.material-palettes();
+@include mat.core();
+$mat-color: (
+    primary: mat.define-palette(map-get($mat-palettes, primary)),
+    accent: mat.define-palette(map-get($mat-palettes, accent)),
+    warn: mat.define-palette(map-get($mat-palettes, warn)),
+);
+@include theme.light() {
+    $my-theme: mat.define-light-theme(
+        (
+            color: $mat-color,
+        )
+    );
+    @include mat.all-component-colors($my-theme);
+}
+@include theme.dark() {
+    $my-theme: mat.define-dark-theme(
+        (
+            color: $mat-color,
+        )
+    );
+    @include mat.all-component-colors($my-theme);
+}
+*/
+
+$lightness-breakpoint: 55%;
+@function get-contrast($palette, $level) {
+    $lightness: list.nth((color.get-raw-color($palette, $level)), 3);
+    @if $lightness < $lightness-breakpoint {
+        @return color.mix-token(neutral, 1200);
+    } @else {
+        @return color.mix-token(neutral, 100);
+    }
+}
+
+/// Defines a material formatted palette
+@function format-palette($palette) {
+    @return (
+        50: color.mix-token($palette, 100),
+        100: color.mix-token($palette, 200),
+        200: color.mix-token($palette, 300),
+        300: color.mix-token($palette, 400),
+        400: color.mix-token($palette, 500),
+        500: color.mix-token($palette, 600),
+        600: color.mix-token($palette, 700),
+        700: color.mix-token($palette, 800),
+        800: color.mix-token($palette, 900),
+        900: color.mix-token($palette, 1000),
+        contrast: (
+            50: get-contrast($palette, 100),
+            100: get-contrast($palette, 200),
+            200: get-contrast($palette, 300),
+            300: get-contrast($palette, 400),
+            400: get-contrast($palette, 500),
+            500: get-contrast($palette, 600),
+            600: get-contrast($palette, 700),
+            700: get-contrast($palette, 800),
+            800: get-contrast($palette, 900),
+            900: get-contrast($palette, 1000),
+        )
+    );
+}
+
+@function material-palettes() {
+    @return ((
+        primary: format-palette(cta),
+        accent: format-palette(active),
+        warn: format-palette(critical),
+        ));
+}
