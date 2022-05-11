@@ -1,43 +1,23 @@
-
-  <!-- Next Steps -->
   <jds-header>
-    <button color="cta" category="plain">French</button>
+    <jds-theme></jds-theme>
   </jds-header>
-  <nav direction="row">
-    <ul>
-      <li><button>Button</button></li>
-      <li><button>Button</button></li>
-      <li><button>Button</button></li>
-      <li><button>Button</button></li>
-      <li><button>Button</button></li>
-      <li><a href="#Link2">Link Two</a></li>
-      <li><a href="#Link2">Link Two</a></li>
-      <li><a href="#Link2">Link Two</a></li>
-      <li><a href="#Link2">Link Two</a></li>
-      </ul>
-      </nav>
-    <div class="content-area-responsive-margins">
-      <h2>Next Steps</h2>
-      <p>What do you want to do next with your app? <a href="#nothere">What do you want to do next with your app?</a> What do
-        you want to do
-        next with your app?</p>
-      <p><strong>asdasdasd</strong>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <a href="www.github.com"><span class="font" aria-hidden></span> Github</a>
-      <input size="small" color="critical" type="button" value="Default">
-      <my-component first="Stencil" last="Name" middle="test"></my-component>
+  <h1>Journey Design System (JDS) sample application</h1>
+  <span class="body3">
+    <p>This application serves as a list of possible sample implementations and is not intended as a coding standards
+      guide, or a list of required or optional templates.</p>
+  </span>
+  <div class="main-nav">
+    <router-outlet></router-outlet>
+  </div>
 
-      <jds-font-icon [iconConfig]="alicornIconConfig"></jds-font-icon>
-      <my-component first="Stencil" last="Name"></my-component>
-      <a href="www.github.com">Github</a>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      <p>What do you want to do next with your app?</p>
-      </div>
-  <jds-footer>Date modified: 2021-09-06</jds-footer>
+  <span class="body4">
+    <p>Information about the design system will be provided in .md files within the package delivery</p>
+    <p>This can be found in your <span class="emphasis">node_modules/@ircc-ca/ds-sdc-core/</span> after installing or <a
+        target="_blank" href="https://github.com/IRCC-ca/ds-sdc/blob/main/packages/ds/core/README.md">found on our
+        Github<span class="open_in_new" aria-label="Opens in new window"></span></a></p>
+  </span>
+  <jds-footer>
+    Date modified: 2022-05-06<br />
+    <button size="small" category="plain" (click)="findRoute(-1)">Prev</button>
+    <button size="small" category="plain" (click)="findRoute(1)">Next</button>
+  </jds-footer>

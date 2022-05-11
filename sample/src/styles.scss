@@ -1,3 +1,7 @@
-@use "~@ircc-ca/ds-sdc-core/index" as ircc-ds;
+@use '~@ircc-ca/ds-sdc-core/index' as ircc-ds;
 @include ircc-ds.default();
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0 8px;
+}

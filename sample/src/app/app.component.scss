@@ -1,22 +1,20 @@
-@use "~@ircc-ca/ds-sdc-core/layout/layout-grid" as layouts;
-@use "~@ircc-ca/ds-sdc-core/typography/typography";
-.sidenav {
-    grid-column: first / span 1;
-    height: 100%;
-    > * {
-        grid-column: auto / span 1;
-    }
-}
-.sidenav2 {
-    grid-column: span 1 / last;
-}
-.masthead {
-    grid-row: 1 / 2;
-    grid-column: first / last;
-    background-color: aquamarine;
-}
+@use '~@ircc-ca/ds-sdc-core/typography/typography';
+:host {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  .main-nav {
+      flex-grow: 1;
+  }
+  > *:not(jds-header, jds-footer) {
+      margin: 0px 10%;
+  }
 
-.wrapper {
-    @include layouts.grid(auto 1fr auto, 1fr auto);
-    height: 100%;
+}
+.open_in_new {
+    &::after {
+        margin: 0.2em;
+        @include typography.fonts-FA-decor-icon('\f08e', 'fa-light');
+    }
 }

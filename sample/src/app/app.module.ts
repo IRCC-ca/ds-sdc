@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './routing/app.routing.module';
+import { SandboxComponent } from './sandbox/sandbox.component';
+import { ThemeSelectComponent } from './theme/theme.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, SandboxComponent, ThemeSelectComponent],
     imports: [
         BrowserModule,
         FormsModule,
@@ -14,6 +17,7 @@ import { AppComponent } from './app.component';
         TranslateModule.forRoot(),
         JlCommonModule,
         IRCCModule,
+        AppRoutingModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
