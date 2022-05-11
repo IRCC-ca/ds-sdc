@@ -24,7 +24,6 @@
                             --critical-background-weak-disabled: color.mix-token($invalid, 100, 0.5),
                             --formcontrol-critical-background: color.mix-token($invalid, 100), 
                             --formcontrol-critical-hover: color.mix-token($invalid, 200),
-                            --formcontrol-critical-disabled: color.mix-token($invalid, 300),
                             --critical-border-disabled: color.mix-token($invalid, 300),
                             --formcontrol-error: color.mix-token($invalid, 700),
                             --formcontrol-critical-border: color.mix-token($invalid, 800),
@@ -44,7 +43,6 @@
                             --critical-background-weak-disabled: color.mix-token($invalid, 1200, 0.5),
                             --formcontrol-critical-background: color.mix-token($invalid, 1200), 
                             --formcontrol-critical-hover: color.mix-token($invalid, 1100),
-                            --formcontrol-critical-disabled: color.mix-token($invalid, 1000),
                             --critical-border-disabled: color.mix-token($invalid, 1000),
                             --formcontrol-error: color.mix-token($invalid, 600),
                             --formcontrol-critical-border: color.mix-token($invalid, 500),
@@ -134,7 +132,7 @@
     
             &:active {
                 --border: var(--formcontrol-critical-border);
-                --background-color: var(--formcontrol-critical-disabled);
+                --background-color: var(--critical-background-weak-disabled);
              }
         }
     }   

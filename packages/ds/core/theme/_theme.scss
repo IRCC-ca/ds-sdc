@@ -26,7 +26,7 @@
 
     @include link.link(cta, visited);
     @include text-global.text-global(neutral);
-    @include global.global(neutral, selected, focus, critical);
+    @include global.global(neutral, selected);
     @include focus.focus(focus);
 
     @include radiobutton.radiobutton(focus, critical);

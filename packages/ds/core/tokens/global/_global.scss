@@ -4,7 +4,7 @@
 @use '../template-const' as template-const;
 @use '../../util/device' as device;
 
-@mixin global($neutral, $accent,$formcontrol, $critical) {
+@mixin global($neutral, $accent) {
     @at-root {
         #{template-const.$root-selectors} {
             @include theme.light {
