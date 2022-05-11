@@ -75,6 +75,7 @@
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
+    vertical-align: top;
 
     --background-color: var(--surface1);
 
@@ -93,12 +94,8 @@
     }
 
     &:enabled {
-        &:hover  {
-            --border: var(--border-hover);
-        }
-    
         &:active {
-            background-color: var(--generic-active);
+            --background-color: var(--generic-active);
         }
     }
 
