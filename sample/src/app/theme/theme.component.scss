@@ -1,0 +1,19 @@
+@use "~@ircc-ca/ds-sdc-core/layout/layout-grid" as layouts;
+@use "~@ircc-ca/ds-sdc-core/typography/typography";
+@use "~@ircc-ca/ds-sdc-core/util/device";
+
+.nav-section {
+    @include layouts.grid(1fr 1fr, auto);
+    @include device.in-tablet-layout() {
+        @include layouts.grid(1fr, auto auto);
+    }
+    @include device.in-phone-layout() {
+        @include layouts.grid(1fr, auto auto);
+    }
+    column-gap: 20px;
+    row-gap: 20px;
+    button {
+        width: -webkit-fill-available;
+        justify-self: center;
+    }
+}
