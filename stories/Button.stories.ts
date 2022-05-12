@@ -4,7 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   component: ButtonComponent,
   args: {
     ngContent: 'Label',

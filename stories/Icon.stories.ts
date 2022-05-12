@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 
 export default {
-  title: 'Icon',
+  title: 'Components/Icon',
   component: IconComponent,
   parameters: {
     design: {

@@ -4,7 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 export default {
-  title: 'Link',
+  title: 'Components/Link',
   component: LinkComponent,
   args: {
     ngContent: 'Link'

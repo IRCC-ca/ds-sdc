@@ -1,9 +1,8 @@
-// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { FooterComponent } from '@ircc-ca/ds-sdc-angular';
 
 export default {
-  title: 'Footer',
+  title: 'Components/Footer',
   component: FooterComponent,
   parameters: {
     design: {
