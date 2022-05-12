@@ -1,7 +1,7 @@
 import { Story } from '@storybook/angular';
 import type { Meta } from '@storybook/angular';
 
-import {HeaderComponent} from '@ircc-ca/ds-sdc-angular'
+import { HeaderComponent } from '@ircc-ca/ds-sdc-angular/src/common/header'
 
 export default {
   title: 'Header',
