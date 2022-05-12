@@ -2,7 +2,8 @@ import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { within, userEvent } from '@storybook/testing-library';
 import { CommonModule } from '@angular/common';
 
-import { HeaderComponent, FooterComponent } from '@ircc-ca/ds-sdc-angular';
+import { HeaderComponent } from '@ircc-ca/ds-sdc-angular/src/common/header';
+import { FooterComponent } from '@ircc-ca/ds-sdc-angular/src/common/footer'
 import Page from './page.component';
 
 export default {

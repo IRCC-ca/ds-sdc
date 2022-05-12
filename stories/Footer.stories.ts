@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { FooterComponent } from '@ircc-ca/ds-sdc-angular';
+import { FooterComponent } from '@ircc-ca/ds-sdc-angular/src/common/footer';
 
 export default {
   title: 'Components/Footer',

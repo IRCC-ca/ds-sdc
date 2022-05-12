@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { IconComponent, IIconConfig, LinkComponent } from '@ircc-ca/ds-sdc-angular';
+import { IconComponent, IIconConfig } from '@ircc-ca/ds-sdc-angular/src/common/icon';
+import { LinkComponent } from '@ircc-ca/ds-sdc-angular/src/common/link';
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 
