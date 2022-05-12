@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IIconConfig } from '../icon/icon.component';
+import { IIconConfig } from '@ircc-ca/ds-sdc-angular/src/common/icon';
 
 @Component({
   selector: 'jds-link',
