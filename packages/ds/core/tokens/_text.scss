@@ -1,4 +1,16 @@
+@use '../util/size';
 @import './sizes';
+
+$size: (
+    body: (
+        small: 3,
+        large: 2,
+    ),
+);
+
+@function get-level($type) {
+    @return map-get($size, $type, size.$size-mode);
+}
 
 $heading: (
     level: (
