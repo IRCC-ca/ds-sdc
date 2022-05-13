@@ -7,8 +7,8 @@
 /** This snapin is intended as a stop-gap during development,
 it is included due to popular demand to create a bridge with the Material Design System to reduce visual conflicts
 should that system be desired.
-If components from the secondary design system are desired with the color and typography palette systems of IRCC-ca integrated,
-this palette snapin can be used to output the desired format.
+If components from the secondary design system are desired with the color and typography palette systems
+of IRCC-ca integrated, this palette snapin can be used to output the desired format.
 Usage indicates an acknowledgement of risk of unexpected behaviour,
 as it is not supported by the core design systems team.
 Optimizations and improvements are welcome as PR's at <https://github.com/IRCC-ca/ds-sdc/pulls> */
@@ -47,9 +47,9 @@ $lightness-breakpoint: 55%;
 @function get-contrast($palette, $level) {
     $lightness: list.nth((color.get-raw-color($palette, $level)), 3);
     @if $lightness < $lightness-breakpoint {
-        @return color.mix-token(neutral, 1200);
-    } @else {
         @return color.mix-token(neutral, 100);
+    } @else {
+        @return color.mix-token(neutral, 1200);
     }
 }
 
