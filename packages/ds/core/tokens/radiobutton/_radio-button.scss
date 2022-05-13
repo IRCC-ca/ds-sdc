@@ -21,10 +21,9 @@
                             --formcontrol-disabled: color.mix-token($valid, 300), 
                             --formcontrol: color.mix-token($valid, 700), 
                             --formcontrol-hover: color.mix-token($valid, 800),
-                            --critical-background-weak-disabled: color.mix-token($invalid, 100, 0.5),
                             --formcontrol-critical-background: color.mix-token($invalid, 100), 
                             --formcontrol-critical-hover: color.mix-token($invalid, 200),
-                            --critical-border-disabled: color.mix-token($invalid, 300),
+                            --critical-background-weak-active: color.mix-token($invalid, 300),
                             --formcontrol-error: color.mix-token($invalid, 700),
                             --formcontrol-critical-border: color.mix-token($invalid, 800),
                             --critical-active: color.mix-token($invalid, 900)
@@ -40,10 +39,9 @@
                             --formcontrol: color.mix-token($valid, 600),
                             --formcontrol-disabled: color.mix-token($valid, 1000), 
                             --formcontrol-hover: color.mix-token($valid, 900),
-                            --critical-background-weak-disabled: color.mix-token($invalid, 1200, 0.5),
                             --formcontrol-critical-background: color.mix-token($invalid, 1200), 
                             --formcontrol-critical-hover: color.mix-token($invalid, 1100),
-                            --critical-border-disabled: color.mix-token($invalid, 1000),
+                            --critical-background-weak-active: color.mix-token($invalid, 1000),
                             --formcontrol-error: color.mix-token($invalid, 600),
                             --formcontrol-critical-border: color.mix-token($invalid, 500),
                             --critical-active: color.mix-token($invalid, 400)
@@ -136,7 +134,7 @@
     
             &:active {
                 --border: var(--formcontrol-critical-border);
-                --background-color: var(--critical-background-weak-disabled);
+                --background-color: var(--critical-background-weak-active);
              }
         }
     }   
