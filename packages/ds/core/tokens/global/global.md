@@ -1,5 +1,7 @@
 # Global
 
+## Global
+
 Creates tokens relating to generic global elements, including surface and form control common colors.
 
 ### Usage
