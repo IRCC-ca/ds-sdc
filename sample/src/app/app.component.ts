@@ -8,6 +8,7 @@ import { routes } from './routing/app.routing.module';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
     title = 'sample';
 
     // config = {

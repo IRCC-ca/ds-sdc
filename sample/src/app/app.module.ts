@@ -12,6 +12,7 @@ import { JLIconModule } from '@ircc-ca/ds-sdc-angular/src/common/icon';
 import { JLFooterModule } from '@ircc-ca/ds-sdc-angular/src/common/footer';
 import { JLHeaderModule } from '@ircc-ca/ds-sdc-angular/src/common/header';
 import { JLLinkModule } from '@ircc-ca/ds-sdc-angular/src/common/link';
+import { Sandbox1Component } from './sandbox1/sandbox1.component';
 
 const JL_ANGULAR_COMPONENTS = [        
     JLButtonModule,
@@ -22,7 +23,7 @@ const JL_ANGULAR_COMPONENTS = [
 ]
 
 @NgModule({
-    declarations: [AppComponent, SandboxComponent, ThemeSelectComponent],
+    declarations: [AppComponent, SandboxComponent, Sandbox1Component, ThemeSelectComponent],
     imports: [
         BrowserModule,
         FormsModule,

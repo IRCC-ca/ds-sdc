@@ -5,8 +5,14 @@ import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 
 export default {
-  title: 'Icon',
+  title: 'Components/Icon',
   component: IconComponent,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=40%3A1643'
+    }
+  },
   decorators: [
     moduleMetadata({
       declarations: [IconComponent, LinkComponent],

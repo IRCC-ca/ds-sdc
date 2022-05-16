@@ -3,55 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.0.9-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.9-beta.0...@ircc-ca/ds-sdc-core@0.0.9-beta.1) (2022-05-11)
+## [0.0.10-beta.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.10-beta.2...@ircc-ca/ds-sdc-core@0.0.10-beta.3) (2022-05-16)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
 
 
 
 
+
+## [0.0.10-beta.2](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.10-beta.1...@ircc-ca/ds-sdc-core@0.0.10-beta.2) (2022-05-16)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-core
+
+
+
+
+
+## [0.0.10-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.9...@ircc-ca/ds-sdc-core@0.0.10-beta.1) (2022-05-13)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-core
+
+
+
+
+
+## [0.0.10-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.9...@ircc-ca/ds-sdc-core@0.0.10-beta.0) (2022-05-13)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-core
+
+
+
+
+
+## [0.0.9](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.8...@ircc-ca/ds-sdc-core@0.0.9) (2022-05-12)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-core
+
+## [0.0.9-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.9-beta.0...@ircc-ca/ds-sdc-core@0.0.9-beta.1) (2022-05-11)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-core
 
 ## [0.0.9-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.8...@ircc-ca/ds-sdc-core@0.0.9-beta.0) (2022-05-06)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
 
-
-
-
-
 ## [0.0.8](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.7...@ircc-ca/ds-sdc-core@0.0.8) (2022-05-05)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
-
-
-
-
-
 
 ## [0.0.8-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.7...@ircc-ca/ds-sdc-core@0.0.8-beta.0) (2022-05-04)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
 
-
-
-
-
-
 ## [0.0.7](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.5...@ircc-ca/ds-sdc-core@0.0.7) (2022-04-25)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
 
-
-
-
-
 ## [0.0.6](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.5...@ircc-ca/ds-sdc-core@0.0.6) (2022-04-25)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
-
-
-
-
 
 ## [0.0.3-beta.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.3-beta.2...@ircc-ca/ds-sdc-core@0.0.3-beta.3) (2022-04-22)
 

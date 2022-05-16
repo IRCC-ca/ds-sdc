@@ -8,6 +8,7 @@
 @use '../tokens/button/round' as button-round;
 @use '../tokens/partial/focus' as focus;
 @use '../tokens/link/link' as link;
+@use '../tokens/radiobutton/radio-button' as radiobutton;
 @use './ircc-jl-colors' as jl;
 
 /// This mixin is used to define the expected element styling configuration for the default theme.
@@ -28,6 +29,8 @@
     @include text-global.text-global(neutral);
     @include global.global(neutral, selected);
     @include focus.focus(focus);
+
+    @include radiobutton.radiobutton(focus, critical);
 }
 
 /// This mixin is used to define the common elements used in all themes.
