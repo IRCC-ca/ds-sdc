@@ -4,10 +4,16 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   component: ButtonComponent,
   args: {
     ngContent: 'Label',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url:'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=8%3A62'
+    }
   },
   decorators: [
     moduleMetadata({
