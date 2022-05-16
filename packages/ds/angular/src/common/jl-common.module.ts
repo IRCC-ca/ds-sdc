@@ -6,6 +6,7 @@ import { LinkComponent } from './link/link.component';
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { RadioButtonComponent } from './radio-button/radio-button.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         ButtonComponent,
         LinkComponent,
         CheckboxComponent,
+        RadioButtonComponent,
         HeaderComponent,
         FooterComponent
     ],
@@ -24,6 +26,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
         ButtonComponent,
         LinkComponent,
         CheckboxComponent,
+        RadioButtonComponent,
         HeaderComponent,
         FooterComponent
     ],

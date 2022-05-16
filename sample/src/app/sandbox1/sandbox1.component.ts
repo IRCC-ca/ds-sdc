@@ -6,10 +6,14 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
     styleUrls: ['./sandbox1.component.scss'],
 })
 export class Sandbox1Component implements AfterViewInit {
-    @ViewChild("invalidRadio") invalidCheckbox!: ElementRef<HTMLInputElement>;
+    @ViewChild("invalidCheckbox") invalidCheckbox!: ElementRef<HTMLInputElement>;
+    @ViewChild("invalidRadio") invalidRadio!: ElementRef<HTMLInputElement>;
 
     ngAfterViewInit() {
         // set the checkbox as invalid
         this.invalidCheckbox.nativeElement.setCustomValidity('invalid field');
+
+        // set the radio button as invalid
+        this.invalidRadio.nativeElement.setCustomValidity('invalid field');
     }
 }
