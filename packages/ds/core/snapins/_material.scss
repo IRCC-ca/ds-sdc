@@ -1,10 +1,14 @@
 @use '../util/color';
 @use 'sass:list';
+@use '../tokens/text';
+
+@use '@angular/material' as mat;
 
 /** This snapin is intended as a stop-gap during development,
-it is not recommended for use in production applications, but included due to popular demand.
-If components from the secondary design system are desired with the color palette system of IRCC-ca integrated,
-this palette snapin can be used to output in the desired format
+it is included due to popular demand to create a bridge with the Material Design System to reduce visual conflicts
+should that system be desired.
+If components from the secondary design system are desired with the color and typography palette systems
+of IRCC-ca integrated, this palette snapin can be used to output the desired format.
 Usage indicates an acknowledgement of risk of unexpected behaviour,
 as it is not supported by the core design systems team.
 Optimizations and improvements are welcome as PR's at <https://github.com/IRCC-ca/ds-sdc/pulls> */
@@ -16,20 +20,18 @@ Optimizations and improvements are welcome as PR's at <https://github.com/IRCC-c
 @use '~@ircc-ca/ds-sdc-core/snapins/material' as ircc-mat;
 @use '~@ircc-ca/ds-sdc-core/util/theme';
 
-$mat-palettes: ircc-mat.material-palettes();
-@include mat.core();
-$mat-color: (
-    primary: mat.define-palette(map-get($mat-palettes, primary)),
-    accent: mat.define-palette(map-get($mat-palettes, accent)),
-    warn: mat.define-palette(map-get($mat-palettes, warn)),
-);
+@include ircc-ds.default();
+
+$mat-typography: ircc-mat.material-typography();
+$mat-color: ircc-mat.material-colors();
+@include mat.core($mat-typography);
 @include theme.light() {
     $my-theme: mat.define-light-theme(
         (
             color: $mat-color,
         )
     );
-    @include mat.all-component-colors($my-theme);
+    // include desired material component mixins here with $my-theme
 }
 @include theme.dark() {
     $my-theme: mat.define-dark-theme(
@@ -37,7 +39,7 @@ $mat-color: (
             color: $mat-color,
         )
     );
-    @include mat.all-component-colors($my-theme);
+    // include desired material component mixins here with $my-theme
 }
 */
 
@@ -45,9 +47,9 @@ $lightness-breakpoint: 55%;
 @function get-contrast($palette, $level) {
     $lightness: list.nth((color.get-raw-color($palette, $level)), 3);
     @if $lightness < $lightness-breakpoint {
-        @return color.mix-token(neutral, 1200);
-    } @else {
         @return color.mix-token(neutral, 100);
+    } @else {
+        @return color.mix-token(neutral, 1200);
     }
 }
 
@@ -79,10 +81,134 @@ $lightness-breakpoint: 55%;
     );
 }
 
-@function material-palettes() {
-    @return ((
-        primary: format-palette(cta),
-        accent: format-palette(active),
-        warn: format-palette(critical),
-        ));
+@function material-colors() {
+    @return (
+        primary: mat.define-palette(format-palette(cta)),
+        accent: mat.define-palette(format-palette(active)),
+        warn: mat.define-palette(format-palette(critical))
+    );
+}
+
+@function material-typography() {
+    @return mat.define-typography-config(
+        $font-family: map-get(text.$body, family),
+        $display-4:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 1, font-size),
+                $line-height: map-get(text.$heading, level, 1, line-height),
+                $font-weight: map-get(text.$heading, weight, emphasis)
+            ),
+        $display-3:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 2, font-size),
+                $line-height: map-get(text.$heading, level, 2, line-height),
+                $font-weight: map-get(text.$heading, weight, emphasis)
+            ),
+        $display-2:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 3, font-size),
+                $line-height: map-get(text.$heading, level, 3, line-height),
+                $font-weight: map-get(text.$heading, weight, emphasis)
+            ),
+        $display-1:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 4, font-size),
+                $line-height: map-get(text.$heading, level, 4, line-height),
+                $font-weight: map-get(text.$heading, weight, emphasis)
+            ),
+        $headline:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 1, font-size),
+                $line-height: map-get(text.$heading, level, 1, line-height),
+                $font-weight: map-get(text.$heading, weight, regular)
+            ),
+        $title:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 2, font-size),
+                $line-height: map-get(text.$heading, level, 2, line-height),
+                $font-weight: map-get(text.$heading, weight, regular)
+            ),
+        $subheading-1:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 4, font-size),
+                $line-height: map-get(text.$heading, level, 4, line-height),
+                $font-weight: map-get(text.$heading, weight, regular)
+            ),
+        $subheading-2:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 3, font-size),
+                $line-height: map-get(text.$heading, level, 3, line-height),
+                $font-weight: map-get(text.$heading, weight, regular)
+            ),
+        $body-1:
+            mat.define-typography-level(
+                $font-family: map-get(text.$body, family),
+                $font-size:
+                    map-get(text.$body, level, text.get-level(body), font-size),
+                $line-height:
+                    map-get(
+                        text.$body,
+                        level,
+                        text.get-level(body),
+                        line-height
+                    ),
+                $font-weight: map-get(text.$body, weight, regular)
+            ),
+        $body-2:
+            mat.define-typography-level(
+                $font-family: map-get(text.$body, family),
+                $font-size:
+                    map-get(text.$body, level, text.get-level(body), font-size),
+                $line-height:
+                    map-get(
+                        text.$body,
+                        level,
+                        text.get-level(body),
+                        line-height
+                    ),
+                $font-weight: map-get(text.$body, weight, emphasis)
+            ),
+        $caption:
+            mat.define-typography-level(
+                $font-family: map-get(text.$body, family),
+                $font-size:
+                    map-get(
+                        text.$body,
+                        level,
+                        text.get-level(body) + 1,
+                        font-size
+                    ),
+                $line-height:
+                    map-get(
+                        text.$body,
+                        level,
+                        text.get-level(body) + 1,
+                        line-height
+                    ),
+                $font-weight: map-get(text.$body, weight, regular)
+            ),
+        $button:
+            mat.define-typography-level(
+                $font-family: map-get(text.$heading, family),
+                $font-size: map-get(text.$heading, level, 6, font-size),
+                $line-height: text.$relative-child-1-5,
+                $font-weight: map-get(text.$heading, weight, emphasis)
+            ),
+        $input:
+            mat.define-typography-level(
+                $font-family: map-get(text.$body, family),
+                $font-size:
+                    map-get(text.$body, level, text.get-level(body), font-size),
+                $line-height: text.$relative-child-1-5,
+                $font-weight: map-get(text.$body, weight, regular)
+            )
+    );
 }
