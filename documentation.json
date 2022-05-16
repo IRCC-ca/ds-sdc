@@ -63,7 +63,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-d10e239af5ef484f51b74d871865563eb90f2971f3c602f188a8ba4f83bb2b60cb361c60a34fc17dd5605ddb9277299c8edd2eae66ed99059dc202ec9718c1da",
+            "id": "component-AppComponent-6ea9bcd3ef6e42a5e9a559040ede9fece07ffca007fd0c5805ea005f80a2cc234fcd2852f28636f6fd37d41f7bf30c3a247a2480665d2cc7ea9d82096586e0f0",
             "file": "sample/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -83,26 +83,6 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "alicornIconConfig",
-                    "defaultValue": "{\n        unicode: 'f6b0',\n        fontFamily: 'fa-solid',\n    } as IIconConfig",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 25
-                },
-                {
-                    "name": "rocketIconConfig",
-                    "defaultValue": "{\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 30
-                },
-                {
                     "name": "title",
                     "defaultValue": "'sample'",
                     "deprecated": false,
@@ -110,7 +90,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 12
                 }
             ],
             "methodsClass": [
@@ -128,7 +108,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -152,7 +132,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateService } from '@ngx-translate/core';\nimport { routes } from './routing/app.routing.module';\n// import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';\n\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n\n    title = 'sample';\n\n    // config = {\n    //   id: 'firstName',\n    //   type: 'input',\n    //   label: 'test label',\n    //   hint: 'test test',\n    //   placeholder: '',\n    // } as IFieldConfig;\n\n    alicornIconConfig = {\n        unicode: 'f6b0',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    rocketIconConfig = {\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    constructor(private translate: TranslateService, private router: Router) {}\n\n    findRoute(dir = 1) {\n        const route = this.router.url.replace('/', '');\n        let newIndex =\n            routes.findIndex((routerRoute) => {\n                return routerRoute.path === route;\n            }) + dir;\n        switch (Math.sign(dir)) {\n            case 1:\n                newIndex = newIndex % routes.length;\n                break;\n            case -1:\n                newIndex = (newIndex + routes.length) % routes.length;\n                break;\n        }\n        const newPath = routes[newIndex].path;\n        this.router.navigate([newPath]);\n    }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { TranslateService } from '@ngx-translate/core';\nimport { routes } from './routing/app.routing.module';\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n\n    title = 'sample';\n\n    // config = {\n    //   id: 'firstName',\n    //   type: 'input',\n    //   label: 'test label',\n    //   hint: 'test test',\n    //   placeholder: '',\n    // } as IFieldConfig;\n\n    constructor(private translate: TranslateService, private router: Router) {}\n\n    findRoute(dir = 1) {\n        const route = this.router.url.replace('/', '');\n        let newIndex =\n            routes.findIndex((routerRoute) => {\n                return routerRoute.path === route;\n            }) + dir;\n        switch (Math.sign(dir)) {\n            case 1:\n                newIndex = newIndex % routes.length;\n                break;\n            case -1:\n                newIndex = (newIndex + routes.length) % routes.length;\n                break;\n        }\n        const newPath = routes[newIndex].path;\n        this.router.navigate([newPath]);\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -180,7 +160,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 33,
+                "line": 12,
                 "jsdoctags": [
                     {
                         "name": "translate",
@@ -331,7 +311,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<footer class=\"footing\">\n    <div class=\"grid-container\">\n        <div class=\"item1 body3\">\n            <ng-content></ng-content>\n        </div>\n        <img src=\"assets/gc_logo.svg\" class=\"item2\">\n    </div>\n</footer>"
+            "templateData": "<footer class=\"footing\">\n    <div class=\"grid-container\">\n        <div class=\"item1 body3\">\n            <ng-content></ng-content>\n        </div>\n        <!-- <img src=\"assets/gc_logo.svg\" class=\"item2\"> -->\n    </div>\n</footer>"
         },
         {
             "name": "HeaderComponent",
@@ -440,7 +420,7 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "HeaderComponent-1",
-            "templateData": "<header class=\"heading\">\n    <div class=\"grid-container\">\n        <img src=\"assets/canada_flag.svg\" class=\"item1\">\n        <img src=\"assets/canada_govt_logo.svg\" class=\"item2\">\n        <div class=\"item3\"><ng-content></ng-content></div>\n    </div>\n    <hr class=\"headerLine\"/>\n</header>\n"
+            "templateData": "<header class=\"heading\">\n    <div class=\"grid-container\">\n        <!-- <img src=\"assets/canada_flag.svg\" class=\"item1\">\n        <img src=\"assets/canada_govt_logo.svg\" class=\"item2\"> -->\n        <div class=\"item3\"><ng-content></ng-content></div>\n    </div>\n    <hr class=\"headerLine\"/>\n</header>\n"
         },
         {
             "name": "IconComponent",
@@ -513,7 +493,7 @@
         },
         {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-88ff3fe9010f20c657c21dbc7f7441745244420973e8cff9ea4e3a1244f55d96da9f64303daec06ada22bf586837c2afa5b5de2de0d2a9a7121800725fa18fe1",
+            "id": "component-LinkComponent-582753230922ba11c3f2432c037b685fd48ab0b7f484b9fc7bd22c4bdebb835762a9b68ed42e176b683a70fcb8555c53cd9cbc3f16486098b52e6c5c01fcb307",
             "file": "packages/ds/angular/src/common/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -597,7 +577,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { IIconConfig } from '../icon/icon.component';\n\n@Component({\n  selector: 'jds-link',\n  templateUrl: './link.component.html',\n  styleUrls: ['./link.component.scss']\n})\n\nexport class LinkComponent{\n\n  @Input() download?: string;   //if developer is specifying a download in the href, they need to specify a download name in order for the \"download icon\" to appear next to it\n  @Input() href!: string;\n  @Input() target?: '_blank' | '_parent' | '_self' | '_top';\n  @Input() ariaLabel?: string;\n\n  linkIconConfig!: IIconConfig;\n\n  public get getIcon(): string[] {\n    if (this.download) {\n      return ['f56d', 'fa-solid'];\n    } else {\n      switch (this.href?.substr(0, 4)) {\n        case ('http'):\n          return ['f08e', 'fa-regular'];\n        case ('mail'):\n          return ['f0e0', 'fa-solid'];\n        case ('tel:'):\n          return ['f095', 'fa-solid'];\n        default:\n          return ['', ''];\n      }\n    }\n  }\n\n  public buildIconConfig() {\n    this.linkIconConfig = {\n      unicode: this.getIcon[0],\n      fontFamily: this.getIcon[1],\n    } as IIconConfig;\n  }\n\n  public get hasIcon(): boolean {\n    if (\n      (this.download !== undefined)\n    ||\n    (this.href?.substr(0, 4) === 'http')\n    ||\n    (this.href?.substr(0, 4) === 'mail')\n    ||\n    (this.href?.substr(0, 4) === 'tel:')\n    )\n    {\n      this.buildIconConfig();\n      return true;\n    } else {\n      return false;\n    }\n  }\n\n  public get isHidden(): boolean {\n    return(\n      this.ariaLabel === ''\n    );\n}\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular/src/common/icon';\n\n@Component({\n  selector: 'jds-link',\n  templateUrl: './link.component.html',\n  styleUrls: ['./link.component.scss']\n})\n\nexport class LinkComponent{\n\n  @Input() download?: string;   //if developer is specifying a download in the href, they need to specify a download name in order for the \"download icon\" to appear next to it\n  @Input() href!: string;\n  @Input() target?: '_blank' | '_parent' | '_self' | '_top';\n  @Input() ariaLabel?: string;\n\n  linkIconConfig!: IIconConfig;\n\n  public get getIcon(): string[] {\n    if (this.download) {\n      return ['f56d', 'fa-solid'];\n    } else {\n      switch (this.href?.substr(0, 4)) {\n        case ('http'):\n          return ['f08e', 'fa-regular'];\n        case ('mail'):\n          return ['f0e0', 'fa-solid'];\n        case ('tel:'):\n          return ['f095', 'fa-solid'];\n        default:\n          return ['', ''];\n      }\n    }\n  }\n\n  public buildIconConfig() {\n    this.linkIconConfig = {\n      unicode: this.getIcon[0],\n      fontFamily: this.getIcon[1],\n    } as IIconConfig;\n  }\n\n  public get hasIcon(): boolean {\n    if (\n      (this.download !== undefined)\n    ||\n    (this.href?.substr(0, 4) === 'http')\n    ||\n    (this.href?.substr(0, 4) === 'mail')\n    ||\n    (this.href?.substr(0, 4) === 'tel:')\n    )\n    {\n      this.buildIconConfig();\n      return true;\n    } else {\n      return false;\n    }\n  }\n\n  public get isHidden(): boolean {\n    return(\n      this.ariaLabel === ''\n    );\n}\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1084,7 +1064,7 @@
         },
         {
             "name": "SandboxComponent",
-            "id": "component-SandboxComponent-5594c794e0abda36f7296e2f1d449b3b82bb89a3e20bd6c74901dbff46b1c0e061244b80e0a69594dbf61df2bbd92accd5b4aaa1f4431838fc578f053b166b99",
+            "id": "component-SandboxComponent-56115df6eb158d3f7bd2ca6e24892735f2f1e59f60093b5f2e231250fb4a50feddb9f9b6db8c44e75d0fafab3fb3889b293f726d3997751b55121fe823fc3721",
             "file": "sample/src/app/sandbox/sandbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1102,7 +1082,18 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "rocketIconConfig",
+                    "defaultValue": "{\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1111,7 +1102,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'jds-sandbox',\n    templateUrl: './sandbox.component.html',\n    styleUrls: ['./sandbox.component.scss'],\n})\nexport class SandboxComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular/src/common/icon';\n\n@Component({\n    selector: 'jds-sandbox',\n    templateUrl: './sandbox.component.html',\n    styleUrls: ['./sandbox.component.scss'],\n})\nexport class SandboxComponent {\n    rocketIconConfig = {\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1120,7 +1111,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h2>Sandbox Component</h2>\n<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>"
+            "templateData": "<h2>Sandbox Component</h2>\n<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>\n\n<jds-button>Ng button</jds-button>\n<br/>   \n<jds-font-icon [iconConfig]=\"rocketIconConfig\">ng Icon</jds-font-icon>\n<br />\n<jds-link [href]=\"'https://www.github.com'\" [target]=\"'_blank'\">A link to Github</jds-link>\n"
         },
         {
             "name": "ThemeSelectComponent",
@@ -1187,13 +1178,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-677aa32a83f4c944c6f2a5f14ae05ec5101da200b16f09daa47faa72225e0f2f647c0ce47a6b5bb3588b43764470e50bae9ad19ea9296b111e371be023591904",
+            "id": "module-AppModule-72f4f49e5397e2e7c17d03645335b46bedf82b0b0f9ea1c6684a7f7cdda5d6c77d41e7aa3e4cbb84d7c714010643b28a704b779483cac9179824f6ce919ea7c6",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "sample/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './routing/app.routing.module';\nimport { SandboxComponent } from './sandbox/sandbox.component';\nimport { Sandbox1Component } from './sandbox1/sandbox1.component';\nimport { ThemeSelectComponent } from './theme/theme.component';\n\n@NgModule({\n    declarations: [AppComponent, SandboxComponent, Sandbox1Component, ThemeSelectComponent],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        JlCommonModule,\n        IRCCModule,\n        AppRoutingModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { JLButtonModule } from '@ircc-ca/ds-sdc-angular/src/common/button';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './routing/app.routing.module';\nimport { SandboxComponent } from './sandbox/sandbox.component';\nimport { ThemeSelectComponent } from './theme/theme.component';\nimport { JLIconModule } from '@ircc-ca/ds-sdc-angular/src/common/icon';\nimport { JLFooterModule } from '@ircc-ca/ds-sdc-angular/src/common/footer';\nimport { JLHeaderModule } from '@ircc-ca/ds-sdc-angular/src/common/header';\nimport { JLLinkModule } from '@ircc-ca/ds-sdc-angular/src/common/link';\nimport { Sandbox1Component } from './sandbox1/sandbox1.component';\nimport { JLRadiobuttonModule } from '@ircc-ca/ds-sdc-angular/src/common/radio-button';\n\nconst JL_ANGULAR_COMPONENTS = [        \n    JLButtonModule,\n    JLIconModule,\n    JLLinkModule,\n    JLRadiobuttonModule,\n    JLFooterModule,\n    JLHeaderModule\n]\n\n@NgModule({\n    declarations: [AppComponent, SandboxComponent, Sandbox1Component, ThemeSelectComponent],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        IRCCModule,\n        JL_ANGULAR_COMPONENTS,\n        AppRoutingModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1226,7 +1217,22 @@
                             "name": "IRCCModule"
                         },
                         {
-                            "name": "JlCommonModule"
+                            "name": "JLButtonModule"
+                        },
+                        {
+                            "name": "JLFooterModule"
+                        },
+                        {
+                            "name": "JLHeaderModule"
+                        },
+                        {
+                            "name": "JLIconModule"
+                        },
+                        {
+                            "name": "JLLinkModule"
+                        },
+                        {
+                            "name": "JLRadiobuttonModule"
                         }
                     ]
                 },
@@ -1321,14 +1327,14 @@
             ]
         },
         {
-            "name": "JlCommonModule",
-            "id": "module-JlCommonModule-df6344fc749b513007a10922b19ca59deaee45f79cdf347757005c8dd47aa7dd95c869df5fff97d6a8412c34b9662be4019073f041bf1bc305cddf1a7191f1ba",
+            "name": "JLButtonModule",
+            "id": "module-JLButtonModule-8542cc2216804a09c6fd33ac3d5a8cd80d506768d112367b95554236486115e3fbd6b64472f829680164630958580a7505805bada59cce14c72fdf1a58b4c836",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "packages/ds/angular/src/common/jl-common.module.ts",
+            "file": "packages/ds/angular/src/common/button/button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IconComponent } from './icon/icon.component';\nimport { ButtonComponent } from './button/button.component';\nimport { LinkComponent } from './link/link.component';\nimport { HeaderComponent } from './header/header.component'\nimport { FooterComponent } from './footer/footer.component'\nimport { RadioButtonComponent } from './radio-button/radio-button.component';\n\n@NgModule({\n    declarations: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        RadioButtonComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    imports: [\n        CommonModule\n    ],\n    exports: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        RadioButtonComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    providers: [],\n})\nexport class JlCommonModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ButtonComponent } from './button.component';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [CommonModule],\n  exports: [ButtonComponent],\n})\nexport class JLButtonModule {}",
             "children": [
                 {
                     "type": "providers",
@@ -1339,21 +1345,6 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
-                        },
-                        {
-                            "name": "FooterComponent"
-                        },
-                        {
-                            "name": "HeaderComponent"
-                        },
-                        {
-                            "name": "IconComponent"
-                        },
-                        {
-                            "name": "LinkComponent"
-                        },
-                        {
-                            "name": "RadioButtonComponent"
                         }
                     ]
                 },
@@ -1366,16 +1357,224 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "JLFooterModule",
+            "id": "module-JLFooterModule-b1605325dd1811763718c27db8ca6c75ba432b4017b402c858c5430ba7522a8b27422fe3a0276f2e716a3db64ab0e8f4fae43cbb8c5a6720e6ba70d9853c7c4e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "packages/ds/angular/src/common/footer/footer.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FooterComponent } from './footer.component';\n\n@NgModule({\n  declarations: [FooterComponent],\n  imports: [CommonModule],\n  exports: [FooterComponent],\n})\nexport class JLFooterModule {}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "FooterComponent"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "JLHeaderModule",
+            "id": "module-JLHeaderModule-221d1feafd1f3844ee5a090924651e385790c20b6279871330f8ff0b1cd2cb3ed32eae04001b5ed2f925150f78f1ce6ce5def86a5132e7491f93507aa3bbf303",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "packages/ds/angular/src/common/header/header.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { HeaderComponent } from './header.component';\n\n@NgModule({\n  declarations: [HeaderComponent],\n  imports: [CommonModule],\n  exports: [HeaderComponent],\n})\nexport class JLHeaderModule {}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "JLIconModule",
+            "id": "module-JLIconModule-69b0208be67b87fe4cb1132a150ad38f2eb0a4160b64fe0edddd95f3c0c6803d5b82ab606539adcef410c6c8ed686d26733aedcc707b4a5ae03388d62b68e88c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "packages/ds/angular/src/common/icon/icon.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { IconComponent } from './icon.component';\n\n@NgModule({\n  declarations: [IconComponent],\n  imports: [CommonModule],\n  exports: [IconComponent],\n})\nexport class JLIconModule {}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "IconComponent"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "IconComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "JLLinkModule",
+            "id": "module-JLLinkModule-c11aa40a0b8df70b12d400c313411a0ac9df3e6667fe2eff5befe3bd57d12a828e6e5449b02bb9d1db12ce91ff14347a88d5d3d7a937f3a83d9bf0bf2128def8",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "packages/ds/angular/src/common/link/link.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { JLIconModule } from '@ircc-ca/ds-sdc-angular/src/common/icon';\nimport { LinkComponent } from './link.component';\n\n@NgModule({\n  declarations: [LinkComponent],\n  imports: [CommonModule, JLIconModule],\n  exports: [LinkComponent],\n})\nexport class JLLinkModule {}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
                         {
                             "name": "LinkComponent"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "JLIconModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "LinkComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "JLRadiobuttonModule",
+            "id": "module-JLRadiobuttonModule-2dfed7e460219c5f9f4876bf33933a01206bffa652945b6a082241664daa13ffa2a28a482818519603fb97fa3117d07c3687931b8e85a65d3509a8aa585a7dd1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "packages/ds/angular/src/common/radio-button/radiobutton.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RadioButtonComponent } from './radio-button.component';\n\n@NgModule({\n  declarations: [RadioButtonComponent],\n  imports: [CommonModule],\n  exports: [RadioButtonComponent],\n})\nexport class JLRadiobuttonModule {}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RadioButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
                         {
                             "name": "RadioButtonComponent"
                         }
@@ -1583,6 +1782,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "JL_ANGULAR_COMPONENTS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "sample/src/app/app.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[        \n    JLButtonModule,\n    JLIconModule,\n    JLLinkModule,\n    JLRadiobuttonModule,\n    JLFooterModule,\n    JLHeaderModule\n]"
             },
             {
                 "name": "LoggedIn",
@@ -2181,6 +2390,18 @@
                     "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
                 }
             ],
+            "sample/src/app/app.module.ts": [
+                {
+                    "name": "JL_ANGULAR_COMPONENTS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "sample/src/app/app.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[        \n    JLButtonModule,\n    JLIconModule,\n    JLLinkModule,\n    JLRadiobuttonModule,\n    JLFooterModule,\n    JLHeaderModule\n]"
+                }
+            ],
             "stories/Page.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -2500,7 +2721,17 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "sample/src/app/app.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "JL_ANGULAR_COMPONENTS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2509,7 +2740,7 @@
                 "linktype": "component",
                 "name": "SandboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
