@@ -13,11 +13,13 @@ import { JLIconModule } from '@ircc-ca/ds-sdc-angular/src/common/icon';
 import { JLFooterModule } from '@ircc-ca/ds-sdc-angular/src/common/footer';
 import { JLHeaderModule } from '@ircc-ca/ds-sdc-angular/src/common/header';
 import { JLLinkModule } from '@ircc-ca/ds-sdc-angular/src/common/link';
+import { JLRadiobuttonModule } from '@ircc-ca/ds-sdc-angular/src/common/radio-button';
 
 const JL_ANGULAR_COMPONENTS = [        
     JLButtonModule,
     JLIconModule,
     JLLinkModule,
+    JLRadiobuttonModule,
     JLFooterModule,
     JLHeaderModule
 ]

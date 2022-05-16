@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { RadioButtonComponent } from '@ircc-ca/ds-sdc-angular';
+import { RadioButtonComponent } from '@ircc-ca/ds-sdc-angular/src/common/radio-button';
 
 export default {
   title: 'Components/Radio button',

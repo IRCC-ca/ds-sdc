@@ -24,7 +24,7 @@
     "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
     "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
     "lint:style": "stylelint \"src/**/*.scss\"",
-    "lint": "ng lint & npm run lint:style",
+    "lint": "ng lint && npm run lint:style",
     "build": "ng build @ircc-ca/ds-sdc-angular",
     "prepublishOnly": "ng build @ircc-ca/ds-sdc-angular",
     "postpublish": "rm -rf dist/"
