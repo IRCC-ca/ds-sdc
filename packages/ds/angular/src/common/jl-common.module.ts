@@ -5,12 +5,14 @@ import { ButtonComponent } from './button/button.component';
 import { LinkComponent } from './link/link.component';
 import { HeaderComponent } from './header/header.component'
 import { FooterComponent } from './footer/footer.component'
+import { RadioButtonComponent } from './radio-button/radio-button.component';
 
 @NgModule({
     declarations: [
         IconComponent,
         ButtonComponent,
         LinkComponent,
+        RadioButtonComponent,
         HeaderComponent,
         FooterComponent
     ],
@@ -21,6 +23,7 @@ import { FooterComponent } from './footer/footer.component'
         IconComponent,
         ButtonComponent,
         LinkComponent,
+        RadioButtonComponent,
         HeaderComponent,
         FooterComponent
     ],

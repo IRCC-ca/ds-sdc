@@ -63,7 +63,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-afe1e921cf2a3da4ba4ee75e06a77c13ba9e462e6025021b4041722790c0a2a94bf2272c54e7e71e49e967d44cda2619138576081e24cfa1c6088331049e594e",
+            "id": "component-AppComponent-d10e239af5ef484f51b74d871865563eb90f2971f3c602f188a8ba4f83bb2b60cb361c60a34fc17dd5605ddb9277299c8edd2eae66ed99059dc202ec9718c1da",
             "file": "sample/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -90,7 +90,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 25
                 },
                 {
                     "name": "rocketIconConfig",
@@ -100,7 +100,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 30
                 },
                 {
                     "name": "title",
@@ -110,7 +110,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 }
             ],
             "methodsClass": [
@@ -128,7 +128,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -152,7 +152,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateService } from '@ngx-translate/core';\nimport { routes } from './routing/app.routing.module';\n// import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';\n\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n    title = 'sample';\n\n    // config = {\n    //   id: 'firstName',\n    //   type: 'input',\n    //   label: 'test label',\n    //   hint: 'test test',\n    //   placeholder: '',\n    // } as IFieldConfig;\n\n    alicornIconConfig = {\n        unicode: 'f6b0',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    rocketIconConfig = {\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    constructor(private translate: TranslateService, private router: Router) {}\n\n    findRoute(dir = 1) {\n        const route = this.router.url.replace('/', '');\n        let newIndex =\n            routes.findIndex((routerRoute) => {\n                return routerRoute.path === route;\n            }) + dir;\n        switch (Math.sign(dir)) {\n            case 1:\n                newIndex = newIndex % routes.length;\n                break;\n            case -1:\n                newIndex = (newIndex + routes.length) % routes.length;\n                break;\n        }\n        const newPath = routes[newIndex].path;\n        this.router.navigate([newPath]);\n    }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { IIconConfig } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateService } from '@ngx-translate/core';\nimport { routes } from './routing/app.routing.module';\n// import { IFieldConfig } from 'packages/ds/angular/src/lib/jl-cl/jl-cl/IFormBase';\n\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n\n    title = 'sample';\n\n    // config = {\n    //   id: 'firstName',\n    //   type: 'input',\n    //   label: 'test label',\n    //   hint: 'test test',\n    //   placeholder: '',\n    // } as IFieldConfig;\n\n    alicornIconConfig = {\n        unicode: 'f6b0',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    rocketIconConfig = {\n        unicode: 'e027',\n        fontFamily: 'fa-solid',\n    } as IIconConfig;\n\n    constructor(private translate: TranslateService, private router: Router) {}\n\n    findRoute(dir = 1) {\n        const route = this.router.url.replace('/', '');\n        let newIndex =\n            routes.findIndex((routerRoute) => {\n                return routerRoute.path === route;\n            }) + dir;\n        switch (Math.sign(dir)) {\n            case 1:\n                newIndex = newIndex % routes.length;\n                break;\n            case -1:\n                newIndex = (newIndex + routes.length) % routes.length;\n                break;\n        }\n        const newPath = routes[newIndex].path;\n        this.router.navigate([newPath]);\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -180,7 +180,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 32,
+                "line": 33,
                 "jsdoctags": [
                     {
                         "name": "translate",
@@ -948,8 +948,73 @@
             "stylesData": ""
         },
         {
+            "name": "RadioButtonComponent",
+            "id": "component-RadioButtonComponent-47fc3dd9cee8f0f6dc124e8219f4295f1d5b76727624a2d9eca9e586e786106c1a8460ba7d988c70050aa072e3438788038af70c4467cf426f6117f85466c4a3",
+            "file": "packages/ds/angular/src/common/radio-button/radio-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "jds-radio-button",
+            "styleUrls": [
+                "./radio-button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./radio-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'jds-radio-button',\n  templateUrl: './radio-button.component.html',\n  styleUrls: ['./radio-button.component.css']\n})\nexport class RadioButtonComponent  { \n  @Input() size?: 'small' | 'large';\n  @Input() ariaLabel?: string;\n  @Input() disabled?: boolean;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./radio-button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div>\n    <input type=\"radio\" />\n    <ng-content></ng-content>\n</div>\n"
+        },
+        {
             "name": "Sandbox1Component",
-            "id": "component-Sandbox1Component-851ea60091ea7fb53f514517207816ccd92836f319097d60f207a9e3d543d83573b04269853f878be6dd66805dc3dc0ff3403a7fe8a5eb625c6b6c54ecc0b373",
+            "id": "component-Sandbox1Component-57e82190ebc6b3b4f6b4a14f66ce159f45ebcf41d786a2ef98bdacd1e7dac3cc5600b39530f056d0198c7cfa8f8abf977bd362041c2e2760430414262cc7ad9f",
             "file": "sample/src/app/sandbox1/sandbox1.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -967,8 +1032,35 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "invalidRadio",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef<HTMLInputElement>",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'invalidRadio'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -976,7 +1068,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'jds-sandbox1',\n    templateUrl: './sandbox1.component.html',\n    styleUrls: ['./sandbox1.component.scss'],\n})\nexport class Sandbox1Component {}\n",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';\n\n@Component({\n    selector: 'jds-sandbox1',\n    templateUrl: './sandbox1.component.html',\n    styleUrls: ['./sandbox1.component.scss'],\n})\nexport class Sandbox1Component implements AfterViewInit {\n    @ViewChild(\"invalidRadio\") invalidRadio!: ElementRef<HTMLInputElement>;\n\n    ngAfterViewInit() {\n        // set the radio button as invalid\n        this.invalidRadio.nativeElement.setCustomValidity('invalid field');\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -985,7 +1077,10 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h2>Sandbox 1 Component</h2>\n<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>"
+            "implements": [
+                "AfterViewInit"
+            ],
+            "templateData": "<h2>Sandbox 1 Component</h2>\n<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>\n\n<br />\n<jds-radio-button>Angular package radiobutton</jds-radio-button>\n<br />\n<input type=\"radio\" id=\"html1\" name=\"fav_language1\" value=\"HTML1\">\n<label class=\"label\" for=\"html1\">core radio</label>\n<br/>\n<input type=\"radio\" id=\"html2\" name=\"fav_language2\" value=\"HTML2\" size=\"small\">\n<label class=\"label\" for=\"html2\">core radio small</label>\n<br/>\n<input type=\"radio\" id=\"html3\" name=\"fav_language3\" value=\"HTML3\" size=\"large\">\n<label class=\"label\" for=\"html3\">core radio large</label>\n<br/>\n<input type=\"radio\" id=\"html4\" name=\"fav_language4\" value=\"HTML4\" size=\"small\" #invalidRadio required>\n<label class=\"label\" for=\"html4\">invalid core radio</label>\n<br />\n<input type=\"radio\" id=\"html5\" name=\"fav_language5\" value=\"HTML5\" disabled>\n<label class=\"label\" for=\"html5\">core radio disabled</label>\n<br />\n<input class=\"invalid\" type=\"radio\" id=\"html8\" name=\"fav_language8\" value=\"HTML8\" disabled checked>\n<label class=\"label\" for=\"html8\">core radio disabled and checked</label>"
         },
         {
             "name": "SandboxComponent",
@@ -1092,13 +1187,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-4ff03609c10a7de790e27db142d66d94e936c434711d6c6d7a96f4471164abe1d8b265606487472303ca8cdcb8d6d79e5424e468afda215f6d215fc1f647615b",
+            "id": "module-AppModule-5cf6028c2f97fd342d2c084392f6b79136ea542998173bfafa50356a8b90f02ce3f4cd1e40e79929aaae7676b03b3843f33827077a9b4f7a6549ea92770eaf46",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "sample/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './routing/app.routing.module';\nimport { SandboxComponent } from './sandbox/sandbox.component';\nimport { ThemeSelectComponent } from './theme/theme.component';\n\n@NgModule({\n    declarations: [AppComponent, SandboxComponent, ThemeSelectComponent],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        JlCommonModule,\n        IRCCModule,\n        AppRoutingModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './routing/app.routing.module';\nimport { SandboxComponent } from './sandbox/sandbox.component';\nimport { Sandbox1Component } from './sandbox1/sandbox1.component';\nimport { ThemeSelectComponent } from './theme/theme.component';\n\n@NgModule({\n    declarations: [\n        AppComponent,\n        SandboxComponent,\n        Sandbox1Component,\n        ThemeSelectComponent\n    ],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        JlCommonModule,\n        IRCCModule,\n        AppRoutingModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1109,6 +1204,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "Sandbox1Component"
                         },
                         {
                             "name": "SandboxComponent"
@@ -1224,13 +1322,13 @@
         },
         {
             "name": "JlCommonModule",
-            "id": "module-JlCommonModule-428a0717e5fef6461ffd30584f214d7402a97b15a170deec96ad955eebaa28afe0bbaee436a25b5e9050f6e2a802d431b8c801e434fdf4c76db18a9794ca1805",
+            "id": "module-JlCommonModule-df6344fc749b513007a10922b19ca59deaee45f79cdf347757005c8dd47aa7dd95c869df5fff97d6a8412c34b9662be4019073f041bf1bc305cddf1a7191f1ba",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "packages/ds/angular/src/common/jl-common.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IconComponent } from './icon/icon.component';\nimport { ButtonComponent } from './button/button.component';\nimport { LinkComponent } from './link/link.component';\nimport { HeaderComponent } from './header/header.component'\nimport { FooterComponent } from './footer/footer.component'\n\n@NgModule({\n    declarations: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    imports: [\n        CommonModule\n    ],\n    exports: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    providers: [],\n})\nexport class JlCommonModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IconComponent } from './icon/icon.component';\nimport { ButtonComponent } from './button/button.component';\nimport { LinkComponent } from './link/link.component';\nimport { HeaderComponent } from './header/header.component'\nimport { FooterComponent } from './footer/footer.component'\nimport { RadioButtonComponent } from './radio-button/radio-button.component';\n\n@NgModule({\n    declarations: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        RadioButtonComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    imports: [\n        CommonModule\n    ],\n    exports: [\n        IconComponent,\n        ButtonComponent,\n        LinkComponent,\n        RadioButtonComponent,\n        HeaderComponent,\n        FooterComponent\n    ],\n    providers: [],\n})\nexport class JlCommonModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1253,6 +1351,9 @@
                         },
                         {
                             "name": "LinkComponent"
+                        },
+                        {
+                            "name": "RadioButtonComponent"
                         }
                     ]
                 },
@@ -1274,6 +1375,9 @@
                         },
                         {
                             "name": "LinkComponent"
+                        },
+                        {
+                            "name": "RadioButtonComponent"
                         }
                     ]
                 },
@@ -1391,6 +1495,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Radiobutton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "defineCustomElement",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1424,21 +1538,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "sample/src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "sample/src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "sample/src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "FONT_FAMILIES",
@@ -1573,6 +1687,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1603,21 +1727,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Radiobutton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<RadioButtonComponent>",
+                "defaultValue": "(args: RadioButtonComponent) => ({\n  props: {...args},\n  template: `<jds-radio-button>Angular package radiobutton</jds-radio-button>`\n})"
             }
         ],
         "functions": [
@@ -1901,6 +2025,28 @@
                     "defaultValue": "(args: LinkComponent) => ({\n  props: {...args},\n  template: `\n    <jds-link \n    [download]=\"download\"\n    [href]=\"href\"\n    [target]=\"target\"\n    [ariaLabel]=\"ariaLabel\"\n    >{{ ngContent }}</jds-link>\n  `\n})"
                 }
             ],
+            "stories/Radiobutton.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Radiobutton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Radiobutton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RadioButtonComponent>",
+                    "defaultValue": "(args: RadioButtonComponent) => ({\n  props: {...args},\n  template: `<jds-radio-button>Angular package radiobutton</jds-radio-button>`\n})"
+                }
+            ],
             "packages/ds/angular/src/stencil-generated/angular-component-lib/utils.ts": [
                 {
                     "name": "defineCustomElement",
@@ -1955,18 +2101,6 @@
                     "defaultValue": "[\n  d.MyComponent\n]"
                 }
             ],
-            "sample/src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "sample/src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "sample/src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -1977,6 +2111,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "sample/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "sample/src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "packages/ds/angular/src/common/icon/icon.component.ts": [
@@ -2232,6 +2378,15 @@
                 "status": "low"
             },
             {
+                "filePath": "packages/ds/angular/src/common/radio-button/radio-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "packages/ds/angular/src/stencil-generated/angular-component-lib/utils.ts",
                 "type": "function",
                 "linktype": "miscellaneous",
@@ -2363,7 +2518,7 @@
                 "linktype": "component",
                 "name": "Sandbox1Component",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2617,6 +2772,26 @@
             },
             {
                 "filePath": "stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Radiobutton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Radiobutton.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
