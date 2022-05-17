@@ -2,6 +2,7 @@
 @use '../util/size' as size;
 @use '../tokens/global/text-global' as text-global;
 @use '../tokens/global/global' as global;
+@use '../tokens/global/selected';
 @use '../tokens/button/primary' as button-primary;
 @use '../tokens/button/secondary' as button-secondary;
 @use '../tokens/button/plain' as button-plain;
@@ -29,8 +30,8 @@
     @include link.link(cta, visited);
     @include text-global.text-global(neutral);
     @include global.global(neutral, selected);
+    @include selected.selected(focus);
     @include focus.focus(focus);
-    @include nav.nav('row', neutral);
 
     @include radiobutton.radiobutton(focus, critical);
 }
