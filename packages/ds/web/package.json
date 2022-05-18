@@ -25,9 +25,9 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "lint:md": "alex --quiet **.md",
-    "lint:style": "stylelint \"src/**/*.scss\"",
-    "lint": "eslint src/**/*{.ts,.tsx} && npm run lint:md && npm run lint:style"
+    "lint:md": "alex --quiet src/**/*.md && alex --quiet *.md",
+    "lint:style": "stylelint src/**/*.scss",
+    "lint": "eslint src/**/*{.ts,.tsx} && npm run lint:style"
   },
   "bugs": {
     "url": "https://github.com/IRCC-ca/ds-sdc/issues"

@@ -8,11 +8,7 @@ The following rules will apply with any of the following html tags
 
 ```html
 <button></button>
-<input type="button"></input>
-<input type="reset"></input>
-<input type="submit"></input>
-// any element with the role of "button"
-<element role="button"></element>
+
 ```
 
 ### Attributes
