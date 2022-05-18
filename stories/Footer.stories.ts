@@ -1,13 +1,15 @@
-// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { FooterComponent } from '@ircc-ca/ds-sdc-angular';
 
 export default {
-  title: 'Footer',
+  title: 'Components/Footer',
   component: FooterComponent,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=958%3A3355'
+    } 
+  }
 } as Meta;
 
 const Template: Story<FooterComponent> = (args: FooterComponent) => ({

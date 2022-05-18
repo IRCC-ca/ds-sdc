@@ -1080,7 +1080,7 @@
             "implements": [
                 "AfterViewInit"
             ],
-            "templateData": "<h2>Sandbox 1 Component</h2>\n<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>\n\n<br />\n<jds-radio-button>Angular package radiobutton</jds-radio-button>\n<br />\n<input type=\"radio\" id=\"html1\" name=\"fav_language1\" value=\"HTML1\">\n<label class=\"label\" for=\"html1\">core radio</label>\n<br/>\n<input type=\"radio\" id=\"html2\" name=\"fav_language2\" value=\"HTML2\" size=\"small\">\n<label class=\"label\" for=\"html2\">core radio small</label>\n<br/>\n<input type=\"radio\" id=\"html3\" name=\"fav_language3\" value=\"HTML3\" size=\"large\">\n<label class=\"label\" for=\"html3\">core radio large</label>\n<br/>\n<input type=\"radio\" id=\"html4\" name=\"fav_language4\" value=\"HTML4\" size=\"small\" #invalidRadio required>\n<label class=\"label\" for=\"html4\">invalid core radio</label>\n<br />\n<input type=\"radio\" id=\"html5\" name=\"fav_language5\" value=\"HTML5\" disabled>\n<label class=\"label\" for=\"html5\">core radio disabled</label>\n<br />\n<input class=\"invalid\" type=\"radio\" id=\"html8\" name=\"fav_language8\" value=\"HTML8\" disabled checked>\n<label class=\"label\" for=\"html8\">core radio disabled and checked</label>"
+            "templateData": "<h2>Sandbox 1 Component</h2>\n<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>\n\n<br />\n<jds-radio-button>Angular package radiobutton</jds-radio-button>\n<br />\n<input type=\"radio\" id=\"html1\" name=\"fav_language1\" value=\"HTML1\">\n<label class=\"label\" for=\"html1\">core radio</label>\n<br/>\n<input type=\"radio\" id=\"html2\" name=\"fav_language2\" value=\"HTML2\" size=\"small\">\n<label class=\"label\" for=\"html2\">core radio small</label>\n<br/>\n<input type=\"radio\" id=\"html3\" name=\"fav_language3\" value=\"HTML3\" size=\"large\">\n<label class=\"label\" for=\"html3\">core radio large</label>\n<br/>\n<input type=\"radio\" id=\"html4\" name=\"fav_language4\" value=\"HTML4\" size=\"small\" #invalidRadio required>\n<label class=\"label\" for=\"html4\">invalid core radio</label>\n<br />\n<input type=\"radio\" id=\"html5\" name=\"fav_language5\" value=\"HTML5\" disabled>\n<label class=\"label\" for=\"html5\">core radio disabled</label>\n<br />\n<input class=\"invalid\" type=\"radio\" id=\"html8\" name=\"fav_language8\" value=\"HTML8\" disabled checked>\n<label class=\"label\" for=\"html8\">core radio disabled and checked</label>\n"
         },
         {
             "name": "SandboxComponent",
@@ -1187,13 +1187,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-5cf6028c2f97fd342d2c084392f6b79136ea542998173bfafa50356a8b90f02ce3f4cd1e40e79929aaae7676b03b3843f33827077a9b4f7a6549ea92770eaf46",
+            "id": "module-AppModule-677aa32a83f4c944c6f2a5f14ae05ec5101da200b16f09daa47faa72225e0f2f647c0ce47a6b5bb3588b43764470e50bae9ad19ea9296b111e371be023591904",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "sample/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './routing/app.routing.module';\nimport { SandboxComponent } from './sandbox/sandbox.component';\nimport { Sandbox1Component } from './sandbox1/sandbox1.component';\nimport { ThemeSelectComponent } from './theme/theme.component';\n\n@NgModule({\n    declarations: [\n        AppComponent,\n        SandboxComponent,\n        Sandbox1Component,\n        ThemeSelectComponent\n    ],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        JlCommonModule,\n        IRCCModule,\n        AppRoutingModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { IRCCModule, JlCommonModule } from '@ircc-ca/ds-sdc-angular';\nimport { TranslateModule } from '@ngx-translate/core';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './routing/app.routing.module';\nimport { SandboxComponent } from './sandbox/sandbox.component';\nimport { Sandbox1Component } from './sandbox1/sandbox1.component';\nimport { ThemeSelectComponent } from './theme/theme.component';\n\n@NgModule({\n    declarations: [AppComponent, SandboxComponent, Sandbox1Component, ThemeSelectComponent],\n    imports: [\n        BrowserModule,\n        FormsModule,\n        ReactiveFormsModule,\n        TranslateModule.forRoot(),\n        JlCommonModule,\n        IRCCModule,\n        AppRoutingModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1538,21 +1538,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "sample/src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: false\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "sample/src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "sample/src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "FONT_FAMILIES",
@@ -1687,21 +1687,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<FooterComponent>",
                 "defaultValue": "(args: FooterComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2101,18 +2101,6 @@
                     "defaultValue": "[\n  d.MyComponent\n]"
                 }
             ],
-            "sample/src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "sample/src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
             "sample/src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -2123,6 +2111,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "sample/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "sample/src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "packages/ds/angular/src/common/icon/icon.component.ts": [
