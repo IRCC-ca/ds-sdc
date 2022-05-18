@@ -66,22 +66,19 @@
 @mixin layout {
     border-radius: token-size.$border-radius;
     appearance: none;
-    // TODO: Update this once the PR for radio is in
-    margin: 0 12px;
-    // outline: 0;
+    margin: token-size.$form-control-margin;
+    outline: 0;
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
     vertical-align: top;
+
+    // --background-color: var(--surface1);
+    // --border: var(--border);
 
     @include checkbox-size();
 
     @include device.if-hover {
         color: var(--formcontrol-hover);
-    }
-
-    &::before {
-        content: '';
-        display: block;
     }
 
     &:enabled {
@@ -99,26 +96,26 @@
     }
 
     @include checked();
-    // @include invalid();
+    @include invalid();
     @include mixed-state();
 }
 
 @mixin checked {
     &:checked  {
-
         --border: var(--formcontrol); 
         background: var(--formcontrol);
 
         // draw the checkmark
-        &::before { 
-            text-align: center;
-            display: inline-block;
+        &:before { 
+            content: "\f00c";
+            color: var(--surface1);
+            position: absolute;
             width: token-size.$relative-0-5;
             height: token-size.$relative-1;
-            margin: 0 6px;
-            border: solid var(--surface1);
-            border-width: 0 3px 3px 0;
-            transform: rotate(45deg);
+            // left: calc(50% - token-size.$relative-0-5/2);
+            // top: calc(50% - token-size.$relative-1/2);
+
+            @extend .fa-regular;
         }
 
         &:enabled {
@@ -134,25 +131,43 @@
 }
 
 @mixin invalid {
-    --formcontrol: var(--formcontrol-error);
+    &:invalid{
+        --formcontrol: var(--formcontrol-error);
+        --background: var(--formcontrol-critical-background);
     
-    --background-color: var(--formcontrol-critical-background);
-
-    &:enabled {
-        @include device.if-hover {
-            --border: var(--formcontrol-critical-border);
-            --background-color: var(--formcontrol-critical-hover);
+        &:enabled {
+            @include device.if-hover {
+                --border: var(--formcontrol-critical-border);
+                --background: var(--formcontrol-critical-hover);
+            }
+    
+            &:active {
+                --border: var(--formcontrol-critical-border);
+                --background: var(--critical-background-weak-active);
+             }
         }
-
-        &:active {
-            --border: var(--formcontrol-critical-border);
-            --background-color: var(--critical-background-weak-active);
-         }
     }
 }
 
 @mixin mixed-state {
-   
+    &:indeterminate{
+        background: var(--formcontrol);
+        &:before 
+        {
+            content: "\f068";
+            color: var(--surface1);
+            position: absolute;
+            width: 14px;
+            height: 16px;
+            // left: calc(50% - 14px/2);
+            // top: calc(50% - 16px/2); 
+
+            align-items: center;
+            text-align: center;
+
+            @extend .fa-regular;
+        }
+    }
 }
 
 @mixin checkbox-size {
