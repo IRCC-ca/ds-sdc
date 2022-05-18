@@ -1,0 +1,37 @@
+@use '../../util/device';
+@use '../../util/theme';
+@use '../../util/color';
+@use '../template-const';
+
+@mixin validation($validation) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.light() {
+                --#{$validation}-background: #{color.mix-token($validation, 700)};
+                --#{$validation}-background-active: #{color.mix-token($validation, 900)};
+                --#{$validation}-background-weak: #{color.mix-token($validation, 100)};
+                --#{$validation}-background-weak-active: #{color.mix-token($validation, 300)};
+                --#{$validation}-border: #{color.mix-token($validation, 700)};
+                --#{$validation}-text: #{color.mix-token($validation, 700)};
+                @media (any-hover: hover) {
+                    --#{$validation}-background-hover: #{color.mix-token($validation, 800)};
+                    --#{$validation}-background-weak-hover: #{color.mix-token($validation, 200)};
+                    --#{$validation}-border-hover: #{color.mix-token($validation, 800)};
+                }
+            }
+            @include theme.dark() {
+                --#{$validation}-background: #{color.mix-token($validation, 600)};
+                --#{$validation}-background-active: #{color.mix-token($validation, 400)};
+                --#{$validation}-background-weak: #{color.mix-token($validation, 1200)};
+                --#{$validation}-background-weak-active: #{color.mix-token($validation, 1000)};
+                --#{$validation}-border: #{color.mix-token($validation, 600)};
+                --#{$validation}-text: #{color.mix-token($validation, 600)};
+                @media (any-hover: hover) {
+                    --#{$validation}-background-hover: #{color.mix-token($validation, 500)};
+                    --#{$validation}-background-weak-hover: #{color.mix-token($validation, 1100)};
+                    --#{$validation}-border-hover: #{color.mix-token($validation, 500)};
+                }
+            }
+        }
+    }
+}
