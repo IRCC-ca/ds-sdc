@@ -46,9 +46,11 @@
     @include select-nav() {
         @include layout() {
             @include select-button() {
+                @include layout();
                 @include layout-tab();
             }
             @include select-anchor() {
+                @include layout();
                 @include layout-tab();
             }
         }
@@ -56,7 +58,6 @@
 }
 
 @mixin layout-tab() {
-    @include button-const.layout();
     background: var(--generic);
     color: var(--text-secondary);
     text-decoration: none;
@@ -104,6 +105,7 @@
 }
 
 @mixin layout() {
+    @include button-const.layout();
     @include theme.selector(row, direction, row) {
         ul {
             flex-direction: row;
