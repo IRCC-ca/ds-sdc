@@ -73,7 +73,7 @@
     $attribute,
     $default
 ) {
-    @if $value == null {
+    @if not $value {
         @content;
 
     } @else if $value == $default {
