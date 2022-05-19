@@ -6,7 +6,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
     styleUrls: ['./sandbox1.component.scss'],
 })
 export class Sandbox1Component implements AfterViewInit {
-    @ViewChild("invalidRadio") invalidRadio!: ElementRef<HTMLInputElement>;
+    @ViewChild('invalidRadio') invalidRadio!: ElementRef<HTMLInputElement>;
 
     ngAfterViewInit() {
         // set the radio button as invalid

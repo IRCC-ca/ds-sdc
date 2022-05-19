@@ -25,7 +25,12 @@ const JL_ANGULAR_COMPONENTS = [
 ]
 
 @NgModule({
-    declarations: [AppComponent, SandboxComponent, Sandbox1Component, ThemeSelectComponent],
+    declarations: [
+        AppComponent,
+        SandboxComponent,
+        Sandbox1Component,
+        ThemeSelectComponent,
+    ],
     imports: [
         BrowserModule,
         FormsModule,

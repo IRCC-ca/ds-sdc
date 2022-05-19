@@ -1,0 +1,130 @@
+@use '../../util/theme';
+@use './button-const';
+@use './plain';
+@use '../sizes';
+@use '../template-const';
+@use '../../util/device';
+@use '../../util/color';
+@use '../../util/size';
+
+
+@mixin select-nav {
+    @at-root {
+        #{template-const.$root-selectors} {
+            nav {
+                @content;
+            }
+        }
+    }
+}
+@mixin select-button {
+    #{button-const.$selectors} {
+        &:where(:not([category]):where(:not([color]))) {
+            @content;
+        }
+    }
+}
+@mixin select-anchor {
+    a:any-link {
+        @content;
+    }
+}
+@mixin selectors {
+    @include select-nav() {
+        ul li {
+            @include select-button() {
+                @content;
+            }
+            @include select-anchor() {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin create() {
+    @include select-nav() {
+        @include layout() {
+            @include select-button() {
+                @include layout();
+                @include layout-tab();
+            }
+            @include select-anchor() {
+                @include layout();
+                @include layout-tab();
+            }
+        }
+    }
+}
+
+@mixin layout-tab() {
+    background: var(--generic);
+    color: var(--text-secondary);
+    text-decoration: none;
+    position: relative;
+    @include size.selector(small) {
+        &:where([selected])::after {
+            transform: translateY(sizes.$fixed-8);
+        }
+    }
+    @include size.selector(large) {
+        &:where([selected])::after {
+            transform: translateY(sizes.$fixed-12);
+        }
+    }
+    &:where([selected])::after {
+        content: ' ';
+        height:sizes.$fixed-4;
+        background: var(--navigation);
+        border-radius: sizes.$fixed-4;
+        display: block;
+
+    }
+
+    @include device.if-hover() {
+        background: var(--generic-hover);
+        &:where([selected])::after {
+            background: var(--navigation-hover);
+        }
+    }
+    &:active {
+        background: var(--generic-active);
+        &:where([selected])::after {
+            background: var(--navigation-hover);
+        }
+    }
+    &:disabled {
+        color: var(--text-disabled);
+        background: var(--generic);
+        &:where([selected])::after {
+            background: var(--navigation-disabled);
+        }
+    }
+
+
+}
+
+@mixin layout() {
+    @include button-const.layout();
+    @include theme.selector(row, direction, row) {
+        ul {
+            flex-direction: row;
+        }
+    }
+    @include theme.selector(column, direction, row) {
+        ul {
+            flex-direction: column;
+        }
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        ::marker {
+            content: none;
+        }
+        li {
+            display: contents;
+            @content;
+        }
+    }
+}
