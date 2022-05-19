@@ -28,7 +28,7 @@
 /// Defines heading levels
 @mixin headings {
     %heading {
-        color: var(--text-primary);
+        color: var(--text);
         font-weight: map.get(text.$heading, weight, regular);
         font-family: map.get(text.$heading, family);
         @include emphasis(map.get(text.$heading, weight, emphasis));
@@ -76,7 +76,7 @@
 /// Defines body levels
 @mixin body {
     %body {
-        color: var(--text-primary);
+        color: var(--text);
         font-weight: map.get(text.$body, weight, regular);
         font-family: map.get(text.$body, family);
         @include emphasis(map.get(text.$body, weight, emphasis));

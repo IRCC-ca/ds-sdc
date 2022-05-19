@@ -10,7 +10,12 @@ import { Sandbox1Component } from './sandbox1/sandbox1.component';
 import { ThemeSelectComponent } from './theme/theme.component';
 
 @NgModule({
-    declarations: [AppComponent, SandboxComponent, Sandbox1Component, ThemeSelectComponent],
+    declarations: [
+        AppComponent,
+        SandboxComponent,
+        Sandbox1Component,
+        ThemeSelectComponent,
+    ],
     imports: [
         BrowserModule,
         FormsModule,

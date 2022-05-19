@@ -2,7 +2,7 @@
 @use '../../util/size' as size;
 @use '../template-const' as template-const;
 @use '../sizes' as token-size;
-$selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
+$selectors: 'button';
 
 @mixin button($category: 'primary', $color: 'cta') {
     @include selectors {
