@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IIconConfig } from '@ircc-ca/ds-sdc-angular/src/common/icon';
+import { IIconConfig } from '@ircc-ca/ds-sdc-angular/icon';
 
 @Component({
     selector: 'jds-sandbox',

@@ -1,19 +1,19 @@
-import { Story, Meta } from '@storybook/angular/types-6-0';
-import { FooterComponent } from '@ircc-ca/ds-sdc-angular/src/common/footer';
+import { FooterComponent } from '@ircc-ca/ds-sdc-angular/footer';
+import { Meta, Story } from '@storybook/angular/types-6-0';
 
 export default {
-  title: 'Components/Footer',
-  component: FooterComponent,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=958%3A3355'
-    } 
-  }
+    title: 'Components/Footer',
+    component: FooterComponent,
+    parameters: {
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/16zKKXc4pzBdRAXmbz6Ht4/Components?node-id=958%3A3355',
+        },
+    },
 } as Meta;
 
 const Template: Story<FooterComponent> = (args: FooterComponent) => ({
-  props: args,
+    props: args,
 });
 
 export const footer = Template.bind({});
