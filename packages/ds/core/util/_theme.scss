@@ -73,7 +73,10 @@
     $attribute,
     $default
 ) {
-    @if $value == $default {
+    @if $value == null {
+        @content;
+
+    } @else if $value == $default {
         &:where(:not([#{$attribute}])),
         &:where([#{$attribute}='#{$value}']) {
             @content;
