@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use 'sass:list';
 @import '../tokens/template-const';
+
 /// global palette constant
 $root-palette: () !global;
 /// global color constant
