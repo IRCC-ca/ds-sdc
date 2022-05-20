@@ -11,48 +11,6 @@
     }
 }
 
-@mixin radiobutton($valid, $invalid) {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include selector {
-                    @include theme.tokens-for-map(
-                        (
-                            --formcontrol-disabled: color.mix-token($valid, 300), 
-                            --formcontrol: color.mix-token($valid, 700), 
-                            --formcontrol-hover: color.mix-token($valid, 800),
-                            --formcontrol-critical-background: color.mix-token($invalid, 100), 
-                            --formcontrol-critical-hover: color.mix-token($invalid, 200),
-                            --critical-background-weak-active: color.mix-token($invalid, 300),
-                            --formcontrol-error: color.mix-token($invalid, 700),
-                            --formcontrol-critical-border: color.mix-token($invalid, 800),
-                            --critical-active: color.mix-token($invalid, 900)
-                        )
-                    );
-                }
-            }
-
-            @include theme.dark {
-                @include selector {
-                    @include theme.tokens-for-map(
-                        (
-                            --formcontrol: color.mix-token($valid, 600),
-                            --formcontrol-disabled: color.mix-token($valid, 1000), 
-                            --formcontrol-hover: color.mix-token($valid, 900),
-                            --formcontrol-critical-background: color.mix-token($invalid, 1200), 
-                            --formcontrol-critical-hover: color.mix-token($invalid, 1100),
-                            --critical-background-weak-active: color.mix-token($invalid, 1000),
-                            --formcontrol-error: color.mix-token($invalid, 600),
-                            --formcontrol-critical-border: color.mix-token($invalid, 500),
-                            --critical-active: color.mix-token($invalid, 400)
-                        )
-                    );
-                }
-            }
-        }
-    }
-}
-
 @mixin create {
     @at-root {
         #{template-const.$root-selectors} {
@@ -73,7 +31,7 @@
     box-shadow: token-size.$border-style;
     vertical-align: top;
 
-    --background-color: var(--surface1);
+    // --background-color: var(--surface1);
 
     @include radiobutton-size();
  
@@ -123,17 +81,17 @@
 
 @mixin invalid {
     &:invalid {
-        --formcontrol: var(--formcontrol-error);
-        --background-color: var(--formcontrol-critical-background);
+        --formcontrol: var(--critical-background);
+        --background-color: var(--critical-background);
 
         &:enabled {
             @include device.if-hover {
-                --border: var(--formcontrol-critical-border);
-                --background-color: var(--formcontrol-critical-hover);
+                --border: var(--critical-border-hover);
+                --background-color: var(--critical-background-weak-hover);
             }
     
             &:active {
-                --border: var(--formcontrol-critical-border);
+                --border: var(--critical-border-hover);
                 --background-color: var(--critical-background-weak-active);
              }
         }
