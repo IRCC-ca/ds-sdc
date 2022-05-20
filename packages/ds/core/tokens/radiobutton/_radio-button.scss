@@ -31,7 +31,7 @@
     box-shadow: token-size.$border-style;
     vertical-align: top;
 
-    // --background-color: var(--surface1);
+    --background-color: var(--surface1);
 
     @include radiobutton-size();
  
