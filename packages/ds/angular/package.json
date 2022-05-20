@@ -1,6 +1,6 @@
 {
     "name": "@ircc-ca/ds-sdc-angular",
-    "version": "0.0.10-beta.6",
+    "version": "0.0.10-beta.7",
     "description": "> TODO: description",
     "author": "IRCC-ca",
     "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
@@ -21,10 +21,10 @@
         "test": "ng test",
         "test:cov": "ng test --coverage",
         "test:watch": "ng test --watch",
-        "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
-        "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
-        "lint:style": "stylelint src/**/*.scss",
-        "lint:md": "alex --quiet src/**/*.md && alex --quiet *.md",
+        "format": "prettier \"./**/**.{ts,json,css,scss,html}\" --write",
+        "format:check": "prettier \"./**/**.{ts,json,css,scss,html}\" --check",
+        "lint:style": "stylelint ./**/*.scss",
+        "lint:md": "alex --quiet ./**/*.md && alex --quiet *.md",
         "lint": "ng lint && npm run lint:style",
         "build": "ng build @ircc-ca/ds-sdc-angular",
         "prepublishOnly": "ng build @ircc-ca/ds-sdc-angular",
@@ -38,7 +38,7 @@
         "@angular/core": "^13.1.0"
     },
     "dependencies": {
-        "@ircc-ca/ds-sdc-core": "^0.0.10-beta.6",
+        "@ircc-ca/ds-sdc-core": "^0.0.10-beta.7",
         "@ircc-ca/ds-sdc-web": "^0.0.5-beta.1",
         "tslib": "^2.3.0"
     },
