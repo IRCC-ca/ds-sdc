@@ -11,6 +11,7 @@
 @use './tokens/button/plain' as button-plain;
 @use './tokens/button/round' as button-round;
 @use './tokens/checkbox/checkbox' as checkbox;
+@use './tokens/button/nav' as button-nav;
 
 /// Default theme, should be included for most applications, and can be customized through the parameters
 /// @param {String} $palette ('default') - the palette from the theme to construct the components with
@@ -41,11 +42,12 @@
     @include button-secondary.create();
     @include button-plain.create();
     @include button-round.create();
+    @include button-nav.create();
 
     @include focus.create();
 
     @include disable.create();
-    
+
     @include checkbox.create();
     @include radiobutton.create();
 }

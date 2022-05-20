@@ -1,54 +1,55 @@
 {
-  "name": "@ircc-ca/ds-sdc-angular",
-  "version": "0.0.10-beta.4",
-  "description": "> TODO: description",
-  "author": "IRCC-ca",
-  "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
-  "license": "MIT",
-  "main": "dist/angular/public-api.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "dist/**"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
-  },
-  "scripts": {
-    "test": "ng test",
-    "test:cov": "ng test --coverage",
-    "test:watch": "ng test --watch",
-    "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
-    "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
-    "lint:style": "stylelint \"src/**/*.scss\"",
-    "lint": "ng lint & npm run lint:style",
-    "build": "ng build @ircc-ca/ds-sdc-angular",
-    "prepublishOnly": "ng build @ircc-ca/ds-sdc-angular",
-    "postpublish": "rm -rf dist/"
-  },
-  "bugs": {
-    "url": "https://github.com/IRCC-ca/ds-sdc/issues"
-  },
-  "peerDependencies": {
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
-  },
-  "dependencies": {
-    "@ircc-ca/ds-sdc-core": "^0.0.10-beta.4",
-    "@ircc-ca/ds-sdc-web": "^0.0.5-beta.0",
-    "tslib": "^2.3.0"
-  },
-  "publishConfig": {
-    "access": "restricted",
-    "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
-    "tag": "ds-sdc-angular",
-    "directory": "dist"
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.6.2"
-  }
+    "name": "@ircc-ca/ds-sdc-angular",
+    "version": "0.0.10-beta.6",
+    "description": "> TODO: description",
+    "author": "IRCC-ca",
+    "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
+    "license": "MIT",
+    "main": "dist/angular/public-api.ts",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "dist/**"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
+    },
+    "scripts": {
+        "test": "ng test",
+        "test:cov": "ng test --coverage",
+        "test:watch": "ng test --watch",
+        "format": "prettier \"src/**/**.{ts,json,css,scss,html}\" --write",
+        "format:check": "prettier \"src/**/**.{ts,json,css,scss,html}\" --check",
+        "lint:style": "stylelint src/**/*.scss",
+        "lint:md": "alex --quiet src/**/*.md && alex --quiet *.md",
+        "lint": "ng lint && npm run lint:style",
+        "build": "ng build @ircc-ca/ds-sdc-angular",
+        "prepublishOnly": "ng build @ircc-ca/ds-sdc-angular",
+        "postpublish": "rm -rf dist/"
+    },
+    "bugs": {
+        "url": "https://github.com/IRCC-ca/ds-sdc/issues"
+    },
+    "peerDependencies": {
+        "@angular/common": "^13.1.0",
+        "@angular/core": "^13.1.0"
+    },
+    "dependencies": {
+        "@ircc-ca/ds-sdc-core": "^0.0.10-beta.6",
+        "@ircc-ca/ds-sdc-web": "^0.0.5-beta.1",
+        "tslib": "^2.3.0"
+    },
+    "publishConfig": {
+        "access": "restricted",
+        "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
+        "tag": "ds-sdc-angular",
+        "directory": "dist"
+    },
+    "devDependencies": {
+        "eslint-config-prettier": "^8.5.0",
+        "prettier": "^2.6.2"
+    }
 }

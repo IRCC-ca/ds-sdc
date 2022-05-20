@@ -2,20 +2,14 @@
 @use '../../util/size' as size;
 @use '../template-const' as template-const;
 @use '../sizes' as token-size;
-$selectors: 'button, input[type="button"], input[type="reset"], input[type="submit"], *[role="button"]';
+$selectors: 'button';
 
 @mixin button($category: 'primary', $color: 'cta') {
-    @include selectors {
         @include theme.selector($category, 'category', 'primary') {
-            @if not $color {
-                @content;
-            } @else {
                 @include theme.selector($color, 'color', 'cta') {
                     @content;
                 }
-            }
         }
-    }
 }
 
 @mixin button-size-padding {
@@ -29,8 +23,12 @@ $selectors: 'button, input[type="button"], input[type="reset"], input[type="subm
 }
 
 @mixin selectors {
-    #{$selectors} {
-        @content;
+    @at-root {
+        #{template-const.$root-selectors} {
+            #{$selectors} {
+                @content;
+            }
+        }
     }
 }
 
