@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { IRCCModule } from '@ircc-ca/ds-sdc-angular';
 import { JLButtonModule } from '@ircc-ca/ds-sdc-angular/button';
+import { JLCheckboxModule } from '@ircc-ca/ds-sdc-angular/checkbox';
 import { JLFooterModule } from '@ircc-ca/ds-sdc-angular/footer';
 import { JLHeaderModule } from '@ircc-ca/ds-sdc-angular/header';
 import { JLIconModule } from '@ircc-ca/ds-sdc-angular/icon';
@@ -15,14 +16,15 @@ import { SandboxComponent } from './sandbox/sandbox.component';
 import { Sandbox1Component } from './sandbox1/sandbox1.component';
 import { ThemeSelectComponent } from './theme/theme.component';
 
-const JL_ANGULAR_COMPONENTS = [        
+const JL_ANGULAR_COMPONENTS = [
     JLButtonModule,
     JLIconModule,
     JLLinkModule,
     JLRadiobuttonModule,
+    JLCheckboxModule,
     JLFooterModule,
-    JLHeaderModule
-]
+    JLHeaderModule,
+];
 
 @NgModule({
     declarations: [

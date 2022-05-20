@@ -14,6 +14,10 @@ export class Sandbox1Component implements AfterViewInit {
     indeterminateCheckbox!: ElementRef<HTMLInputElement>;
     @ViewChild('indeterminateInvalidCheckbox')
     indeterminateInvalidCheckbox!: ElementRef<HTMLInputElement>;
+    @ViewChild('indeterminateDisabledCheckbox')
+    indeterminateDisabledCheckbox!: ElementRef<HTMLInputElement>;
+    @ViewChild('indeterminateSmall')
+    indeterminateSmall!: ElementRef<HTMLInputElement>;
 
     @ViewChild('invalidRadio') invalidRadio!: ElementRef<HTMLInputElement>;
     @ViewChild('invalidCheckedRadio')
@@ -31,11 +35,20 @@ export class Sandbox1Component implements AfterViewInit {
         // set the checkbox as indeterminate state as true
         this.indeterminateCheckbox.nativeElement.indeterminate = true;
 
-        // set the checkbox as indeterminate and invalid states
+        // set checkbox as indeterminate and invalid
         this.indeterminateInvalidCheckbox.nativeElement.indeterminate = true;
         this.indeterminateInvalidCheckbox.nativeElement.setCustomValidity(
             'invalid field'
         );
+
+        // set the checkbox as indeterminate and disabled states
+        this.indeterminateDisabledCheckbox.nativeElement.indeterminate = true;
+        this.indeterminateDisabledCheckbox.nativeElement.setCustomValidity(
+            'invalid field'
+        );
+
+        // set cehckbox as indeterminate for small size
+        this.indeterminateSmall.nativeElement.indeterminate = true;
 
         // set the radio button as invalid
         this.invalidRadio.nativeElement.setCustomValidity('invalid field');

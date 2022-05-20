@@ -11,48 +11,6 @@
     }
 }
 
-@mixin checkbox($valid, $invalid) {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include selector {
-                    @include theme.tokens-for-map(
-                        (
-                            --formcontrol-disabled: color.mix-token($valid, 300), 
-                            --formcontrol: color.mix-token($valid, 700), 
-                            --formcontrol-hover: color.mix-token($valid, 800),
-                            --formcontrol-critical-background: color.mix-token($invalid, 100), 
-                            --formcontrol-critical-hover: color.mix-token($invalid, 200),
-                            --critical-background-weak-active: color.mix-token($invalid, 300),
-                            --formcontrol-error: color.mix-token($invalid, 700),
-                            --formcontrol-critical-border: color.mix-token($invalid, 800),
-                            --critical-active: color.mix-token($invalid, 900)
-                        )
-                    )
-                }
-            }
-
-            @include theme.dark {
-                @include selector {
-                    @include theme.tokens-for-map(
-                        (
-                            --formcontrol: color.mix-token($valid, 600),
-                            --formcontrol-disabled: color.mix-token($valid, 1000), 
-                            --formcontrol-hover: color.mix-token($valid, 900),
-                            --formcontrol-critical-background: color.mix-token($invalid, 1200), 
-                            --formcontrol-critical-hover: color.mix-token($invalid, 1100),
-                            --critical-background-weak-active: color.mix-token($invalid, 1000),
-                            --formcontrol-error: color.mix-token($invalid, 600),
-                            --formcontrol-critical-border: color.mix-token($invalid, 500),
-                            --critical-active: color.mix-token($invalid, 400)
-                        )
-                    );
-                }
-            }
-        }
-    }
-}
-
 @mixin create {
     @at-root {
         #{template-const.$root-selectors} {
@@ -72,26 +30,23 @@
     box-shadow: token-size.$border-style;
     vertical-align: top;
 
-    // --background-color: var(--surface1);
-    // --border: var(--border);
-
     @include checkbox-size();
 
     @include device.if-hover {
         color: var(--formcontrol-hover);
     }
 
-    &:enabled {
-        &:active {
-            --background-color: var(--generic-active);
-        }
-    }
-
     &:disabled {
-        --background: var(--border-disabled);
+        --border: var(--border-disabled);
         
         & + label {
             color: var(--text-disabled);
+        }
+    }
+
+    &:enabled {
+        &:active {
+            --background-color: var(--generic-active);
         }
     }
 
@@ -106,16 +61,19 @@
         background: var(--formcontrol);
 
         // draw the checkmark
-        &:before { 
-            content: "\f00c";
+
+        &::before { 
+            content: '\f00c';
+            // TODO: create mixin? 
             color: var(--surface1);
-            position: absolute;
-            width: token-size.$relative-0-5;
-            height: token-size.$relative-1;
-            // left: calc(50% - token-size.$relative-0-5/2);
-            // top: calc(50% - token-size.$relative-1/2);
+            position: relative;
 
             @extend .fa-regular;
+        }
+
+        &:disabled {
+            --border: var(--formcontrol-disabled);
+            background: var(--formcontrol-disabled);
         }
 
         &:enabled {
@@ -132,18 +90,18 @@
 
 @mixin invalid {
     &:invalid{
-        --formcontrol: var(--formcontrol-error);
+        --formcontrol: var(--critical-border);
         --background: var(--formcontrol-critical-background);
     
         &:enabled {
             @include device.if-hover {
-                --border: var(--formcontrol-critical-border);
+                --border: var(--critical-border-hover);
                 --background: var(--formcontrol-critical-hover);
             }
     
             &:active {
-                --border: var(--formcontrol-critical-border);
-                --background: var(--critical-background-weak-active);
+                --border: var(--critical-background-active);
+                --background-color: var(--critical-background-weak-active);
              }
         }
     }
@@ -152,28 +110,45 @@
 @mixin mixed-state {
     &:indeterminate{
         background: var(--formcontrol);
-        &:before 
-        {
-            content: "\f068";
+        
+        &::before {
+            content: '\f068';
+            // TODO: create mixin? 
             color: var(--surface1);
-            position: absolute;
-            width: 14px;
-            height: 16px;
-            // left: calc(50% - 14px/2);
-            // top: calc(50% - 16px/2); 
-
-            align-items: center;
-            text-align: center;
+            position: relative;
 
             @extend .fa-regular;
+        }
+
+        &:disabled {
+            --border: var(--formcontrol-disabled);
+            background: var(--formcontrol-disabled);
+        }
+
+        &:enabled {
+            @include device.if-hover {
+                --border: var(--formcontrol-hover);
+            }
+
+            &:active {
+                --border: var(--formcontrol-hover);
+            }
         }
     }
 }
 
 @mixin checkbox-size {
     @include size.selector(small) {
-        width: token-size.$relative-1-25;
+        width: token-size.$relative-1-25; 
         height: token-size.$relative-1-25;
+
+        &:checked::before {
+            @include icon-small();
+        }
+
+        &:indeterminate::before{
+            @include icon-small();
+        }
 
         @extend .body3;
     }
@@ -182,6 +157,33 @@
         width: token-size.$relative-1-5;
         height: token-size.$relative-1-5;
 
+        &:checked::before {
+            @include icon-large();
+        }
+
+        &:indeterminate::before {
+            @include icon-large();
+        }
+
         @extend .body2;
     }
+}
+
+// TODO: fix this
+@mixin icon-small {
+    width: 14px;
+    height: 16px;
+    left: calc(50% - 14px/2);
+    top: calc(50% - 16px/2);
+    font-size: 16px;
+}
+
+// TODO: fix this
+// NOTE: use px or rem?
+@mixin icon-large {
+    width: 18px;
+    height: 20px;
+    left: calc(50% - 18px/2);
+    top: calc(50% - 20px/2);
+    font-size: 20px;
 }

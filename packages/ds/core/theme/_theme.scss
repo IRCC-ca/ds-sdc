@@ -10,7 +10,6 @@
 @use '../tokens/button/round' as button-round;
 @use '../tokens/partial/focus' as focus;
 @use '../tokens/link/link' as link;
-@use '../tokens/checkbox/checkbox' as checkbox;
 @use '../tokens/button/nav' as nav;
 @use '../tokens/radiobutton/radio-button' as radiobutton;
 @use './ircc-jl-colors' as jl;
@@ -37,7 +36,6 @@
     @include validation.validation(success);
     @include validation.validation(critical);
 
-    @include checkbox.checkbox(focus, critical);
     @include radiobutton.radiobutton(focus, critical);
 }
 
