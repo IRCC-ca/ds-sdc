@@ -58,22 +58,13 @@
 @mixin checked {
     &:checked  {
         --border: var(--formcontrol); 
-        background: var(--formcontrol);
+        background-color: var(--formcontrol);
 
-        // draw the checkmark
-
-        &::before { 
-            content: '\f00c';
-            // TODO: create mixin? 
-            color: var(--surface1);
-            position: relative;
-
-            @extend .fa-regular;
-        }
+        @include create-icon('\f00c');
 
         &:disabled {
             --border: var(--formcontrol-disabled);
-            background: var(--formcontrol-disabled);
+            background-color: var(--formcontrol-disabled);
         }
 
         &:enabled {
@@ -89,18 +80,18 @@
 }
 
 @mixin invalid {
-    &:invalid{
+    &:invalid {
         --formcontrol: var(--critical-border);
-        --background: var(--formcontrol-critical-background);
+        --background-color: var(--critical-background-weak);
     
         &:enabled {
             @include device.if-hover {
                 --border: var(--critical-border-hover);
-                --background: var(--formcontrol-critical-hover);
+                --background-color: var(--critical-background-weak-hover);
             }
     
             &:active {
-                --border: var(--critical-background-active);
+                --border: var(--critical-border-hover);
                 --background-color: var(--critical-background-weak-active);
              }
         }
@@ -109,30 +100,14 @@
 
 @mixin mixed-state {
     &:indeterminate{
-        background: var(--formcontrol);
+        --border: var(--formcontrol);
+        background-color: var(--formcontrol);
         
-        &::before {
-            content: '\f068';
-            // TODO: create mixin? 
-            color: var(--surface1);
-            position: relative;
-
-            @extend .fa-regular;
-        }
+        @include create-icon('\f068');
 
         &:disabled {
             --border: var(--formcontrol-disabled);
             background: var(--formcontrol-disabled);
-        }
-
-        &:enabled {
-            @include device.if-hover {
-                --border: var(--formcontrol-hover);
-            }
-
-            &:active {
-                --border: var(--formcontrol-hover);
-            }
         }
     }
 }
@@ -142,12 +117,13 @@
         width: token-size.$relative-1-25; 
         height: token-size.$relative-1-25;
 
-        &:checked::before {
-            @include icon-small();
-        }
-
-        &:indeterminate::before{
-            @include icon-small();
+        &:checked::before, &:indeterminate::before{
+            @include icon-size(
+                token-size.$relative-0-875,
+                token-size.$relative-1,
+                token-size.$relative-1, 
+                token-size.$relative-1
+                );
         }
 
         @extend .body3;
@@ -157,33 +133,34 @@
         width: token-size.$relative-1-5;
         height: token-size.$relative-1-5;
 
-        &:checked::before {
-            @include icon-large();
-        }
-
-        &:indeterminate::before {
-            @include icon-large();
+        &:checked::before, &:indeterminate::before {
+            @include icon-size(
+                token-size.$relative-1-125,
+                token-size.$relative-1-25,
+                token-size.$relative-1-25,
+                token-size.$relative-1-25
+                );
         }
 
         @extend .body2;
     }
 }
 
-// TODO: fix this
-@mixin icon-small {
-    width: 14px;
-    height: 16px;
-    left: calc(50% - 14px/2);
-    top: calc(50% - 16px/2);
-    font-size: 16px;
+@mixin icon-size($width, $height, $font-size, $line-height) {
+    width: $width;
+    height: $height;
+    left: calc(50% - $width / 2);
+    top: calc(50% - $height / 2);
+    font-size: $font-size;
+    line-height: $line-height;
 }
 
-// TODO: fix this
-// NOTE: use px or rem?
-@mixin icon-large {
-    width: 18px;
-    height: 20px;
-    left: calc(50% - 18px/2);
-    top: calc(50% - 20px/2);
-    font-size: 20px;
+@mixin create-icon($content) {
+    &::before {
+        content: $content;
+        color: var(--surface1);
+        position: relative;
+
+        @extend .fa-regular;
+    }
 }
