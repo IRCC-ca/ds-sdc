@@ -15,13 +15,7 @@ These elements can be included in a custom theme as a mixin.
 
 ### Checkbox
 
-The checkbox is an element that allow users to select and/or unselected multiples items. It can be included in a custom theme by adding the following with 3 parameters.
+The checkbox is an element that allow users to select and/or unselected multiples items. 
 
-```scss
-@use './checkbox';
-@include checkbox.checkbox($focus, $critical);
-```
+The checkbox could have 4 states styles applied (invalid, checked, mixed-states and disabled) and 2 different sizes (large and small).
 
-The `$focus` property will define checked and unchecked radiobutton color usage variables. The `$critical`properties will define the radiobutton with an invalid error state color palettes.
-
-// TODO: mentioned about mixed state
