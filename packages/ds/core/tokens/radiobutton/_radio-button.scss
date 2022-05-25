@@ -79,29 +79,33 @@
         --border: var(--critical-background);
         background-color: var(--critical-background-weak);
 
-        &:enabled {
+        @include device.if-hover {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-hover);
+        }
+
+        &:active {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-active);
+        }
+
+        &:checked {
+            background-color: var(--surface1);
+
             @include device.if-hover {
-                --border: var(--critical-border-hover);
-                background-color: var(--critical-background-weak-hover);
-            }
-    
-            &:active {
-                --border: var(--critical-border-hover);
-                background-color: var(--critical-background-weak-active);
+                --border: var(--critical-background-hover);
             }
 
-            &:checked {
-                background-color: var(--surface1);
+            &:active {
+                --border: var(--critical-background-active);
             }
         }
     }   
 }
 
-@mixin checked-circle-size($border-size, $left, $top) {
+@mixin checked-circle-size($border-size) {
     &:checked {
         box-shadow: $border-size;
-        left: $left;
-        top: $top;
     }
 }
 
@@ -110,7 +114,7 @@
         height: token-size.$relative-1-25;
         width: token-size.$relative-1-25;
 
-        @include checked-circle-size(token-size.$radio-selected-border-radius-6,token-size.$fixed-6, token-size.$fixed-6);
+        @include checked-circle-size(token-size.$radio-selected-border-radius-small);
 
         @extend .body3;
     }
@@ -119,7 +123,7 @@
         height: token-size.$relative-1-5;
         width: token-size.$relative-1-5;
 
-        @include checked-circle-size(token-size.$radio-selected-border-radius-8,token-size.$fixed-8, token-size.$fixed-8);
+        @include checked-circle-size(token-size.$radio-selected-border-radius-large);
 
         @extend .body2
     }
