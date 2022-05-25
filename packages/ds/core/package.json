@@ -23,8 +23,8 @@
         "test": "echo \"Tests not implemented\"",
         "format": "prettier \"./**/*.{ts,json,css,scss,html}\" --write",
         "format:check": "prettier \"./**/*.{ts,json,css,scss,html}\" --check",
-        "lint:md": "alex ./*/**/*.md",
-        "lint:style": "stylelint ./*/**/*.scss",
+        "lint:md": "alex **/*.md",
+        "lint:style": "stylelint **/*.scss",
         "lint": "npm run lint:style"
     },
     "bugs": {

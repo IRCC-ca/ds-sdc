@@ -46,7 +46,7 @@
 
     &:enabled {
         &:active {
-            --background-color: var(--generic-active);
+            background-color: var(--generic-active);
         }
     }
 
@@ -57,23 +57,22 @@
 
 @mixin checked {
     &:checked  {
-        --border: var(--formcontrol); 
+        box-shadow: none;
         background-color: var(--formcontrol);
 
         @include create-icon('\f00c');
 
         &:disabled {
-            --border: var(--formcontrol-disabled);
             background-color: var(--formcontrol-disabled);
         }
 
         &:enabled {
             @include device.if-hover {
-                --border: var(--formcontrol-hover);
+                background-color: var(--formcontrol-hover);
             }
 
             &:active {
-                --border: var(--formcontrol-hover);
+                background-color: var(--formcontrol-hover);
             }
         }
     }
@@ -81,33 +80,65 @@
 
 @mixin invalid {
     &:invalid {
-        --formcontrol: var(--critical-border);
-        --background-color: var(--critical-background-weak);
+        --border: var(--critical-border);
+        background-color: var(--critical-background-weak);
     
-        &:enabled {
+        @include device.if-hover {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-hover);
+        }
+
+        &:active {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-active);
+        }
+
+        &:checked {
+            box-shadow: none;
+            background-color: var(--critical-background);
+
             @include device.if-hover {
-                --border: var(--critical-border-hover);
-                --background-color: var(--critical-background-weak-hover);
+                background-color: var(--critical-background-hover);
             }
     
             &:active {
-                --border: var(--critical-border-hover);
-                --background-color: var(--critical-background-weak-active);
-             }
+                background-color: var(--critical-background-active);
+            }
         }
     }
 }
 
 @mixin mixed-state {
-    &:indeterminate{
-        --border: var(--formcontrol);
+    &:indeterminate {
+        box-shadow: none;
         background-color: var(--formcontrol);
         
         @include create-icon('\f068');
 
         &:disabled {
-            --border: var(--formcontrol-disabled);
-            background: var(--formcontrol-disabled);
+            background-color: var(--formcontrol-disabled);
+        }
+
+        &:enabled {
+            @include device.if-hover {
+                background-color: var(--formcontrol-hover);
+            }
+
+            &:active {
+                background-color: var(--formcontrol-hover);
+            }
+        }
+
+        &:invalid {
+            background-color: var(--critical-background);
+            
+            @include device.if-hover {
+                background-color: var(--critical-background-hover);
+            }
+
+            &:active {
+                background-color: var(--critical-background-active);
+            }
         }
     }
 }
