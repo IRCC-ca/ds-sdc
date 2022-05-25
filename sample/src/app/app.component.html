@@ -1,7 +1,19 @@
   <jds-header>
     <jds-theme></jds-theme>
+    <span class="form-inline">
+      <select 
+          #selectedLang 
+          (change)="switchLang(selectedLang.value)">
+        <option *ngFor="let language of translate.getLangs()" 
+          lang="language"
+          [value]="language"
+          [selected]="language === translate.currentLang">
+          {{ language }}
+        </option>
+      </select>
+    </span>
   </jds-header>
-  <h1>Journey Design System (JDS) sample application</h1>
+  <h1>{{ 'Header.AppName' | translate }}</h1>
   <span class="body3">
     <p>This application serves as a list of possible sample implementations and is not intended as a coding standards
       guide, or a list of required or optional templates.</p>
