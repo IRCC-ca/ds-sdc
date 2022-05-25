@@ -22,7 +22,6 @@
 }
 
 @mixin layout {
-    // unchecked state
     border-radius: token-size.$border-radius-circle;
     appearance: none;
     margin: token-size.$form-control-margin;
@@ -30,9 +29,7 @@
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
     vertical-align: top;
-
-    --background-color: var(--surface1);
-
+    
     @include radiobutton-size();
  
     @include device.if-hover {
@@ -49,7 +46,7 @@
 
     &:enabled {
         &:active {
-            --background-color: var(--generic-active);
+            background-color: var(--generic-active);
         }
     }
 
@@ -61,8 +58,6 @@
     &:checked {
         --border: var(--formcontrol);
         
-        box-shadow: token-size.$radio-selected-border-radius;
-
         &:disabled {
             --border: var(--formcontrol-disabled);
         }
@@ -81,21 +76,33 @@
 
 @mixin invalid {
     &:invalid {
-        --formcontrol: var(--critical-background);
-        --background-color: var(--critical-background);
+        --border: var(--critical-background);
+        background-color: var(--critical-background-weak);
 
         &:enabled {
             @include device.if-hover {
                 --border: var(--critical-border-hover);
-                --background-color: var(--critical-background-weak-hover);
+                background-color: var(--critical-background-weak-hover);
             }
     
             &:active {
                 --border: var(--critical-border-hover);
-                --background-color: var(--critical-background-weak-active);
-             }
+                background-color: var(--critical-background-weak-active);
+            }
+
+            &:checked {
+                background-color: var(--surface1);
+            }
         }
     }   
+}
+
+@mixin checked-circle-size($border-size, $left, $top) {
+    &:checked {
+        box-shadow: $border-size;
+        left: $left;
+        top: $top;
+    }
 }
 
 @mixin radiobutton-size {
@@ -103,12 +110,16 @@
         height: token-size.$relative-1-25;
         width: token-size.$relative-1-25;
 
+        @include checked-circle-size(token-size.$radio-selected-border-radius-6,token-size.$fixed-6, token-size.$fixed-6);
+
         @extend .body3;
     }
 
     @include size.selector(large) {
         height: token-size.$relative-1-5;
         width: token-size.$relative-1-5;
+
+        @include checked-circle-size(token-size.$radio-selected-border-radius-8,token-size.$fixed-8, token-size.$fixed-8);
 
         @extend .body2
     }
