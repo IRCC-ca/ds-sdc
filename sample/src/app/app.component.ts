@@ -8,7 +8,6 @@ import { routes } from './routing/app.routing.module';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
     title = 'sample';
 
     // config = {
@@ -19,7 +18,14 @@ export class AppComponent {
     //   placeholder: '',
     // } as IFieldConfig;
 
-    constructor(private translate: TranslateService, private router: Router) {}
+    constructor(public translate: TranslateService, private router: Router) {
+        translate.addLangs(['en', 'fr']);
+        translate.setDefaultLang('en');
+    }
+
+    switchLang(lang: string) {
+        this.translate.use(lang);
+    }
 
     findRoute(dir = 1) {
         const route = this.router.url.replace('/', '');
