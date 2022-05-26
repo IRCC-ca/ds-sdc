@@ -1,23 +1,32 @@
   <jds-header>
     <jds-theme></jds-theme>
+    <span class="form-inline">
+      <select 
+          #selectedLang 
+          (change)="switchLang(selectedLang.value)">
+        <option *ngFor="let language of translate.getLangs()" 
+          lang="language"
+          [value]="language"
+          [selected]="language === translate.currentLang">
+          {{ language }}
+        </option>
+      </select>
+    </span>
   </jds-header>
-  <h1>Journey Design System (JDS) sample application</h1>
+  <h1>{{ 'App.AppName' | translate }}</h1>
   <span class="body3">
-    <p>This application serves as a list of possible sample implementations and is not intended as a coding standards
-      guide, or a list of required or optional templates.</p>
+    <p>{{'App.Text' | translate }}</p>
   </span>
   <div class="main-nav">
     <router-outlet></router-outlet>
   </div>
 
   <span class="body4">
-    <p>Information about the design system will be provided in .md files within the package delivery</p>
-    <p>This can be found in your <span class="emphasis">node_modules/@ircc-ca/ds-sdc-core/</span> after installing or <a
-        target="_blank" href="https://github.com/IRCC-ca/ds-sdc/blob/main/packages/ds/core/README.md">found on our
-        Github<span class="open_in_new" aria-label="Opens in new window"></span></a></p>
+    <p>{{'App.InfoPackage' | translate}}</p>
+    <p [innerHTML]="'App.PackageLink' | translate"></p>
   </span>
   <jds-footer>
-    Date modified: 2022-05-06<br />
-    <button size="small" category="plain" (click)="findRoute(-1)">Prev</button>
-    <button size="small" category="plain" (click)="findRoute(1)">Next</button>
+    {{'Footer.DateModified' | translate }}: 2022-05-06<br />
+    <button size="small" category="plain" (click)="findRoute(-1)">{{ 'Footer.Prev' | translate }}</button>
+    <button size="small" category="plain" (click)="findRoute(1)">{{ 'Footer.Next' | translate }}</button>
   </jds-footer>
