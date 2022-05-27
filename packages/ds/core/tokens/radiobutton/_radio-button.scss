@@ -117,8 +117,6 @@
         @include checked-circle-size(
             token-size.$radio-selected-border-radius-small
         );
-
-        @extend .body3;
     }
 
     @include size.selector(large) {
@@ -128,7 +126,5 @@
         @include checked-circle-size(
             token-size.$radio-selected-border-radius-large
         );
-
-        @extend .body2;
     }
 }

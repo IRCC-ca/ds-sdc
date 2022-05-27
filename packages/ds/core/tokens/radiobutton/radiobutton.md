@@ -28,13 +28,3 @@ The values accepted are:
 
 - small
 - large
-
-#### Checked
-
-The radio button defaults to not checked. If the user select the radio button, the style will set checked that can't be overwrite using the palette `$focus`. If the radio button is invalid will be using the palette `$critical`.
-
-```html
-<input type="radio" checked />
-```
-
-
