@@ -39,7 +39,10 @@ $fixed-0: 0;
 $border-radius: $fixed-4;
 $border-radius-circle: 99999px;
 $border-style: $fixed-0 $fixed-0 $fixed-0 $fixed-1 var(--border) inset;
-$radio-selected-border-radius: $fixed-0 $fixed-0 $fixed-0 $fixed-6 var(--border) inset;
+$radio-selected-border-radius-small: $fixed-0 $fixed-0 $fixed-0 $fixed-6
+    var(--border) inset;
+$radio-selected-border-radius-large: $fixed-0 $fixed-0 $fixed-0 $fixed-8
+    var(--border) inset;
 $outline-width: $fixed-3;
 $focus-shadow: $fixed-0 $fixed-0 $fixed-0 $outline-width var(--surface1);
 

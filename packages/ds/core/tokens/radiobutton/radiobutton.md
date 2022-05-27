@@ -7,20 +7,24 @@
 The following rules will apply with any of the following html tags
 
 ```html
-<input type="radio">
+<input type="radio" />
 ```
 
-## Theming
+### Attributes
 
-These elements can be included in a custom theme as a mixin.
+The following sections outline the categories that may be used to customize the look and feel of the element
 
-### Radiobutton
+#### Size
 
-The radiobutton is an element that allows users to check one option. It can be included in a custom theme by adding the following with 2 parameters.
+Defaults to the configured size at the application level. `size="large"` is the default.
 
-```scss
-@use './radiobutton';
-@include radiobutton.radiobutton($focus, $critical);
+This attribute defines the radio button checked size (width and height) to inherit, as follows:
+
+```html
+<input type="radio" size="setting" />
 ```
 
-The `$focus` property will define checked and unchecked radiobutton color usage variables. The `$critical`properties will define the radiobutton with an invalid error state color palettes.
+The values accepted are:
+
+- small
+- large
