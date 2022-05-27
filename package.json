@@ -33,6 +33,7 @@
         "@ircc-ca/ds-sdc-core": "file:packages/ds/core",
         "@ircc-ca/ds-sdc-web": "file:packages/ds/web",
         "@ngx-translate/core": "^14.0.0",
+        "@ngx-translate/http-loader": "^7.0.0",
         "@stencil/core": "^2.15.0",
         "rxjs": "~7.4.0",
         "tslib": "^2.3.0",
