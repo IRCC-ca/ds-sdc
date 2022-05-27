@@ -6,16 +6,23 @@
 The following rules will apply with any of the following html tags
 
 ```html
-<input type="checkbox">
+<input type="checkbox" />
+```
+### Attributes
+
+The following sections outline the categories that may be used to customize the look and feel of the element
+
+#### Size
+
+Defaults to the configured size at the application level. `size="large"` is the default.
+
+This attribute defines the width and height size to inherit for the checkbox. This can be overridden at the instance level, though it is not recommended, as follows:
+
+```html
+<input type="checkbox" size="setting" />
 ```
 
-## Theming
+The values accepted are:
 
-These elements can be included in a custom theme as a mixin.
-
-### Checkbox
-
-The checkbox is an element that allow users to select and/or unselected multiples items. 
-
-The checkbox could have 4 states styles applied (invalid, checked, mixed-states and disabled) and 2 different sizes (large and small).
-
+- small
+- large

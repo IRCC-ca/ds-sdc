@@ -4,9 +4,11 @@
 @use '../../util/size' as size;
 @use '../template-const' as template-const;
 @use '../sizes' as token-size;
+@use '../../typography/typography' as typography;
+@use '../text' as text;
 
 @mixin selector {
-    [type='checkbox'] {
+    input[type='checkbox'] {
         @content;
     }
 }
@@ -25,7 +27,6 @@
     border-radius: token-size.$border-radius;
     appearance: none;
     margin: token-size.$form-control-margin;
-    outline: 0;
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
     vertical-align: top;
@@ -152,12 +153,9 @@
             @include icon-size(
                 token-size.$relative-0-875,
                 token-size.$relative-1,
-                token-size.$relative-1, 
-                token-size.$relative-1
+                2
                 );
         }
-
-        @extend .body3;
     }
 
     @include size.selector(large) {
@@ -168,22 +166,19 @@
             @include icon-size(
                 token-size.$relative-1-125,
                 token-size.$relative-1-25,
-                token-size.$relative-1-25,
-                token-size.$relative-1-25
+                1
                 );
-        }
-
-        @extend .body2;
+       }
     }
 }
 
-@mixin icon-size($width, $height, $font-size, $line-height) {
+@mixin icon-size($width, $height, $level) {
     width: $width;
     height: $height;
     left: calc(50% - $width / 2);
     top: calc(50% - $height / 2);
-    font-size: $font-size;
-    line-height: $line-height;
+    font-size: map-get(text.$body , level, $level, font-size);
+    line-height: map-get(text.$body , level, $level, font-size); 
 }
 
 @mixin create-icon($content) {
