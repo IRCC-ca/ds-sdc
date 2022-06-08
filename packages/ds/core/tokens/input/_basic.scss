@@ -1,0 +1,111 @@
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../template-const' as template-const;
+@use '../sizes' as sizes;
+@use '../../util/device' as device;
+@use '../../util/size' as size;
+
+@mixin input-basic() {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include theme.light {
+                @include input-basic-selector {
+                    
+                }
+            }
+        }
+    }
+}
+
+@mixin input-basic-selector  {
+    input {
+        @include theme.selector(text, type, text) {
+            @content;
+        }
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include input-basic-selector() {
+                @include common();
+                @include valid();
+                @include invalid();
+            }
+        }
+    }
+}
+
+@mixin common {
+    border-style: solid;
+    border-width: sizes.$fixed-1;
+    border-radius: sizes.$border-radius;
+    color: var(--text-primary);
+
+    @include size.selector(small) {
+        @extend .body3;
+        padding: sizes.$fixed-10 sizes.$fixed-12;
+    }
+
+    @include size.selector(large) {
+        @extend .body2;
+        padding: sizes.$fixed-14 sizes.$fixed-12;
+    }
+
+    &:focus {
+        outline-width: sizes.$fixed-2;
+        outline-offset: sizes.$fixed-2;
+        border-color: var(--border);
+        &:invalid {
+            border-color: var(--critical-border);
+        }
+    }
+}
+
+@mixin valid {
+    border-color: var(--border);
+    background-color: var(--surface1);
+
+    @include device.if-hover {
+        border-color: var(--border-hover);
+    }
+
+    &:focus {
+        border-color: var(--border);
+    }
+
+    @include device.if-touch {
+        &:active {
+            border-color: var(--border-hover);
+            background-color: var(--generic-active);
+        }
+    }
+
+    &:disabled {
+        border-color: var(--border-disabled);
+        color: var(--text-disabled);
+    }
+}
+
+@mixin invalid {
+    &:invalid {
+        border-color: var(--critical-border);
+        background-color: var(--critical-background-weak);
+
+        @include device.if-hover {
+            border-color: var(--critical-border-hover);
+        }
+
+        &:focus {
+            border-color: var(--critical-border);
+        }
+
+        @include device.if-touch {
+            &:active {
+                    border-color: --critical-border-hover;
+                    background-color: var(--critical-background-weak-hover);
+            }
+        }
+    }
+}

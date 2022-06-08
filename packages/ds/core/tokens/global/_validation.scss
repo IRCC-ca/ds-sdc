@@ -13,9 +13,9 @@
                 --#{$validation}-background-weak-active: #{color.mix-token($validation, 300)};
                 --#{$validation}-border: #{color.mix-token($validation, 700)};
                 --#{$validation}-text: #{color.mix-token($validation, 700)};
+                --#{$validation}-background-weak-hover: #{color.mix-token($validation, 200)};
                 @media (any-hover: hover) {
                     --#{$validation}-background-hover: #{color.mix-token($validation, 800)};
-                    --#{$validation}-background-weak-hover: #{color.mix-token($validation, 200)};
                     --#{$validation}-border-hover: #{color.mix-token($validation, 800)};
                 }
             }
@@ -26,9 +26,9 @@
                 --#{$validation}-background-weak-active: #{color.mix-token($validation, 1000)};
                 --#{$validation}-border: #{color.mix-token($validation, 600)};
                 --#{$validation}-text: #{color.mix-token($validation, 600)};
+                --#{$validation}-background-weak-hover: #{color.mix-token($validation, 1100)};
                 @media (any-hover: hover) {
                     --#{$validation}-background-hover: #{color.mix-token($validation, 500)};
-                    --#{$validation}-background-weak-hover: #{color.mix-token($validation, 1100)};
                     --#{$validation}-border-hover: #{color.mix-token($validation, 500)};
                 }
             }
