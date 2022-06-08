@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-lerna run lint
-lerna run test
+npx lerna run lint
+npx lerna run test
