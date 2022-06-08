@@ -21,6 +21,12 @@
     }
 }
 
+@mixin if-touch {
+    @media (pointer: coarse) {
+        @content;
+    }
+}
+
 /// Content included within this mixin will only be included
 /// if the device is determined to fall within the phone viewport range
 @mixin in-phone-layout {

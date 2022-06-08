@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app.routing.module';
 import { SandboxComponent } from './sandbox/sandbox.component';
 import { Sandbox1Component } from './sandbox1/sandbox1.component';
+import { Sandbox2Component } from './sandbox2/sandbox2.component';
 import { ThemeSelectComponent } from './theme/theme.component';
 
 const JL_ANGULAR_COMPONENTS = [
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         AppComponent,
         SandboxComponent,
         Sandbox1Component,
+        Sandbox2Component,
         ThemeSelectComponent,
     ],
     imports: [
