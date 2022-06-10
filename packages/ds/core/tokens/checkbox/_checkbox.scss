@@ -6,6 +6,7 @@
 @use '../sizes' as token-size;
 @use '../../typography/typography' as typography;
 @use '../text' as text;
+@use 'sass:map';
 
 @mixin selector {
     input[type='checkbox'] {
@@ -36,18 +37,29 @@
     @include device.if-hover {
         color: var(--formcontrol-hover);
     }
+    &:active {
+        background-color: var(--generic-active);
+    }
 
     &:disabled {
         --border: var(--border-disabled);
-        
+
         & + label {
             color: var(--text-disabled);
         }
     }
 
-    &:enabled {
+    &:checked,
+    &:indeterminate {
+        @include device.if-hover {
+            background-color: var(--formcontrol-hover);
+        }
+
         &:active {
-            background-color: var(--generic-active);
+            background-color: var(--formcontrol-hover);
+        }
+        &:disabled {
+            background-color: var(--formcontrol-disabled);
         }
     }
 
@@ -57,25 +69,11 @@
 }
 
 @mixin checked {
-    &:checked  {
+    &:checked {
         box-shadow: none;
         background-color: var(--formcontrol);
 
         @include create-icon('\f00c');
-
-        &:disabled {
-            background-color: var(--formcontrol-disabled);
-        }
-
-        &:enabled {
-            @include device.if-hover {
-                background-color: var(--formcontrol-hover);
-            }
-
-            &:active {
-                background-color: var(--formcontrol-hover);
-            }
-        }
     }
 }
 
@@ -83,7 +81,7 @@
     &:invalid {
         --border: var(--critical-border);
         background-color: var(--critical-background-weak);
-    
+
         @include device.if-hover {
             --border: var(--critical-border-hover);
             background-color: var(--critical-background-weak-hover);
@@ -93,7 +91,7 @@
             --border: var(--critical-border-hover);
             background-color: var(--critical-background-weak-active);
         }
-
+        &:indeterminate,
         &:checked {
             box-shadow: none;
             background-color: var(--critical-background);
@@ -101,7 +99,7 @@
             @include device.if-hover {
                 background-color: var(--critical-background-hover);
             }
-    
+
             &:active {
                 background-color: var(--critical-background-active);
             }
@@ -113,48 +111,23 @@
     &:indeterminate {
         box-shadow: none;
         background-color: var(--formcontrol);
-        
+
         @include create-icon('\f068');
-
-        &:disabled {
-            background-color: var(--formcontrol-disabled);
-        }
-
-        &:enabled {
-            @include device.if-hover {
-                background-color: var(--formcontrol-hover);
-            }
-
-            &:active {
-                background-color: var(--formcontrol-hover);
-            }
-        }
-
-        &:invalid {
-            background-color: var(--critical-background);
-            
-            @include device.if-hover {
-                background-color: var(--critical-background-hover);
-            }
-
-            &:active {
-                background-color: var(--critical-background-active);
-            }
-        }
     }
 }
 
 @mixin checkbox-size {
     @include size.selector(small) {
-        width: token-size.$relative-1-25; 
+        width: token-size.$relative-1-25;
         height: token-size.$relative-1-25;
 
-        &:checked::before, &:indeterminate::before{
+        &:checked::before,
+        &:indeterminate::before {
             @include icon-size(
                 token-size.$relative-0-875,
                 token-size.$relative-1,
                 2
-                );
+            );
         }
     }
 
@@ -162,13 +135,14 @@
         width: token-size.$relative-1-5;
         height: token-size.$relative-1-5;
 
-        &:checked::before, &:indeterminate::before {
+        &:checked::before,
+        &:indeterminate::before {
             @include icon-size(
                 token-size.$relative-1-125,
                 token-size.$relative-1-25,
                 1
-                );
-       }
+            );
+        }
     }
 }
 
@@ -177,8 +151,8 @@
     height: $height;
     left: calc(50% - $width / 2);
     top: calc(50% - $height / 2);
-    font-size: map-get(text.$body , level, $level, font-size);
-    line-height: map-get(text.$body , level, $level, font-size); 
+    font-size: map.get(text.$body, level, $level, font-size);
+    line-height: map.get(text.$body, level, $level, font-size);
 }
 
 @mixin create-icon($content) {
