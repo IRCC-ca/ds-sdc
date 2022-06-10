@@ -2,6 +2,14 @@
 
 This package contains the theming functionality for the Journey Design System
 
+## Getting started 
+
+To install the IRCC Digital Journey Labs Design System styles, you will need to run the following command using [npm](https://www.npmjs.com/):
+
+```
+npm install --save-dev @ircc-ca/ds-sdc-core
+```
+
 ## Usage
 
 In your root-level stylesheet, initialize the design system with
@@ -14,10 +22,20 @@ In your root-level stylesheet, initialize the design system with
 ### Element style tokens and layouts
 
 - [Button](./tokens/button/button.md)
+- [Checkbox](./tokens/checkbox/checkbox.md)
 - [Global](./tokens/global/global.md)
 - [Link](./tokens/link/link.md)
+- [Radiobutton](./tokens/radiobutton/radiobutton.md)
+
+#### Partials
+
 - [Disable](./tokens/partial/disable.md)
 - [Focus](./tokens/partial/focus.md)
+
+
+- [Layout](./layout/layout.md)
+- [Paint](./paint/paint.md)
+- [Snapins material](./snapins/_material.scss)
 
 ### Constant tokens
 
@@ -31,7 +49,6 @@ In your root-level stylesheet, initialize the design system with
 - [Heading and Body imports and declarations](./typography/_fonts.scss)
 - [Typography levels and usage declarations](./typography/_typography.scss)
 
--
 
 ### Utilities
 

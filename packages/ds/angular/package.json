@@ -1,7 +1,7 @@
 {
     "name": "@ircc-ca/ds-sdc-angular",
     "version": "0.0.10-beta.11",
-    "description": "> TODO: description",
+    "description": "Angular components for Digital Journey Labs Design System",
     "author": "IRCC-ca",
     "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
     "license": "MIT",
