@@ -12,7 +12,6 @@
 @use '../tokens/link/link' as link;
 @use '../tokens/button/nav' as nav;
 @use './ircc-jl-colors' as jl;
-@use '../tokens/input/basic';
 
 /// This mixin is used to define the expected element styling configuration for the default theme.
 /// @param {String} $palette - the palette key to construct from the palette theme
@@ -35,7 +34,6 @@
     @include focus.focus(focus);
     @include validation.validation(success);
     @include validation.validation(critical);
-    @include basic.input-basic();
 }
 
 /// This mixin is used to define the common elements used in all themes.

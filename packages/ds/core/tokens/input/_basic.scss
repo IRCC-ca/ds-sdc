@@ -5,18 +5,6 @@
 @use '../../util/device' as device;
 @use '../../util/size' as size;
 
-@mixin input-basic() {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include input-basic-selector {
-                    
-                }
-            }
-        }
-    }
-}
-
 @mixin input-basic-selector  {
     input {
         @include theme.selector(text, type, text) {
