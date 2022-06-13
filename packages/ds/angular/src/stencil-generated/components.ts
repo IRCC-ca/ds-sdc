@@ -27,3 +27,24 @@ export class MyComponent {
     this.el = r.nativeElement;
   }
 }
+
+
+export declare interface WebButton extends Components.WebButton {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['ariaLabelBtn', 'category', 'color', 'disabled', 'label', 'name', 'size', 'type', 'value']
+})
+@Component({
+  selector: 'web-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['ariaLabelBtn', 'category', 'color', 'disabled', 'label', 'name', 'size', 'type', 'value']
+})
+export class WebButton {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}

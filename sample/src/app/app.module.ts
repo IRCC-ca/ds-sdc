@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app.routing.module';
+import { SandboxStencilComponent } from './sandbox-stencil/sandbox-stencil.component';
 import { SandboxComponent } from './sandbox/sandbox.component';
 import { Sandbox1Component } from './sandbox1/sandbox1.component';
 import { Sandbox2Component } from './sandbox2/sandbox2.component';
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     declarations: [
         AppComponent,
         SandboxComponent,
+        SandboxStencilComponent,
         Sandbox1Component,
         Sandbox2Component,
         ThemeSelectComponent,

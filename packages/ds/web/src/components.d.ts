@@ -24,6 +24,44 @@ export namespace Components {
          */
         "theme": string;
     }
+    interface WebButton {
+        /**
+          * (optional) aria-label for <button> element
+         */
+        "ariaLabelBtn"?: string;
+        /**
+          * (optional) Category for <button> custom element
+         */
+        "category"?: 'primary' | 'secondary' | 'plain';
+        /**
+          * (optional) Color attribute for <button> element
+         */
+        "color"?: 'critical' | 'CTA';
+        /**
+          * (optional) Disabled attribute for <button> element
+         */
+        "disabled": boolean;
+        /**
+          * Button label
+         */
+        "label": string;
+        /**
+          * (optional) Name attribute for <button> element
+         */
+        "name"?: string;
+        /**
+          * (optional) Size for <button> custom element
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * (optional) Types for <button> element
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * (optional)  Value for <button> element
+         */
+        "value"?: string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -32,8 +70,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLWebButtonElement extends Components.WebButton, HTMLStencilElement {
+    }
+    var HTMLWebButtonElement: {
+        prototype: HTMLWebButtonElement;
+        new (): HTMLWebButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "web-button": HTMLWebButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -55,8 +100,47 @@ declare namespace LocalJSX {
          */
         "theme"?: string;
     }
+    interface WebButton {
+        /**
+          * (optional) aria-label for <button> element
+         */
+        "ariaLabelBtn"?: string;
+        /**
+          * (optional) Category for <button> custom element
+         */
+        "category"?: 'primary' | 'secondary' | 'plain';
+        /**
+          * (optional) Color attribute for <button> element
+         */
+        "color"?: 'critical' | 'CTA';
+        /**
+          * (optional) Disabled attribute for <button> element
+         */
+        "disabled"?: boolean;
+        /**
+          * Button label
+         */
+        "label"?: string;
+        /**
+          * (optional) Name attribute for <button> element
+         */
+        "name"?: string;
+        /**
+          * (optional) Size for <button> custom element
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * (optional) Types for <button> element
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * (optional)  Value for <button> element
+         */
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "web-button": WebButton;
     }
 }
 export { LocalJSX as JSX };
@@ -64,6 +148,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "web-button": LocalJSX.WebButton & JSXBase.HTMLAttributes<HTMLWebButtonElement>;
         }
     }
 }
