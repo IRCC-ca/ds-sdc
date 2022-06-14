@@ -35,7 +35,6 @@
     @include focus.focus(focus);
     @include validation.validation(success);
     @include validation.validation(critical);
-    @include textarea.input-textarea();
 }
 
 /// This mixin is used to define the common elements used in all themes.

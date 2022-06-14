@@ -6,18 +6,6 @@
 @use '../../util/size' as size;
 @use './input-const' as input-const;
 
-@mixin input-textarea() {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include input-textarea-selector {
-                    
-                }
-            }
-        }
-    }
-}
-
 @mixin input-textarea-selector  {
     textarea {
         @content;

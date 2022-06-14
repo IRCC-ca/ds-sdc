@@ -69,7 +69,7 @@
 
         @include device.if-touch {
             &:active {
-                    border-color: --critical-border-hover;
+                    border-color: var(--critical-border-hover);
                     background-color: var(--critical-background-weak-hover);
             }
         }

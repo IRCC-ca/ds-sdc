@@ -6,18 +6,6 @@
 @use '../../util/size' as size;
 @use './input-const' as input-const;
 
-@mixin input-basic() {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include input-basic-selector {
-                    
-                }
-            }
-        }
-    }
-}
-
 @mixin input-basic-selector  {
     input {
         @include theme.selector(text, type, text) {
