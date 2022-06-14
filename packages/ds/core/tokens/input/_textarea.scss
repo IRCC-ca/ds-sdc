@@ -6,11 +6,11 @@
 @use '../../util/size' as size;
 @use './input-const' as input-const;
 
-@mixin input-basic() {
+@mixin input-textarea() {
     @at-root {
         #{template-const.$root-selectors} {
             @include theme.light {
-                @include input-basic-selector {
+                @include input-textarea-selector {
                     
                 }
             }
@@ -18,35 +18,35 @@
     }
 }
 
-@mixin input-basic-selector  {
-    input {
-        @include theme.selector(text, type, text) {
-            @content;
-        }
+@mixin input-textarea-selector  {
+    textarea {
+        @content;
     }
 }
 
 @mixin create {
     @at-root {
         #{template-const.$root-selectors} {
-            @include input-basic-selector() {
+            @include input-textarea-selector() {
                 @include input-const.common();
                 @include input-const.valid();
                 @include input-const.invalid();
-                @include textPadding();
+                @include layout();
             }
         }
     }
 }
 
-@mixin textPadding {
+@mixin layout {
+    resize: vertical;
 
     @include size.selector(small) {
-        padding: sizes.$fixed-10 sizes.$fixed-12;
+        padding: sizes.$fixed-10 sizes.$fixed-16 sizes.$fixed-10 sizes.$fixed-14;
     }
 
     @include size.selector(large) {
-        padding: sizes.$fixed-14 sizes.$fixed-12;
+        padding: sizes.$fixed-14 sizes.$fixed-16 sizes.$fixed-14 sizes.$fixed-20;
     }
 
 }
+

@@ -32,26 +32,32 @@
 <br />
 <input size="large" type="text" value="" required>
 <br />
-<label class="label">Basic small text input, letters only:</label>
-<br />
-<input size="small" type="text" value="@#$%^" pattern="[A-Za-z]{20}">
-<br />
-<label class="label">Basic large text input, letters only:</label>
-<br />
-<input size="large"type="text" value="@#$%^" pattern="[A-Za-z]{20}">
-<br />
 <label class="label">Basic small text input, 8+ characters required:</label>
 <br />
 <input size="small" type="text" value="Default" pattern=".{8,}">
 <br />
 <label class="label">Basic large text input, 8+ characters required:</label>
 <br />
-<input size="large"type="text" value="Default" pattern=".{8,}">
+<input size="large" type="text" value="Default" pattern=".{8,}">
 <br />
-<label class="label">Basic small text input, must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter:</label>
 <br />
-<input size="small" type="text" value="Default" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 <br />
-<label class="label">Basic large text input, must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter:</label>
+<h3>TextArea</h3>
 <br />
-<input size="large"type="text" value="Default" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+<label class="label">Basic large textarea</label>
+<br />
+<textarea rows="5" cols="50" size="large">The textarea tag defines a multi-line text input control.  The textarea element is often used in a form, to collect user inputs like comments or reviews.  A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).
+</textarea>
+<br />
+<label class="label">Basic small textarea</label>
+<br />
+<textarea rows="5" cols="50" size="small">The textarea tag defines a multi-line text input control.  The textarea element is often used in a form, to collect user inputs like comments or reviews.  A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).
+</textarea>
+<br />
+<label class="label">Required input textarea, no size defined</label>
+<br />
+<textarea rows="5" cols="50" required placeholder="Something is required here"></textarea>
+<br />
+<label class="label">Disabled input textarea, no size defined</label>
+<br />
+<textarea rows="5" cols="50" disabled></textarea>
