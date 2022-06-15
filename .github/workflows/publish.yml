@@ -38,3 +38,14 @@ jobs:
         fi
         npx lerna run build
         npx lerna publish from-git --yes
+    - name: "Publish Storybook"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: 'ca-central-1'
+      run: |
+        if [ ${{ github.base_ref }} = main ]; then
+          storybook-to-aws-s3 --bucket-path=aws-journey-design-storybook/main --aws-profile=NONE
+        else
+          storybook-to-aws-s3 --bucket-path=aws-journey-design-storybook/develop --aws-profile=NONE
+        fi

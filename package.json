@@ -16,7 +16,8 @@
         "test": "lerna run test",
         "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
         "storybook": "npm run docs:json && start-storybook -p 6006",
-        "build-storybook": "npm run docs:json && build-storybook",
+        "storybook:build": "npm run docs:json && build-storybook",
+        "deploy-storybook": "storybook-to-aws-s3",
         "prepare": "husky install"
     },
     "dependencies": {
