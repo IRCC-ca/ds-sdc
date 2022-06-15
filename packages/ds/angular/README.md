@@ -1,24 +1,49 @@
-# Angular
+# `ds-sdc-angular`
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+**UNDER DEVELOPMENT and not ready to be used** 
 
-## Code scaffolding
+This package contains Angular components for the Digital Journey Labs Design System
 
-Run `ng generate component component-name --project angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular`.
-> Note: Don't forget to add `--project angular` or else it will be added to the default project in your `angular.json` file. 
+## Getting started 
 
-## Build
+To install the IRCC Digital Journey Labs Design System Angular components, you will need to run the following command using [npm](https://www.npmjs.com/):
 
-Run `ng build angular` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npm install --save-dev @ircc-ca/ds-sdc-angular
+```
 
-## Publishing
+## Usage
 
-After building your library with `ng build angular`, go to the dist folder `cd dist/angular` and run `npm publish`.
+| Package name  | Description  |   |
+|---|---|---|
+| [`@ircc-ca/ds-sdc-angular/button`](./button/)  | Angular custom button  |   |
+| [`@ircc-ca/ds-sdc-angular/checkbox`](./checkbox/)  | Angular custom checkbox  |   |
+| [`@ircc-ca/ds-sdc-angular/footer`](./footer/)  | Angular custom footer  |   |
+| [`@ircc-ca/ds-sdc-angular/header`](./header/)  | Angular custom header  |   |
+| [`@ircc-ca/ds-sdc-angular/icon`](./icon/)  |  Angular custom icon |   |
+| [`@ircc-ca/ds-sdc-angular/link`](./link/)  | Angular custom link  |   |
+| [`@ircc-ca/ds-sdc-angular/radiobutton`](./radio-button/)  | Angular custom radio-button  |   |
 
-## Running unit tests
+To use a component, you can import it in the component module from the package: 
 
-Run `ng test angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import { JLButtonModule } from '@ircc-ca/ds-sdc-angular/button';
 
-## Further help
+@NgModule({
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        JLButtonModule,
+        AppRoutingModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+})
+export class AppModule {}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```

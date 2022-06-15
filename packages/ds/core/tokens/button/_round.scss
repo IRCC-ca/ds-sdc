@@ -9,47 +9,37 @@
 $round: 'round';
 
 @mixin button-round($palette) {
-    @include button-const.button($category: $round, $color: null) {
-        @include device.if-hover {
-            --background-hover: #{var(--generic-hover)};
-        }
-        @include theme.tokens-for-map(
-            (
-                --background-active: var(--generic-active),
-                --background: color.mix-token(neutral, 600, 0),
-            )
-        );
-    }
-
     @include theme.light {
-        @include button-const.button($category: $round, $color: $palette) {
-            @include theme.tokens-for-map(
-                (
-                    --text: color.mix-token($palette, 700),
-                    --text-disabled: color.mix-token($palette, 300),
-                )
-            );
+        #{button-const.$selectors} {
+            @include button-const.button($category: $round, $color: $palette) {
+                @include theme.tokens-for-map(
+                    (
+                        --text: color.mix-token($palette, 700),
+                        --text-disabled: color.mix-token($palette, 300),
+                    )
+                );
+            }
         }
     }
 
     @include theme.dark {
-        @include button-const.button($category: $round, $color: $palette) {
-            @include theme.tokens-for-map(
-                (
-                    --text: color.mix-token($palette, 600),
-                    --text-disabled: color.mix-token($palette, 1000),
-                )
-            );
+        #{button-const.$selectors} {
+            @include button-const.button($category: $round, $color: $palette) {
+                @include theme.tokens-for-map(
+                    (
+                        --text: color.mix-token($palette, 600),
+                        --text-disabled: color.mix-token($palette, 1000),
+                    )
+                );
+            }
         }
     }
 }
 
 @mixin create() {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include button-const.button($category: $round, $color: null) {
-                @include layout();
-            }
+    @include button-const.selectors {
+        @include button-const.button($category: $round, $color: null) {
+            @include layout();
         }
     }
 }
@@ -57,7 +47,7 @@ $round: 'round';
 @mixin layout() {
     @include button-const.layout-round();
 
-    background-color: var(--background);
+    background-color: var(--generic);
     @include device.if-hover {
         background-color: var(--generic-hover);
     }
@@ -69,6 +59,6 @@ $round: 'round';
     &:disabled {
         --text: var(--text-disabled);
 
-        background-color: var(--background);
+        background-color: var(--generic);
     }
 }

@@ -17,6 +17,9 @@
                     --text-secondary: color.mix-token($palette, 400),
                     --text-placeholder: color.mix-token($palette, 500),
                     --text-disabled: color.mix-token($palette, 800),
+                ),
+                $all: (
+                    --text: #{var(--text-primary)}
                 )
             );
         }

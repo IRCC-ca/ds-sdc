@@ -15,10 +15,18 @@
     "color-hex-length": "long",
     "selector-attribute-quotes": "always",
     "string-quotes": "single",
-    "max-nesting-depth": 3,
+    "max-nesting-depth": [
+      3, {
+        "ignoreAtRules": ["/^--my-/", "at-root"]
+      }
+    ],
     "selector-max-compound-selectors": 3,
     "selector-max-specificity": "0,3,2",
     "declaration-no-important": true,
+    "comment-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+    "rule-empty-line-before": null,
     "at-rule-no-vendor-prefix": true,
     "media-feature-name-no-vendor-prefix": true,
     "property-no-vendor-prefix": true,
@@ -28,7 +36,8 @@
     "selector-class-pattern": "[a-z-]+",
     "selector-id-pattern": "[a-z-]+",
     "selector-max-id": 0,
-    "selector-no-qualifying-type": true,
+    "selector-no-qualifying-type": null,
+    "scss/at-extend-no-missing-placeholder": null,
     "selector-type-no-unknown": [
       true,
       {

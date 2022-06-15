@@ -1,8 +1,7 @@
-/* stylelint-disable length-zero-no-unit */
 $bp-width-desktop: 1366px;
 $bp-width-tablet: 768px;
 $bp-width-phone: 360px;
-$bp-width-0: 0px;
+$bp-width-0: 0;
 
 $relative-3-5: 3.5rem;
 $relative-3-25: 3.25rem;
@@ -14,6 +13,7 @@ $relative-2: 2rem;
 $relative-1-75: 1.75rem;
 $relative-1-5: 1.5rem;
 $relative-1-25: 1.25rem;
+$relative-1-125: 1.125rem;
 $relative-1: 1rem;
 $relative-0-875: 0.875rem;
 $relative-0-75: 0.75rem;
@@ -27,18 +27,28 @@ $fixed-400: 400px;
 $fixed-36: 36px;
 $fixed-20: 20px;
 $fixed-16: 16px;
+$fixed-14: 14px;
 $fixed-12: 12px;
+$fixed-10: 10px;
 $fixed-8: 8px;
+$fixed-6: 6px;
 $fixed-4: 4px;
 $fixed-3: 3px;
 $fixed-2: 2px;
 $fixed-1: 1px;
-$fixed-0: 0px;
+$fixed-0: 0;
 
 $border-radius: $fixed-4;
+$border-radius-circle: 99999px;
 $border-style: $fixed-0 $fixed-0 $fixed-0 $fixed-1 var(--border) inset;
+$radio-selected-border-radius-small: $fixed-0 $fixed-0 $fixed-0 $fixed-6
+    var(--border) inset;
+$radio-selected-border-radius-large: $fixed-0 $fixed-0 $fixed-0 $fixed-8
+    var(--border) inset;
 $outline-width: $fixed-3;
-$focus-shadow: 0 0 0 $outline-width var(--surface1);
+$focus-shadow: $fixed-0 $fixed-0 $fixed-0 $outline-width var(--surface1);
+
+$form-control-margin: $fixed-0 $fixed-12;
 
 $max-button-width: $fixed-400;
 $small-padding: $fixed-8 $fixed-16;

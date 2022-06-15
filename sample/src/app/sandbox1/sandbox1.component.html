@@ -1,2 +1,65 @@
-<h2>Sandbox 1 Component</h2>
-<p>feel free to replace this content with any test content, or add any routes with a template you want to test.</p>
+<h2>{{ 'Sandbox1.Title' | translate }}</h2>
+<p>{{ 'Sandbox1.Text' | translate }}</p>
+
+<h3>Checkbox</h3>
+<jds-checkbox>Angular checkbox</jds-checkbox>
+<br />
+<input type="checkbox" id="checkbox_input1" name="checkbox_input1" value="checkbox_input1">
+<label for="checkbox_input1">Core checkbox</label>
+<br />
+<input type="checkbox" id="checkbox_input2" name="checkbox_input2" value="checkbox_input2" size="small">
+<label for="checkbox_input2">Core checkbox small</label>
+<br />
+<input type="checkbox" id="checkbox_input3" name="checkbox_input3" value="checkbox_input3" size="large">
+<label for="checkbox_input3">Core checkbox large</label>
+<br />
+<input type="checkbox" id="checkbox_input4" name="checkbox_input4" value="checkbox_input4" checked>
+<label for="checkbox_input4">Core checkbox checked</label>
+<br />
+<input type="checkbox" id="checkbox_input5" name="checkbox_input5" value="checkbox_input5" #invalidCheckbox required>
+<label for="checkbox_input5">Core invalid checkbox</label>
+<br />
+<input type="checkbox" id="checkbox_input6" name="checkbox_input6" value="checkbox_input6" #invalidCheckedCheckbox required checked>
+<label for="checkbox_input6">Core invalid and checked checkbox</label>
+<br />
+<input type="checkbox" id="checkbox_input7" name="checkbox_input7" value="checkbox_input7" disabled>
+<label for="checkbox_input7">Core disabled checkbox</label>
+<br />
+<input type="checkbox" id="checkbox_input8" name="checkbox_input8" value="checkbox_input8" disabled checked>
+<label for="checkbox_input8">Core disabled and checked checkbox</label>
+<br />
+<input type="checkbox" name="indeterminate" id="indeterminate" value="indeterminate" #indeterminateCheckbox />
+<label for="indeterminate">Core indeterminate checkbox</label>
+<br/>
+<input type="checkbox" name="indeterminate1" id="indeterminate1" value="indeterminate1" #indeterminateInvalidCheckbox />
+<label for="indeterminate1">Core indeterminate invalid checkbox</label>
+<br/>
+<input type="checkbox" name="indeterminate2" id="indeterminate2" value="indeterminate2" #indeterminateDisabledCheckbox disabled/>
+<label for="indeterminate2">Core indeterminate disabled checkbox</label>
+<br />
+<input type="checkbox" name="indeterminate3" id="indeterminate3" value="indeterminate3" #indeterminateSmall size="small"/>
+<label for="indeterminate3">Core indeterminate small checkbox</label>
+<br/>
+<h3>Radio buttons</h3>
+<jds-radio-button>Angular package radiobutton</jds-radio-button>
+<br />
+<input type="radio" id="html1" name="fav_language1" value="HTML1">
+<label class="label" for="html1">core radio</label>
+<br/>
+<input type="radio" id="html2" name="fav_language2" value="HTML2" size="small">
+<label class="label" for="html2">core radio small</label>
+<br/>
+<input type="radio" id="html3" name="fav_language3" value="HTML3" size="large">
+<label class="label" for="html3">core radio large</label>
+<br/>
+<input type="radio" id="html4" name="fav_language4" value="HTML4" size="small" #invalidRadio required>
+<label class="label" for="html4">invalid core radio</label>
+<br />
+<input type="radio" id="html5" name="fav_language5" value="HTML5" #invalidCheckedRadio checked>
+<label class="label" for="html5">core invalid checked</label>
+<br/>
+<input type="radio" id="html6" name="fav_language6" value="HTML6" disabled>
+<label class="label" for="html6">core radio disabled</label>
+<br />
+<input class="invalid" type="radio" id="html8" name="fav_language8" value="HTML8" disabled checked>
+<label class="label" for="html8">core radio disabled and checked</label>

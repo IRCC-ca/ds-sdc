@@ -3,12 +3,17 @@
 @use './paint/paint' as paint;
 @use './theme/theme' as theme;
 @use './tokens/link/link' as link;
+@use './tokens/radiobutton/radio-button' as radiobutton;
 @use './tokens/partial/focus' as focus;
 @use './tokens/partial/disable' as disable;
 @use './tokens/button/primary' as button-primary;
 @use './tokens/button/secondary' as button-secondary;
 @use './tokens/button/plain' as button-plain;
 @use './tokens/button/round' as button-round;
+@use './tokens/checkbox/checkbox' as checkbox;
+@use './tokens/button/nav' as button-nav;
+@use './tokens/input/basic' as input-basic;
+@use './tokens/input/textarea' as input-textarea;
 
 /// Default theme, should be included for most applications, and can be customized through the parameters
 /// @param {String} $palette ('default') - the palette from the theme to construct the components with
@@ -39,8 +44,14 @@
     @include button-secondary.create();
     @include button-plain.create();
     @include button-round.create();
+    @include button-nav.create();
 
     @include focus.create();
 
     @include disable.create();
+
+    @include checkbox.create();
+    @include radiobutton.create();
+    @include input-basic.create();
+    @include input-textarea.create();
 }

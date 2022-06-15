@@ -1,0 +1,166 @@
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/device' as device;
+@use '../../util/size' as size;
+@use '../template-const' as template-const;
+@use '../sizes' as token-size;
+@use '../../typography/typography' as typography;
+@use '../text' as text;
+@use 'sass:map';
+
+@mixin selector {
+    input[type='checkbox'] {
+        @content;
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include selector() {
+                @include layout();
+            }
+        }
+    }
+}
+
+@mixin layout {
+    border-radius: token-size.$border-radius;
+    appearance: none;
+    margin: token-size.$form-control-margin;
+    box-sizing: border-box;
+    box-shadow: token-size.$border-style;
+    vertical-align: top;
+
+    @include checkbox-size();
+
+    @include device.if-hover {
+        color: var(--formcontrol-hover);
+    }
+    &:active {
+        background-color: var(--generic-active);
+    }
+
+    &:disabled {
+        --border: var(--border-disabled);
+
+        & + label {
+            color: var(--text-disabled);
+        }
+    }
+
+    &:checked,
+    &:indeterminate {
+        @include device.if-hover {
+            background-color: var(--formcontrol-hover);
+        }
+
+        &:active {
+            background-color: var(--formcontrol-hover);
+        }
+        &:disabled {
+            background-color: var(--formcontrol-disabled);
+        }
+    }
+
+    @include checked();
+    @include invalid();
+    @include mixed-state();
+}
+
+@mixin checked {
+    &:checked {
+        box-shadow: none;
+        background-color: var(--formcontrol);
+
+        @include create-icon('\f00c');
+    }
+}
+
+@mixin invalid {
+    &:invalid {
+        --border: var(--critical-border);
+        background-color: var(--critical-background-weak);
+
+        @include device.if-hover {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-hover);
+        }
+
+        &:active {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-active);
+        }
+        &:indeterminate,
+        &:checked {
+            box-shadow: none;
+            background-color: var(--critical-background);
+
+            @include device.if-hover {
+                background-color: var(--critical-background-hover);
+            }
+
+            &:active {
+                background-color: var(--critical-background-active);
+            }
+        }
+    }
+}
+
+@mixin mixed-state {
+    &:indeterminate {
+        box-shadow: none;
+        background-color: var(--formcontrol);
+
+        @include create-icon('\f068');
+    }
+}
+
+@mixin checkbox-size {
+    @include size.selector(small) {
+        width: token-size.$relative-1-25;
+        height: token-size.$relative-1-25;
+
+        &:checked::before,
+        &:indeterminate::before {
+            @include icon-size(
+                token-size.$relative-0-875,
+                token-size.$relative-1,
+                2
+            );
+        }
+    }
+
+    @include size.selector(large) {
+        width: token-size.$relative-1-5;
+        height: token-size.$relative-1-5;
+
+        &:checked::before,
+        &:indeterminate::before {
+            @include icon-size(
+                token-size.$relative-1-125,
+                token-size.$relative-1-25,
+                1
+            );
+        }
+    }
+}
+
+@mixin icon-size($width, $height, $level) {
+    width: $width;
+    height: $height;
+    left: calc(50% - $width / 2);
+    top: calc(50% - $height / 2);
+    font-size: map.get(text.$body, level, $level, font-size);
+    line-height: map.get(text.$body, level, $level, font-size);
+}
+
+@mixin create-icon($content) {
+    &::before {
+        content: $content;
+        color: var(--surface1);
+        position: relative;
+
+        @extend .fa-regular;
+    }
+}

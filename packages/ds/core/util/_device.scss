@@ -10,6 +10,23 @@
     }
 }
 
+// Content included within this mixin will be included on devices that do not support a hover state,
+// and be conditionally included within a hover state on devices that do
+@mixin always-if-hover {
+    @media (any-hover: none) {
+        @content;
+    }
+    @include if-hover() {
+        @content;
+    }
+}
+
+@mixin if-touch {
+    @media (pointer: coarse) {
+        @content;
+    }
+}
+
 /// Content included within this mixin will only be included
 /// if the device is determined to fall within the phone viewport range
 @mixin in-phone-layout {

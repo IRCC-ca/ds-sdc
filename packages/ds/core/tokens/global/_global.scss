@@ -3,6 +3,7 @@
 @use '../../util/theme' as theme;
 @use '../template-const' as template-const;
 @use '../../util/device' as device;
+
 @mixin global($neutral, $accent) {
     @at-root {
         #{template-const.$root-selectors} {
@@ -20,6 +21,8 @@
                     (
                         --surface1: color.mix-token($neutral, 100),
                         --surface2: color.mix-token($neutral, 200),
+                        --generic: color.mix-token($neutral, 900, 0),
+                        --generic-hover: color.mix-token($neutral, 900, 0.06),
                         --generic-active: color.mix-token($neutral, 900, 0.12),
                         --border: color.mix-token($neutral, 800),
                         --divider: color.mix-token($neutral, 300),

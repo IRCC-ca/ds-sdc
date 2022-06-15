@@ -1,0 +1,25 @@
+{
+    "App": {
+        "AppName": "Journey Design System (JDS) sample application",
+        "Text": "This application serves as a list of possible sample implementations and is not intended as a coding standards guide, or a list of required or optional templates.",
+        "InfoPackage": "Information about the design system will be provided in .md files within the package delivery",
+        "PackageLink": "This can be found in your <span class='emphasis'>node_modules/@ircc-ca/ds-sdc-core/</span> after installing or <a target='_blank' href='https://github.com/IRCC-ca/ds-sdc/blob/main/packages/ds/core/README.md'>found on ourGithub<span class='open_in_new' aria-label='Opens in new window'></span></a>"
+    },
+    "Footer": {
+        "DateModified": "Date modified",
+        "Prev": "Prev",
+        "Next": "Next"
+    },
+    "Sandbox": {
+        "Title": "Sandbox Component",
+        "Text": "feel free to replace this content with any test content, or add any routes with a template you want to test."
+    },
+    "Sandbox1": {
+        "Title": "Sandbox 1 Component",
+        "Text": "feel free to replace this content with any test content, or add any routes with a template you want to test."
+    },
+    "Theme": {
+        "Dark": "Dark",
+        "Light": "Light"
+    }
+}

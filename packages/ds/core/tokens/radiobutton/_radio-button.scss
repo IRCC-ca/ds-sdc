@@ -1,0 +1,130 @@
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/size' as size;
+@use '../../util/device' as device;
+@use '../template-const' as template-const;
+@use '../sizes' as token-size;
+
+@mixin selector {
+    input[type='radio'] {
+        @content;
+    }
+}
+
+@mixin create {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @include selector() {
+                @include layout();
+            }
+        }
+    }
+}
+
+@mixin layout {
+    border-radius: token-size.$border-radius-circle;
+    appearance: none;
+    margin: token-size.$form-control-margin;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    box-shadow: token-size.$border-style;
+    vertical-align: top;
+
+    @include radiobutton-size();
+
+    @include device.if-hover {
+        color: var(--formcontrol-hover);
+    }
+
+    &:disabled {
+        --border: var(--border-disabled);
+
+        & + label {
+            color: var(--text-disabled);
+        }
+    }
+
+    &:enabled {
+        &:active {
+            background-color: var(--generic-active);
+        }
+    }
+
+    @include checked();
+    @include invalid();
+}
+
+@mixin checked {
+    &:checked {
+        --border: var(--formcontrol);
+
+        &:disabled {
+            --border: var(--formcontrol-disabled);
+        }
+
+        &:enabled {
+            @include device.if-hover {
+                --border: var(--formcontrol-hover);
+            }
+
+            &:active {
+                --border: var(--formcontrol-hover);
+            }
+        }
+    }
+}
+
+@mixin invalid {
+    &:invalid {
+        --border: var(--critical-background);
+        background-color: var(--critical-background-weak);
+
+        @include device.if-hover {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-hover);
+        }
+
+        &:active {
+            --border: var(--critical-border-hover);
+            background-color: var(--critical-background-weak-active);
+        }
+
+        &:checked {
+            background-color: var(--surface1);
+
+            @include device.if-hover {
+                --border: var(--critical-background-hover);
+            }
+
+            &:active {
+                --border: var(--critical-background-active);
+            }
+        }
+    }
+}
+
+@mixin checked-circle-size($border-size) {
+    &:checked {
+        box-shadow: $border-size;
+    }
+}
+
+@mixin radiobutton-size {
+    @include size.selector(small) {
+        height: token-size.$relative-1-25;
+        width: token-size.$relative-1-25;
+
+        @include checked-circle-size(
+            token-size.$radio-selected-border-radius-small
+        );
+    }
+
+    @include size.selector(large) {
+        height: token-size.$relative-1-5;
+        width: token-size.$relative-1-5;
+
+        @include checked-circle-size(
+            token-size.$radio-selected-border-radius-large
+        );
+    }
+}
