@@ -18,7 +18,7 @@
         "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
         "storybook": "npm run docs:json && start-storybook -p 6006",
         "build-storybook": "npm run docs:json && build-storybook",
-        "prepare": "lerna run build --since --concurrency=1 && husky install"
+        "prepare": "lerna run build --since --concurrency=1"
     },
     "dependencies": {
         "@angular/animations": "~13.1.0",
