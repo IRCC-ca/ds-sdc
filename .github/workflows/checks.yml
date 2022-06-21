@@ -22,6 +22,7 @@ jobs:
         npm set "//npm.fontawesome.com/:_authToken=${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
     - name: Install dependencies
       run: | # Install and link dependencies
+        npx lerna link
         npx lerna bootstrap
     - name: Run tests # Run tests and linting for all packages
       run: |
