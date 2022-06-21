@@ -4,9 +4,9 @@
 @import '../tokens/template-const';
 
 /// global palette constant
-$root-palette: () !global;
+$root-palette: ();
 /// global color constant
-$color-mode: '' !global;
+$color-mode: '';
 
 /// override the color mode setting (required before theme creation)
 /// @param {String} $new-mode - new setting for color mode, as defined in palette theme
