@@ -25,5 +25,5 @@ jobs:
         npx lerna bootstrap
     - name: Run tests # Run tests and linting for all packages
       run: |
-        npx lerna exec npm run test
-        npx lerna exec npm run lint
+        npx lerna run test
+        npx lerna run lint
