@@ -30,7 +30,6 @@ jobs:
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor}}@users.noreply.github.com"
-
         npx lerna bootstrap
         if [ ${{ github.base_ref }} = main ]; then
           npx lerna version --conventional-commits --conventional-graduate --yes

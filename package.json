@@ -12,7 +12,6 @@
         "lint:md": "alex --quiet sample/**/*.md && alex --quiet *.md",
         "lint:sample:style": "stylelint \"./sample/src/**/*.scss\"",
         "lint:style": "npm run lint:sample:style",
-        "prepublish": "lerna run build --concurrency=1",
         "build-sample": "ng build --project=sample",
         "watch": "ng build --watch --configuration development",
         "test": "lerna run test",
