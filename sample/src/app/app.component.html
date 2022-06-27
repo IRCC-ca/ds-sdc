@@ -1,5 +1,4 @@
   <jds-header>
-    <jds-theme></jds-theme>
     <span class="form-inline">
       <select 
           #selectedLang 
@@ -25,8 +24,8 @@
     <p>{{'App.InfoPackage' | translate}}</p>
     <p [innerHTML]="'App.PackageLink' | translate"></p>
   </span>
+  <button size="small" category="plain" (click)="findRoute(-1)">{{ 'Footer.Prev' | translate }}</button>
+  <button size="small" category="plain" (click)="findRoute(1)">{{ 'Footer.Next' | translate }}</button>
   <jds-footer>
     {{'Footer.DateModified' | translate }}: 2022-05-06<br />
-    <button size="small" category="plain" (click)="findRoute(-1)">{{ 'Footer.Prev' | translate }}</button>
-    <button size="small" category="plain" (click)="findRoute(1)">{{ 'Footer.Next' | translate }}</button>
   </jds-footer>
