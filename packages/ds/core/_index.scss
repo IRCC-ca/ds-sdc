@@ -1,7 +1,6 @@
 @use './typography/fonts' as fonts;
 @use './typography/typography' as typography;
 @use './paint/paint' as paint;
-@use './theme/theme' as theme;
 @use './tokens/link/link' as link;
 @use './tokens/radiobutton/radio-button' as radiobutton;
 @use './tokens/partial/focus' as focus;
@@ -15,28 +14,30 @@
 @use './tokens/input/basic' as input-basic;
 @use './tokens/input/textarea' as input-textarea;
 
-/// Default theme, should be included for most applications, and can be customized through the parameters
-/// @param {String} $palette ('default') - the palette from the theme to construct the components with
-/// @param {String} $size ('large') - The text size to default to,
-/// Client-facing applications should be constructed with large text
-/// Officer-facing applications should be constructed with small text.
-@mixin default($palette: 'default', $size: 'large') {
-    @include create-globals($palette, $size);
-    @include create-item-layouts();
-}
 
-/// the global level tokens to construct layouts
-/// @param {String} $palette ('default') - the palette from the theme to construct the components with
-/// @param {String} $size ('large') - The text size to default to,
-/// Client-facing applications should be constructed with large text
-/// Officer-facing applications should be constructed with small text.
-@mixin create-globals($palette, $size) {
-    @include theme.default($palette, $size);
+@forward './theme/theme' as theme-*;
+@forward './theme/ircc-jl-colors' as palette-*;
+
+@forward './typography/fonts' as fonts-*;
+@forward './typography/typography' as typography-*;
+@forward './paint/paint' as paint-*;
+@forward './tokens/link/link' as link-*;
+@forward './tokens/radiobutton/radio-button' as radiobutton-*;
+@forward './tokens/partial/focus' as focus-*;
+@forward './tokens/partial/disable' as disable-*;
+@forward './tokens/button/primary' as button-primary-*;
+@forward './tokens/button/secondary' as button-secondary-*;
+@forward './tokens/button/plain' as button-plain-*;
+@forward './tokens/button/round' as button-round-*;
+@forward './tokens/checkbox/checkbox' as checkbox-*;
+@forward './tokens/button/nav' as button-nav-*;
+@forward './tokens/input/basic' as input-basic-*;
+@forward './tokens/input/textarea' as input-textarea-*;
+
+
+/// constructs element layouts based on local and global tokens
+@mixin create-all-layouts() {
     @include fonts.create();
-}
-
-/// the item level tokens to construct layouts
-@mixin create-item-layouts() {
     @include typography.create();
     @include paint.create();
     @include link.create();
