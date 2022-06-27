@@ -12,26 +12,17 @@
     width: 100%;
     border-width: sizes.$fixed-2;
     border-style: solid;
-    margin-top: sizes.$fixed-12;
+    margin-top: sizes.$fixed-24;
 }
 
 .grid-container {
     display: grid;
-    @include layout-grid.grid(max-content max-content auto, auto);
+    @include layout-grid.grid(max-content auto, auto);
     * {grid-column: auto / span 1};
     
     align-items: center;
   }
 
-  .item1 {
-    padding-left: sizes.$fixed-20;
-  }
-
   .item2 {
-    padding-left: sizes.$fixed-20;
-  }
-
-  .item3 {
     justify-self: end;
-    padding-right: sizes.$fixed-20;
   }
