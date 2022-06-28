@@ -2,7 +2,7 @@
 
 This package contains the theming functionality for the Journey Design System
 
-## Getting started 
+## Getting started
 
 To install the IRCC Digital Journey Labs Design System styles, you will need to run the following command using [npm](https://www.npmjs.com/):
 
@@ -15,8 +15,10 @@ npm install --save-dev @ircc-ca/ds-sdc-core
 In your root-level stylesheet, initialize the design system with
 
 ```scss
-@use "~@ircc-ca/ds-sdc-core/index" as ircc-ds;
-@include ircc-ds.default();
+@use '~@ircc-ca/ds-sdc-core/index' as ircc-ds;
+@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large);
+@include ircc-ds.theme-all-element-tokens();
+@include ircc-ds.create-all-layouts();
 ```
 
 ### Element style tokens and layouts
@@ -31,7 +33,6 @@ In your root-level stylesheet, initialize the design system with
 
 - [Disable](./tokens/partial/disable.md)
 - [Focus](./tokens/partial/focus.md)
-
 
 - [Layout](./layout/layout.md)
 - [Paint](./paint/paint.md)
@@ -49,7 +50,6 @@ In your root-level stylesheet, initialize the design system with
 - [Heading and Body imports and declarations](./typography/_fonts.scss)
 - [Typography levels and usage declarations](./typography/_typography.scss)
 
-
 ### Utilities
 
 - [Color mode and token](./util/_color.scss)
@@ -65,4 +65,4 @@ In your root-level stylesheet, initialize the design system with
 A css reset is not currently expected or required, if you are experiencing an unexpected visual bug, please submit a Bug.
 This package is intended to apply with minimal effort based on HTML tags and minimal use of class selectors to reduce overhead in existing projects.
 As this project is a work in progress, usage of multiple design systems is recommended, so long as they don't visually conflict.
-If you find an issue, [please submit a Bug or Feature Request on our Github](https://github.com/IRCC-ca/ds-sdc/issues/new/choose) and add the `core` tag
+If you find an issue, [please submit a Bug or Feature Request on our Github](https://github.com/IRCC-ca/ds-sdc/issues/new/choose) and add the `core` tag.
