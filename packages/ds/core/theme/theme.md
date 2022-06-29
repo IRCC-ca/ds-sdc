@@ -12,28 +12,27 @@ Theming functionality for the core design system package. Only one theme should 
 
 A custom theme can be created by calling the desired element styles package constructors with the desired color usage, and including the `required-common-theme` mixin.
 
-### Required common theme
+### Init Required
 
-This mixin is used to define the common elements used in all themes. There are 2 common parameters at this time, and it can be called as follows.
+This mixin is used to initialize the variables used for generation of the themeable elements. There are 3 parameters at this time, and it can be called as follows.
 
 ```scss
-@use './theme';
-@include theme.required-common-theme($palette, $size);
+@use '@ircc-ca/ds-sdc-core/index' as ircc-ds; 
+@include ircc-ds.theme-init-required($root-palette, $palette, $size);
 ```
+
+#### Root-palette
+
+The object that defines the colour palettes used in the application, including the theme, the colour usages, and the HSL values for each shade.
 
 #### Palette
 
-An identifier key used to generate the color usage tokens throughout this package. This will reference a map identified within the `$journeylab-palette` constant [declared in the color palette](./_ircc-jl-colors.scss).
+An identifier key used to generate the color usage tokens throughout this package. This will reference the palette key within the `$root-palette`.
 
 #### Size
 
 An identifier key used to generate the default size of the elements, as defined through text and padding. This will reference the `$sizes` map [declared in size utilities](../util/_size.scss).
 
-### Default
+### All Element Tokens
 
-Definition of the default theme through the `default` mixin, and includes the expected element styling configuration. It can be called as follows.
-
-```scss
-@use './theme';
-@include theme.default($palette, $size);
-```
+This is an ease of use mixin to define the theme tokens for every element layout in the system.

@@ -6,17 +6,9 @@
 @mixin color-scheme($light, $dark, $all: ()) {
     @media (prefers-color-scheme: dark) {
         @include tokens-for-map($dark);
-
-        &[theme='light'] {
-            @include tokens-for-map($light);
-        }
     }
     @media (prefers-color-scheme: light) {
         @include tokens-for-map($light);
-
-        &[theme='dark'] {
-            @include tokens-for-map($dark);
-        }
     }
     @include tokens-for-map($all);
 }
@@ -28,12 +20,6 @@
             @media (prefers-color-scheme: light) {
                 @content;
             }
-
-            @media (prefers-color-scheme: dark) {
-                &[theme='light'] {
-                    @content;
-                }
-            }
         }
     }
 }
@@ -44,12 +30,6 @@
         #{template-const.$root-selectors} {
             @media (prefers-color-scheme: dark) {
                 @content;
-            }
-
-            @media (prefers-color-scheme: light) {
-                &[theme='dark'] {
-                    @content;
-                }
             }
         }
     }
