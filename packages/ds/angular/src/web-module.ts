@@ -3,7 +3,7 @@ import { defineCustomElements } from '@ircc-ca/ds-sdc-web/loader';
 
 import * as Components from './stencil-generated/components';
 
-const DJL_Components = [Components.MyComponent, Components.WebButton];
+const DJL_Components = [Components.MyComponent, Components.DjlButton];
 
 defineCustomElements();
 

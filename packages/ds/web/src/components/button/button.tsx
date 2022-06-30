@@ -7,11 +7,11 @@ interface buttonConfig {
 }
 
 @Component({
-  tag: 'web-button',
+  tag: 'djl-button',
 })
 export class DjlButton {
   /** (optional) Disabled attribute for <button> element */
-  @Prop() disabled: boolean;
+  @Prop() disabled?: boolean;
 
   /** (optional) Name attribute for <button> element */
   @Prop() name?: string;
@@ -26,16 +26,13 @@ export class DjlButton {
   @Prop() value?: string;
 
   /** (optional) Category for <button> custom element */
-  @Prop({ reflect: true }) category?: 'primary' | 'secondary' | 'plain' = 'primary';
+  @Prop() category?: 'primary' | 'secondary' | 'plain';
 
   /** (optional) Size for <button> custom element */
-  @Prop({ reflect: true }) size?: 'small' | 'large' = 'large';
+  @Prop() size?: 'small' | 'large';
 
   /** (optional) aria-label for <button> element */
-  @Prop() ariaLabelBtn?: string;
-
-  /** Button label */
-  @Prop() label: string;
+  @Prop({ attribute: 'aria-label' }) ariaLabelBtn?: string;
 
   // eslint-disable-next-line @stencil/element-type
   @Element() el: HTMLElement;
@@ -57,6 +54,7 @@ export class DjlButton {
   render() {
     return (
       <button
+        aria-label={this.ariaLabelBtn}
         name={this.name}
         {...this.config}
         value={this.value}
@@ -64,9 +62,8 @@ export class DjlButton {
         aria-disabled={this.disabled ? 'true' : null}
         type={this.type}
         color={this.color}
-        aria-label={this.ariaLabelBtn}
       >
-        {this.label}
+        <slot />
       </button>
       // <button {...{ category: this.category, size: this.size }} disabled={this.disabled} aria-disabled={this.disabled ? 'true' : null} type={this.type} color={this.color}>
       //   {this.label}

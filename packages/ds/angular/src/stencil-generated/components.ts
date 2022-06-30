@@ -8,6 +8,27 @@ import { Components } from '@ircc-ca/ds-sdc-web';
 
 
 
+export declare interface DjlButton extends Components.DjlButton {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['ariaLabelBtn', 'category', 'color', 'disabled', 'name', 'size', 'type', 'value']
+})
+@Component({
+  selector: 'djl-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['ariaLabelBtn', 'category', 'color', 'disabled', 'name', 'size', 'type', 'value']
+})
+export class DjlButton {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MyComponent extends Components.MyComponent {}
 
 @ProxyCmp({
@@ -21,27 +42,6 @@ export declare interface MyComponent extends Components.MyComponent {}
   inputs: ['first', 'last', 'middle', 'theme']
 })
 export class MyComponent {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface WebButton extends Components.WebButton {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['ariaLabelBtn', 'category', 'color', 'disabled', 'label', 'name', 'size', 'type', 'value']
-})
-@Component({
-  selector: 'web-button',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['ariaLabelBtn', 'category', 'color', 'disabled', 'label', 'name', 'size', 'type', 'value']
-})
-export class WebButton {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
