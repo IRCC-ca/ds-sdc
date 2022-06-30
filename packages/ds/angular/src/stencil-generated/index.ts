@@ -1,7 +1,4 @@
 
 import * as d from './components';
 
-export const DIRECTIVES = [
-  d.MyComponent,
-  d.WebButton
-];
+export const DIRECTIVES = [d.MyComponent, d.DjlButton];
