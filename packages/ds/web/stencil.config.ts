@@ -23,7 +23,6 @@ export const config: Config = {
     angularOutputTarget({
       componentCorePackage: '@ircc-ca/ds-sdc-web',
       directivesProxyFile: '../angular/src/stencil-generated/components.ts',
-      directivesArrayFile: '../angular/src/stencil-generated/index.ts',
     }),
   ],
 };
