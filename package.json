@@ -5,6 +5,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
+        "start:react": "cd examples/react-stencil && npm run start",
         "build": "ng build",
         "lint": "ng lint && npm run lint:style",
         "format": "lerna run format",

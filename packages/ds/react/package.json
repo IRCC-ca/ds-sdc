@@ -33,5 +33,17 @@
         "access": "restricted",
         "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
         "tag": "ds-sdc-react"
+    },
+    "dependencies": {
+        "@ircc-ca/ds-sdc-core": "^0.0.10-beta.13",
+        "@ircc-ca/ds-sdc-web": "^0.0.5-beta.2"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@types/react": "^18.0.14",
+        "@types/react-dom": "^18.0.5",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^4.7.4"
     }
 }
