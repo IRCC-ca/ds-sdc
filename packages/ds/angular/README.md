@@ -24,10 +24,13 @@ npm install --save-dev @ircc-ca/ds-sdc-angular
 | [`@ircc-ca/ds-sdc-angular/link`](./link/)  | Angular custom link  |   |
 | [`@ircc-ca/ds-sdc-angular/radiobutton`](./radio-button/)  | Angular custom radio-button  |   |
 
+Include the `CUSTOM_ELEMENTS_SCHEMA` in the modules that use the components.
+
 To use a component, you can import it in the component module from the package: 
 
 ```typescript
 import { JLButtonModule } from '@ircc-ca/ds-sdc-angular/button';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 @NgModule({
     declarations: [
@@ -42,6 +45,7 @@ import { JLButtonModule } from '@ircc-ca/ds-sdc-angular/button';
         AppRoutingModule,
     ],
     providers: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
