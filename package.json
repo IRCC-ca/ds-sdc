@@ -64,6 +64,7 @@
         "@types/estree": "^0.0.47",
         "@types/jest": "^27.4.1",
         "@types/node": "^12.11.1",
+        "@types/react-dom": "^18.0.5",
         "@typescript-eslint/eslint-plugin": "5.17.0",
         "@typescript-eslint/parser": "5.17.0",
         "alex": "^10.0.0",
