@@ -15,8 +15,20 @@ TODO
 | Package                   | Description                                                                         | Docs             |
 | ------------------------- | ----------------------------------------------------------------------------------- | ---------------- |
 | [`@ircc-ca/ds-sdc-core`](packages/ds/core/)           | Sass styles for components | [Docs](packages/ds/core/README.md) |
-| [`@ircc-ca/ds-sdc-core`](/packages/ds/angular/)      | UI components for Angular applications                          | [Docs](packages/ds/angular/README.md) |
-| [`@ircc-ca/ds-sdc-web`](packages/ds/web/)    | UI components for Stencil applications              | [Docs](packages/ds/web/readme.md) |
+| [`@ircc-ca/ds-sdc-angular`](/packages/ds/angular/)      | UI components for Angular applications                          | [Docs](packages/ds/angular/README.md) |
+| [`@ircc-ca/ds-sdc-react`](/packages/ds/react/) | UI components for React application| [Docs](packages/ds/react/README.md)| 
+[`@ircc-ca/ds-sdc-web`](packages/ds/web/)    | UI components for Stencil applications              | [Docs](packages/ds/web/readme.md) |
+
+## Examples projects
+
+### React 
+
+For an example of `@ircc-ca/ds-sdc-react`, see [`stencil-react`](examples/react-stencil/) 
+
+
+### Angular 
+
+For an example of `@ircc-ca/ds-sdc-angular` and `@ircc-ca/sd-dsc-core`, see the following example project [`angular sample`](sample/)
 
 ## Storybook
 
@@ -46,8 +58,21 @@ ______________________
 | Paquet                   | Description                                                                         | Docs             |
 | ------------------------- | ----------------------------------------------------------------------------------- | ---------------- |
 | [`@ircc-ca/ds-sdc-core`](packages/ds/core/)           | Sass styles for components | [Docs](packages/ds/core/README.md) |
-| [`@ircc-ca/ds-sdc-core`](/packages/ds/angular/)      | UI components for Angular applications                          | [Docs](packages/ds/angular/README.md) |
+| [`@ircc-ca/ds-sdc-angular`](/packages/ds/angular/)      | UI components for Angular applications                          | [Docs](packages/ds/angular/README.md) |
+| [`@ircc-ca/ds-sdc-react`](packages/ds/react/) | UI Components for React applications | [Docs](packages/ds/react/README.md)
 | [`@ircc-ca/ds-sdc-web`](packages/ds/web/)    | UI components for Stencil applications              | [Docs](packages/ds/web/readme.md) |
+
+
+## Exemple d'implémentation 
+
+### React 
+
+For an example of `@ircc-ca/ds-sdc-react`, see [`stencil-react`](examples/react-stencil/) 
+
+
+### Angular 
+
+For an example of `@ircc-ca/ds-sdc-angular` and `@ircc-ca/sd-dsc-core`, see the following example project [`angular sample`](sample/)
 
 ## Storybook
 
