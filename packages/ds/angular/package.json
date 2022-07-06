@@ -25,7 +25,7 @@
         "format:check": "prettier \"./**/**.{ts,json,css,scss,html}\" --check",
         "lint:style": "stylelint ./**/*.scss",
         "lint:md": "alex --quiet ./**/*.md && alex --quiet *.md",
-        "lint": "echo \"ng lint && npm run lint:style\"",
+        "lint": "ng lint && npm run lint:style",
         "build": "ng build @ircc-ca/ds-sdc-angular",
         "prepublishOnly": "ng build @ircc-ca/ds-sdc-angular",
         "postpublish": "rm -rf dist/"
