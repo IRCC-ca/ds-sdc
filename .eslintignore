@@ -9,3 +9,6 @@ coverage
 **/dist/**
 **/*-generated/**
 **/loader/**
+
+# ignore when stencil is building
+/packages/ds/angular/src/stencil-generated/components.ts
