@@ -8,7 +8,7 @@
 
 @mixin input-basic-selector  {
     input {
-        @include theme.selector(text, type, text) {
+        @include theme.select-attribute(text, type, text) {
             @content;
         }
     }

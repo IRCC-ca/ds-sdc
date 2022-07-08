@@ -7,44 +7,24 @@
 @use '../sizes' as sizes;
 
 $plain: 'plain';
+$default-color: '';
 
 @mixin tokens($palette) {
-    @include theme.light {
-        @include button-const.selectors() {
-            @include button-const.button($category: $plain, $color: $palette) {
-                --text: #{color.mix-token($palette, 700)};
-                --text-disabled: #{color.mix-token($palette, 300)};
-            }
+    @include theme.select-attribute($palette, color, $default-color) {
+        @include theme.light {
+            --text: #{color.mix-token($palette, 700)};
+            --text-disabled: #{color.mix-token($palette, 300)};
         }
-    }
-    @include theme.dark {
-        @include button-const.selectors() {
-            @include button-const.button($category: $plain, $color: $palette) {
-                --text: #{color.mix-token($palette, 600)};
-                --text-disabled: #{color.mix-token($palette, 1000)};
-            }
-        }
-    }
-}
-
-@mixin button-plain($palette) {
-    @include button-const.selectors() {
-        @include button-const.button($category: $plain, $color: $palette) {
-            @include tokens($palette);
-        }
-    }
-}
-
-@mixin create() {
-    @include button-const.selectors() {
-        @include button-const.layout();
-        @include button-const.button($category: $plain, $color: null) {
-            @include layout();
+        @include theme.dark {
+            --text: #{color.mix-token($palette, 600)};
+            --text-disabled: #{color.mix-token($palette, 1000)};
         }
     }
 }
 
 @mixin layout() {
+        @include button-const.layout();
+        
     background-color: var(--generic);
     color: var(--text);
     @include device.if-hover {
@@ -59,5 +39,27 @@ $plain: 'plain';
         --text: var(--text-disabled);
         color: var(--text);
         background: var(--generic);
+    }
+    }
+
+/// create the layout and tokens for a plain button
+/// @param {List} $palette: a list of palettes desired, reflective of the role
+@mixin create(
+    $palette: (
+        cta,
+        critical,
+    )
+) {
+    @include button-const.selectors() {
+        &:where([category="#{$plain}"]) {
+            @include layout();
+            @each $key in $palette {
+                @if $default-color == null {
+                    $default-color: $key !global;
+                }
+                @include tokens($key);
+            }
+        }
+        
     }
 }

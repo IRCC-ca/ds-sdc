@@ -1,7 +1,6 @@
 @use '~@ircc-ca/ds-sdc-core/index' as ircc-ds;
-@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large);
-@include ircc-ds.theme-all-element-tokens();
-@include ircc-ds.create-all-layouts();
+@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, light);
+@include ircc-ds.element-styles();
 
 /* You can add global styles to this file, and also import other style files */
 

@@ -3,35 +3,41 @@
 @use '../../util/color';
 @use '../template-const';
 
-@mixin validation($validation) {
+@mixin create($palette: (critical, success)) {
     @at-root {
         #{template-const.$root-selectors} {
-            @include theme.light() {
-                --#{$validation}-background: #{color.mix-token($validation, 700)};
-                --#{$validation}-background-active: #{color.mix-token($validation, 900)};
-                --#{$validation}-background-weak: #{color.mix-token($validation, 100)};
-                --#{$validation}-background-weak-active: #{color.mix-token($validation, 300)};
-                --#{$validation}-border: #{color.mix-token($validation, 700)};
-                --#{$validation}-text: #{color.mix-token($validation, 700)};
-                --#{$validation}-background-weak-hover: #{color.mix-token($validation, 200)};
-                @media (any-hover: hover) {
-                    --#{$validation}-background-hover: #{color.mix-token($validation, 800)};
-                    --#{$validation}-border-hover: #{color.mix-token($validation, 800)};
-                }
+            @each $key in $palette {
+                @include tokens($key);
             }
-            @include theme.dark() {
-                --#{$validation}-background: #{color.mix-token($validation, 600)};
-                --#{$validation}-background-active: #{color.mix-token($validation, 400)};
-                --#{$validation}-background-weak: #{color.mix-token($validation, 1200)};
-                --#{$validation}-background-weak-active: #{color.mix-token($validation, 1000)};
-                --#{$validation}-border: #{color.mix-token($validation, 600)};
-                --#{$validation}-text: #{color.mix-token($validation, 600)};
-                --#{$validation}-background-weak-hover: #{color.mix-token($validation, 1100)};
-                @media (any-hover: hover) {
-                    --#{$validation}-background-hover: #{color.mix-token($validation, 500)};
-                    --#{$validation}-border-hover: #{color.mix-token($validation, 500)};
-                }
-            }
+        }
+    }
+}
+
+@mixin tokens($palette) {
+    @include theme.light() {
+        --#{$palette}-background: #{color.mix-token($palette, 700)};
+        --#{$palette}-background-active: #{color.mix-token($palette, 900)};
+        --#{$palette}-background-weak: #{color.mix-token($palette, 100)};
+        --#{$palette}-background-weak-active: #{color.mix-token($palette, 300)};
+        --#{$palette}-border: #{color.mix-token($palette, 700)};
+        --#{$palette}-text: #{color.mix-token($palette, 700)};
+        --#{$palette}-background-weak-hover: #{color.mix-token($palette, 200)};
+        @media (any-hover: hover) {
+            --#{$palette}-background-hover: #{color.mix-token($palette, 800)};
+            --#{$palette}-border-hover: #{color.mix-token($palette, 800)};
+        }
+    }
+    @include theme.dark() {
+        --#{$palette}-background: #{color.mix-token($palette, 600)};
+        --#{$palette}-background-active: #{color.mix-token($palette, 400)};
+        --#{$palette}-background-weak: #{color.mix-token($palette, 1200)};
+        --#{$palette}-background-weak-active: #{color.mix-token($palette, 1000)};
+        --#{$palette}-border: #{color.mix-token($palette, 600)};
+        --#{$palette}-text: #{color.mix-token($palette, 600)};
+        --#{$palette}-background-weak-hover: #{color.mix-token($palette, 1100)};
+        @media (any-hover: hover) {
+            --#{$palette}-background-hover: #{color.mix-token($palette, 500)};
+            --#{$palette}-border-hover: #{color.mix-token($palette, 500)};
         }
     }
 }

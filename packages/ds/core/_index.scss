@@ -5,15 +5,17 @@
 @use './tokens/radiobutton/radio-button' as radiobutton;
 @use './tokens/partial/focus' as focus;
 @use './tokens/partial/disable' as disable;
-@use './tokens/button/primary' as button-primary;
-@use './tokens/button/secondary' as button-secondary;
-@use './tokens/button/plain' as button-plain;
-@use './tokens/button/round' as button-round;
 @use './tokens/checkbox/checkbox' as checkbox;
-@use './tokens/button/nav' as button-nav;
 @use './tokens/input/basic' as input-basic;
 @use './tokens/input/textarea' as input-textarea;
-
+@use './tokens/button/plain';
+@use './tokens/button/nav';
+@use './tokens/button/primary';
+@use './tokens/button/round';
+@use './tokens/global/global';
+@use './tokens/global/selected';
+@use './tokens/global/text-global';
+@use './tokens/global/validation';
 
 @forward './theme/theme' as theme-*;
 @forward './theme/ircc-jl-colors' as palette-*;
@@ -25,12 +27,7 @@
 @forward './tokens/radiobutton/radio-button' as radiobutton-*;
 @forward './tokens/partial/focus' as focus-*;
 @forward './tokens/partial/disable' as disable-*;
-@forward './tokens/button/primary' as button-primary-*;
-@forward './tokens/button/secondary' as button-secondary-*;
-@forward './tokens/button/plain' as button-plain-*;
-@forward './tokens/button/round' as button-round-*;
 @forward './tokens/checkbox/checkbox' as checkbox-*;
-@forward './tokens/button/nav' as button-nav-*;
 @forward './tokens/input/basic' as input-basic-*;
 @forward './tokens/input/textarea' as input-textarea-*;
 
@@ -41,11 +38,6 @@
     @include typography.create();
     @include paint.create();
     @include link.create();
-    @include button-primary.create();
-    @include button-secondary.create();
-    @include button-plain.create();
-    @include button-round.create();
-    @include button-nav.create();
 
     @include focus.create();
 
@@ -55,4 +47,21 @@
     @include radiobutton.create();
     @include input-basic.create();
     @include input-textarea.create();
+}
+
+@mixin element-styles($include: null) {
+    @include global.create();
+    @include selected.create();
+    @include text-global.create();
+    @include validation.create();
+    @include fonts.create();
+    @include typography.create();
+    @if $include == null {
+        @include plain.create();
+        @include nav.create();
+        @include primary.create();
+        @include round.create();
+    }
+
+
 }

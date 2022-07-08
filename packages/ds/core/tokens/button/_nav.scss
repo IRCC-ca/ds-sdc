@@ -7,53 +7,16 @@
 @use '../../util/color';
 @use '../../util/size';
 
-
-@mixin select-nav {
-    @at-root {
-        #{template-const.$root-selectors} {
-            nav {
-                @content;
-            }
-        }
-    }
-}
-@mixin select-button {
-    #{button-const.$selectors} {
-        &:where(:not([category]):where(:not([color]))) {
-            @content;
-        }
-    }
-}
-@mixin select-anchor {
-    a:any-link {
+@mixin selectors {
+    :where(a:any-link, #{button-const.$selectors}:where(:not([category])))#{template-const.$escape}:where(nav *) {
         @content;
     }
 }
-@mixin selectors {
-    @include select-nav() {
-        ul li {
-            @include select-button() {
-                @content;
-            }
-            @include select-anchor() {
-                @content;
-            }
-        }
-    }
-}
 
-@mixin create() {
-    @include select-nav() {
-        @include layout() {
-            @include select-button() {
-                @include layout();
-                @include layout-tab();
-            }
-            @include select-anchor() {
-                @include layout();
-                @include layout-tab();
-            }
-        }
+@mixin create {
+    @include selectors() {
+        @include layout();
+        @include layout-tab();
     }
 }
 
@@ -62,6 +25,7 @@
     color: var(--text-secondary);
     text-decoration: none;
     position: relative;
+    display: inline-block;
     @include size.selector(small) {
         &:where([selected])::after {
             transform: translateY(sizes.$fixed-8);
@@ -73,7 +37,7 @@
         }
     }
     &:where([selected])::after {
-        content: ' ';
+        content: '';
         height:sizes.$fixed-4;
         background: var(--navigation);
         border-radius: sizes.$fixed-4;
@@ -94,7 +58,8 @@
         }
     }
     &:disabled {
-        color: var(--text-disabled);
+        --text: var(--text-disabled);
+        color: var(--text);
         background: var(--generic);
         &:where([selected])::after {
             background: var(--navigation-disabled);
@@ -106,25 +71,5 @@
 
 @mixin layout() {
     @include button-const.layout();
-    @include theme.selector(row, direction, row) {
-        ul {
-            flex-direction: row;
-        }
-    }
-    @include theme.selector(column, direction, row) {
-        ul {
-            flex-direction: column;
-        }
-    }
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        ::marker {
-            content: none;
-        }
-        li {
-            display: contents;
-            @content;
-        }
-    }
+    @include layout-tab();
 }
