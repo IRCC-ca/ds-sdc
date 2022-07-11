@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Request a new feature
+about: Request a new feature. Suggest a modification or improvement to existing features.
 title: '[REQUEST] <title>'
 labels: Request, Needs Triage
 assignees: ''
