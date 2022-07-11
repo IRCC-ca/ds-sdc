@@ -1,6 +1,6 @@
 ---
 name: Bug
-about: Report a system part that is not working as expected.
+about: Report a system part that is not working as expected or a deficiency
 title: '[BUG] <title>'
 labels: Bug, Needs Triage
 assignees: ''
