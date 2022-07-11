@@ -11,6 +11,7 @@
 @use './tokens/button/plain';
 @use './tokens/button/nav';
 @use './tokens/button/primary';
+@use './tokens/button/secondary';
 @use './tokens/button/round';
 @use './tokens/global/global';
 @use './tokens/global/selected';
@@ -56,10 +57,11 @@
     @include validation.create();
     @include fonts.create();
     @include typography.create();
-    @if $include == null {
+    @if not $include {
+        @include primary.create();
+        @include secondary.create();
         @include plain.create();
         @include nav.create();
-        @include primary.create();
         @include round.create();
     }
 

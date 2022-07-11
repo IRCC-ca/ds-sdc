@@ -3,6 +3,7 @@
 @use '../template-const' as template-const;
 @use './button-const' as button-const;
 @use '../../util/device' as device;
+@use 'sass:map';
 
 $primary: 'primary';
 $default-color: '';
@@ -36,10 +37,10 @@ $default-color: '';
     @include button-const.selectors() {
         &:where([category=#{$primary}], :not([category])) {
             @each $map in $palette {
-                @if $default-color == null {
-                    $default-color: map-get($map, role) !global;
+                @if not $default-color {
+                    $default-color: map.get($map, role) !global;
                 }
-                @include tokens(map-get($map, role), map-get($map, text));
+                @include tokens(map.get($map, role), map.get($map, text));
             }
                     @include layout();
             }

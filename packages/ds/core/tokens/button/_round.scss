@@ -31,13 +31,14 @@ $default-color: '';
 ) {
     @include button-const.selectors {
         &:where([category='#{$round}']) {
-            @include layout();
             @each $key in $palette {
-                @if $default-color == null {
+                @if not $default-color {
                     $default-color: $key !global;
                 }
                 @include tokens($key);
             }
+            
+            @include layout();
         }
     }
 }
