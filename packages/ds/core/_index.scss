@@ -4,8 +4,6 @@
 @use './tokens/link/link' as link;
 @use './tokens/partial/focus' as focus;
 @use './tokens/partial/disable' as disable;
-@use './tokens/input/basic' as input-basic;
-@use './tokens/input/textarea' as input-textarea;
 
 @use './tokens/button/plain';
 @use './tokens/button/nav';
@@ -15,6 +13,10 @@
 
 @use './tokens/checkbox/checkbox';
 @use './tokens/radio/radio';
+
+
+@use './tokens/input/text';
+@use './tokens/input/textarea';
 
 @use './tokens/global/global';
 @use './tokens/global/selected';
@@ -32,7 +34,7 @@
 @forward './tokens/partial/focus' as focus-*;
 @forward './tokens/partial/disable' as disable-*;
 @forward './tokens/checkbox/checkbox' as checkbox-*;
-@forward './tokens/input/basic' as input-basic-*;
+@forward './tokens/input/text' as input-text-*;
 @forward './tokens/input/textarea' as input-textarea-*;
 
 
@@ -68,6 +70,8 @@
         @include round.create();
         @include checkbox.create();
         @include radio.create();
+        @include text.create();
+        @include textarea.create();
     }
 
 
