@@ -8,8 +8,10 @@
 @use '../../util/size';
 
 @mixin selectors {
-    :where(a:any-link, #{button-const.$selectors}:where(:not([category])))#{template-const.$escape}:where(nav *) {
-        @content;
+    a:any-link, #{button-const.$selectors}:where(:not([category])) {
+        &#{template-const.$escape}:where(nav *) {
+            @content;
+        }
     }
 }
 
@@ -22,7 +24,7 @@
 
 @mixin layout-tab() {
     background: var(--generic);
-    color: var(--text-secondary);
+    --text: var(--text-secondary);
     text-decoration: none;
     position: relative;
     display: inline-block;

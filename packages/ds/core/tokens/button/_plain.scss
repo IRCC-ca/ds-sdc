@@ -7,7 +7,7 @@
 @use '../sizes' as sizes;
 
 $plain: 'plain';
-$default-color: '';
+$default-color: null;
 
 @mixin tokens($palette) {
     @include theme.select-attribute($palette, color, $default-color) {
@@ -51,9 +51,9 @@ $default-color: '';
     )
 ) {
     @include button-const.selectors() {
-        &:where([category="#{$plain}"]) {
+        &:where([category='#{$plain}']) {
             @each $key in $palette {
-                @if not $default-color {
+                @if not $default-color{
                     $default-color: $key !global;
                 }
                 @include tokens($key);

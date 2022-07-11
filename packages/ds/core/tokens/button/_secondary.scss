@@ -6,7 +6,7 @@
 @use '../../util/device' as device;
 @use '../sizes' as sizes;
 $secondary: 'secondary';
-$default-color: '';
+$default-color: null;
 @mixin tokens($palette: cta) {
     @include theme.select-attribute($palette, color, $default-color) {
         --border: var(--text);

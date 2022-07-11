@@ -6,12 +6,11 @@
 @use 'sass:map';
 
 $primary: 'primary';
-$default-color: '';
+$default-color: null;
 
 @mixin tokens($palette, $text-palette) {
-    
     @include theme.select-attribute($palette, color, $default-color) {
-    @include theme.light {
+        @include theme.light {
             @include device.if-hover {
                 --background-hover: #{color.mix-token($palette, 800)};
             }
@@ -19,9 +18,9 @@ $default-color: '';
             --background-active: #{color.mix-token($palette, 900)};
             --background-disabled: #{color.mix-token($palette, 300)};
             --text: #{color.mix-token($text-palette, 100)};
-    }
+        }
 
-    @include theme.dark {
+        @include theme.dark {
             @include device.if-hover {
                 --background-hover: #{color.mix-token($palette, 500)};
             }
@@ -29,22 +28,27 @@ $default-color: '';
             --background-active: #{color.mix-token($palette, 400)};
             --background-disabled: #{color.mix-token($palette, 1000)};
             --text: #{color.mix-token($text-palette, 1200)};
+        }
     }
 }
-}
 
-@mixin create($palette: ((role: cta, text: neutral), (role: critical, text: neutral))) {
+@mixin create(
+    $palette: (
+        (role: cta, text: neutral),
+        (role: critical, text: neutral),
+    )
+) {
     @include button-const.selectors() {
-        &:where([category=#{$primary}], :not([category])) {
+        &:where([category='#{$primary}'], :not([category])) {
             @each $map in $palette {
                 @if not $default-color {
                     $default-color: map.get($map, role) !global;
                 }
                 @include tokens(map.get($map, role), map.get($map, text));
             }
-                    @include layout();
-            }
+            @include layout();
         }
+    }
 }
 
 @mixin layout() {

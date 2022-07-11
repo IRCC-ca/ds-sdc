@@ -1,7 +1,6 @@
 @use './typography/fonts' as fonts;
 @use './typography/typography' as typography;
 @use './paint/paint' as paint;
-@use './tokens/link/link' as link;
 @use './tokens/partial/focus' as focus;
 @use './tokens/partial/disable' as disable;
 
@@ -13,6 +12,7 @@
 
 @use './tokens/checkbox/checkbox';
 @use './tokens/radio/radio';
+@use './tokens/link/link';
 
 
 @use './tokens/input/text';
@@ -22,6 +22,7 @@
 @use './tokens/global/selected';
 @use './tokens/global/text-global';
 @use './tokens/global/validation';
+
 
 @forward './theme/theme' as theme-*;
 @forward './theme/ircc-jl-colors' as palette-*;
@@ -72,6 +73,7 @@
         @include radio.create();
         @include text.create();
         @include textarea.create();
+        @include link.create();
     }
 
 
