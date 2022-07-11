@@ -4,14 +4,6 @@
 @use '../template-const';
 $selectors: 'button';
 
-@mixin element-attributes($category: 'primary', $color: 'cta') {
-    @include theme.select-attribute($category, 'category', 'primary') {
-        @include theme.select-attribute($color, 'color', 'cta') {
-            @content;
-        }
-    }
-}
-
 @mixin button-size-padding {
     @include size.selector(small) {
         padding: token-size.$small-padding;
