@@ -2,7 +2,6 @@
 @use './typography/typography' as typography;
 @use './paint/paint' as paint;
 @use './tokens/link/link' as link;
-@use './tokens/radiobutton/radio-button' as radiobutton;
 @use './tokens/partial/focus' as focus;
 @use './tokens/partial/disable' as disable;
 @use './tokens/input/basic' as input-basic;
@@ -15,6 +14,8 @@
 @use './tokens/button/round';
 
 @use './tokens/checkbox/checkbox';
+@use './tokens/radio/radio';
+
 @use './tokens/global/global';
 @use './tokens/global/selected';
 @use './tokens/global/text-global';
@@ -27,7 +28,7 @@
 @forward './typography/typography' as typography-*;
 @forward './paint/paint' as paint-*;
 @forward './tokens/link/link' as link-*;
-@forward './tokens/radiobutton/radio-button' as radiobutton-*;
+@forward './tokens/radio/radio' as radio-*;
 @forward './tokens/partial/focus' as focus-*;
 @forward './tokens/partial/disable' as disable-*;
 @forward './tokens/checkbox/checkbox' as checkbox-*;
@@ -66,6 +67,7 @@
         @include nav.create();
         @include round.create();
         @include checkbox.create();
+        @include radio.create();
     }
 
 
