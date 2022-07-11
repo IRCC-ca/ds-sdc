@@ -1,6 +1,6 @@
 ---
 name: Bug
-about: File a bug/issue
+about: Report a system part that is not working as expected.
 title: '[BUG] <title>'
 labels: Bug, Needs Triage
 assignees: ''
