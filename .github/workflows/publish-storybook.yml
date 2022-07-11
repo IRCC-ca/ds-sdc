@@ -27,5 +27,5 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: 'ca-central-1'
     - name: "Push storybook static to S3"
-      run: aws s3 sync . s3://arn:aws:s3:::${{ secrets.AWS_BUCKET_SB }}
+      run: aws s3 sync . arn:aws:s3:::${{ secrets.AWS_BUCKET_SB }}/*
 
