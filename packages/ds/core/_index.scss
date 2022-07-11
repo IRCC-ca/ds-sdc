@@ -5,14 +5,16 @@
 @use './tokens/radiobutton/radio-button' as radiobutton;
 @use './tokens/partial/focus' as focus;
 @use './tokens/partial/disable' as disable;
-@use './tokens/checkbox/checkbox' as checkbox;
 @use './tokens/input/basic' as input-basic;
 @use './tokens/input/textarea' as input-textarea;
+
 @use './tokens/button/plain';
 @use './tokens/button/nav';
 @use './tokens/button/primary';
 @use './tokens/button/secondary';
 @use './tokens/button/round';
+
+@use './tokens/checkbox/checkbox';
 @use './tokens/global/global';
 @use './tokens/global/selected';
 @use './tokens/global/text-global';
@@ -63,6 +65,7 @@
         @include plain.create();
         @include nav.create();
         @include round.create();
+        @include checkbox.create();
     }
 
 
