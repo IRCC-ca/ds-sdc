@@ -1,16 +1,20 @@
 @use '../tokens/template-const' as template-const;
 @use '../util/integer' as integer;
+@use 'sass:math';
 @mixin create($surface-start: 1) {
     @at-root {
         $surface-level: $surface-start;
         #{template-const.$root-selectors} {
             @include backgroundLevel($surface-level);
+            
         }
     }
+
 }
 
 @mixin backgroundLevel($counter) {
+    $counter: math.clamp(1, integer.mod($counter, 3), 2);
     $name: --surface#{$counter};
 
     background: var($name);
-} ;
+};

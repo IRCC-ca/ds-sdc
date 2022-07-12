@@ -1,8 +1,6 @@
 @use './typography/fonts' as fonts;
 @use './typography/typography' as typography;
 @use './paint/paint' as paint;
-@use './tokens/partial/focus' as focus;
-@use './tokens/partial/disable' as disable;
 
 @use './tokens/button/plain';
 @use './tokens/button/nav';
@@ -23,6 +21,10 @@
 @use './tokens/global/text-global';
 @use './tokens/global/validation';
 
+@use './tokens/partial/focus';
+@use './tokens/partial/disable';
+
+@use './typography/fa-wrapper';
 
 @forward './theme/theme' as theme-*;
 @forward './theme/ircc-jl-colors' as palette-*;
@@ -61,20 +63,57 @@
     @include selected.create();
     @include text-global.create();
     @include validation.create();
+    @include paint.create();
+
     @include fonts.create();
     @include typography.create();
+    @include fa-wrapper.create();
     @if not $include {
-        @include primary.create();
-        @include secondary.create();
-        @include plain.create();
-        @include nav.create();
-        @include round.create();
-        @include checkbox.create();
-        @include radio.create();
-        @include text.create();
-        @include textarea.create();
-        @include link.create();
+        @include element(primary);
+        @include element(secondary);
+        @include element(plain);
+        @include element(nav);
+        @include element(round);
+        @include element(checkbox);
+        @include element(radio);
+        @include element(text);
+        @include element(textarea);
+        @include element(link);
+        @include element(focus);
+        @include element(disable);
+    } @else {
+        @each $key in $include {
+            @include element($key);
+        }
     }
 
 
+}
+
+@mixin element($key) {
+    @if $key == primary {
+        @include primary.create();
+    } @else if $key == secondary {
+        @include secondary.create();
+    } @else if $key == plain {
+        @include plain.create();
+    } @else if $key == nav {
+        @include nav.create();
+    } @else if $key == round {
+        @include round.create();
+    } @else if $key == checkbox {
+        @include checkbox.create();
+    } @else if $key == radio {
+        @include radio.create();
+    } @else if $key == text {
+        @include text.create();
+    } @else if $key == textarea {
+        @include textarea.create();
+    } @else if $key == link {
+        @include link.create();
+    } @else if $key == focus {
+        @include focus.create();
+    } @else if $key == disable {
+        @include disable.create();
+    }
 }

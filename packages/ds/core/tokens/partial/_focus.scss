@@ -4,42 +4,21 @@
 @use '../template-const' as template-const;
 @use '../sizes' as sizes;
 
-@mixin focus($palette) {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include selector {
-                    @include theme.tokens-for-map(
-                        (
-                            --focus-border: color.mix-token($palette, 700),
-                            --focus-border-weak:
-                                color.mix-token($palette, 200),
-                        )
-                    );
-                }
-            }
-            @include theme.dark {
-                @include selector {
-                    @include theme.tokens-for-map(
-                        (
-                            --focus-border: color.mix-token($palette, 600),
-                            --focus-border-weak:
-                                color.mix-token($palette, 1100),
-                        )
-                    );
-                }
-            }
-        }
+@mixin tokens($palette) {
+    @include theme.light {
+        --focus-border: #{color.mix-token($palette, 700)};
+        --focus-border-weak: #{color.mix-token($palette, 200)};
+    }
+    @include theme.dark {
+        --focus-border: #{color.mix-token($palette, 600)};
+        --focus-border-weak: #{color.mix-token($palette, 1100)};
     }
 }
 
-@mixin create {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include selector {
-                @include layout();
-            }
-        }
+@mixin create($palette: focus) {
+    @include selector {
+        @include tokens($palette);
+        @include layout();
     }
 }
 

@@ -32,5 +32,4 @@
 @mixin create() {
     @include create-body();
     @include create-headings();
-    @include FA.create();
 }
