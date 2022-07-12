@@ -35,4 +35,6 @@ jobs:
       run: npm run storybook:build
     - name: "Push storybook static to S3"
       run: aws s3 sync ./storybook-static ${{ secrets.AWS_BUCKET_SB }}
+    - name: "Create invalidation for distribution" 
+      run: aws cloudfront create-invalidation  --distribution-id ${{ secrets.AWS_DISTRIBUTION }} --paths "/*"
 
