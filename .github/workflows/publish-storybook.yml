@@ -27,7 +27,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: 'ca-central-1'
     - name: "Create storybook static folder"
-      run: npm run storybook-static
+      run: npm run storybook:build
     - name: "Push storybook static to S3"
       run: aws s3 sync ./ ${{ secrets.AWS_BUCKET_SB }}
 
