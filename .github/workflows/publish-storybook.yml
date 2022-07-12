@@ -34,5 +34,5 @@ jobs:
     - name: "Create storybook static folder"
       run: npm run storybook:build
     - name: "Push storybook static to S3"
-      run: aws s3 sync ./ ${{ secrets.AWS_BUCKET_SB }}
+      run: aws s3 sync ./storybook-static ${{ secrets.AWS_BUCKET_SB }}
 
