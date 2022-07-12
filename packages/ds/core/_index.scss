@@ -40,24 +40,6 @@
 @forward './tokens/input/text' as input-text-*;
 @forward './tokens/input/textarea' as input-textarea-*;
 
-
-/// constructs element layouts based on local and global tokens
-@mixin create-all-layouts() {
-    @include fonts.create();
-    @include typography.create();
-    @include paint.create();
-    @include link.create();
-
-    @include focus.create();
-
-    @include disable.create();
-
-    @include checkbox.create();
-    @include radiobutton.create();
-    @include input-basic.create();
-    @include input-textarea.create();
-}
-
 @mixin element-styles($include: null) {
     @include global.create();
     @include selected.create();
