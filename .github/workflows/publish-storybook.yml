@@ -24,7 +24,7 @@ jobs:
       run: | # Install and link dependencies
         npx lerna bootstrap
     - name: "Build packages"
-      run: npx lerna run build --stream
+      run: npm run build:packages
     - name: "Configure AWS Credentials"
       uses: aws-actions/configure-aws-credentials@v1
       with:
