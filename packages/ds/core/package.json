@@ -20,6 +20,7 @@
         "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
     },
     "scripts": {
+        "build": "echo \"No build required! This script exists to avoid a lerna bug\"",
         "test": "echo \"Tests not implemented\"",
         "format": "prettier \"./**/*.{ts,json,css,scss,html}\" --write",
         "format:check": "prettier \"./**/*.{ts,json,css,scss,html}\" --check",
