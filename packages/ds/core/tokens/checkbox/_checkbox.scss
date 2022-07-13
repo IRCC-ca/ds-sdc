@@ -9,18 +9,14 @@
 @use 'sass:map';
 
 @mixin selector {
-    input[type='checkbox'] {
+    input[type='checkbox']#{template-const.$escape} {
         @content;
     }
 }
 
 @mixin create {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include selector() {
-                @include layout();
-            }
-        }
+    @include selector() {
+        @include layout();
     }
 }
 

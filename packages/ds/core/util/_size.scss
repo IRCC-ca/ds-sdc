@@ -16,7 +16,7 @@ $sizes: (small, large);
 /// @param {String} $value key from $sizes list, when size aligns to $value, content will display
 @mixin selector ($value: small) {
 
-    @include theme.selector($value: $value,
+    @include theme.select-attribute($value: $value,
         $attribute: size,
         $default: $size-mode,
     ) {

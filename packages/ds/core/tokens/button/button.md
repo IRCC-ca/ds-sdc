@@ -34,7 +34,7 @@ The values accepted in the default component inclusion list are:
 
 #### Color
 
-Defaults to `color="cta"` if unset.
+Defaults to `color="cta"` if unset in the default theme.
 
 This attribute is used to select which color palette in the theme to reference, and not a singular static color to set. The color palette usage can be set using the `color` attribute as follows:
 
@@ -64,48 +64,30 @@ The values accepted are:
 
 ## Theming
 
-These elements can be included in a custom theme as a mixin.
+Each button can be included seperately as part of a custom theme, by calling the `create` mixin and passing in the required map. The first color role passed will determine the default
 
 ### Primary
 
-The primary button is a solid single color button. It can be included in a custom theme by adding the following with 2 parameters.
-
 ```scss
 @use './primary';
-@include primary.button-primary($palette, $text-palette);
+$palette: ((role: cta, text: neutral));
+/// within rule
+@include primary.create($palette);
 ```
 
-The mixin can be called any number of times with `$palette` defining a new `category` as above, and create the appropriate variables on the selector group for that category. The `$text-palette` property will create variables in the selector that define the colors used in the text.
+As the primary button uses 2 color palettes, the mixin can be called by passing a list of maps, following the format above. The name of the color role is derived from the `role` attribute, and the `text` is tied to the corresponding object.
 
-### Secondary
+### Plain / Secondary / Round
 
-The secondary button is an outline single color button. It can be included in a custom theme by adding the following with 1 parameter.
-
-```scss
-@use './secondary';
-@include secondary.button-secondary($palette);
+``` scss
+@use './(button category)';
+$palette: (cta);
+/// within rule
+@include (button category).create($palette);
 ```
 
-The mixin can be called any number of times with `$palette` defining a new `category` as above, and create the appropriate variables on the selector group for that category.
+The plain, secondary, and round buttons use a single color palette, and can be called by passing a list of color roles, following the format above.
 
-### Plain
+### Nav
 
-The plain button is a single color text button. It can be included in a custom theme by adding the following with 1 parameter.
-
-```scss
-@use './plain';
-@include plain.button-plain($palette);
-```
-
-The mixin can be called any number of times with `$palette` defining a new `category` as above, and create the appropriate variables on the selector group for that category.
-
-### Round
-
-The round button is a single color text button, with a 1:1 aspect ratio and rounded borders. It can be included in a custom theme by adding the following with 1 parameter.
-
-```scss
-@use './round';
-@include round.button-round($palette);
-```
-
-The mixin can be called any number of times with `$palette` defining a new `category` as above, and create the appropriate variables on the selector group for that category.
+Nav buttons follow the theme of the `selected` and `text-global` token lists, and cannot be themed directly.

@@ -1,19 +1,30 @@
 @use './typography/fonts' as fonts;
 @use './typography/typography' as typography;
 @use './paint/paint' as paint;
-@use './tokens/link/link' as link;
-@use './tokens/radiobutton/radio-button' as radiobutton;
-@use './tokens/partial/focus' as focus;
-@use './tokens/partial/disable' as disable;
-@use './tokens/button/primary' as button-primary;
-@use './tokens/button/secondary' as button-secondary;
-@use './tokens/button/plain' as button-plain;
-@use './tokens/button/round' as button-round;
-@use './tokens/checkbox/checkbox' as checkbox;
-@use './tokens/button/nav' as button-nav;
-@use './tokens/input/basic' as input-basic;
-@use './tokens/input/textarea' as input-textarea;
 
+@use './tokens/button/plain';
+@use './tokens/button/nav';
+@use './tokens/button/primary';
+@use './tokens/button/secondary';
+@use './tokens/button/round';
+
+@use './tokens/checkbox/checkbox';
+@use './tokens/radio/radio';
+@use './tokens/link/link';
+
+
+@use './tokens/input/text';
+@use './tokens/input/textarea';
+
+@use './tokens/global/global';
+@use './tokens/global/selected';
+@use './tokens/global/text-global';
+@use './tokens/global/validation';
+
+@use './tokens/partial/focus';
+@use './tokens/partial/disable';
+
+@use './typography/fa-wrapper';
 
 @forward './theme/theme' as theme-*;
 @forward './theme/ircc-jl-colors' as palette-*;
@@ -22,37 +33,69 @@
 @forward './typography/typography' as typography-*;
 @forward './paint/paint' as paint-*;
 @forward './tokens/link/link' as link-*;
-@forward './tokens/radiobutton/radio-button' as radiobutton-*;
+@forward './tokens/radio/radio' as radio-*;
 @forward './tokens/partial/focus' as focus-*;
 @forward './tokens/partial/disable' as disable-*;
-@forward './tokens/button/primary' as button-primary-*;
-@forward './tokens/button/secondary' as button-secondary-*;
-@forward './tokens/button/plain' as button-plain-*;
-@forward './tokens/button/round' as button-round-*;
 @forward './tokens/checkbox/checkbox' as checkbox-*;
-@forward './tokens/button/nav' as button-nav-*;
-@forward './tokens/input/basic' as input-basic-*;
+@forward './tokens/input/text' as input-text-*;
 @forward './tokens/input/textarea' as input-textarea-*;
 
+@mixin element-styles($include: null) {
+    @include global.create();
+    @include selected.create();
+    @include text-global.create();
+    @include validation.create();
+    @include paint.create();
 
-/// constructs element layouts based on local and global tokens
-@mixin create-all-layouts() {
     @include fonts.create();
     @include typography.create();
-    @include paint.create();
-    @include link.create();
-    @include button-primary.create();
-    @include button-secondary.create();
-    @include button-plain.create();
-    @include button-round.create();
-    @include button-nav.create();
+    @include fa-wrapper.create();
+    @if not $include {
+        @include element(primary);
+        @include element(secondary);
+        @include element(plain);
+        @include element(nav);
+        @include element(round);
+        @include element(checkbox);
+        @include element(radio);
+        @include element(text);
+        @include element(textarea);
+        @include element(link);
+        @include element(focus);
+        @include element(disable);
+    } @else {
+        @each $key in $include {
+            @include element($key);
+        }
+    }
 
-    @include focus.create();
 
-    @include disable.create();
+}
 
-    @include checkbox.create();
-    @include radiobutton.create();
-    @include input-basic.create();
-    @include input-textarea.create();
+@mixin element($key) {
+    @if $key == primary {
+        @include primary.create();
+    } @else if $key == secondary {
+        @include secondary.create();
+    } @else if $key == plain {
+        @include plain.create();
+    } @else if $key == nav {
+        @include nav.create();
+    } @else if $key == round {
+        @include round.create();
+    } @else if $key == checkbox {
+        @include checkbox.create();
+    } @else if $key == radio {
+        @include radio.create();
+    } @else if $key == text {
+        @include text.create();
+    } @else if $key == textarea {
+        @include textarea.create();
+    } @else if $key == link {
+        @include link.create();
+    } @else if $key == focus {
+        @include focus.create();
+    } @else if $key == disable {
+        @include disable.create();
+    }
 }

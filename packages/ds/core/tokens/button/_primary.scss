@@ -1,59 +1,58 @@
 @use '../../util/color' as color;
-@use '../../util/size' as size;
-@use '../text' as text;
 @use '../../util/theme' as theme;
 @use '../template-const' as template-const;
 @use './button-const' as button-const;
 @use '../../util/device' as device;
+@use 'sass:map';
 
 $primary: 'primary';
+$default-color: null;
 
-@mixin button-primary($palette, $text-palette) {
-    @include theme.light {
-        #{button-const.$selectors} {
-            @include button-const.button(
-                $category: $primary,
-                $color: $palette
-            ) {
-                @include device.if-hover {
-                    --background-hover: #{color.mix-token($palette, 800)};
-                }
-                --background: #{color.mix-token($palette, 700)};
-                --background-active: #{color.mix-token($palette, 900)};
-                --background-disabled: #{color.mix-token($palette, 300)};
-                --text: #{color.mix-token($text-palette, 100)};
+@mixin tokens($palette, $text-palette) {
+    @include theme.select-attribute($palette, color, $default-color) {
+        @include theme.light {
+            @include device.if-hover {
+                --background-hover: #{color.mix-token($palette, 800)};
             }
+            --background: #{color.mix-token($palette, 700)};
+            --background-active: #{color.mix-token($palette, 900)};
+            --background-disabled: #{color.mix-token($palette, 300)};
+            --text: #{color.mix-token($text-palette, 100)};
         }
-    }
 
-    @include theme.dark {
-        #{button-const.$selectors} {
-            @include button-const.button(
-                $category: $primary,
-                $color: $palette
-            ) {
-                @include device.if-hover {
-                    --background-hover: #{color.mix-token($palette, 500)};
-                }
-                --background: #{color.mix-token($palette, 700)};
-                --background-active: #{color.mix-token($palette, 400)};
-                --background-disabled: #{color.mix-token($palette, 1000)};
-                --text: #{color.mix-token($text-palette, 1200)};
+        @include theme.dark {
+            @include device.if-hover {
+                --background-hover: #{color.mix-token($palette, 500)};
             }
+            --background: #{color.mix-token($palette, 700)};
+            --background-active: #{color.mix-token($palette, 400)};
+            --background-disabled: #{color.mix-token($palette, 1000)};
+            --text: #{color.mix-token($text-palette, 1200)};
         }
     }
 }
 
-@mixin create() {
+@mixin create(
+    $palette: (
+        (role: cta, text: neutral),
+        (role: critical, text: neutral),
+    )
+) {
     @include button-const.selectors() {
-        @include button-const.layout();
-        @include button-const.button($category: $primary, $color: null) {
+        &:where([category='#{$primary}'], :not([category])) {
+            @each $map in $palette {
+                @if not $default-color {
+                    $default-color: map.get($map, role) !global;
+                }
+                @include tokens(map.get($map, role), map.get($map, text));
+            }
             @include layout();
         }
     }
 }
 
 @mixin layout() {
+    @include button-const.layout();
     background-color: var(--background);
     @include device.if-hover {
         background-color: var(--background-hover);

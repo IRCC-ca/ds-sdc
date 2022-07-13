@@ -7,38 +7,37 @@
 @use '../sizes' as sizes;
 
 $round: 'round';
+$default-color: '';
 
-@mixin button-round($palette) {
-    @include theme.light {
-        #{button-const.$selectors} {
-            @include button-const.button($category: $round, $color: $palette) {
-                @include theme.tokens-for-map(
-                    (
-                        --text: color.mix-token($palette, 700),
-                        --text-disabled: color.mix-token($palette, 300),
-                    )
-                );
-            }
+@mixin tokens($palette: cta) {
+    @include theme.select-attribute($palette, color, $default-color) {
+        @include theme.light {
+            --text: #{color.mix-token($palette, 700)};
+            --text-disabled: #{color.mix-token($palette, 300)};
         }
-    }
 
-    @include theme.dark {
-        #{button-const.$selectors} {
-            @include button-const.button($category: $round, $color: $palette) {
-                @include theme.tokens-for-map(
-                    (
-                        --text: color.mix-token($palette, 600),
-                        --text-disabled: color.mix-token($palette, 1000),
-                    )
-                );
-            }
+        @include theme.dark {
+            --text: #{color.mix-token($palette, 600)};
+            --text-disabled: #{color.mix-token($palette, 1000)};
         }
     }
 }
 
-@mixin create() {
+@mixin create(
+    $palette: (
+        cta,
+        critical,
+    )
+) {
     @include button-const.selectors {
-        @include button-const.button($category: $round, $color: null) {
+        &:where([category='#{$round}']) {
+            @each $key in $palette {
+                @if not $default-color {
+                    $default-color: $key !global;
+                }
+                @include tokens($key);
+            }
+            
             @include layout();
         }
     }

@@ -17,9 +17,10 @@ In your root-level stylesheet, initialize the design system with
 ```scss
 @use '~@ircc-ca/ds-sdc-core/index' as ircc-ds;
 @include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large);
-@include ircc-ds.theme-all-element-tokens();
-@include ircc-ds.create-all-layouts();
+@include ircc-ds.element-styles();
 ```
+
+A list of elements can be passed to `element-styles` to include, should only certain element styles be desired.
 
 ### Element style tokens and layouts
 
