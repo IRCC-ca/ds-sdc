@@ -1,9 +1,13 @@
 name: Publish Storybook
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [closed]
+    branches:
+      - develop
+      - main
+    path: 'stories/**'
 jobs:
-  checks:
+  storybook:
     runs-on: ubuntu-latest
     steps:
     - name: "Checkout"
