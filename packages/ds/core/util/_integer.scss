@@ -1,9 +1,9 @@
 @use 'sass:math' as math;
 
 /// Modulus function
-/// @param {Number} $dividend - the number to be divided in the operation
-/// @param {Number} $divisor - the number to divide the dividend in the operation
+/// @param {Number} $a - the number to be divided in the operation
+/// @param {Number} $b - the number to divide the dividend in the operation
 /// @returns {Number} - the remainder of the dividing operation
-@function mod($dividend, $divisor) {
+@function mod($a, $b) {
     @return calc($a - $b * math.floor(math.div($a, $b)));
 }

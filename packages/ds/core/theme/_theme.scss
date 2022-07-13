@@ -1,48 +1,14 @@
 @use '../util/color' as color;
 @use '../util/size' as size;
-@use '../tokens/global/text-global' as text-global;
-@use '../tokens/global/global' as global;
-@use '../tokens/global/selected';
-@use '../tokens/global/validation';
-@use '../tokens/button/primary' as button-primary;
-@use '../tokens/button/secondary' as button-secondary;
-@use '../tokens/button/plain' as button-plain;
-@use '../tokens/button/round' as button-round;
-@use '../tokens/partial/focus' as focus;
-@use '../tokens/link/link' as link;
-@use '../tokens/button/nav' as nav;
-@use './ircc-jl-colors' as jl;
-@use '../tokens/input/textarea';
 
-/// This mixin is used to define the expected element styling configuration for the default theme.
-/// @param {String} $palette - the palette key to construct from the palette theme
-/// @param {String} $size - the size key to construct default sizes for elements
-@mixin default($palette, $size) {
-    @include required-common-theme(jl.$journeylab-palette, $palette, $size);
-    @include button-primary.button-primary(cta, neutral);
-    @include button-primary.button-primary(critical, neutral);
-    @include button-secondary.button-secondary(cta);
-    @include button-secondary.button-secondary(critical);
-    @include button-plain.button-plain(cta);
-    @include button-plain.button-plain(critical);
-    @include button-round.button-round(cta);
-    @include button-round.button-round(critical);
-
-    @include link.link(cta, visited);
-    @include text-global.text-global(neutral);
-    @include global.global(neutral, selected);
-    @include selected.selected(focus);
-    @include focus.focus(focus);
-    @include validation.validation(success);
-    @include validation.validation(critical);
-}
-
-/// This mixin is used to define the common elements used in all themes.
+/// This mixin is used to define the required common variables used in all themes.
 /// @param {Map} $root-palette - the palette map to be used for the construction of the theme
 /// @param {String} $palette-key - the palette key to construct from the palette theme
 /// @param {String} $size - the size key to construct default sizes for elements
-@mixin required-common-theme($root-palette, $palette-key, $size) {
+/// @param {String} $color-scheme - the color scheme to follow, align to prefers-color-scheme for best results
+@mixin init-required($root-palette, $palette-key: default, $size: large, $color-scheme: light) {
     @include color.set-palette($root-palette);
     @include color.set-mode($palette-key);
+    @include color.set-scheme($color-scheme);
     @include size.set-mode($size);
 }

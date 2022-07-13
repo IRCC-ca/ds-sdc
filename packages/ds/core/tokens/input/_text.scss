@@ -6,25 +6,21 @@
 @use '../../util/size' as size;
 @use './input-const' as input-const;
 
-@mixin input-basic-selector  {
-    input {
-        @include theme.selector(text, type, text) {
+@mixin input-text-selector  {
+    input#{template-const.$escape} {
+        @include theme.select-attribute(text, type, text) {
             @content;
         }
     }
 }
 
 @mixin create {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include input-basic-selector() {
+            @include input-text-selector() {
                 @include input-const.common();
                 @include input-const.valid();
                 @include input-const.invalid();
                 @include textPadding();
             }
-        }
-    }
 }
 
 @mixin textPadding {

@@ -6,6 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DjlButton {
+        /**
+          * (optional) aria-label for <button> element
+         */
+        "ariaLabelBtn"?: string;
+        /**
+          * (optional) Category for <button> custom element
+         */
+        "category"?: 'primary' | 'secondary' | 'plain';
+        /**
+          * (optional) Color attribute for <button> element
+         */
+        "color"?: 'critical' | 'CTA';
+        /**
+          * (optional) Disabled attribute for <button> element
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Name attribute for <button> element
+         */
+        "name"?: string;
+        /**
+          * (optional) Size for <button> custom element
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * (optional) Types for <button> element
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * (optional)  Value for <button> element
+         */
+        "value"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -26,6 +60,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDjlButtonElement extends Components.DjlButton, HTMLStencilElement {
+    }
+    var HTMLDjlButtonElement: {
+        prototype: HTMLDjlButtonElement;
+        new (): HTMLDjlButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -33,10 +73,45 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "djl-button": HTMLDjlButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface DjlButton {
+        /**
+          * (optional) aria-label for <button> element
+         */
+        "ariaLabelBtn"?: string;
+        /**
+          * (optional) Category for <button> custom element
+         */
+        "category"?: 'primary' | 'secondary' | 'plain';
+        /**
+          * (optional) Color attribute for <button> element
+         */
+        "color"?: 'critical' | 'CTA';
+        /**
+          * (optional) Disabled attribute for <button> element
+         */
+        "disabled"?: boolean;
+        /**
+          * (optional) Name attribute for <button> element
+         */
+        "name"?: string;
+        /**
+          * (optional) Size for <button> custom element
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * (optional) Types for <button> element
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * (optional)  Value for <button> element
+         */
+        "value"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -56,6 +131,7 @@ declare namespace LocalJSX {
         "theme"?: string;
     }
     interface IntrinsicElements {
+        "djl-button": DjlButton;
         "my-component": MyComponent;
     }
 }
@@ -63,6 +139,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

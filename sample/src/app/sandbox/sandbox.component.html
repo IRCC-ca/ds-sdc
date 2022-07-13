@@ -1,22 +1,26 @@
 <nav direction="row">
-    <ul>
+    <ul class="surface">
         <li><button selected>Button</button></li>
         <li><button>Button</button></li>
         <li><button disabled>Button</button></li>
         <li><button disabled selected>Button</button></li>
         <li><button disabled>Button</button></li>
-        <li><a size="small" href="#Link2">Link Two</a></li>
+        <li class="surface"><a size="small" href="#Link2">Link Two</a></li>
         <li><a size="small" href="#Link2" selected>Link Two</a></li>
-        <li><a size="small" href="#Link2">Link Two</a></li>
+        <li class="surface"><a size="small" href="#Link2">Link Two</a></li>
         <li><a size="small" href="#Link2">Link Two</a></li>
         </ul>
 </nav>
+<div class="jds-escape">
+    <div>
+        <button category="secondary" color="critical">Button</button>
+        <button category="secondary" color="cta" disabled>Button</button>
+    </div>
+</div>
+<button category="plain" selected>Button</button>
 
-<button category="secondary" color="critical" selected>Button</button>
-<button category="secondary" color="critical">Button</button>
-<button category="secondary" color="critical" disabled>Button</button>
-<button category="secondary" color="critical" disabled selected>Button</button>
-<button category="secondary" color="critical" disabled>Button</button>
+<button category="plain" disabled selected>Button</button>
+<button category="plain" disabled>Button</button>
 
 <h2>{{ 'Sandbox.Title' | translate }}</h2>
 <p>{{'Sandbox.Text' |translate }}</p>

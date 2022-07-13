@@ -5,14 +5,23 @@
 
 /// global palette constant
 $root-palette: ();
-/// global color constant
+/// global color mode constant
 $color-mode: '';
+/// global color scheme constant
+$color-scheme: '';
 
 /// override the color mode setting (required before theme creation)
-/// @param {String} $new-mode - new setting for color mode, as defined in palette theme
+/// @param {String} $new-mode - new setting for color mode, as defined in the theme map
 @mixin set-mode($new-mode: default) {
     // overrides the color mode
     $color-mode: $new-mode !global;
+}
+
+/// override the color mode setting (required before theme creation)
+/// @param {String} $new-scheme - new setting for color scheme
+@mixin set-scheme($new-scheme: light) {
+    // overrides the color scheme
+    $color-scheme: $new-scheme !global;
 }
 
 /// @param {Map} $palette - set the palette to be used when generating

@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.13-beta.6](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.13-beta.5...@ircc-ca/ds-sdc-angular@0.0.13-beta.6) (2022-07-07)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
+## [0.0.13-beta.5](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.13-beta.4...@ircc-ca/ds-sdc-angular@0.0.13-beta.5) (2022-07-06)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
+## [0.0.13-beta.4](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.13-beta.3...@ircc-ca/ds-sdc-angular@0.0.13-beta.4) (2022-07-04)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
+## [0.0.13-beta.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.13-beta.2...@ircc-ca/ds-sdc-angular@0.0.13-beta.3) (2022-06-30)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
+## [0.0.13-beta.2](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.13-beta.1...@ircc-ca/ds-sdc-angular@0.0.13-beta.2) (2022-06-30)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
+## [0.0.13-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.13-beta.0...@ircc-ca/ds-sdc-angular@0.0.13-beta.1) (2022-06-27)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
+## [0.0.13-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.12...@ircc-ca/ds-sdc-angular@0.0.13-beta.0) (2022-06-23)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-angular
+
+
+
+
+
 ## [0.0.12](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-angular@0.0.11...@ircc-ca/ds-sdc-angular@0.0.12) (2022-06-23)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-angular

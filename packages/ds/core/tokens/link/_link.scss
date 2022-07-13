@@ -3,59 +3,49 @@
 @use '../template-const' as template-const;
 @use '../sizes' as sizes;
 @use '../../util/device' as device;
+@use 'sass:map';
 
-@mixin link($palette, $visited-palette) {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include theme.light {
-                @include anchor-selector {
-                    @include device.if-hover {
-                        --text-hover: #{color.mix-token($palette, 800)};
-                    }
-                    @include theme.tokens-for-map(
-                        (
-                            --text: color.mix-token($palette, 700),
-                            --text-active: color.mix-token($palette, 900),
-                            --text-visited:
-                                color.mix-token($visited-palette, 700),
-                        )
-                    );
-                }
-            }
-
-            @include theme.dark {
-                @include anchor-selector {
-                    @include device.if-hover {
-                        --text-hover: #{color.mix-token($palette, 500)};
-                    }
-                    @include theme.tokens-for-map(
-                        (
-                            --text: color.mix-token($palette, 600),
-                            --text-active: color.mix-token($palette, 400),
-                            --text-visited:
-                                color.mix-token($visited-palette, 600),
-                        )
-                    );
-                }
-            }
+@mixin tokens($palette, $visited-palette) {
+    @include theme.light {
+        @include device.if-hover {
+            --text-hover: #{color.mix-token($palette, 800)};
         }
+        --text: #{color.mix-token($palette, 700)};
+        --text-active: #{color.mix-token($palette, 900)};
+        --text-visited: #{color.mix-token($visited-palette, 700)};
+    }
+
+    @include theme.dark {
+        @include device.if-hover {
+            --text-hover: #{color.mix-token($palette, 500)};
+        }
+        --text: #{color.mix-token($palette, 600)};
+        --text-active: #{color.mix-token($palette, 400)};
+        --text-visited: #{color.mix-token($visited-palette, 600)};
     }
 }
 
 @mixin anchor-selector {
     a,
     .link {
-        @content;
+        &#{template-const.$escape} {
+            @content;
+        }
     }
 }
 
-@mixin create {
-    @at-root {
-        #{template-const.$root-selectors} {
-            @include anchor-selector() {
-                @include layout();
-            }
-        }
+@mixin create(
+    $palette: (
+        unvisited: cta,
+        visited: visited,
+    )
+) {
+    @include anchor-selector() {
+        @include tokens(
+            map.get($palette, unvisited),
+            map.get($palette, visited)
+        );
+        @include layout();
     }
 }
 

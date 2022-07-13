@@ -1,6 +1,6 @@
 {
     "name": "@ircc-ca/ds-sdc-angular",
-    "version": "0.0.12",
+    "version": "0.0.13-beta.6",
     "description": "Angular components for Digital Journey Labs Design System",
     "author": "IRCC-ca",
     "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
@@ -25,7 +25,7 @@
         "format:check": "prettier \"./**/**.{ts,json,css,scss,html}\" --check",
         "lint:style": "stylelint ./**/*.scss",
         "lint:md": "alex --quiet ./**/*.md && alex --quiet *.md",
-        "lint": "echo \"ng lint && npm run lint:style\"",
+        "lint": "ng lint && npm run lint:style",
         "build": "ng build @ircc-ca/ds-sdc-angular",
         "prepublishOnly": "ng build @ircc-ca/ds-sdc-angular",
         "postpublish": "rm -rf dist/"

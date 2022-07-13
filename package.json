@@ -5,19 +5,19 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
+        "start:react": "cd examples/react-stencil && npm run start",
         "build": "ng build",
+        "build:packages": "lerna run build --scope=@ircc-ca/ds-sdc-core && lerna run build --scope=@ircc-ca/ds-sdc-web && lerna run build --scope=@ircc-ca/ds-sdc-angular && lerna run build --scope=@ircc-ca/ds-sdc-react",
         "lint": "ng lint && npm run lint:style",
         "format": "lerna run format",
         "web": "lerna run web",
         "lint:md": "alex --quiet sample/**/*.md && alex --quiet *.md",
         "lint:sample:style": "stylelint \"./sample/src/**/*.scss\"",
         "lint:style": "npm run lint:sample:style",
-        "build-sample": "ng build --project=sample",
-        "watch": "ng build --watch --configuration development",
         "test": "lerna run test",
         "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
         "storybook": "npm run docs:json && start-storybook -p 6006",
-        "build-storybook": "npm run docs:json && build-storybook",
+        "storybook:build": "npm run docs:json && build-storybook",
         "prepare": "husky install"
     },
     "dependencies": {
@@ -34,7 +34,6 @@
         "@ircc-ca/ds-sdc-web": "file:packages/ds/web",
         "@ngx-translate/core": "^14.0.0",
         "@ngx-translate/http-loader": "^7.0.0",
-        "@stencil/core": "^2.15.0",
         "rxjs": "~7.4.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.11.4"
@@ -64,6 +63,7 @@
         "@types/estree": "^0.0.47",
         "@types/jest": "^27.4.1",
         "@types/node": "^12.11.1",
+        "@types/react-dom": "^18.0.5",
         "@typescript-eslint/eslint-plugin": "5.17.0",
         "@typescript-eslint/parser": "5.17.0",
         "alex": "^10.0.0",

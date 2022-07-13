@@ -7,22 +7,18 @@
 @use './input-const' as input-const;
 
 @mixin input-textarea-selector  {
-    textarea {
+    textarea#{template-const.$escape} {
         @content;
     }
 }
 
 @mixin create {
-    @at-root {
-        #{template-const.$root-selectors} {
             @include input-textarea-selector() {
                 @include input-const.common();
                 @include input-const.valid();
                 @include input-const.invalid();
                 @include layout();
             }
-        }
-    }
 }
 
 @mixin layout {

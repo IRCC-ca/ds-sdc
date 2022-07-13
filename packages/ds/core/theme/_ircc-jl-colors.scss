@@ -503,27 +503,45 @@ $purple: (
 );
 
 /// Palette referenced for color token creation.
-$journeylab-palette: (
-    default: (
-        neutral: $grey,
-        cta: $navy,
-        active: $blue,
-        critical: $red,
-        warning: $orange,
-        information: $teal,
-        success: $green,
-        focus: $blue,
-        visited: $purple,
-    ),
-    greyscale: (
-        neutral: $grey,
-        cta: $grey,
-        active: $grey,
-        critical: $grey,
-        warning: $grey,
-        information: $grey,
-        success: $grey,
-        focus: $grey,
-        visited: $grey,
-    ),
-);
+@function journeylab() {
+    @return (
+        default: (
+            neutral: $grey,
+            cta: $navy,
+            active: $blue,
+            critical: $red,
+            warning: $orange,
+            information: $teal,
+            success: $green,
+            focus: $blue,
+            visited: $purple,
+        ),
+        greyscale: (
+            neutral: $grey,
+            cta: $grey,
+            active: $grey,
+            critical: $grey,
+            warning: $grey,
+            information: $grey,
+            success: $grey,
+            focus: $grey,
+            visited: $grey,
+        )
+    );
+}
+
+@function quebec() {
+    @return (
+        default: (
+            neutral: $purple,
+            cta: $teal,
+            active: $purple,
+            critical: $orange,
+            warning: $purple,
+            information: $purple,
+            success: $purple,
+            focus: $purple,
+            visited: $purple,
+        )
+    );
+}
