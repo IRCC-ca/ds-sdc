@@ -27,6 +27,11 @@
             border-color: var(--critical-border);
         }
     }
+
+    &::placeholder {
+        color: var(--text-placeholder);
+    }
+    
 }
 
 @mixin valid {
