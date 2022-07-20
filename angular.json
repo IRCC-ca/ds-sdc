@@ -135,14 +135,14 @@
           "storybook": {
               "builder": "@storybook/angular:start-storybook",
               "options": {
-                  "browserTarget": "sample:build:development",
+                  "browserTarget": "sample:build",
                   "port": 6006
               }
           },
           "build-storybook": {
               "builder": "@storybook/angular:build-storybook",
               "options": {
-                  "browserTarget": "sample:production"
+                  "browserTarget": "sample:build"
               }
           }
       }
