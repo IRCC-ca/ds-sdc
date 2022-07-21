@@ -18,7 +18,8 @@
         "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
         "storybook": "ng run sample:storybook",
         "storybook:build": "ng run sample:build-storybook",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prep": "npx lerna clean -y && npx lerna bootstrap && npm run build:packages && npx lerna link"
     },
     "dependencies": {
         "@angular/animations": "~13.1.0",

@@ -13,7 +13,7 @@
 @use './tokens/link/link';
 
 
-@use './tokens/input/text';
+@use './tokens/input/input';
 @use './tokens/input/textarea';
 
 @use './tokens/global/global';
@@ -37,7 +37,7 @@
 @forward './tokens/partial/focus' as focus-*;
 @forward './tokens/partial/disable' as disable-*;
 @forward './tokens/checkbox/checkbox' as checkbox-*;
-@forward './tokens/input/text' as input-text-*;
+@forward './tokens/input/input' as input-text-*;
 @forward './tokens/input/textarea' as input-textarea-*;
 
 @mixin element-styles($include: null) {
@@ -58,7 +58,7 @@
         @include element(round);
         @include element(checkbox);
         @include element(radio);
-        @include element(text);
+        @include element(input);
         @include element(textarea);
         @include element(link);
         @include element(focus);
@@ -87,8 +87,8 @@
         @include checkbox.create();
     } @else if $key == radio {
         @include radio.create();
-    } @else if $key == text {
-        @include text.create();
+    } @else if $key == input {
+        @include input.create();
     } @else if $key == textarea {
         @include textarea.create();
     } @else if $key == link {

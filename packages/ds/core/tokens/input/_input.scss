@@ -6,21 +6,32 @@
 @use '../../util/size' as size;
 @use './input-const' as input-const;
 
+$input-types : (
+    text,
+    search,
+    file
+);
+
 @mixin input-text-selector  {
-    input#{template-const.$escape} {
-        @include theme.select-attribute(text, type, text) {
-            @content;
+    @each $type in $input-types{
+        input#{template-const.$escape} {
+            @include theme.select-attribute($type, type, text) {
+                @content;
+            }
+            &:where([type="file"]){
+                // any future file type styles (duplicate for all types with seperate styles)
+            }
         }
     }
 }
 
 @mixin create {
-            @include input-text-selector() {
+         @include input-text-selector() {
                 @include input-const.common();
                 @include input-const.valid();
                 @include input-const.invalid();
                 @include textPadding();
-            }
+         }
 }
 
 @mixin textPadding {
