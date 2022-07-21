@@ -19,7 +19,7 @@ $input-types : (
                 @content;
             }
             &:where([type="file"]){
-                //visibility: hidden;
+                // any future file type styles (duplicate for all types with seperate styles)
             }
         }
     }
