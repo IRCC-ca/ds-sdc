@@ -22,10 +22,6 @@
     &:focus {
         outline-width: sizes.$fixed-2;
         outline-offset: sizes.$fixed-2;
-        border-color: var(--border);
-        &:invalid {
-            border-color: var(--critical-border);
-        }
     }
 
     &::placeholder {
@@ -60,7 +56,7 @@
 }
 
 @mixin invalid {
-    &:invalid {
+    &:invalid, &.ng-invalid.ng-touched{
         border-color: var(--critical-border);
         background-color: var(--critical-background-weak);
 

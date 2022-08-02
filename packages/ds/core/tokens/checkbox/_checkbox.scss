@@ -74,7 +74,7 @@
 }
 
 @mixin invalid {
-    &:invalid {
+    &:invalid, &.ng-invalid.ng-touched{
         --border: var(--critical-border);
         background-color: var(--critical-background-weak);
 
