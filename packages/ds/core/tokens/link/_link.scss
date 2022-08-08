@@ -5,7 +5,7 @@
 @use '../../util/device' as device;
 @use 'sass:map';
 
-@mixin tokens($palette, $visited-palette) {
+@mixin tokens($palette, $visited-palette, $hover-palette) {
     @include theme.light {
         @include device.if-hover {
             --text-hover: #{color.mix-token($palette, 800)};
@@ -38,12 +38,14 @@
     $palette: (
         unvisited: cta,
         visited: visited,
+        hover: focus
     )
 ) {
     @include anchor-selector() {
         @include tokens(
             map.get($palette, unvisited),
-            map.get($palette, visited)
+            map.get($palette, visited),
+            map.get($palette, hover),
         );
         @include layout();
     }

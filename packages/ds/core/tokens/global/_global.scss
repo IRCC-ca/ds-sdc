@@ -14,7 +14,7 @@
             --surface2: #{color.mix-token($palette, 200)};
             --generic: #{color.mix-token($palette, 900, 0)};
             --generic-active: #{color.mix-token($palette, 900, 0.12)};
-            --border: #{color.mix-token($palette, 800)};
+            --border: #{color.mix-token($palette, 700)};
             --divider: #{color.mix-token($palette, 300)};
             --border-disabled: #{color.mix-token($palette, 300)};
             --dimmer: #{color.mix-token($palette, 1100)};
@@ -28,7 +28,7 @@
             --surface2: #{color.mix-token($palette, 1100)};
             --generic: #{color.mix-token($palette, 400, 0)};
             --generic-active: #{color.mix-token($palette, 400, 0.12)};
-            --border: #{color.mix-token($palette, 500)};
+            --border: #{color.mix-token($palette, 600)};
             --divider: #{color.mix-token($palette, 1000)};
             --border-disabled: #{color.mix-token($palette, 1000)};
             --dimmer: #{color.mix-token($palette, 200)};
