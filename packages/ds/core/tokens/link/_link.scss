@@ -5,22 +5,22 @@
 @use '../../util/device' as device;
 @use 'sass:map';
 
-@mixin tokens($palette, $visited-palette, $hover-palette) {
+@mixin tokens($cta-palette, $visited-palette, $focus-palette) {
     @include theme.light {
         @include device.if-hover {
-            --text-hover: #{color.mix-token($palette, 800)};
+            --text-hover: #{color.mix-token($focus-palette, 800)};
         }
-        --text: #{color.mix-token($palette, 700)};
-        --text-active: #{color.mix-token($palette, 900)};
+        --text: #{color.mix-token($cta-palette, 700)};
+        --text-active: #{color.mix-token($cta-palette, 900)};
         --text-visited: #{color.mix-token($visited-palette, 700)};
     }
 
     @include theme.dark {
         @include device.if-hover {
-            --text-hover: #{color.mix-token($palette, 500)};
+            --text-hover: #{color.mix-token($focus-palette, 500)};
         }
-        --text: #{color.mix-token($palette, 600)};
-        --text-active: #{color.mix-token($palette, 400)};
+        --text: #{color.mix-token($cta-palette, 600)};
+        --text-active: #{color.mix-token($cta-palette, 400)};
         --text-visited: #{color.mix-token($visited-palette, 600)};
     }
 }
@@ -36,16 +36,16 @@
 
 @mixin create(
     $palette: (
-        unvisited: cta,
+        cta: cta,
         visited: visited,
-        hover: focus
+        focus: focus
     )
 ) {
     @include anchor-selector() {
         @include tokens(
-            map.get($palette, unvisited),
+            map.get($palette, cta),
             map.get($palette, visited),
-            map.get($palette, hover),
+            map.get($palette, focus),
         );
         @include layout();
     }
