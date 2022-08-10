@@ -25,6 +25,7 @@
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
     vertical-align: top;
+    cursor: pointer;
 
     @include size();
 
