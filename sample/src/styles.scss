@@ -2,6 +2,7 @@
 // @media (prefers-color-scheme: dark) {
 //     @include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, dark);
 // }
+// need to update documentation for this
 @media (prefers-color-scheme: light) {
     @include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, light);
 }
