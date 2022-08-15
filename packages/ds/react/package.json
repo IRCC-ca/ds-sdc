@@ -1,8 +1,8 @@
 {
     "name": "@ircc-ca/ds-sdc-react",
-    "version": "0.0.2",
+    "version": "0.0.2-beta.4",
     "description": "React components for Digital Journey Labs Design System",
-    "author": "IRRC-CA",
+    "author": "IRCC-CA",
     "homepage": "http://\"https://github.com/IRCC-ca/ds-sdc#readme",
     "license": "MIT",
     "repository": {
@@ -18,6 +18,10 @@
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
     "files": [
         "dist/"
     ],
@@ -27,8 +31,7 @@
     "publishConfig": {
         "access": "restricted",
         "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
-        "tag": "ds-sdc-react",
-        "directory": "dist"
+        "tag": "ds-sdc-react"
     },
     "dependencies": {
         "@ircc-ca/ds-sdc-core": "^0.0.10-beta.13",

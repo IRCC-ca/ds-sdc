@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    # Check for npm updates on Sundays
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    target-branch: "develop"
+
+    

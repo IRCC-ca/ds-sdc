@@ -5,7 +5,8 @@ on:
     branches:
       - develop
       - main
-    path: 'stories/**'
+    paths: 
+      - 'stories/**'
 jobs:
   storybook:
     runs-on: ubuntu-latest
