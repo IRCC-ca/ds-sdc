@@ -10,7 +10,9 @@ on:
     - main
 jobs:
   publish:
-    if: github.event.pull_request.merged == true # Condition
+    echo NEW PUBLISH CONDITION
+    if: ${{ (github.event.pull_request.merged == true) || (github.event.workflow_dispatch) }}
+    echo NEW PUBLISH CONDITION SUCCEEDED
     runs-on: ubuntu-latest
     steps:
     - name: "Checkout"
