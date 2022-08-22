@@ -35,7 +35,8 @@ jobs:
         echo PRE-BOOTSTRAP
         npx lerna bootstrap
         echo POST-BOOTSTRAP
-        if [ ${{ github.ref }} = main ]; then
+        echo GIT REF:    ${{ github.ref }}
+        if [ ${{ github.ref }} = 'refs/heads/main' ]; then
           echo ECHO message: branch is MAIN
           npx lerna version --conventional-commits --conventional-graduate --yes
         else
