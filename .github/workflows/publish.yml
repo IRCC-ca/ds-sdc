@@ -39,7 +39,7 @@ jobs:
         # npm install --prefix /packages/ds/web
         # npm install --prefix /packages/ds/angular
         # npm install --prefix /packages/ds/react
-        if [ ${{ github.base_ref }} = main ]; then
+        if [ ${{ github.ref }} = main ]; then
           npx lerna version --conventional-commits --conventional-graduate --yes
         else
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
