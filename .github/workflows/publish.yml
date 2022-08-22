@@ -10,9 +10,6 @@ on:
     - main
 jobs:
   publish:
-    echo NEW PUBLISH CONDITION
-    if: github.event_name == 'workflow_dispatch'
-    echo NEW PUBLISH CONDITION SUCCEEDED
     runs-on: ubuntu-latest
     steps:
     - name: "Checkout"
