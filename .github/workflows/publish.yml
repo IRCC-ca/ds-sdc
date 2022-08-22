@@ -5,6 +5,9 @@ on:
     branches:
       - develop
       - main
+  workflow_dispatch:
+    branches:
+    - main
 jobs:
   publish:
     if: github.event.pull_request.merged == true # Condition
