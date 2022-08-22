@@ -35,13 +35,11 @@ jobs:
         echo PRE-BOOTSTRAP
         npx lerna bootstrap
         echo POST-BOOTSTRAP
-        # npm install --prefix /packages/ds/core
-        # npm install --prefix /packages/ds/web
-        # npm install --prefix /packages/ds/angular
-        # npm install --prefix /packages/ds/react
         if [ ${{ github.ref }} = main ]; then
+          echo ECHO message: branch is MAIN
           npx lerna version --conventional-commits --conventional-graduate --yes
         else
+          echo ECHO message: branch is NOT main
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
         fi
         npx lerna run build --scope=@ircc-ca/ds-sdc-core
