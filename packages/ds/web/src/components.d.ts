@@ -40,6 +40,8 @@ export namespace Components {
          */
         "value"?: string;
     }
+    interface DjlLink {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -66,6 +68,12 @@ declare global {
         prototype: HTMLDjlButtonElement;
         new (): HTMLDjlButtonElement;
     };
+    interface HTMLDjlLinkElement extends Components.DjlLink, HTMLStencilElement {
+    }
+    var HTMLDjlLinkElement: {
+        prototype: HTMLDjlLinkElement;
+        new (): HTMLDjlLinkElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -74,6 +82,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
+        "djl-link": HTMLDjlLinkElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -112,6 +121,8 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface DjlLink {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -132,6 +143,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "djl-button": DjlButton;
+        "djl-link": DjlLink;
         "my-component": MyComponent;
     }
 }
@@ -140,6 +152,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
+            "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
