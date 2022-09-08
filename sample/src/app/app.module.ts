@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { IRCCModule } from '@ircc-ca/ds-sdc-angular';
@@ -68,5 +68,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ],
     providers: [],
     bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
