@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IconConfig } from "./components/icon/djl-icon";
 export namespace Components {
     interface DjlButton {
         /**
@@ -40,6 +41,14 @@ export namespace Components {
          */
         "value"?: string;
     }
+    interface DjlIcon {
+        /**
+          * Icon config json object, or parsable json string
+          * @example ``` {    unicode : 'f6b0',    fontFamily : 'fa-solid' } ```
+          * @example ``` '{"unicode": "f6b0", "fontFamily": "fa-solid"}' ```
+         */
+        "iconConfig": IconConfig | string;
+    }
     interface DjlLink {
     }
     interface MyComponent {
@@ -68,6 +77,12 @@ declare global {
         prototype: HTMLDjlButtonElement;
         new (): HTMLDjlButtonElement;
     };
+    interface HTMLDjlIconElement extends Components.DjlIcon, HTMLStencilElement {
+    }
+    var HTMLDjlIconElement: {
+        prototype: HTMLDjlIconElement;
+        new (): HTMLDjlIconElement;
+    };
     interface HTMLDjlLinkElement extends Components.DjlLink, HTMLStencilElement {
     }
     var HTMLDjlLinkElement: {
@@ -82,6 +97,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
+        "djl-icon": HTMLDjlIconElement;
         "djl-link": HTMLDjlLinkElement;
         "my-component": HTMLMyComponentElement;
     }
@@ -121,6 +137,14 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface DjlIcon {
+        /**
+          * Icon config json object, or parsable json string
+          * @example ``` {    unicode : 'f6b0',    fontFamily : 'fa-solid' } ```
+          * @example ``` '{"unicode": "f6b0", "fontFamily": "fa-solid"}' ```
+         */
+        "iconConfig"?: IconConfig | string;
+    }
     interface DjlLink {
     }
     interface MyComponent {
@@ -143,6 +167,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "djl-button": DjlButton;
+        "djl-icon": DjlIcon;
         "djl-link": DjlLink;
         "my-component": MyComponent;
     }
@@ -152,6 +177,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
+            "djl-icon": LocalJSX.DjlIcon & JSXBase.HTMLAttributes<HTMLDjlIconElement>;
             "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }

@@ -8,4 +8,5 @@ import type { JSX } from '@ircc-ca/ds-sdc-web';
 
 
 export const DjlButton = /*@__PURE__*/createReactComponent<JSX.DjlButton, HTMLDjlButtonElement>('djl-button');
+export const DjlIcon = /*@__PURE__*/createReactComponent<JSX.DjlIcon, HTMLDjlIconElement>('djl-icon');
 export const MyComponent = /*@__PURE__*/createReactComponent<JSX.MyComponent, HTMLMyComponentElement>('my-component');
