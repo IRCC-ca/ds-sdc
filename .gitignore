@@ -49,3 +49,6 @@ packages/ds/angular/coverage
 
 # Storybook static
 storybook-static/**
+
+# npm config file
+/.npmrc
