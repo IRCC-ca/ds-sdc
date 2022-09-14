@@ -50,6 +50,13 @@ export namespace Components {
         "iconConfig": IconConfig | string;
     }
     interface DjlLink {
+        "djlAriaLabel"?: string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
     }
     interface MyComponent {
         /**
@@ -146,6 +153,13 @@ declare namespace LocalJSX {
         "iconConfig"?: IconConfig | string;
     }
     interface DjlLink {
+        "djlAriaLabel"?: string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
     }
     interface MyComponent {
         /**
