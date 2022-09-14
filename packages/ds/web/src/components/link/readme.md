@@ -1,6 +1,13 @@
 # djl-link
 
-
+## Usage
+```html
+<djl-link href="#">Test blank link</djl-link><br/>
+<djl-link href="https://github.com/" target="_self">Test Web link</djl-link><br/>
+<djl-link download="https://github.com/" href="#" target="_blank">Test Download link</djl-link><br/>
+<djl-link href="mailto:test@example.com" target="_blank">Test Email link</djl-link><br/>
+<djl-link href="tel:7788888888" target="_blank">Test Phone link</djl-link>
+```
 
 <!-- Auto Generated Below -->
 
