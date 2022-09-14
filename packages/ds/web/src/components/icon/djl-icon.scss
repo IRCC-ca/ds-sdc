@@ -2,7 +2,6 @@
 @use '~@ircc-ca/ds-sdc-core/typography/fa-wrapper';
 
 :host {
-  display: block;
   @include fa-wrapper.create();
   .font-icon {
     &::before {
