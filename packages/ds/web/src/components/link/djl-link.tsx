@@ -17,7 +17,7 @@ export class DjlLink {
 
   @Prop() target?: '_blank' | '_parent' | '_self' | '_top';
 
-  @Prop() djlAriaLabel?: string;
+  @Prop() ariaLabel: string;
 
   @State() linkIconConfig!: IconConfig;
 
@@ -62,13 +62,13 @@ export class DjlLink {
   }
 
   isHidden(): boolean {
-    return this.djlAriaLabel === '';
+    return this.ariaLabel === '';
   }
 
   render() {
     return (
       <Host>
-        <a href={this.href} download={this.download} target={this.target} aria-label={this.djlAriaLabel}>
+        <a href={this.href} download={this.download} target={this.target} aria-label={this.ariaLabel}>
           <span class="font">
             <slot aria-hidden={this.isHidden()} />
           </span>

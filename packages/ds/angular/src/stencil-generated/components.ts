@@ -54,13 +54,13 @@ export declare interface DjlLink extends Components.DjlLink {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['djlAriaLabel', 'download', 'href', 'target']
+  inputs: ['ariaLabel', 'download', 'href', 'target']
 })
 @Component({
   selector: 'djl-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['djlAriaLabel', 'download', 'href', 'target']
+  inputs: ['ariaLabel', 'download', 'href', 'target']
 })
 export class DjlLink {
   protected el: HTMLElement;
