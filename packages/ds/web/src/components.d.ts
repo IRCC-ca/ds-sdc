@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IconConfig } from "./components/icon/djl-icon";
 export namespace Components {
     interface DjlButton {
         /**
@@ -40,6 +41,23 @@ export namespace Components {
          */
         "value"?: string;
     }
+    interface DjlIcon {
+        /**
+          * Icon config json object, or parsable json string
+          * @example ``` {    unicode : 'f6b0',    fontFamily : 'fa-solid' } ```
+          * @example ``` '{"unicode": "f6b0", "fontFamily": "fa-solid"}' ```
+         */
+        "iconConfig": IconConfig | string;
+    }
+    interface DjlLink {
+        "ariaLabel": string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
+    }
     interface DjlFormCheckbox {
         "ariaLabel"?: string;
         "disabled"?: boolean;
@@ -71,6 +89,18 @@ declare global {
         prototype: HTMLDjlButtonElement;
         new (): HTMLDjlButtonElement;
     };
+    interface HTMLDjlIconElement extends Components.DjlIcon, HTMLStencilElement {
+    }
+    var HTMLDjlIconElement: {
+        prototype: HTMLDjlIconElement;
+        new (): HTMLDjlIconElement;
+    };
+    interface HTMLDjlLinkElement extends Components.DjlLink, HTMLStencilElement {
+    }
+    var HTMLDjlLinkElement: {
+        prototype: HTMLDjlLinkElement;
+        new (): HTMLDjlLinkElement;
+    };
     interface HTMLDjlFormCheckboxElement extends Components.DjlFormCheckbox, HTMLStencilElement {
     }
     var HTMLDjlFormCheckboxElement: {
@@ -85,6 +115,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
+        "djl-icon": HTMLDjlIconElement;
+        "djl-link": HTMLDjlLinkElement;
         "djl-form-checkbox": HTMLDjlFormCheckboxElement;
         "my-component": HTMLMyComponentElement;
     }
@@ -124,6 +156,23 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface DjlIcon {
+        /**
+          * Icon config json object, or parsable json string
+          * @example ``` {    unicode : 'f6b0',    fontFamily : 'fa-solid' } ```
+          * @example ``` '{"unicode": "f6b0", "fontFamily": "fa-solid"}' ```
+         */
+        "iconConfig"?: IconConfig | string;
+    }
+    interface DjlLink {
+        "ariaLabel"?: string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
+    }
     interface DjlFormCheckbox {
         "ariaLabel"?: string;
         "disabled"?: boolean;
@@ -149,6 +198,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "djl-button": DjlButton;
+        "djl-icon": DjlIcon;
+        "djl-link": DjlLink;
         "djl-form-checkbox": DjlFormCheckbox;
         "my-component": MyComponent;
     }
@@ -158,6 +209,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
+            "djl-icon": LocalJSX.DjlIcon & JSXBase.HTMLAttributes<HTMLDjlIconElement>;
+            "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "djl-form-checkbox": LocalJSX.DjlFormCheckbox & JSXBase.HTMLAttributes<HTMLDjlFormCheckboxElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }

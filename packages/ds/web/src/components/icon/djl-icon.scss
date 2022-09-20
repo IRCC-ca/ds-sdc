@@ -1,0 +1,12 @@
+@use '~@ircc-ca/ds-sdc-core/typography/typography';
+@use '~@ircc-ca/ds-sdc-core/typography/fa-wrapper';
+
+:host {
+  @include fa-wrapper.create();
+  .font-icon {
+    &::before {
+      --font-unicode: inherit;
+      @include typography.fonts-FA-variable-icon(--font-unicode);
+    }
+  }
+}

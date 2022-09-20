@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.0...@ircc-ca/ds-sdc-react@0.0.4-beta.1) (2022-09-20)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
+
+
+
+
+
+## [0.0.4-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.3...@ircc-ca/ds-sdc-react@0.0.4-beta.0) (2022-09-20)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
+
+
+
+
+
 ## [0.0.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.3-beta.5...@ircc-ca/ds-sdc-react@0.0.3) (2022-08-22)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
