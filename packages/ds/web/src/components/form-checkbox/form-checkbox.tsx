@@ -7,18 +7,49 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix
 export class DjlFormCheckbox {
-  @Prop() size?: 'small' | 'large';
+  /**
+   * Makes the purpose of the field clear
+   */
+  @Prop() label: string;
 
-  @Prop() ariaLabel?: string;
+  /**
+   * When further detail of the purpose is needed
+   */
+  @Prop() description: string;
 
-  @Prop() disabled?: boolean;
+  /**
+   * Specifies a short hint that describes the expected value of the field. Can also be used as a supporting instruction.
+   */
+  @Prop() hint: string;
+
+  /**
+   * Text that describes the error that occurred
+   */
+  @Prop() errorText: string;
+
+  /**
+   * Include “(required)” as text at the end of labels of required fields
+   */
+  @Prop() required = false;
+
+  @Prop() type: 'normal' | 'parent-child';
 
   render() {
     return (
       <Host>
-        <input type="checkbox">
-          <slot/>
-        </input>
+        {this.required
+          ? <h3 class='form-checkbox-label'><span class='text-color-warning'>*</span> {this.label} (required)</h3>
+          : <h3 class='form-checkbox-label'>{this.label}</h3>
+        }
+        {this.description && <p class='form-checkbox-desc'>{this.description}</p>}
+        {this.hint && <p class='form-checkbox-hint'>{this.hint}</p>}
+        <slot/>
+        {this.errorText &&
+          <p class='error-message'>
+            <djl-icon icon-config={'{"unicode": "f06a", "fontFamily": "fa-light"}'}></djl-icon>
+            {this.errorText}
+          </p>
+        }
       </Host>
     );
   }

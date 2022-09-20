@@ -1,3 +1,24 @@
+@use '~@ircc-ca/ds-sdc-core/tokens/sizes';
+
 :host {
   display: block;
+  .text-color-warning {
+    color: var(--critical-text);
+  }
+  .form-checkbox-label {
+    margin-bottom: sizes.$fixed-4;
+  }
+  .form-checkbox-desc {
+    margin: 0;
+  }
+  .form-checkbox-hint {
+    color: var(--text-placeholder);
+    margin-top: sizes.$fixed-12;
+  }
+  .error-message {
+    color: var(--critical-text);
+    > djl-icon {
+      margin-right: sizes.$fixed-4;
+    }
+  }
 }

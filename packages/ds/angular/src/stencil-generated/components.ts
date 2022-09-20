@@ -29,6 +29,27 @@ export class DjlButton {
 }
 
 
+export declare interface DjlFormCheckbox extends Components.DjlFormCheckbox {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['description', 'errorText', 'hint', 'label', 'required', 'type']
+})
+@Component({
+  selector: 'djl-form-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['description', 'errorText', 'hint', 'label', 'required', 'type']
+})
+export class DjlFormCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface DjlIcon extends Components.DjlIcon {}
 
 @ProxyCmp({
@@ -63,27 +84,6 @@ export declare interface DjlLink extends Components.DjlLink {}
   inputs: ['ariaLabel', 'download', 'href', 'target']
 })
 export class DjlLink {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface DjlFormCheckbox extends Components.DjlFormCheckbox {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['ariaLabel', 'disabled', 'size']
-})
-@Component({
-  selector: 'djl-form-checkbox',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['ariaLabel', 'disabled', 'size']
-})
-export class DjlFormCheckbox {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

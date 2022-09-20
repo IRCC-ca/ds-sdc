@@ -30,11 +30,13 @@ Angular
 
 ### Used by
 
+ - [djl-form-checkbox](../form-checkbox)
  - [djl-link](../link)
 
 ### Graph
 ```mermaid
 graph TD;
+  djl-form-checkbox --> djl-icon
   djl-link --> djl-icon
   style djl-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
