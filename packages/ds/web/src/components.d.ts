@@ -49,6 +49,15 @@ export namespace Components {
          */
         "iconConfig": IconConfig | string;
     }
+    interface DjlLink {
+        "ariaLabel": string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -81,6 +90,12 @@ declare global {
         prototype: HTMLDjlIconElement;
         new (): HTMLDjlIconElement;
     };
+    interface HTMLDjlLinkElement extends Components.DjlLink, HTMLStencilElement {
+    }
+    var HTMLDjlLinkElement: {
+        prototype: HTMLDjlLinkElement;
+        new (): HTMLDjlLinkElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -90,6 +105,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
         "djl-icon": HTMLDjlIconElement;
+        "djl-link": HTMLDjlLinkElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -136,6 +152,15 @@ declare namespace LocalJSX {
          */
         "iconConfig"?: IconConfig | string;
     }
+    interface DjlLink {
+        "ariaLabel"?: string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -157,6 +182,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "djl-button": DjlButton;
         "djl-icon": DjlIcon;
+        "djl-link": DjlLink;
         "my-component": MyComponent;
     }
 }
@@ -166,6 +192,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
             "djl-icon": LocalJSX.DjlIcon & JSXBase.HTMLAttributes<HTMLDjlIconElement>;
+            "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

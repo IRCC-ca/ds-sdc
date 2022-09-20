@@ -1,0 +1,15 @@
+@use '~@ircc-ca/ds-sdc-core/tokens/sizes';
+
+:host {
+  .icon {
+    padding-left: sizes.$fixed-8;
+  }
+
+  .font {
+    text-decoration: underline;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

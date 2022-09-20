@@ -50,6 +50,27 @@ export class DjlIcon {
 }
 
 
+export declare interface DjlLink extends Components.DjlLink {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['ariaLabel', 'download', 'href', 'target']
+})
+@Component({
+  selector: 'djl-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['ariaLabel', 'download', 'href', 'target']
+})
+export class DjlLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MyComponent extends Components.MyComponent {}
 
 @ProxyCmp({
