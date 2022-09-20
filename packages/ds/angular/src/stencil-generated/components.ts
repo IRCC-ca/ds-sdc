@@ -50,25 +50,6 @@ export class DjlFormCheckbox {
 }
 
 
-export declare interface FormCheckbox extends Components.FormCheckbox {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
-@Component({
-  selector: 'form-checkbox',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
-})
-export class FormCheckbox {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
 export declare interface MyComponent extends Components.MyComponent {}
 
 @ProxyCmp({

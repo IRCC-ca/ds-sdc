@@ -45,8 +45,6 @@ export namespace Components {
         "disabled"?: boolean;
         "size"?: 'small' | 'large';
     }
-    interface FormCheckbox {
-    }
     interface MyComponent {
         /**
           * The first name
@@ -79,12 +77,6 @@ declare global {
         prototype: HTMLDjlFormCheckboxElement;
         new (): HTMLDjlFormCheckboxElement;
     };
-    interface HTMLFormCheckboxElement extends Components.FormCheckbox, HTMLStencilElement {
-    }
-    var HTMLFormCheckboxElement: {
-        prototype: HTMLFormCheckboxElement;
-        new (): HTMLFormCheckboxElement;
-    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -94,7 +86,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
         "djl-form-checkbox": HTMLDjlFormCheckboxElement;
-        "form-checkbox": HTMLFormCheckboxElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -138,8 +129,6 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "size"?: 'small' | 'large';
     }
-    interface FormCheckbox {
-    }
     interface MyComponent {
         /**
           * The first name
@@ -161,7 +150,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "djl-button": DjlButton;
         "djl-form-checkbox": DjlFormCheckbox;
-        "form-checkbox": FormCheckbox;
         "my-component": MyComponent;
     }
 }
@@ -171,7 +159,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
             "djl-form-checkbox": LocalJSX.DjlFormCheckbox & JSXBase.HTMLAttributes<HTMLDjlFormCheckboxElement>;
-            "form-checkbox": LocalJSX.FormCheckbox & JSXBase.HTMLAttributes<HTMLFormCheckboxElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
