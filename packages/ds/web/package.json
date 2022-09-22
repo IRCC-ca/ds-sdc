@@ -1,6 +1,6 @@
 {
   "name": "@ircc-ca/ds-sdc-web",
-  "version": "0.0.9-beta.2",
+  "version": "0.0.9-beta.4",
   "description": "Stencil Component Starter",
   "author": "IRCC-ca",
   "main": "dist/index.cjs.js",
@@ -48,7 +48,7 @@
     "@stencil/sass": "^1.5.2",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "7.30.1",
-    "puppeteer": "^14.1.0"
+    "puppeteer": "^17.1.3"
   },
   "license": "MIT"
 }

@@ -22,7 +22,7 @@ export class DjlLink {
   @State() linkIconConfig!: IconConfig;
 
   getIcon(): string[] {
-    if (this.download) {
+    if (this.download != undefined) {
       return ['f56d', 'fa-solid'];
     } else {
       switch (this.href?.substring(0, 4)) {
