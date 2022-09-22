@@ -25,7 +25,21 @@
   error-text="This field is required."
   required>
   <input type="checkbox" id="default-1">
-  <label for="default-1">Toppings</label>
+  <label for="default-1">Toppings</label><br/>
   <input type="checkbox" id="default-2">
   <label for="default-2">Pepperoni</label>
+</djl-form-checkbox>
+<djl-form-checkbox
+  label="Pizza Toppings"
+  description="Description Text"
+  hint="Select all that apply."
+  error-text="This field is required."
+  type="parent-child"
+  >
+  <input type="checkbox" id="parent-1">
+  <label for="default-1">Parent</label><br/>
+  <input type="checkbox" id="child-1">
+  <label for="default-2">Child 1</label><br/>
+  <input type="checkbox" id="child-2">
+  <label for="default-2">Child 2</label><br/>
 </djl-form-checkbox>

@@ -21,4 +21,13 @@
       margin-right: sizes.$fixed-4;
     }
   }
+  ::slotted(input[type="checkbox"]) {
+    margin-bottom: sizes.$fixed-8 !important;
+    margin-left: 0 !important;
+  }
+  .slot-parent-child {
+    ::slotted(input[type="checkbox"]:not(:first-child)) {
+      margin-left: 32px !important;
+    }
+  }
 }

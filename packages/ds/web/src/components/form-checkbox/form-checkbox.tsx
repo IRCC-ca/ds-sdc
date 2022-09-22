@@ -32,7 +32,14 @@ export class DjlFormCheckbox {
    */
   @Prop() required = false;
 
-  @Prop() type: 'normal' | 'parent-child';
+  // eslint-disable-next-line @stencil/strict-mutable
+  @Prop({mutable: true}) type: 'normal' | 'parent-child';
+
+  componentWillLoad() {
+    if (this.type == undefined) {
+      this.type = 'normal';
+    }
+  }
 
   render() {
     return (
@@ -43,7 +50,9 @@ export class DjlFormCheckbox {
         }
         {this.description && <p class='form-checkbox-desc'>{this.description}</p>}
         {this.hint && <p class='form-checkbox-hint'>{this.hint}</p>}
-        <slot/>
+        <div class={`slot-${this.type}`}>
+          <slot/>
+        </div>
         {this.errorText &&
           <p class='error-message'>
             <djl-icon icon-config={'{"unicode": "f06a", "fontFamily": "fa-light"}'}></djl-icon>
