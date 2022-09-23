@@ -1,4 +1,5 @@
 @use '~@ircc-ca/ds-sdc-core/tokens/sizes';
+@use '~@ircc-ca/ds-sdc-core/util/size';
 
 :host {
   display: block;
@@ -13,7 +14,11 @@
   }
   .form-checkbox-hint {
     color: var(--text-placeholder);
-    margin-top: sizes.$fixed-12;
+    @if size.$size-mode == 'small' {
+      margin-top: sizes.$fixed-8;
+    } @else {
+      margin-top: sizes.$fixed-12;
+    }
   }
   .error-message {
     color: var(--critical-text);
