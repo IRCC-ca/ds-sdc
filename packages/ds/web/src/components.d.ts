@@ -41,6 +41,29 @@ export namespace Components {
          */
         "value"?: string;
     }
+    interface DjlFormCheckbox {
+        /**
+          * When further detail of the purpose is needed
+         */
+        "description": string;
+        /**
+          * Text that describes the error that occurred
+         */
+        "errorText": string;
+        /**
+          * Specifies a short hint that describes the expected value of the field. Can also be used as a supporting instruction.
+         */
+        "hint": string;
+        /**
+          * Makes the purpose of the field clear
+         */
+        "label": string;
+        /**
+          * Include “(required)” as text at the end of labels of required fields
+         */
+        "required": boolean;
+        "type": 'normal' | 'parent-child';
+    }
     interface DjlIcon {
         /**
           * Icon config json object, or parsable json string
@@ -84,6 +107,12 @@ declare global {
         prototype: HTMLDjlButtonElement;
         new (): HTMLDjlButtonElement;
     };
+    interface HTMLDjlFormCheckboxElement extends Components.DjlFormCheckbox, HTMLStencilElement {
+    }
+    var HTMLDjlFormCheckboxElement: {
+        prototype: HTMLDjlFormCheckboxElement;
+        new (): HTMLDjlFormCheckboxElement;
+    };
     interface HTMLDjlIconElement extends Components.DjlIcon, HTMLStencilElement {
     }
     var HTMLDjlIconElement: {
@@ -104,6 +133,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
+        "djl-form-checkbox": HTMLDjlFormCheckboxElement;
         "djl-icon": HTMLDjlIconElement;
         "djl-link": HTMLDjlLinkElement;
         "my-component": HTMLMyComponentElement;
@@ -144,6 +174,29 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface DjlFormCheckbox {
+        /**
+          * When further detail of the purpose is needed
+         */
+        "description"?: string;
+        /**
+          * Text that describes the error that occurred
+         */
+        "errorText"?: string;
+        /**
+          * Specifies a short hint that describes the expected value of the field. Can also be used as a supporting instruction.
+         */
+        "hint"?: string;
+        /**
+          * Makes the purpose of the field clear
+         */
+        "label"?: string;
+        /**
+          * Include “(required)” as text at the end of labels of required fields
+         */
+        "required"?: boolean;
+        "type"?: 'normal' | 'parent-child';
+    }
     interface DjlIcon {
         /**
           * Icon config json object, or parsable json string
@@ -181,6 +234,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "djl-button": DjlButton;
+        "djl-form-checkbox": DjlFormCheckbox;
         "djl-icon": DjlIcon;
         "djl-link": DjlLink;
         "my-component": MyComponent;
@@ -191,6 +245,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
+            "djl-form-checkbox": LocalJSX.DjlFormCheckbox & JSXBase.HTMLAttributes<HTMLDjlFormCheckboxElement>;
             "djl-icon": LocalJSX.DjlIcon & JSXBase.HTMLAttributes<HTMLDjlIconElement>;
             "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;

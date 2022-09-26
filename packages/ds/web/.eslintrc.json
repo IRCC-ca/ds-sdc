@@ -32,6 +32,7 @@
       "@stencil/required-jsdoc": "off",
       "@stencil/reserved-member-names": "error",
       "@stencil/single-export": "error",
-      "@stencil/strict-mutable": "error"
+      "@stencil/strict-mutable": "error",
+      "@typescript-eslint/no-unused-vars": "off"
     }
 }
