@@ -37,8 +37,8 @@
         "tag": "ds-sdc-core"
     },
     "dependencies": {
-        "@fontsource/inter": "^4.5.4",
-        "@fontsource/lato": "^4.5.2",
+        "@fontsource/inter": "^4.5.12",
+        "@fontsource/lato": "^4.5.9",
         "@fortawesome/fontawesome-pro": "^6.0.0"
     },
     "devDependencies": {
