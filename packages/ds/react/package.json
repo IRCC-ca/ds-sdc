@@ -34,16 +34,16 @@
         "tag": "ds-sdc-react"
     },
     "dependencies": {
-        "@ircc-ca/ds-sdc-core": "^0.0.10-beta.13",
-        "@ircc-ca/ds-sdc-web": "^0.0.5-beta.2"
+        "@ircc-ca/ds-sdc-core": "file:../core",
+        "@ircc-ca/ds-sdc-web": "file:../web"
     },
     "devDependencies": {
-        "@types/node": "^18.0.0",
-        "@types/react": "^18.0.14",
-        "@types/react-dom": "^18.0.5",
+        "@types/node": "^18.8.3",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "^18.0.6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "typescript": "^4.7.4"
+        "typescript": "^4.8.4"
     },
     "peerDependencies": {
         "react": "^16.12.0",
