@@ -38,8 +38,7 @@
     "tag": "ds-sdc-web"
   },
   "dependencies": {
-    "@ircc-ca/ds-sdc-core": "file:../core",
-    "@ircc-ca/ds-sdc-web": "file:../web"
+    "@ircc-ca/ds-sdc-core": "file:../core"
   },
   "devDependencies": {
     "@stencil/angular-output-target": "^0.4.0",
