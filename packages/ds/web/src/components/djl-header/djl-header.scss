@@ -1,0 +1,44 @@
+@use '~@ircc-ca/ds-sdc-core/tokens/sizes';
+@use '~@ircc-ca/ds-sdc-core/layout/layout-grid';
+
+:host{
+  width: 100%;
+}
+
+.heading {
+  padding-top: sizes.$fixed-8;
+}
+
+.headerLine {
+    --global-divider: #102242;
+
+    background-color: var(--global-divider);
+    width: 100%;
+    height: sizes.$fixed-4;
+    margin-top: sizes.$fixed-24;
+    border: none;
+}
+
+.grid-container {
+    padding: sizes.$fixed-8;
+    display: grid;
+    @include layout-grid.grid(max-content auto, auto);
+    * {grid-column: auto / span 1};
+    
+    align-items: center;
+  }
+
+  .item2 {
+    justify-self: end;
+  }
+
+  @media(prefers-color-scheme: dark) {
+    :host {
+      background-color: #000000;
+    }
+  
+    .headerLine {
+      background-color: #ffffff;
+    }
+  }
+  
