@@ -3,7 +3,16 @@ import { defineCustomElements } from '@ircc-ca/ds-sdc-web/loader';
 
 import * as Components from './stencil-generated/components';
 
-const DJL_Components = [Components.MyComponent, Components.DjlButton];
+// All stencil generated components should be declared below.
+const DJL_Components = [
+  Components.MyComponent,
+  Components.DjlButton,
+  Components.DjlFormCheckbox,
+  Components.DjlIcon,
+  Components.DjlLink,
+  Components.DjlHeader,
+  Components.DjlFooter
+];
 
 defineCustomElements();
 
