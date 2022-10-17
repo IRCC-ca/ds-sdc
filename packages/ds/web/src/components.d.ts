@@ -41,6 +41,8 @@ export namespace Components {
          */
         "value"?: string;
     }
+    interface DjlFooter {
+    }
     interface DjlFormCheckbox {
         /**
           * When further detail of the purpose is needed
@@ -63,6 +65,8 @@ export namespace Components {
          */
         "required": boolean;
         "type": 'normal' | 'parent-child';
+    }
+    interface DjlHeader {
     }
     interface DjlIcon {
         /**
@@ -107,11 +111,23 @@ declare global {
         prototype: HTMLDjlButtonElement;
         new (): HTMLDjlButtonElement;
     };
+    interface HTMLDjlFooterElement extends Components.DjlFooter, HTMLStencilElement {
+    }
+    var HTMLDjlFooterElement: {
+        prototype: HTMLDjlFooterElement;
+        new (): HTMLDjlFooterElement;
+    };
     interface HTMLDjlFormCheckboxElement extends Components.DjlFormCheckbox, HTMLStencilElement {
     }
     var HTMLDjlFormCheckboxElement: {
         prototype: HTMLDjlFormCheckboxElement;
         new (): HTMLDjlFormCheckboxElement;
+    };
+    interface HTMLDjlHeaderElement extends Components.DjlHeader, HTMLStencilElement {
+    }
+    var HTMLDjlHeaderElement: {
+        prototype: HTMLDjlHeaderElement;
+        new (): HTMLDjlHeaderElement;
     };
     interface HTMLDjlIconElement extends Components.DjlIcon, HTMLStencilElement {
     }
@@ -133,7 +149,9 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
+        "djl-footer": HTMLDjlFooterElement;
         "djl-form-checkbox": HTMLDjlFormCheckboxElement;
+        "djl-header": HTMLDjlHeaderElement;
         "djl-icon": HTMLDjlIconElement;
         "djl-link": HTMLDjlLinkElement;
         "my-component": HTMLMyComponentElement;
@@ -174,6 +192,8 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface DjlFooter {
+    }
     interface DjlFormCheckbox {
         /**
           * When further detail of the purpose is needed
@@ -196,6 +216,8 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         "type"?: 'normal' | 'parent-child';
+    }
+    interface DjlHeader {
     }
     interface DjlIcon {
         /**
@@ -234,7 +256,9 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "djl-button": DjlButton;
+        "djl-footer": DjlFooter;
         "djl-form-checkbox": DjlFormCheckbox;
+        "djl-header": DjlHeader;
         "djl-icon": DjlIcon;
         "djl-link": DjlLink;
         "my-component": MyComponent;
@@ -245,7 +269,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
+            "djl-footer": LocalJSX.DjlFooter & JSXBase.HTMLAttributes<HTMLDjlFooterElement>;
             "djl-form-checkbox": LocalJSX.DjlFormCheckbox & JSXBase.HTMLAttributes<HTMLDjlFormCheckboxElement>;
+            "djl-header": LocalJSX.DjlHeader & JSXBase.HTMLAttributes<HTMLDjlHeaderElement>;
             "djl-icon": LocalJSX.DjlIcon & JSXBase.HTMLAttributes<HTMLDjlIconElement>;
             "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;

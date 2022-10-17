@@ -29,6 +29,25 @@ export class DjlButton {
 }
 
 
+export declare interface DjlFooter extends Components.DjlFooter {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'djl-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class DjlFooter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface DjlFormCheckbox extends Components.DjlFormCheckbox {}
 
 @ProxyCmp({
@@ -42,6 +61,25 @@ export declare interface DjlFormCheckbox extends Components.DjlFormCheckbox {}
   inputs: ['description', 'errorText', 'hint', 'label', 'required', 'type']
 })
 export class DjlFormCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DjlHeader extends Components.DjlHeader {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'djl-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class DjlHeader {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
