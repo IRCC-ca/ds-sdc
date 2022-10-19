@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.9-beta.8](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-web@0.0.9-beta.7...@ircc-ca/ds-sdc-web@0.0.9-beta.8) (2022-10-19)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-web
+
 ## [0.0.9-beta.7](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-web@0.0.9-beta.6...@ircc-ca/ds-sdc-web@0.0.9-beta.7) (2022-10-17)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-web
