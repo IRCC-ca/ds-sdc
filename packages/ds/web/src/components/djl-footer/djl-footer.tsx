@@ -4,6 +4,7 @@ import { Component, h, State } from '@stencil/core';
   tag: 'djl-footer',
   styleUrl: 'djl-footer.scss',
   shadow: true,
+  assetsDirs: ['../../core/assets'],
 })
 export class DjlFooter {
   @State() theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
