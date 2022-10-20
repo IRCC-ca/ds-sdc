@@ -4,6 +4,7 @@ import { Component, h, State } from '@stencil/core';
   tag: 'djl-header',
   styleUrl: 'djl-header.scss',
   shadow: true,
+  assetsDirs: ['../../core/assets'],
 })
 export class DjlHeader {
   @State() theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
