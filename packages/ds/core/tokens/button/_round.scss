@@ -17,8 +17,8 @@ $default-color: '';
         }
 
         @include theme.dark {
-            --text: #{color.mix-token($palette, 600)};
-            --text-disabled: #{color.mix-token($palette, 1000)};
+            --text: #{color.mix-token($palette, 400)};
+            --text-disabled: #{color.mix-token($palette, 900)};
         }
     }
 }

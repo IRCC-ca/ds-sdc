@@ -20,11 +20,11 @@ $default-color: null;
         }
         @include theme.dark {
             @include device.if-hover {
-                --border-hover: #{color.mix-token($palette, 500)};
+                --border-hover: #{color.mix-token($palette, 300)};
             }
-            --text: #{color.mix-token($palette, 600)};
+            --text: #{color.mix-token($palette, 400)};
             --text-disabled: #{color.mix-token($palette, 1000)};
-            --border-active: #{color.mix-token($palette, 400)};
+            --border-active: #{color.mix-token($palette, 200)};
         }
     }
 }
@@ -64,6 +64,7 @@ $default-color: null;
         --text: var(--text-disabled);
         color: var(--text);
         background-color: var(--generic);
+        border-color: var(--border-disabled);
     }
 
     &:focus {
