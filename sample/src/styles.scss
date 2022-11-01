@@ -4,9 +4,7 @@
 // }
 // need to update documentation for this
 
-@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, light);
-
-
+@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, both);
 @include ircc-ds.element-styles();
 
 

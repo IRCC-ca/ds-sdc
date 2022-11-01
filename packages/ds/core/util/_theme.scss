@@ -5,6 +5,10 @@
 @mixin light {
     @if (color.$color-scheme == light) {
         @content;
+    } @else {
+        @media(prefers-color-scheme: light){
+            @content;
+        }
     }
 }
 
@@ -12,6 +16,10 @@
 @mixin dark {
     @if (color.$color-scheme == dark) {
         @content;
+    } @else {
+        @media(prefers-color-scheme: dark){
+            @content;
+        }
     }
 }
 
