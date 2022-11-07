@@ -60,8 +60,7 @@
         }
     }
     &:disabled {
-        --text: var(--text-disabled);
-        color: var(--text);
+        color: var(--text-disabled);
         background: var(--generic);
         &:where([selected])::after {
             background: var(--navigation-disabled);

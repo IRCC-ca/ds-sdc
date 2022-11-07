@@ -1,0 +1,10 @@
+
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.content * {
+    margin: 1rem 0 1rem 0;
+}
