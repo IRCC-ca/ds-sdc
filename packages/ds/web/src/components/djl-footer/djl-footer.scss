@@ -29,13 +29,7 @@
     margin-right: sizes.$fixed-4;
   }
 
-  @media(prefers-color-scheme: dark) {
-    :host {
-      background-color: #000000;
-      color: white;
-    }
-  
-    hr {
-      background-color: #ffffff;
-    }
+  hr {
+    background-color: var(--header-line);
   }
+
