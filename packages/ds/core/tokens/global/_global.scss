@@ -18,6 +18,7 @@
             --divider: #{color.mix-token($palette, 300)};
             --border-disabled: #{color.mix-token($palette, 300)};
             --dimmer: #{color.mix-token($palette, 1100)};
+            --header-line: #{color.mix-token(cta, 1100)};
         }
         @include theme.dark {
             @media (any-hover: hover) {
@@ -32,6 +33,7 @@
             --divider: #{color.mix-token($palette, 1000)};
             --border-disabled: #{color.mix-token($palette, 1000)};
             --dimmer: #{color.mix-token($palette, 1000, 0.8)};
+            --header-line: #{color.mix-token(cta, 200)};
         }
 }
 

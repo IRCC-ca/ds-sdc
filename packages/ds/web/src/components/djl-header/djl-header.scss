@@ -10,11 +10,9 @@
 }
 
 .headerLine {
-    --global-divider: #102242;
-
-    background-color: var(--global-divider);
+    background-color: var(--header-line);
     width: 100%;
-    height: sizes.$fixed-4;
+    height: sizes.$fixed-2;
     margin-top: sizes.$fixed-24;
     border: none;
 }
@@ -30,15 +28,5 @@
 
   .item2 {
     justify-self: end;
-  }
-
-  @media(prefers-color-scheme: dark) {
-    :host {
-      background-color: #000000;
-    }
-  
-    .headerLine {
-      background-color: #ffffff;
-    }
   }
   

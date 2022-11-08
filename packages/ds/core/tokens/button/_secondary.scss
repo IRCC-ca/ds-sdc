@@ -12,19 +12,19 @@ $default-color: null;
         --border: var(--text);
         @include theme.light {
             @include device.if-hover {
-                --border-hover: #{color.mix-token($palette, 800)};
+                --secondary-border-hover: #{color.mix-token($palette, 800)};
             }
             --text: #{color.mix-token($palette, 700)};
-            --text-disabled: #{color.mix-token($palette, 300)};
-            --border-active: #{color.mix-token($palette, 900)};
+            --secondary-text-disabled: #{color.mix-token($palette, 300)};
+            --secondary-border-active: #{color.mix-token($palette, 900)};
         }
         @include theme.dark {
             @include device.if-hover {
-                --border-hover: #{color.mix-token($palette, 300)};
+                --secondary-border-hover: #{color.mix-token($palette, 300)};
             }
             --text: #{color.mix-token($palette, 400)};
-            --text-disabled: #{color.mix-token($palette, 1000)};
-            --border-active: #{color.mix-token($palette, 200)};
+            --secondary-text-disabled: #{color.mix-token($palette, 1000)};
+            --secondary-border-active: #{color.mix-token($palette, 200)};
         }
     }
 }
@@ -51,7 +51,7 @@ $default-color: null;
 @mixin layout() {
     @include button-const.layout();
     box-shadow: sizes.$border-style;
-    background-color: var(--generic);
+    background-color: var(--surface1);
     @include device.if-hover {
         background-color: var(--generic-hover);
     }
@@ -61,10 +61,10 @@ $default-color: null;
     }
 
     &:disabled {
-        --text: var(--text-disabled);
+        --text: var(--secondary-text-disabled);
         color: var(--text);
-        background-color: var(--generic);
-        border-color: var(--border-disabled);
+        background-color: var(--surface1);
+        border-color: var(--secondary-border-disabled);
     }
 
     &:focus {

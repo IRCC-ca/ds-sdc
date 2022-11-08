@@ -23,7 +23,7 @@
 }
 
 @mixin layout-tab() {
-    background: var(--generic);
+    background: var(--surface1);
     --text: var(--text-secondary);
     text-decoration: none;
     position: relative;
@@ -46,6 +46,9 @@
         display: block;
 
     }
+    &:where([selected]){
+        --text: var(--text-primary);
+    }
 
     @include device.if-hover() {
         background: var(--generic-hover);
@@ -60,9 +63,8 @@
         }
     }
     &:disabled {
-        --text: var(--text-disabled);
-        color: var(--text);
-        background: var(--generic);
+        background: var(--surface1);
+        color: var(--text-disabled);
         &:where([selected])::after {
             background: var(--navigation-disabled);
         }

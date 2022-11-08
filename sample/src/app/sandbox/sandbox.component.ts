@@ -7,6 +7,7 @@ import { IIconConfig } from '@ircc-ca/ds-sdc-angular/icon';
     styleUrls: ['./sandbox.component.scss'],
 })
 export class SandboxComponent {
+
     rocketIconConfig = {
         unicode: 'e027',
         fontFamily: 'fa-solid',
