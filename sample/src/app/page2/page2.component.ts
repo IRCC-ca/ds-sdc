@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { IIconConfig } from '@ircc-ca/ds-sdc-angular/icon';
 
 @Component({
-    selector: 'jds-sandbox',
-    templateUrl: './sandbox.component.html',
-    styleUrls: ['./sandbox.component.scss'],
+    selector: 'jds-page2',
+    templateUrl: './page2.component.html',
+    styleUrls: ['./page2.component.scss'],
 })
-export class SandboxComponent {
+export class Page2Component {
 
     rocketIconConfig = {
         unicode: 'e027',

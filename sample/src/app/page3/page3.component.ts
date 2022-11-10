@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-    selector: 'jds-sandbox1',
-    templateUrl: './sandbox1.component.html',
-    styleUrls: ['./sandbox1.component.scss'],
+    selector: 'jds-page3',
+    templateUrl: './page3.component.html',
+    styleUrls: ['./page3.component.scss'],
 })
-export class Sandbox1Component implements AfterViewInit {
+export class Page3Component implements AfterViewInit {
     @ViewChild('invalidCheckbox')
     invalidCheckbox!: ElementRef<HTMLInputElement>;
     @ViewChild('invalidCheckedCheckbox')

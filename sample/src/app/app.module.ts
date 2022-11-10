@@ -14,11 +14,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app.routing.module';
-import { SandboxStencilComponent } from './sandbox-stencil/sandbox-stencil.component';
-import { SandboxComponent } from './sandbox/sandbox.component';
-import { Sandbox1Component } from './sandbox1/sandbox1.component';
-import { Sandbox2Component } from './sandbox2/sandbox2.component';
-import { Sandbox3Component } from './sandbox3/sandbox3.component';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
+import { Page3Component } from './page3/page3.component';
+import { Page4Component } from './page4/page4.component';
+import { Page5Component } from './page5/page5.component';
 import { ThemeSelectComponent } from './theme/theme.component';
 
 const JL_ANGULAR_COMPONENTS = [
@@ -43,11 +43,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
     declarations: [
         AppComponent,
-        SandboxComponent,
-        SandboxStencilComponent,
-        Sandbox1Component,
-        Sandbox2Component,
-        Sandbox3Component,
+        Page1Component,
+        Page2Component,
+        Page3Component,
+        Page4Component,
+        Page5Component,
         ThemeSelectComponent,
     ],
     imports: [
