@@ -36,10 +36,14 @@
     }
     &:active {
         background-color: var(--generic-active);
+        &:disabled {
+            background-color: var(--surface1);
+        }
     }
 
     &:disabled {
         --border: var(--border-disabled);
+        cursor: not-allowed;
 
         & + label {
             color: var(--text-disabled);
