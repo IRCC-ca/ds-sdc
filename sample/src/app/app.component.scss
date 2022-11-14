@@ -17,3 +17,29 @@
         @include typography.fonts-FA-decor-icon('\f08e', 'fa-light');
     }
 }
+
+.fixed-content {
+    bottom: 10%;
+    right: 0;
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.page-nav > ul{
+    list-style: none;
+    li {
+        display: inline;
+        button{
+        margin: .25rem;
+        border: .25rem solid var(--surface2);
+        width: 20rem;
+        }
+    }
+}
+
+
+

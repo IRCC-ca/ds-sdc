@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { IRCCModule } from '@ircc-ca/ds-sdc-angular';
@@ -13,14 +13,13 @@ import { JLRadiobuttonModule } from '@ircc-ca/ds-sdc-angular/radio-button';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
+import { ColoursComponent } from './dev/colours/colours.component';
+import { DevBlankComponent } from './dev/dev-blank/dev-blank.component';
+import { HomeComponent } from './home/home.component';
+import { CoreQAComponent } from './qa/core-qa/core-qa.component';
+import { QABlankComponent } from './qa/qa-blank/qa-blank.component';
+import { StencilQAComponent } from './qa/stencil-qa/stencil-qa.component';
 import { AppRoutingModule } from './routing/app.routing.module';
-import { SandboxStencilComponent } from './sandbox-stencil/sandbox-stencil.component';
-import { SandboxComponent } from './sandbox/sandbox.component';
-import { Sandbox1Component } from './sandbox1/sandbox1.component';
-import { Sandbox2Component } from './sandbox2/sandbox2.component';
-import { Sandbox3Component } from './sandbox3/sandbox3.component';
-import { ThemeSelectComponent } from './theme/theme.component';
-
 const JL_ANGULAR_COMPONENTS = [
     JLButtonModule,
     JLIconModule,
@@ -43,12 +42,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
     declarations: [
         AppComponent,
-        SandboxComponent,
-        SandboxStencilComponent,
-        Sandbox1Component,
-        Sandbox2Component,
-        Sandbox3Component,
-        ThemeSelectComponent,
+        HomeComponent,
+        StencilQAComponent,
+        QABlankComponent,
+        DevBlankComponent,
+        ColoursComponent,
+        CoreQAComponent,
     ],
     imports: [
         BrowserModule,
@@ -68,6 +67,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ],
     providers: [],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

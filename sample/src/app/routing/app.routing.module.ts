@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; // CLI imports router
-import { SandboxStencilComponent } from '../sandbox-stencil/sandbox-stencil.component';
-import { SandboxComponent } from '../sandbox/sandbox.component';
-import { Sandbox1Component } from '../sandbox1/sandbox1.component';
-import { Sandbox2Component } from '../sandbox2/sandbox2.component';
-import { Sandbox3Component } from '../sandbox3/sandbox3.component';
+import { ColoursComponent } from '../dev/colours/colours.component';
+import { DevBlankComponent } from '../dev/dev-blank/dev-blank.component';
+import { HomeComponent } from '../home/home.component';
+import { InstructionsComponent } from '../instructions/instructions.component';
+import { CoreQAComponent } from '../qa/core-qa/core-qa.component';
+import { QABlankComponent } from '../qa/qa-blank/qa-blank.component';
+import { StencilQAComponent } from '../qa/stencil-qa/stencil-qa.component';
 
 export const routes: Routes = [
-    { path: 'sandbox', component: SandboxComponent },
-    { path: 'sandbox-stencil', component: SandboxStencilComponent },
-    { path: 'sandbox1', component: Sandbox1Component },
-    { path: 'sandbox2', component: Sandbox2Component },
-    { path: 'sandbox3', component: Sandbox3Component },
+    { path: 'home', component: HomeComponent },
+    { path: 'instructions', component: InstructionsComponent },
+    { path: 'stencil-qa', component: StencilQAComponent },
+    { path: 'qa-blank', component: QABlankComponent },
+    { path: 'dev-blank', component: DevBlankComponent },
+    { path: 'colours', component: ColoursComponent },
+    { path: 'core-qa', component: CoreQAComponent },
 ];
 
 // configures NgModule imports and exports
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', redirectTo: 'sandbox', pathMatch: 'full' },
+            { path: '', redirectTo: 'home', pathMatch: 'full' },
             ...routes,
         ]),
     ],
