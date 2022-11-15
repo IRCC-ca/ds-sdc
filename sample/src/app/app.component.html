@@ -12,24 +12,14 @@
       </select>
     </span>
   </djl-header>
-<h1>DS Sandbox</h1>
-<nav class="page-nav">
-  <ul>
-    <li><button id="home" (click)="handleNav('/home')">Home</button></li>
-    <li><button id="instructions" (click)="handleNav('/instructions')">Instructions</button></li>
-    <li><button id="core-qa" (click)="handleNav('/core-qa')">Core - QA</button></li>
-    <li><button id="stencil-qa" (click)="handleNav('/stencil-qa')">Stencil - QA</button></li>
-    <li><button id="qa-blank" (click)="handleNav('/qa-blank')">Blank - QA</button></li>
-    <li><button id="dev-blank" (click)="handleNav('/dev-blank')">Dev</button></li>
-    <li><button id="colours" (click)="handleNav('/colours')">Colours</button></li>
-  </ul>
-</nav>
+  <h1>{{ 'App.AppName' | translate }}</h1>
+  <span class="body3">
+    <p>{{'App.Text' | translate }}</p>
+  </span>
   <div class="main-nav">
     <router-outlet></router-outlet>
   </div>
-  <div class="fixed-content">
-    <button (click)="this.goToTop()">Scroll to top</button>
-  </div>
+
   <span class="body4">
     <p>{{'App.InfoPackage' | translate}}</p>
     <p [innerHTML]="'App.PackageLink' | translate"></p>

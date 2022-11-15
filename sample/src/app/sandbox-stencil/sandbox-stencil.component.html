@@ -1,0 +1,45 @@
+<my-component first="What's up" last="yio"></my-component>
+<br />
+<djl-button>this is button from Stencil</djl-button>
+<br />
+<djl-button color="cta" category="plain" size="small" disabled="true" type="button">Stencil button</djl-button>
+<br />
+<djl-button  color="critical" size="small" disabled=false type="button" category="secondary">Stencil button</djl-button>
+<br/>
+<djl-button aria-label="button from ng" disabled="true" color="critical">disabled stencil</djl-button>
+<br/>
+<djl-button color="CTA" category="plain">Boo</djl-button>
+<br/>
+<djl-icon icon-config='{"unicode": "f6b0", "fontFamily": "fa-solid"}'></djl-icon>
+<djl-icon icon-config='{"unicode": "f6b0", "fontFamily": "fa-thin"}'></djl-icon>
+<djl-icon icon-config='{"unicode": "f076", "fontFamily": "fa-light", "ariaLabel": "label"}'></djl-icon><br/>
+<djl-link href="#">Test blank link</djl-link><br/>
+<djl-link href="https://github.com/" target="_self">Test Web link</djl-link><br/>
+<djl-link download="https://github.com/" href="#" target="_blank">Test Download link</djl-link><br/>
+<djl-link href="mailto:test@example.com" target="_blank">Test Email link</djl-link><br/>
+<djl-link href="tel:7788888888" target="_blank">Test Phone link</djl-link>
+<djl-form-checkbox
+  label="Pizza Toppings"
+  description="Description Text"
+  hint="Select all that apply."
+  error-text="This field is required."
+  required>
+  <input type="checkbox" id="default-1">
+  <label for="default-1">Toppings</label><br/>
+  <input type="checkbox" id="default-2">
+  <label for="default-2">Pepperoni</label>
+</djl-form-checkbox>
+<djl-form-checkbox
+  label="Pizza Toppings"
+  description="Description Text"
+  hint="Select all that apply."
+  error-text="This field is required."
+  type="parent-child"
+  >
+  <input type="checkbox" id="parent-1">
+  <label for="default-1">Parent</label><br/>
+  <input type="checkbox" id="child-1">
+  <label for="default-2">Child 1</label><br/>
+  <input type="checkbox" id="child-2">
+  <label for="default-2">Child 2</label><br/>
+</djl-form-checkbox>

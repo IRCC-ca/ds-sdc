@@ -44,16 +44,4 @@ export class AppComponent {
         const newPath = routes[newIndex].path;
         this.router.navigate([newPath]);
     }
-
-    goToTop() {
-        window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-        });
-    }
-
-    handleNav(path: string) {
-        this.router.url !== path ? this.router.navigateByUrl(path) : null;
-    }
 }
