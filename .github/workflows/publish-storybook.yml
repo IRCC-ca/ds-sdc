@@ -23,8 +23,6 @@ jobs:
       run: | # Set registry and authenticate with repo token
         npm set @ircc-ca:registry=https://npm.pkg.github.com/ircc-ca
         npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
-        npm set @fortawesome:registry=https://npm.fontawesome.com/
-        npm set "//npm.fontawesome.com/:_authToken=${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
     - name: "Install dependencies"
       run: | # Install and link dependencies
         npx lerna bootstrap
