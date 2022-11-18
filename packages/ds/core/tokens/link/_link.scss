@@ -19,9 +19,9 @@
         @include device.if-hover {
             --text-hover: #{color.mix-token($focus-palette, 500)};
         }
-        --text: #{color.mix-token($cta-palette, 600)};
-        --text-active: #{color.mix-token($cta-palette, 400)};
-        --text-visited: #{color.mix-token($visited-palette, 600)};
+        --text: #{color.mix-token($cta-palette, 400)};
+        --text-active: #{color.mix-token($cta-palette, 300)};
+        --text-visited: #{color.mix-token($visited-palette, 500)};
     }
 }
 

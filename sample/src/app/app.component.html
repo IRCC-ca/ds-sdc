@@ -1,4 +1,4 @@
-  <jds-header>
+<djl-header>
     <span class="form-inline">
       <select 
           #selectedLang 
@@ -11,21 +11,31 @@
         </option>
       </select>
     </span>
-  </jds-header>
-  <h1>{{ 'App.AppName' | translate }}</h1>
-  <span class="body3">
-    <p>{{'App.Text' | translate }}</p>
-  </span>
+  </djl-header>
+<h1>DS Sandbox</h1>
+<nav class="page-nav">
+  <ul>
+    <li><button id="home" (click)="handleNav('/home')">Home</button></li>
+    <li><button id="instructions" (click)="handleNav('/instructions')">Instructions</button></li>
+    <li><button id="core-qa" (click)="handleNav('/core-qa')">Core - QA</button></li>
+    <li><button id="stencil-qa" (click)="handleNav('/stencil-qa')">Stencil - QA</button></li>
+    <li><button id="qa-blank" (click)="handleNav('/qa-blank')">Blank - QA</button></li>
+    <li><button id="dev-blank" (click)="handleNav('/dev-blank')">Dev</button></li>
+    <li><button id="colours" (click)="handleNav('/colours')">Colours</button></li>
+  </ul>
+</nav>
   <div class="main-nav">
     <router-outlet></router-outlet>
   </div>
-
+  <div class="fixed-content">
+    <button (click)="this.goToTop()">Scroll to top</button>
+  </div>
   <span class="body4">
     <p>{{'App.InfoPackage' | translate}}</p>
     <p [innerHTML]="'App.PackageLink' | translate"></p>
   </span>
   <button size="small" category="plain" (click)="findRoute(-1)">{{ 'Footer.Prev' | translate }}</button>
   <button size="small" category="plain" (click)="findRoute(1)">{{ 'Footer.Next' | translate }}</button>
-  <jds-footer>
+  <djl-footer>
     {{'Footer.DateModified' | translate }}: 2022-05-06<br />
-  </jds-footer>
+  </djl-footer>

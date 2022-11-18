@@ -3,61 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.0.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.3-beta.5...@ircc-ca/ds-sdc-react@0.0.3) (2022-08-22)
+## [0.0.4-beta.6](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.5...@ircc-ca/ds-sdc-react@0.0.4-beta.6) (2022-10-17)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
 
+## [0.0.4-beta.5](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.4...@ircc-ca/ds-sdc-react@0.0.4-beta.5) (2022-10-11)
 
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
 
+## [0.0.4-beta.4](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.3...@ircc-ca/ds-sdc-react@0.0.4-beta.4) (2022-09-28)
 
+### Reverts
+
+-   Revert "Bump react-dom from 16.14.0 to 18.2.0 (#209)" (#215) ([d982e8b](https://github.com/IRCC-ca/ds-sdc/commit/d982e8b3c51d8e6933355f89aa89ca1bbe5ebe06)), closes [#209](https://github.com/IRCC-ca/ds-sdc/issues/209) [#215](https://github.com/IRCC-ca/ds-sdc/issues/215)
+
+## [0.0.4-beta.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.2...@ircc-ca/ds-sdc-react@0.0.4-beta.3) (2022-09-26)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
+
+## [0.0.4-beta.2](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.1...@ircc-ca/ds-sdc-react@0.0.4-beta.2) (2022-09-26)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
+
+## [0.0.4-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.4-beta.0...@ircc-ca/ds-sdc-react@0.0.4-beta.1) (2022-09-20)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
+
+## [0.0.4-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.3...@ircc-ca/ds-sdc-react@0.0.4-beta.0) (2022-09-20)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
+
+## [0.0.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.3-beta.5...@ircc-ca/ds-sdc-react@0.0.3) (2022-08-22)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-react
 
 ## [0.0.3-beta.5](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.2...@ircc-ca/ds-sdc-react@0.0.3-beta.5) (2022-08-22)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
 
-
-
-
-
 ## 0.0.2 (2022-08-15)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
-
-
-
-
 
 ## [0.0.2-beta.4](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.2-beta.3...@ircc-ca/ds-sdc-react@0.0.2-beta.4) (2022-07-14)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
 
-
-
-
-
 ## [0.0.2-beta.3](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.2-beta.2...@ircc-ca/ds-sdc-react@0.0.2-beta.3) (2022-07-13)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
-
-
-
-
 
 ## 0.0.2-beta.2 (2022-07-13)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
 
-
-
-
-
 ## [0.0.2-beta.1](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-react@0.0.2-beta.0...@ircc-ca/ds-sdc-react@0.0.2-beta.1) (2022-07-06)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-react
-
-
-
-
 
 ## 0.0.2-beta.0 (2022-07-04)
 

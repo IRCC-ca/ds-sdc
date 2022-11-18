@@ -52,6 +52,7 @@
     ],
     "unit-allowed-list": ["px", "%", "em", "rem", "vw", "vh", "deg", "s", "fr"],
     "max-empty-lines": 2,
-    "max-line-length": 120
+    "max-line-length": 120,
+    "annotation-no-unknown": null
   }
 }

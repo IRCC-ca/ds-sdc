@@ -40,9 +40,15 @@
 
     &:disabled {
         --border: var(--border-disabled);
+        cursor: not-allowed;
 
         & + label {
             color: var(--text-disabled);
+        }
+
+        &:active {
+            --border: var(--border-disabled);
+            background-color: var(--surface1);
         }
     }
 

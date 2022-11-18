@@ -29,6 +29,107 @@ export class DjlButton {
 }
 
 
+export declare interface DjlFooter extends Components.DjlFooter {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'djl-footer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class DjlFooter {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DjlFormCheckbox extends Components.DjlFormCheckbox {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['description', 'errorText', 'hint', 'label', 'required', 'type']
+})
+@Component({
+  selector: 'djl-form-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['description', 'errorText', 'hint', 'label', 'required', 'type']
+})
+export class DjlFormCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DjlHeader extends Components.DjlHeader {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'djl-header',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class DjlHeader {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DjlIcon extends Components.DjlIcon {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['iconConfig']
+})
+@Component({
+  selector: 'djl-icon',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['iconConfig']
+})
+export class DjlIcon {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface DjlLink extends Components.DjlLink {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['ariaLabel', 'download', 'href', 'target']
+})
+@Component({
+  selector: 'djl-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['ariaLabel', 'download', 'href', 'target']
+})
+export class DjlLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MyComponent extends Components.MyComponent {}
 
 @ProxyCmp({

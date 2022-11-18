@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IconConfig } from "./components/icon/djl-icon";
 export namespace Components {
     interface DjlButton {
         /**
@@ -40,6 +41,50 @@ export namespace Components {
          */
         "value"?: string;
     }
+    interface DjlFooter {
+    }
+    interface DjlFormCheckbox {
+        /**
+          * When further detail of the purpose is needed
+         */
+        "description": string;
+        /**
+          * Text that describes the error that occurred
+         */
+        "errorText": string;
+        /**
+          * Specifies a short hint that describes the expected value of the field. Can also be used as a supporting instruction.
+         */
+        "hint": string;
+        /**
+          * Makes the purpose of the field clear
+         */
+        "label": string;
+        /**
+          * Include “(required)” as text at the end of labels of required fields
+         */
+        "required": boolean;
+        "type": 'normal' | 'parent-child';
+    }
+    interface DjlHeader {
+    }
+    interface DjlIcon {
+        /**
+          * Icon config json object, or parsable json string
+          * @example ``` {    unicode : 'f6b0',    fontFamily : 'fa-solid' } ```
+          * @example ``` '{"unicode": "f6b0", "fontFamily": "fa-solid"}' ```
+         */
+        "iconConfig": IconConfig | string;
+    }
+    interface DjlLink {
+        "ariaLabel": string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -66,6 +111,36 @@ declare global {
         prototype: HTMLDjlButtonElement;
         new (): HTMLDjlButtonElement;
     };
+    interface HTMLDjlFooterElement extends Components.DjlFooter, HTMLStencilElement {
+    }
+    var HTMLDjlFooterElement: {
+        prototype: HTMLDjlFooterElement;
+        new (): HTMLDjlFooterElement;
+    };
+    interface HTMLDjlFormCheckboxElement extends Components.DjlFormCheckbox, HTMLStencilElement {
+    }
+    var HTMLDjlFormCheckboxElement: {
+        prototype: HTMLDjlFormCheckboxElement;
+        new (): HTMLDjlFormCheckboxElement;
+    };
+    interface HTMLDjlHeaderElement extends Components.DjlHeader, HTMLStencilElement {
+    }
+    var HTMLDjlHeaderElement: {
+        prototype: HTMLDjlHeaderElement;
+        new (): HTMLDjlHeaderElement;
+    };
+    interface HTMLDjlIconElement extends Components.DjlIcon, HTMLStencilElement {
+    }
+    var HTMLDjlIconElement: {
+        prototype: HTMLDjlIconElement;
+        new (): HTMLDjlIconElement;
+    };
+    interface HTMLDjlLinkElement extends Components.DjlLink, HTMLStencilElement {
+    }
+    var HTMLDjlLinkElement: {
+        prototype: HTMLDjlLinkElement;
+        new (): HTMLDjlLinkElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -74,6 +149,11 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "djl-button": HTMLDjlButtonElement;
+        "djl-footer": HTMLDjlFooterElement;
+        "djl-form-checkbox": HTMLDjlFormCheckboxElement;
+        "djl-header": HTMLDjlHeaderElement;
+        "djl-icon": HTMLDjlIconElement;
+        "djl-link": HTMLDjlLinkElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -112,6 +192,50 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface DjlFooter {
+    }
+    interface DjlFormCheckbox {
+        /**
+          * When further detail of the purpose is needed
+         */
+        "description"?: string;
+        /**
+          * Text that describes the error that occurred
+         */
+        "errorText"?: string;
+        /**
+          * Specifies a short hint that describes the expected value of the field. Can also be used as a supporting instruction.
+         */
+        "hint"?: string;
+        /**
+          * Makes the purpose of the field clear
+         */
+        "label"?: string;
+        /**
+          * Include “(required)” as text at the end of labels of required fields
+         */
+        "required"?: boolean;
+        "type"?: 'normal' | 'parent-child';
+    }
+    interface DjlHeader {
+    }
+    interface DjlIcon {
+        /**
+          * Icon config json object, or parsable json string
+          * @example ``` {    unicode : 'f6b0',    fontFamily : 'fa-solid' } ```
+          * @example ``` '{"unicode": "f6b0", "fontFamily": "fa-solid"}' ```
+         */
+        "iconConfig"?: IconConfig | string;
+    }
+    interface DjlLink {
+        "ariaLabel"?: string;
+        /**
+          * If developer is specifying a download in the href, they need to specify a download name in order for the "download icon" to appear next to it
+         */
+        "download"?: string;
+        "href": string;
+        "target"?: '_blank' | '_parent' | '_self' | '_top';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -132,6 +256,11 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "djl-button": DjlButton;
+        "djl-footer": DjlFooter;
+        "djl-form-checkbox": DjlFormCheckbox;
+        "djl-header": DjlHeader;
+        "djl-icon": DjlIcon;
+        "djl-link": DjlLink;
         "my-component": MyComponent;
     }
 }
@@ -140,6 +269,11 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "djl-button": LocalJSX.DjlButton & JSXBase.HTMLAttributes<HTMLDjlButtonElement>;
+            "djl-footer": LocalJSX.DjlFooter & JSXBase.HTMLAttributes<HTMLDjlFooterElement>;
+            "djl-form-checkbox": LocalJSX.DjlFormCheckbox & JSXBase.HTMLAttributes<HTMLDjlFormCheckboxElement>;
+            "djl-header": LocalJSX.DjlHeader & JSXBase.HTMLAttributes<HTMLDjlHeaderElement>;
+            "djl-icon": LocalJSX.DjlIcon & JSXBase.HTMLAttributes<HTMLDjlIconElement>;
+            "djl-link": LocalJSX.DjlLink & JSXBase.HTMLAttributes<HTMLDjlLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

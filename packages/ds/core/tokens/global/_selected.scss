@@ -31,10 +31,7 @@
         --formcontrol-disabled: #{color.mix-token($palette, 1000)};
         @media (any-hover: hover) {
             --navigation-hover: #{color.mix-token($palette, 500)};
-            --navigation-weak-hover: #{color.mix-token(
-                    $palette,
-                    1100
-                )};
+            --navigation-weak-hover: #{color.mix-token($palette,1100)};
             --formcontrol-hover: #{color.mix-token($palette, 500)};
         }
     }

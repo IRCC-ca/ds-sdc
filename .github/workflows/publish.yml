@@ -24,11 +24,10 @@ jobs:
       run: | # Set registry and authenticate with repo token
         npm set @ircc-ca:registry=https://npm.pkg.github.com/ircc-ca
         npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
-        npm set @fortawesome:registry=https://npm.fontawesome.com/
-        npm set "//npm.fontawesome.com/:_authToken=${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
     - name: "Version and publish"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor}}@users.noreply.github.com"
@@ -52,3 +51,4 @@ jobs:
         npx lerna run build --scope=@ircc-ca/ds-sdc-react
         echo react package built
         npx lerna publish from-git --yes
+        npm publish
