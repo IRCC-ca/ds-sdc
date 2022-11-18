@@ -51,4 +51,4 @@ jobs:
         npx lerna run build --scope=@ircc-ca/ds-sdc-react
         echo react package built
         npx lerna publish from-git --yes
-        npm publish
+        npm publish --access=public

@@ -1,6 +1,7 @@
 {
   "name": "@ircc-ca/ds-sdc-sample",
   "version": "0.0.0",
+  "private": false,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
