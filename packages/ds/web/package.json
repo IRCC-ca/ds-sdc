@@ -48,7 +48,7 @@
     "@stencil/sass": "^2.0.0",
     "@types/jest": "^27.0.3",
     "eslint": "^7.0.0",
-    "eslint-plugin-react": "7.31.10",
+    "eslint-plugin-react": "7.31.11",
     "jest": "^27.0.3",
     "jest-cli": "^27.4.5",
     "puppeteer": "^19.2.2"
