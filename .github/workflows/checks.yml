@@ -16,8 +16,8 @@ jobs:
         node-version: '16'
     - name: "Setup npm"
       run: | # Set registry and authenticate with repo token
-        npm set @ircc-ca:registry=https://npm.pkg.github.com/ircc-ca
-        npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+        npm set @ircc-ca:registry=https://registry.npmjs.com/
+        npm set "//registry.npmjs.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
     - name: Install dependencies
       run: | # Install and link dependencies
         npx lerna bootstrap
