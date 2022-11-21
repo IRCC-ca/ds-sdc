@@ -32,7 +32,6 @@
         "url": "https://github.com/IRCC-ca/ds-sdc/issues"
     },
     "publishConfig": {
-        "access": "restricted",
         "@ircc-ca:registry": "https://registry.npmjs.com/",
         "tag": "ds-sdc-core"
     },
