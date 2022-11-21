@@ -43,10 +43,7 @@ jobs:
         echo angular package built
         npx lerna run build --scope=@ircc-ca/ds-sdc-react
         echo react package built
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      name: "Publish to npm"
-      run: npm publish
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
  
