@@ -1,3 +1,5 @@
+npm version patch
+npm i
 cd packages/ds/core
 npm version patch
 npm i
@@ -11,8 +13,6 @@ cd ../react
 npm version patch
 npm i
 cd ../../..
-npm version patch
-npm i
 git add package-lock.json
 git add package.json
 git add packages/ds/angular/package-lock.json
