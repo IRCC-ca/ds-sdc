@@ -20,13 +20,8 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: '16'
-    - name: "Setup npm"
-      run: | # Set registry and authenticate with repo token
-        npm set @ircc-ca:registry=https://npm.pkg.github.com/ircc-ca
-        npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
     - name: "Version and publish"
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: |
         git config user.name "${{ github.actor }}"
@@ -35,7 +30,7 @@ jobs:
         npx lerna bootstrap
         echo POST-BOOTSTRAP
         echo GIT REF:    ${{ github.ref }}
-        if [ ${{ github.ref }} = 'main' ]; then
+        if [ ${{ github.ref }} == 'main' ]; then
           echo ECHO message: branch is MAIN
           npx lerna version --conventional-commits --conventional-graduate --yes
         else
