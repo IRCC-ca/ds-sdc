@@ -49,6 +49,8 @@ jobs:
       working-directory: packages/ds/core
       run: |
         echo publishing core...
+        npm version patch
+        npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
         npm publish --access public
@@ -58,6 +60,8 @@ jobs:
       working-directory: packages/ds/react
       run: |
         echo publishing react...
+        npm version patch
+        npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
         npm publish --access public
@@ -67,6 +71,8 @@ jobs:
       working-directory: packages/ds/web
       run: |
         echo publishing web...
+        npm version patch
+        npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
         npm publish --access public
@@ -76,6 +82,8 @@ jobs:
       working-directory: packages/ds/angular
       run: |
         echo publishing angular...
+        npm version patch
+        npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
         npm publish --access public
