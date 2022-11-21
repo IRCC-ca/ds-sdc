@@ -21,8 +21,6 @@ jobs:
       with: 
         node-version: '16'
     - name: "Version and publish"
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor}}@users.noreply.github.com"
@@ -46,3 +44,6 @@ jobs:
         npx lerna run build --scope=@ircc-ca/ds-sdc-react
         echo react package built
         npm publish --access=public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
