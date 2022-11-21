@@ -1,5 +1,5 @@
 {
-    "name": "@ircc-ds-sdc/ds-sdc-core",
+    "name": "@ircc-ca/ds-sdc",
     "version": "0.0.0",
     "private": false,
     "scripts": {
