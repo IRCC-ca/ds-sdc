@@ -86,5 +86,23 @@
         "stylelint-scss": "^4.3.0",
         "ts-jest": "^28.0.8",
         "typescript": "~4.8.4"
-    }
+    },
+    "description": "([Français](#gabarit-pour-dépôts-de-code-source-ouvert-du-gouvernement-du-canada))",
+    "main": "index.js",
+    "directories": {
+        "ds-sdc-core": "packages/ds/core",
+        "ds-sdc-web": "packages/ds/web",
+        "ds-sdc-react": "packages/ds/react",
+        "ds-sdc-angular": "packages/ds/angular"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IRCC-ca/ds-sdc.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/IRCC-ca/ds-sdc/issues"
+    },
+    "homepage": "https://github.com/IRCC-ca/ds-sdc#readme"
 }
