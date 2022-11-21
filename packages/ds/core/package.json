@@ -33,7 +33,7 @@
     },
     "publishConfig": {
         "access": "restricted",
-        "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
+        "@ircc-ca:registry": "https://registry.npmjs.com/",
         "tag": "ds-sdc-core"
     },
     "dependencies": {
