@@ -43,8 +43,7 @@
         "tslib": "^2.4.0"
     },
     "publishConfig": {
-        "access": "restricted",
-        "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
+        "@ircc-ca:registry": "https://registry.npmjs.com/",
         "tag": "ds-sdc-angular",
         "directory": "dist"
     },

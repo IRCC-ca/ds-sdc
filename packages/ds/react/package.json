@@ -29,9 +29,9 @@
         "url": "https://github.com/IRCC-ca/ds-sdc/issues"
     },
     "publishConfig": {
-        "access": "restricted",
-        "@ircc-ca:registry": "https://npm.pkg.github.com/ircc-ca",
-        "tag": "ds-sdc-react"
+        "@ircc-ca:registry": "https://registry.npmjs.com/",
+        "tag": "ds-sdc-react",
+        "directory": "dist"
     },
     "dependencies": {
         "@ircc-ca/ds-sdc-core": "file:../core",
