@@ -45,7 +45,7 @@ jobs:
         echo react package built
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      name: "Publish"
+      name: "Publish to npm"
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
