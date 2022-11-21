@@ -35,13 +35,13 @@ jobs:
           echo ECHO message: branch is NOT MAIN
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
         fi
-        npx lerna run build --scope=@ircc-ds-sdc/ds-sdc-core
+        npx lerna run build --scope=@ircc-ca/ds-sdc-core
         echo core package built
-        npx lerna run build --scope=@ircc-ds-sdc/ds-sdc-web
+        npx lerna run build --scope=@ircc-ca/ds-sdc-web
         echo web package built
-        npx lerna run build --scope=@ircc-ds-sdc/ds-sdc-angular
+        npx lerna run build --scope=@ircc-ca/ds-sdc-angular
         echo angular package built
-        npx lerna run build --scope=@ircc-ds-sdc/ds-sdc-react
+        npx lerna run build --scope=@ircc-ca/ds-sdc-react
         echo react package built
         npm publish --access=public
       env:
