@@ -45,16 +45,42 @@ jobs:
         echo react package built
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - name: "Publishing"
+    - name: "Publishing core"
       working-directory: packages/ds/core
       run: |
-        echo publishing now...
+        echo publishing core...
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
         npm publish --access public
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+    - name: "Publishing react"
+      working-directory: packages/ds/react
+      run: |
+        echo publishing react...
+        npm set @ircc-ca:registry=https://registry.npmjs.com/
+        npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
+        npm publish --access public
+      env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: "Publishing web"
+      working-directory: packages/ds/web
+      run: |
+        echo publishing web...
+        npm set @ircc-ca:registry=https://registry.npmjs.com/
+        npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
+        npm publish --access public
+      env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: "Publishing angular"
+      working-directory: packages/ds/angular
+      run: |
+        echo publishing angular...
+        npm set @ircc-ca:registry=https://registry.npmjs.com/
+        npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
+        npm publish --access public
+      env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         
 
  
