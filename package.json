@@ -5,7 +5,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:react": "cd examples/react-stencil && npm run start",
+        "start:react": "cd sample-react && npm run start",
         "build": "ng build",
         "build:packages": "lerna run build --scope=@ircc-ca/ds-sdc-core && lerna run build --scope=@ircc-ca/ds-sdc-web && lerna run build --scope=@ircc-ca/ds-sdc-angular && lerna run build --scope=@ircc-ca/ds-sdc-react",
         "lint": "ng lint && npm run lint:style",
