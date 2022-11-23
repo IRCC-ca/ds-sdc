@@ -32,7 +32,7 @@
 }
 /// Mixin to include to define all fontawesome fonts used in the design system
 @mixin create() {
-    $font-root: '~@fortawesome/fontawesome-pro/webfonts';
+    $font-root: '../../../../fonts';
     @font-face {
         font-family: 'Font Awesome 6 Brands';
         font-style: normal;
