@@ -39,36 +39,36 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing react"
-      working-directory: packages/ds/react
+      working-directory: packages/ds/react/dist
       run: |
         echo publishing react...
         npm version patch
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish --access public
+        npm publish --access public --tag latest
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing web"
-      working-directory: packages/ds/web
+      working-directory: packages/ds/web/dist
       run: |
         echo publishing web...
         npm version patch
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish --access public
+        npm publish --access public --tag latest
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing angular"
-      working-directory: packages/ds/angular
+      working-directory: packages/ds/angular/dist
       run: |
         echo publishing angular...
         npm version patch
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish --access public
+        npm publish --access public --tag latest
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         
