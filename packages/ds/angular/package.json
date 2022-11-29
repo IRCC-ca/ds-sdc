@@ -1,6 +1,6 @@
 {
     "name": "@ircc-ca/ds-sdc-angular",
-    "version": "0.0.41",
+    "version": "0.0.42",
     "description": "Angular components for Digital Journey Labs Design System",
     "author": "IRCC-ca",
     "homepage": "https://github.com/IRCC-ca/ds-sdc#readme",
@@ -43,9 +43,7 @@
         "tslib": "^2.4.0"
     },
     "publishConfig": {
-        "@ircc-ca:registry": "https://registry.npmjs.com/",
-        "tag": "ds-sdc-angular",
-        "directory": "dist"
+        "@ircc-ca:registry": "https://registry.npmjs.com/"
     },
     "devDependencies": {
         "eslint-config-prettier": "^8.5.0",
