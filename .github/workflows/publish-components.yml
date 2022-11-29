@@ -39,7 +39,7 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing react"
-      working-directory: packages/ds/react
+      working-directory: packages/ds/react/
       run: |
         echo publishing react...
         npm version patch
@@ -50,7 +50,7 @@ jobs:
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing web"
-      working-directory: packages/ds/web
+      working-directory: packages/ds/web/
       run: |
         echo publishing web...
         npm version patch
@@ -61,7 +61,7 @@ jobs:
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing angular"
-      working-directory: packages/ds/angular/dist
+      working-directory: packages/ds/angular/
       run: |
         echo publishing angular...
         npm version patch
