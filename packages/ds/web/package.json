@@ -1,6 +1,6 @@
 {
   "name": "@ircc-ca/ds-sdc-web",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "Stencil Component Starter",
   "author": "IRCC-ca",
   "main": "dist/index.cjs.js",
