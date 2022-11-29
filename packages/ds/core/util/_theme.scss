@@ -5,7 +5,7 @@
 @mixin light {
     @if (color.$color-scheme == light) {
         @content;
-    } @else {
+    } @else if (color.$color-scheme == system) {
         @media(prefers-color-scheme: light){
             @content;
         }
@@ -16,7 +16,7 @@
 @mixin dark {
     @if (color.$color-scheme == dark) {
         @content;
-    } @else {
+    } @else if (color.$color-scheme == system) {
         @media(prefers-color-scheme: dark){
             @content;
         }
