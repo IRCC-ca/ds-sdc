@@ -86,6 +86,7 @@ jobs:
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
         cd dist
+        echo navigated to dist...
         npm publish --access public --tag beta
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
