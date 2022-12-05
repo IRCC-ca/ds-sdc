@@ -23,13 +23,6 @@ jobs:
         npx lerna bootstrap
         echo POST-BOOTSTRAP
         echo GIT REF:    ${{ github.ref }}
-        if [ ${{ github.ref }} == 'main' ]; then
-          echo ECHO message: branch is MAIN
-          npx lerna version --conventional-commits --conventional-graduate --yes
-        else
-          echo ECHO message: branch is NOT MAIN
-          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
-        fi
         npx lerna run build --scope=@ircc-ca/ds-sdc-web
         echo web package built
         npx lerna run build --scope=@ircc-ca/ds-sdc-angular
@@ -61,7 +54,7 @@ jobs:
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: "Publishing angular"
-      working-directory: packages/ds/angular/
+      working-directory: packages/ds/angular/dist
       run: |
         echo publishing angular...
         npm version patch
