@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.55-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.53-beta.0...@ircc-ca/ds-sdc-core@0.0.55-beta.0) (2022-12-05)
+
+**Note:** Version bump only for package @ircc-ca/ds-sdc-core
+
 ## [0.0.53-beta.0](https://github.com/IRCC-ca/ds-sdc/compare/@ircc-ca/ds-sdc-core@0.0.51-beta.0...@ircc-ca/ds-sdc-core@0.0.53-beta.0) (2022-11-30)
 
 **Note:** Version bump only for package @ircc-ca/ds-sdc-core
