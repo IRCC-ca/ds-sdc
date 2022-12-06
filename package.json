@@ -1,6 +1,6 @@
 {
     "name": "@ircc-ca/ds-sdc",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "private": false,
     "scripts": {
         "ng": "ng",
@@ -19,7 +19,10 @@
         "storybook": "ng run sample:storybook",
         "storybook:build": "ng run sample:build-storybook",
         "prepare": "husky install",
-        "prep": "npx lerna clean -y && npx lerna bootstrap && npm run build:packages && npx lerna link"
+        "prep": "npx lerna clean -y && npx lerna bootstrap && npm run build:packages && npx lerna link",
+        "patch-v": "sh shell/patch-version.sh",
+        "beta-v": "sh shell/beta-version.sh",
+        "release-v": "sh shell/release-version.sh"
     },
     "dependencies": {
         "@angular/animations": "^14.2.8",
