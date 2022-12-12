@@ -22,7 +22,8 @@
         "prep": "npx lerna clean -y && npx lerna bootstrap && npm run build:packages && npx lerna link",
         "patch-v": "sh shell/patch-version.sh",
         "beta-v": "sh shell/beta-version.sh",
-        "release-v": "sh shell/release-version.sh"
+        "release-v": "sh shell/release-version.sh",
+        "rm-pl": "sh shell/clear-package-lock.sh"
     },
     "dependencies": {
         "@angular/animations": "^14.2.8",
