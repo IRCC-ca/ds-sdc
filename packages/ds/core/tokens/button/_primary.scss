@@ -12,25 +12,26 @@ $default-color: null;
     @include theme.select-attribute($palette, color, $default-color) {
         @include theme.light {
             @include device.if-hover {
-                --background-hover: #{color.mix-token($palette, 800)};
+                --primary-background-hover: #{color.mix-token($palette, 800)};
             }
-            --background: #{color.mix-token($palette, 700)};
-            --background-active: #{color.mix-token($palette, 900)};
-            --background-disabled: #{color.mix-token($palette, 300)};
-            --text: #{color.mix-token($text-palette, 100)};
+            --primary-background: #{color.mix-token($palette, 700)};
+            --primary-background-active: #{color.mix-token($palette, 900)};
+            --primary-background-disabled: #{color.mix-token($palette, 300)};
+            --primary-text: #{color.mix-token($text-palette, 100)};
             --primary-text-disabled: #{color.mix-token($text-palette, 100)};
         }
 
         @include theme.dark {
             @include device.if-hover {
-                --background-hover: #{color.mix-token($palette, 500)};
+                --primary-background-hover: #{color.mix-token($palette, 500)};
             }
-            --background: #{color.mix-token($palette, 600)};
-            --background-active: #{color.mix-token($palette, 400)};
-            --background-disabled: #{color.mix-token($palette, 1000)};
-            --text: #{color.mix-token($text-palette, 200)};
+            --primary-background: #{color.mix-token($palette, 600)};
+            --primary-background-active: #{color.mix-token($palette, 400)};
+            --primary-background-disabled: #{color.mix-token($palette, 1000)};
+            --primary-text: #{color.mix-token($text-palette, 200)};
             --primary-text-disabled: #{color.mix-token($text-palette, 1000)};
         }
+        --text: var(--primary-text);
     }
 }
 
@@ -55,17 +56,17 @@ $default-color: null;
 
 @mixin layout() {
     @include button-const.layout();
-    background-color: var(--background);
+    background-color: var(--primary-background);
     @include device.if-hover {
-        background-color: var(--background-hover);
+        background-color: var(--primary-background-hover);
     }
 
     &:active {
-        background-color: var(--background-active);
+        background-color: var(--primary-background-active);
     }
 
     &:disabled {
-        background-color: var(--background-disabled);
+        background-color: var(--primary-background-disabled);
         color: var(--primary-text-disabled);
     }
 }
