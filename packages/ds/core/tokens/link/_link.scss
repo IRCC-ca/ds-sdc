@@ -8,20 +8,20 @@
 @mixin tokens($cta-palette, $visited-palette, $focus-palette) {
     @include theme.light {
         @include device.if-hover {
-            --text-hover: #{color.mix-token($focus-palette, 800)};
+            --link-text-hover: #{color.mix-token($focus-palette, 800)};
         }
-        --text: #{color.mix-token($cta-palette, 700)};
-        --text-active: #{color.mix-token($cta-palette, 900)};
-        --text-visited: #{color.mix-token($visited-palette, 700)};
+        --link-text: #{color.mix-token($cta-palette, 700)};
+        --link-text-active: #{color.mix-token($cta-palette, 900)};
+        --link-text-visited: #{color.mix-token($visited-palette, 700)};
     }
 
     @include theme.dark {
         @include device.if-hover {
-            --text-hover: #{color.mix-token($focus-palette, 500)};
+            --link-text-hover: #{color.mix-token($focus-palette, 500)};
         }
-        --text: #{color.mix-token($cta-palette, 400)};
-        --text-active: #{color.mix-token($cta-palette, 300)};
-        --text-visited: #{color.mix-token($visited-palette, 500)};
+        --link-text: #{color.mix-token($cta-palette, 400)};
+        --link-text-active: #{color.mix-token($cta-palette, 300)};
+        --link-text-visited: #{color.mix-token($visited-palette, 500)};
     }
 }
 
@@ -57,10 +57,10 @@
     display: inline;
 
     &:link {
-        color: var(--text);
+        color: var(--link-text);
     }
     @include device.if-hover {
-        color: var(--text-hover);
+        color: var(--link-text-hover);
         background-color: var(--generic-hover);
     }
 
@@ -70,11 +70,11 @@
     }
 
     &:active {
-        color: var(--text-active);
+        color: var(--link-text-active);
         background-color: var(--generic-active);
     }
 
     &:visited {
-        color: var(--text-visited);
+        color: var(--link-text-visited);
     }
 }
