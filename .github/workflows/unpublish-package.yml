@@ -1,0 +1,19 @@
+name: Unpublish
+on:
+  workflow_dispatch:
+    branches:
+    - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "unpublishing core"
+      working-directory: packages/ds/core/
+      run: |
+        echo un-publishing core...
+        npm i
+        npm set @ircc-ca:registry=https://registry.npmjs.com/
+        npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
+        npm unpublish @@ircc-ca/ds-sdc-core@1.0.2 --force
+      env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
