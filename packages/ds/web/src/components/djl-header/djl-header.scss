@@ -22,11 +22,14 @@
     display: grid;
     @include layout-grid.grid(max-content auto, auto);
     * {grid-column: auto / span 1};
-    
+
     align-items: center;
+
+    img {
+      min-width: 295px;
+    }
   }
 
   .item2 {
     justify-self: end;
   }
-  
