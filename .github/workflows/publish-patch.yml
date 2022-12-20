@@ -1,0 +1,46 @@
+name: Publish-patch
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+  workflow_dispatch:
+    branches:
+    - develop
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # Checkout all branches and tags
+    - name: "Use NodeJS 16"
+      uses: actions/setup-node@v2
+      with: 
+        node-version: '16'
+    - name: "Version and build"
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor}}@users.noreply.github.com"
+        echo PRE-BOOTSTRAP
+        npx lerna bootstrap
+        echo POST-BOOTSTRAP
+        echo GIT REF:    ${{ github.ref }}
+        npx lerna run build --scope=@ircc-ca/ds-sdc-core
+        echo core package built
+        npx lerna run build --scope=@ircc-ca/ds-sdc-angular
+        echo angular package built
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: "Publishing angular"
+      working-directory: packages/ds/angular/dist
+      run: |
+        echo publishing angular...
+        npm version patch
+        npm i
+        npm set @ircc-ca:registry=https://registry.npmjs.com/
+        npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
+        npm publish --access public --tag beta
+      env:
+       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
