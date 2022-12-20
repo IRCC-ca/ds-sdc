@@ -1,4 +1,4 @@
-name: Publish-beta
+name: Publish-patch
 on:
   pull_request:
     types: [closed]
