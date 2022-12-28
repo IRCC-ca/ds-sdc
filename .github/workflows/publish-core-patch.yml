@@ -1,4 +1,4 @@
-name: Publish-patch
+name: Publish-core-patch
 on:
   pull_request:
     types: [closed]
@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: '16'
-    - name: "Version and build"
+    - name: "Build"
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor}}@users.noreply.github.com"
@@ -29,18 +29,15 @@ jobs:
         echo GIT REF:    ${{ github.ref }}
         npx lerna run build --scope=@ircc-ca/ds-sdc-core
         echo core package built
-        npx lerna run build --scope=@ircc-ca/ds-sdc-angular
-        echo angular package built
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - name: "Publishing angular"
-      working-directory: packages/ds/angular/dist
+    - name: "Publishing core"
+      working-directory: packages/ds/core/
       run: |
-        echo publishing angular...
-        npm version patch
+        echo publishing core...
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish --access public --tag beta
+        npm publish --tag=patch
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
