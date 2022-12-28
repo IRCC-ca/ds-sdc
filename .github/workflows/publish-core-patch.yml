@@ -1,8 +1,12 @@
-name: Publish-Core
+name: Publish-core-patch
 on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
   workflow_dispatch:
     branches:
-    - main
+    - develop
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -34,6 +38,6 @@ jobs:
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish
+        npm publish --tag=patch
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

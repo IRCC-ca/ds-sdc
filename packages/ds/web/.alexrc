@@ -1,9 +1,0 @@
-{
-  "noBinary": true,
-  "profanitySureness": 2,
-  "allow": [
-    "color",
-    "invalid",
-    "disabled"
-  ]
-}
