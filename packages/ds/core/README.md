@@ -19,9 +19,10 @@ In your root-level stylesheet, initialize the design system with:
 @include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, light);
 @include ircc-ds.element-styles();
 ```
+Alternatively, you can pass in `dark` instead of `light` as the final parameter of `theme-init-required()` to initialize only the dark color scheme, or `system` if you would like to default to the user's operating system settings.
 
-A list of elements can be passed to `element-styles` to include, should only certain element styles be desired.
-Alternatively, you can pass in `dark` instead of `light` as the final parameter to initialize only the dark color scheme, or `system` if you would like to default to the user's operating system settings.
+A list of elements can be passed to `element-styles()` to include, should only certain element styles be desired.
+
 
 ### Element style tokens and layouts
 
