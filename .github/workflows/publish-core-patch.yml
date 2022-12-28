@@ -1,9 +1,5 @@
 name: Publish-core-patch
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - develop
   workflow_dispatch:
     branches:
     - develop

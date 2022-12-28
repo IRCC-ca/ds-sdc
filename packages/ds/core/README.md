@@ -12,15 +12,16 @@ npm install --save-dev @ircc-ca/ds-sdc-core
 
 ## Usage
 
-In your root-level stylesheet, initialize the design system with
+In your root-level stylesheet, initialize the design system with:
 
 ```scss
 @use '~@ircc-ca/ds-sdc-core/index' as ircc-ds;
-@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large);
+@include ircc-ds.theme-init-required(ircc-ds.palette-journeylab(), default, large, light);
 @include ircc-ds.element-styles();
 ```
 
 A list of elements can be passed to `element-styles` to include, should only certain element styles be desired.
+Alternatively, you can pass in `dark` instead of `light` as the final parameter to initialize only the dark color scheme, or `system` if you would like to default to the user's operating system settings.
 
 ### Element style tokens and layouts
 
