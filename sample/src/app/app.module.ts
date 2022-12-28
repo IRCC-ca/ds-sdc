@@ -16,9 +16,9 @@ import { AppComponent } from './app.component';
 import { ColoursComponent } from './dev/colours/colours.component';
 import { DevBlankComponent } from './dev/dev-blank/dev-blank.component';
 import { HomeComponent } from './home/home.component';
+import { AngularQAComponent } from './qa/component-qa/angular-qa.component';
 import { CoreQAComponent } from './qa/core-qa/core-qa.component';
 import { QABlankComponent } from './qa/qa-blank/qa-blank.component';
-import { StencilQAComponent } from './qa/stencil-qa/stencil-qa.component';
 import { AppRoutingModule } from './routing/app.routing.module';
 const JL_ANGULAR_COMPONENTS = [
     JLButtonModule,
@@ -43,7 +43,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     declarations: [
         AppComponent,
         HomeComponent,
-        StencilQAComponent,
+        AngularQAComponent,
         QABlankComponent,
         DevBlankComponent,
         ColoursComponent,

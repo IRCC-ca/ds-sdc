@@ -1,8 +1,12 @@
-name: Publish-Core
+name: Publish-angular-patch
 on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
   workflow_dispatch:
     branches:
-    - main
+    - develop
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -23,17 +27,17 @@ jobs:
         npx lerna bootstrap
         echo POST-BOOTSTRAP
         echo GIT REF:    ${{ github.ref }}
-        npx lerna run build --scope=@ircc-ca/ds-sdc-core
-        echo core package built
+        npx lerna run build --scope=@ircc-ca/ds-sdc-angular
+        echo angular package built
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - name: "Publishing core"
-      working-directory: packages/ds/core/
+    - name: "Publishing angular"
+      working-directory: packages/ds/angular/dist
       run: |
-        echo publishing core...
+        echo publishing angular...
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish
+        npm publish --tag=patch
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

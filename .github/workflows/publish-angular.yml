@@ -1,4 +1,4 @@
-name: Publish-Components
+name: Publish-Angular-Components
 on:
   workflow_dispatch:
     branches:
@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: '16'
-    - name: "Version and build"
+    - name: "Build"
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor}}@users.noreply.github.com"
@@ -31,11 +31,10 @@ jobs:
       working-directory: packages/ds/angular/dist
       run: |
         echo publishing angular...
-        npm version patch
         npm i
         npm set @ircc-ca:registry=https://registry.npmjs.com/
         npm set "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}"
-        npm publish --access public
+        npm publish
       env:
        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         
