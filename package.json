@@ -20,9 +20,10 @@
         "storybook:build": "ng run sample:build-storybook",
         "prepare": "husky install",
         "prep": "npx lerna clean -y && npx lerna bootstrap && npm run build:packages && npx lerna link",
-        "patch-v": "sh shell/patch-version.sh",
-        "beta-v": "sh shell/beta-version.sh",
-        "release-v": "sh shell/release-version.sh",
+        "a-p": "sh shell/angular-patch-version.sh",
+        "c-p": "sh shell/core-patch-version.sh",
+        "a-r": "sh shell/angular-release-version.sh",
+        "c-r": "sh shell/core-release-version.sh",
         "rm-pl": "sh shell/clear-package-lock.sh"
     },
     "dependencies": {

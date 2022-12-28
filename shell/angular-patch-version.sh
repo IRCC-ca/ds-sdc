@@ -1,4 +1,4 @@
-cd ../angular
+cd packages/ds/angular
 npm version patch
 npm i
 cd ../../..

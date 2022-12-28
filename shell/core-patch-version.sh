@@ -1,4 +1,4 @@
-cd ../core
+cd packages/ds/core
 npm version patch
 npm i
 cd ../../..
