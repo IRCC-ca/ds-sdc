@@ -1,0 +1,47 @@
+@use '../../util/theme' as theme;
+@use '../../util/size' as size;
+@use '../sizes' as token-size;
+@use '../template-const';
+$selectors: 'lib-dropdown-input';
+
+@mixin dropdown-size-padding {
+    @include size.selector(small) {
+        padding: token-size.$small-padding;
+    }
+
+    @include size.selector(large) {
+        padding: token-size.$large-padding;
+    }
+}
+
+@mixin selectors {
+        #{$selectors}#{template-const.$escape} {
+            @content;
+        }
+}
+
+@mixin layout {
+    select{
+    border-radius: token-size.$border-radius;
+    border-style: none;
+    justify-content: center;
+    max-width: token-size.$max-button-width;
+    cursor: pointer;
+    width: 100%;
+
+    @include dropdown-size-padding();
+    @include dropdown-size();
+
+    color: var(--text);
+    }
+}
+
+@mixin dropdown-size {
+    @include size.selector(small) {
+        @extend .h6;
+    }
+
+    @include size.selector(large) {
+        @extend .h5;
+    }
+}

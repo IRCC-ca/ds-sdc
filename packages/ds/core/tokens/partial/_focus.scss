@@ -17,8 +17,12 @@
 
 @mixin create($palette: focus) {
     @include selector {
-        @include tokens($palette);
         @include layout();
+    }
+    @at-root {
+        #{template-const.$root-selectors} {
+        @include tokens($palette);
+        }
     }
 }
 

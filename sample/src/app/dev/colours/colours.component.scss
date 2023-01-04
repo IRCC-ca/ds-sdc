@@ -110,3 +110,27 @@ hr{
 .text-disabled {
     background-color: var(--text-disabled);
 }
+
+.primary-background{
+    background-color: var(--primary-background);
+}
+
+.primary-background-hover{
+    background-color: var(--primary-background-hover);
+}
+
+.primary-background-disabled{
+    background-color: var(--primary-background-disabled);
+}
+
+.primary-text{
+    background-color: var(--primary-text);
+}
+
+.primary-text-disabled{
+    background-color: var(--primary-text-disabled);
+}
+
+.focus-border{
+    background-color: var(--focus-border);
+}
