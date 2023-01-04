@@ -1,14 +1,14 @@
 @use '../../util/color' as color;
 @use '../../util/theme' as theme;
 @use '../template-const' as template-const;
-@use './button-const' as button-const;
+@use './dropdown-const' as dropdown-const;
 @use '../../util/device' as device;
 @use 'sass:map';
 
 $primary: 'primary';
 $default-color: null;
 
-@mixin tokens($palette : cta, $text-palette) {
+@mixin tokens($palette, $text-palette) {
     @include theme.select-attribute($palette, color, $default-color) {
         @include theme.light {
             @include device.if-hover {
@@ -41,8 +41,8 @@ $default-color: null;
         (role: critical, text: neutral),
     )
 ) {
-    @include button-const.selectors() {
-        &:where([category='#{$primary}'], :not([category])) {
+    @include dropdown-const.selectors() {
+        &:where(lib-dropdown-input[category='#{$primary}']) {
             @each $map in $palette {
                 @if not $default-color {
                     $default-color: map.get($map, role) !global;
@@ -55,18 +55,11 @@ $default-color: null;
 }
 
 @mixin layout() {
-    @include button-const.layout();
-    background-color: var(--primary-background);
-    @include device.if-hover {
+    @include dropdown-const.layout();
+    select{
+        background-color: var(--primary-background);
+        @include device.if-hover {
         background-color: var(--primary-background-hover);
-    }
-
-    &:active {
-        background-color: var(--primary-background-active);
-    }
-
-    &:disabled {
-        background-color: var(--primary-background-disabled);
-        color: var(--primary-text-disabled);
+        }
     }
 }
