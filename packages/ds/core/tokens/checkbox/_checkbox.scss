@@ -26,10 +26,26 @@
     margin: token-size.$form-control-margin;
     box-sizing: border-box;
     box-shadow: token-size.$border-style;
-    vertical-align: top;
+    vertical-align: bottom;
     cursor: pointer;
+    display: inline-flex;
 
     @include checkbox-size();
+
+    & + label {
+        padding-left: 8px;
+        width: 130px;
+        height: 20px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--text-primary);
+        flex: none;
+        order: 0;
+        flex-grow: 1;
+    }
 
     @include device.if-hover {
         color: var(--formcontrol-hover);

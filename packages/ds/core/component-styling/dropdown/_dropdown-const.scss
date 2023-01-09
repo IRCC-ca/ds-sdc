@@ -1,7 +1,7 @@
 @use '../../util/theme' as theme;
 @use '../../util/size' as size;
-@use '../sizes' as token-size;
-@use '../template-const';
+@use '../../tokens/sizes' as token-size;
+@use '../../tokens/template-const';
 $selectors: 'lib-dropdown-input';
 
 @mixin dropdown-size-padding {
