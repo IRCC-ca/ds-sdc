@@ -8,10 +8,6 @@
 @use './tokens/button/secondary';
 @use './tokens/button/round';
 
-@use './tokens/dropdown/plain' as dd-plain;
-@use './tokens/dropdown/primary' as dd-primary;
-@use './tokens/dropdown/secondary' as dd-secondary;
-
 @use './tokens/checkbox/checkbox';
 @use './tokens/radio/radio';
 @use './tokens/link/link';
@@ -27,6 +23,11 @@
 
 @use './tokens/partial/focus';
 @use './tokens/partial/disable';
+
+@use './component-styling/checkbox/checkbox' as checkbox-component;
+@use './component-styling/dropdown/plain' as dd-plain;
+@use './component-styling/dropdown/primary' as dd-primary;
+@use './component-styling/dropdown/secondary' as dd-secondary;
 
 @use './typography/fa-wrapper';
 
@@ -70,6 +71,7 @@
         @include element(link);
         @include element(focus);
         @include element(disable);
+        @include element(checkbox-component);
     } @else {
         @each $key in $include {
             @include element($key);
@@ -110,5 +112,7 @@
         @include focus.create();
     } @else if $key == disable {
         @include disable.create();
+    } @else if $key == checkbox-component {
+        @include checkbox-component.create();
     }
 }

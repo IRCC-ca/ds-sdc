@@ -1,10 +1,10 @@
 @use '../../util/color' as color;
-@use '../text' as text;
+@use '../../tokens/text' as text;
 @use '../../util/theme' as theme;
-@use '../template-const' as template-const;
+@use '../../tokens/template-const' as template-const;
 @use './dropdown-const' as dropdown-const;
 @use '../../util/device' as device;
-@use '../sizes' as sizes;
+@use '../../tokens/sizes' as sizes;
 $secondary: 'secondary';
 $default-color: null;
 @mixin tokens($palette: cta) {
