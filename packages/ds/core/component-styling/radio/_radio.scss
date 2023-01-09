@@ -1,0 +1,31 @@
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/device' as device;
+@use '../../util/size' as size;
+@use '../../tokens/template-const' as template-const;
+@use '../../tokens/sizes' as token-size;
+@use '../../typography/typography' as typography;
+@use '../../tokens/text' as text;
+@use 'sass:map';
+
+@mixin selector {
+  lib-radio-input#{template-const.$escape} {
+    @content;
+  }
+}
+
+@mixin create {
+  @include selector() {
+    @include layout();
+  }
+}
+
+@mixin layout {
+  div.radio {
+    margin-top: 12px;
+    margin-left: -12px;
+    &:last-child {
+      margin-bottom: 12px;
+    }
+  }
+}
