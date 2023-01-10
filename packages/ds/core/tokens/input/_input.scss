@@ -8,6 +8,7 @@
 
 $input-types : (
     text,
+    password,
     //search,
     //file
 );
@@ -18,9 +19,10 @@ $input-types : (
             @include theme.select-attribute($type, type, text) {
                 @content;
             }
-            //&:where([type="file"]){
+            &:where([type="password"]){
                 // any future file type styles (duplicate for all types with seperate styles)
-            //}
+                @content;
+            }
         }
     }
 }
