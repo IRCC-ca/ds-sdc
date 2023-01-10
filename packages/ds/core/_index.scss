@@ -25,6 +25,7 @@
 @use './tokens/partial/disable';
 
 @use './component-styling/checkbox/checkbox' as checkbox-component;
+@use './component-styling/radio/radio' as radio-component;
 @use './component-styling/dropdown/plain' as dd-plain;
 @use './component-styling/dropdown/primary' as dd-primary;
 @use './component-styling/dropdown/secondary' as dd-secondary;
@@ -72,6 +73,7 @@
         @include element(focus);
         @include element(disable);
         @include element(checkbox-component);
+        @include element(radio-component);
     } @else {
         @each $key in $include {
             @include element($key);
@@ -114,5 +116,7 @@
         @include disable.create();
     } @else if $key == checkbox-component {
         @include checkbox-component.create();
+    } @else if $key == radio-component {
+        @include radio-component.create();
     }
 }
