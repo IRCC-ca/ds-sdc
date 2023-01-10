@@ -1,4 +1,4 @@
-../cd packages/ds/core
+cd ../packages/ds/core
 npm version major
 npm i
 cd ../../..
