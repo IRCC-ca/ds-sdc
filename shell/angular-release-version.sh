@@ -1,4 +1,4 @@
-cd packages/ds/angular
+cd ../packages/ds/angular
 npm version major
 npm i
 cd ../../..
