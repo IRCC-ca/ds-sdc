@@ -1,0 +1,57 @@
+@use '../../util/color' as color;
+@use '../../util/theme' as theme;
+@use '../../util/device' as device;
+@use '../../util/size' as size;
+@use '../../tokens/template-const' as template-const;
+@use '../../tokens/sizes' as token-size;
+@use '../../typography/typography' as typography;
+@use '../../tokens/text' as text;
+@use 'sass:map';
+
+@mixin selector {
+    jl-pr-sclp-input#{template-const.$escape} {
+        @content;
+    }
+}
+
+@mixin create {
+    @include selector() {
+        @include layout();
+    }
+}
+
+@mixin layout {
+
+.input-container {
+  user-select: none;
+
+  .input-text {
+    width: 100%;
+    display: grid;
+    position: relative;
+  }
+
+
+.passwordIcon {
+  justify-self: flex-end;
+  align-self: flex-end;
+  //TODO: Calculate the position of the eye icon
+}
+
+.transparentButton {
+  position: absolute;
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin-bottom: 0px;
+  background: transparent;
+  z-index: 1;
+
+  &:focus{
+    box-shadow: 0 0 0 3px var(--focus-border);
+  }
+  
+}
+
+}
+   
+}

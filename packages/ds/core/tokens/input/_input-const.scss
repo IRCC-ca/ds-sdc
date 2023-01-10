@@ -6,6 +6,7 @@
 @use '../../util/size' as size;
 
 @mixin common {
+    width: 100%;
     border-style: solid;
     border-width: sizes.$fixed-1;
     border-radius: sizes.$border-radius;
