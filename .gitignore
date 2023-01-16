@@ -29,13 +29,13 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+/Design-System/.angular/cache
+/Design-System/.sass-cache/
+/Design-System/connect.lock
+/Design-System/coverage
+/Design-System/libpeerconnection.log
+/Design-System/testem.log
+/Design-System/typings
 
 # System files
 .DS_Store
@@ -45,7 +45,7 @@ Thumbs.db
 **/*debug.log
 
 # Jest
-packages/ds/angular/coverage
+/Design-System/packages/ds/angular/coverage
 
 # Storybook static
 storybook-static/**
