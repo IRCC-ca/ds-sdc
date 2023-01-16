@@ -20,6 +20,7 @@
 @use './tokens/global/selected';
 @use './tokens/global/text-global';
 @use './tokens/global/validation';
+@use './tokens/alert/alert' as alert-tokens;
 
 @use './tokens/partial/focus';
 @use './tokens/partial/disable';
@@ -29,6 +30,7 @@
 @use './component-styling/dropdown/plain' as dd-plain;
 @use './component-styling/dropdown/primary' as dd-primary;
 @use './component-styling/dropdown/secondary' as dd-secondary;
+@use './component-styling/alert/alert';
 
 @use './typography/fa-wrapper';
 
@@ -74,6 +76,8 @@
         @include element(disable);
         @include element(checkbox-component);
         @include element(input-component);
+        @include element(alert);
+        @include element(alert-tokens);
     } @else {
         @each $key in $include {
             @include element($key);
@@ -118,5 +122,9 @@
         @include checkbox-component.create();
     } @else if $key == input-component {
         @include input-component.create();
+    } @else if $key == alert {
+        @include alert.create();
+    } @else if $key == alert-tokens {
+        @include alert-tokens.create();
     }
 }

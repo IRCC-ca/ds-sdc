@@ -1,0 +1,37 @@
+@use '../../util/device';
+@use '../../util/theme';
+@use '../../util/color';
+@use '../template-const';
+
+@mixin create($palette: (neutral, critical, success, information, warning)) {
+    @at-root {
+        #{template-const.$root-selectors} {
+            @each $key in $palette {
+                @include tokens($key);
+            }
+        }
+    }
+}
+
+@mixin tokens($palette) {
+    @include theme.light() {
+        @if $palette == neutral {
+            --#{$palette}-alert-background: #{color.mix-token($palette, 200)};
+        } @else {
+            --#{$palette}-alert-background: #{color.mix-token($palette, 100)};
+        }
+        --#{$palette}-alert-border: #{color.mix-token($palette, 700)};
+        --#{$palette}-alert-icon: #{color.mix-token($palette, 800)};
+    }
+
+    @include theme.dark() {
+        @if $palette == neutral {
+            --#{$palette}-alert-background: #{color.mix-token($palette, 200)};
+        } @else {
+            --#{$palette}-alert-background: #{color.mix-token($palette, 100)};
+        }
+        --#{$palette}-alert-border: #{color.mix-token($palette, 700)};
+        --#{$palette}-alert-icon: #{color.mix-token($palette, 800)};
+    }
+
+}
