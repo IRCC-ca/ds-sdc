@@ -25,8 +25,8 @@ $default-color: null;
 
 @mixin layout() {
         @include button-const.layout();
-        
-    background-color: var(--surface1);
+
+    background-color: transparent;
     color: var(--text);
     @include device.if-hover {
         background: var(--generic-hover);
@@ -61,6 +61,6 @@ $default-color: null;
             }
             @include layout();
         }
-        
+
     }
 }
